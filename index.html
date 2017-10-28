@@ -36,6 +36,22 @@ svg {
   cursor: move;
 }
 
+path:hover {
+  stroke: #000;
+  stroke-width:3px;
+}
+
+.tooltip2 {
+  position: absolute;
+  background: white;
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.test {
+display:none;
+}
 </style>
 <body>
 <script src="https://d3js.org/d3.v3.min.js"></script>
@@ -45,6 +61,7 @@ var margin = {top: 30, right: 10, bottom: 10, left: 10},
     width = 1400 - margin.left - margin.right,
     height = 700 - margin.top - margin.bottom;
 
+// sets scales
 var x = d3.scale.ordinal().rangePoints([0, width], 1),
     y = {},
     dragging = {};
@@ -59,8 +76,11 @@ var svg = d3.select("body").append("svg")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    
+var tooltip = d3.select("body").append("div") 
+		.attr("class", "tooltip2")
 
-d3.csv("data/segregacion-escuela-euskadi.csv", function(error, cars) {
+d3.tsv("data/segregacion-escuela-euskadi.tsv", function(error, cars) {
 
   // Extract the list of dimensions and create a scale for each.
   x.domain(dimensions = d3.keys(cars[0]).filter(function(d) {
@@ -75,15 +95,19 @@ d3.csv("data/segregacion-escuela-euskadi.csv", function(error, cars) {
     .selectAll("path")
       .data(cars)
     .enter().append("path")
-      .attr("d", path);
-
+      .attr("d", path)
+    	.attr("class",function(d) { return d.zona;} );
+			
   // Add blue foreground lines for focus.
   foreground = svg.append("g")
       .attr("class", "foreground")
     .selectAll("path")
       .data(cars)
     .enter().append("path")
-      .attr("d", path);
+      .attr("d", path)
+      .attr("class",function(d) { return d.zona;} )
+      .on("mousemove", showTooltip) // AÑADIR EVENTO SHOW TOOLTIP
+			.on("mouseout", hideTooltip); // OCULTAR TOOLTIP
 
   // Add a group element for each dimension.
   var g = svg.selectAll(".dimension")
@@ -134,6 +158,26 @@ d3.csv("data/segregacion-escuela-euskadi.csv", function(error, cars) {
     .selectAll("rect")
       .attr("x", -8)
       .attr("width", 16);
+      
+	function showTooltip(d) {
+		// Fill the tooltip
+		tooltip.html(
+			"<div><table class='tooltip-table'></div>" +
+					"<tr class='zero-row'><td><strong>" + d.zona + "</strong> (zona " + d.zona_id + ")</td></tr>" +
+			"</table>")
+			.style("opacity", 1)
+
+		//tooltip.style("left", "300px")
+		//tooltip.style("top", "6200px")
+
+		tooltip.style("left", (d3.event.pageX)+55 + "px")
+		tooltip.style("top", (d3.event.pageY)-55 + "px")
+	}
+
+	function hideTooltip(d) {
+		// Hide tooltip
+		tooltip.style("opacity", 0)
+	}
 });
 
 function position(d) {
