@@ -80,6 +80,14 @@ p {
 .araba {
 	stroke:#f6ae01;
 }
+.media {
+	stroke:#666;
+}
+
+#Bizkaia,#Gipuzkoa,#Araba,#Media {
+	stroke-width: 3px;
+	stroke-dasharray: 5,3;
+}
 
 </style>
 </head>
@@ -112,12 +120,12 @@ var svg = d3.select("body").append("svg")
 var tooltip = d3.select("body").append("div") 
 		.attr("class", "tooltip2")
 
-d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, cars) {
+d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 
   // Extract the list of dimensions and create a scale for each.
-  x.domain(dimensions = d3.keys(cars[0]).filter(function(d) {
+  x.domain(dimensions = d3.keys(zonas[0]).filter(function(d) {
     return d != "zona" && (y[d] = d3.scale.linear()
-        .domain(d3.extent(cars, function(p) { return +p[d]; }))
+        .domain(d3.extent(zonas, function(p) { return +p[d]; }))
         .range([height, 0]));
   }));
 
@@ -125,7 +133,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, cars) {
   background = svg.append("g")
       .attr("class", "background")
     .selectAll("path")
-      .data(cars)
+      .data(zonas)
     .enter().append("path")
       .attr("d", path)
     	.attr("class",function(d) { return d.zona;} );
@@ -134,10 +142,11 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, cars) {
   foreground = svg.append("g")
       .attr("class", "foreground")
     .selectAll("path")
-      .data(cars)
+      .data(zonas)
     .enter().append("path")
       .attr("d", path)
       .attr("class",function(d) { return d.zona + " "+ d.provincia;} ) // colorea líneas según color de provincia
+      .attr("id",function(d) { return d.zona;} ) // colorea líneas según color de provincia
       .on("mousemove", showTooltip) // AÑADIR EVENTO SHOW TOOLTIP
 			.on("mouseout", hideTooltip); // OCULTAR TOOLTIP
 
