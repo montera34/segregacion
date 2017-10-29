@@ -58,7 +58,7 @@ Rekalde	65	70	59	35	17	20.4	7	1744	bizkaia
 Basurto-Zorroza	72	0	55	0	10.1		8	829	bizkaia
 test	0	0	0	0	0	0	0	30879	
 test	72	72	72	72	38	0	0	70346	
-Araba					16.3	4.8	100	102841	araba
-Gipuzkoa					8.5	5.4	200	204066	gipuzkoa
-Bizkaia					8.1	4.3	300		bizkaia
+Araba					16.3	4.8	100	30879	araba
+Gipuzkoa					8.5	5.4	200	70346	gipuzkoa
+Bizkaia					8.1	4.3	300	102841	bizkaia
 Media					9.5	4.7	-		media
