@@ -19,11 +19,11 @@ svg {
   fill: none;
   stroke: #ddd;
   shape-rendering: crispEdges;
-  stroke-width: 1.2px;
 }
 
 .foreground path {
   fill: none;
+	stroke-width: 1.1px;
 }
 
 .brush .extent {
@@ -62,7 +62,7 @@ path:hover {
 }
 
 h1 {
-  font-size: 12px;
+  font-size: 16px;
   font-weight:bold;
 }
 p {
@@ -71,14 +71,29 @@ p {
 .perc_bec_mat_escolar_pub, .perc_bec_comedor_pub, .perc_alum_ext_pub {
   display:none;	
 }
+.square {
+	width:40px;
+	height:5px;
+	float:left;
+	border: 4px white solid;
+}
 .bizkaia {
 	stroke:#da5455;
+}
+.square_bizkaia {
+	background-color:#da5455;
 }
 .gipuzkoa {
 	stroke:#4199cb;
 }
+.square_gipuzkoa {
+	background-color:#4199cb;
+}
 .araba {
 	stroke:#f6ae01;
+}
+.square_araba {
+	background-color:#f6ae01;
 }
 .media {
 	stroke:#666;
@@ -99,12 +114,20 @@ p {
 	fill:black;
 	font-weight:bold;
 }
-
+.legend-barrios p {
+	float:left;
+	margin-right:15px;
+}
 </style>
 </head>
 <body>
-<h1>Segregación público-privada en educación zonas escolares de Euskadi</h1>
-<p>Reordena ejes. Pasa el ratón por las líneas para descubrir de qué zona se trata.</p>
+<h1>Segregación público-privada en educación en zonas escolares de Euskadi</h1>
+<p>Cada línea es una zona escolar. Pasa el cursor para descubrir más información.</p>
+<div class="legend-barrios">
+	<p><span class="square square_araba"></span>Araba</p>
+	<p><span class="square square_gipuzkoa"></span>Gipuzkoa</p>
+	<p><span class="square square_bizkaia"></span>Bizkaia</p>
+</div>
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -257,7 +280,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 	svg.append("text")
 		.attr("x", chartWidth+chartWidth/2)
 		.attr("y", -margin.top/6)
-		.text("Privado")
+		.text("Privado-concertado")
 		.attr("class","axis_label");
 	svg.append("text")
 		.attr("x", chartWidth/2+chartWidth*2)
@@ -267,7 +290,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 	svg.append("text")
 		.attr("x", chartWidth+chartWidth/2+chartWidth*2)
 		.attr("y", -margin.top/6)
-		.text("Privado")
+		.text("Privado-concertado")
 		.attr("class","axis_label");
 	svg.append("text")
 		.attr("x", chartWidth/2+chartWidth*4)
@@ -277,7 +300,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 	svg.append("text")
 		.attr("x", chartWidth+chartWidth/2+chartWidth*4)
 		.attr("y", -margin.top/6)
-		.text("Privado")
+		.text("Privado-concertado")
 		.attr("class","axis_label");
 	function showTooltip(d) {
 		// Fill the tooltip
