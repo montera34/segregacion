@@ -19,11 +19,11 @@ svg {
   fill: none;
   stroke: #ddd;
   shape-rendering: crispEdges;
+  stroke-width: 1.2px;
 }
 
 .foreground path {
   fill: none;
-  stroke: steelblue;
 }
 
 .brush .extent {
@@ -45,8 +45,8 @@ svg {
 }
 
 path:hover {
-  stroke: #000;
-  stroke-width:3px;
+  stroke: #000 !important;
+  stroke-width:4px;
 }
 
 .tooltip2 {
@@ -68,6 +68,19 @@ h1 {
 p {
   font-size: 12px;
 }
+.perc_bec_mat_escolar_pub, .perc_bec_comedor_pub, .perc_alum_ext_pub {
+  display:none;	
+}
+.bizkaia {
+	stroke:#da5455;
+}
+.gipuzkoa {
+	stroke:#4199cb;
+}
+.araba {
+	stroke:#f6ae01;
+}
+
 </style>
 </head>
 <body>
@@ -76,9 +89,9 @@ p {
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
 
-var margin = {top: 30, right: 10, bottom: 10, left: 10},
-    width = 1400 - margin.left - margin.right,
-    height = 700 - margin.top - margin.bottom;
+var margin = {top: 50, right: 10, bottom: 10, left: 10},
+    width = 1200 - margin.left - margin.right,
+    height = 650 - margin.top - margin.bottom;
 
 // sets scales
 var x = d3.scale.ordinal().rangePoints([0, width], 1),
@@ -99,7 +112,7 @@ var svg = d3.select("body").append("svg")
 var tooltip = d3.select("body").append("div") 
 		.attr("class", "tooltip2")
 
-d3.tsv("data/segregacion-escuela-euskadi.tsv", function(error, cars) {
+d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, cars) {
 
   // Extract the list of dimensions and create a scale for each.
   x.domain(dimensions = d3.keys(cars[0]).filter(function(d) {
@@ -117,14 +130,14 @@ d3.tsv("data/segregacion-escuela-euskadi.tsv", function(error, cars) {
       .attr("d", path)
     	.attr("class",function(d) { return d.zona;} );
 			
-  // Add blue foreground lines for focus.
+  // Add foreground lines for focus.
   foreground = svg.append("g")
       .attr("class", "foreground")
     .selectAll("path")
       .data(cars)
     .enter().append("path")
       .attr("d", path)
-      .attr("class",function(d) { return d.zona;} )
+      .attr("class",function(d) { return d.zona + " "+ d.provincia;} ) // colorea líneas según color de provincia
       .on("mousemove", showTooltip) // AÑADIR EVENTO SHOW TOOLTIP
 			.on("mouseout", hideTooltip); // OCULTAR TOOLTIP
 
@@ -159,6 +172,15 @@ d3.tsv("data/segregacion-escuela-euskadi.tsv", function(error, cars) {
               .attr("visibility", null);
         }));
 
+	// Add rectangles to hide not interesting paths
+  g.append("rect")
+		.attr("y", 0 )
+		.attr("height", height)
+		.attr("x", 0)
+		.attr("width", 148)
+		.attr("fill","#FFFFFF")
+		.attr("class", function(d) { return d; });
+
   // Add an axis and title.
   g.append("g")
       .attr("class", "axis")
@@ -177,12 +199,45 @@ d3.tsv("data/segregacion-escuela-euskadi.tsv", function(error, cars) {
     .selectAll("rect")
       .attr("x", -8)
       .attr("width", 16);
-      
+  
+  // rótulos
+	svg.append("text")
+		.attr("x", 148/2)
+		.attr("y", -margin.top/2)
+		.text("% becas Meterial escolar")
+		.style("text-anchor", "left	")
+		.attr("font-size", "12px")
+		.attr("fill", "black")
+		.attr("font-weight", "bold");
+  // rótulos
+	svg.append("text")
+		.attr("x", 148*2+148/2)
+		.attr("y", -margin.top/2)
+		.text("% becas comedor")
+		.style("text-anchor", "left	")
+		.attr("font-size", "12px")
+		.attr("fill", "black")
+		.attr("font-weight", "bold");
+  // rótulos
+	svg.append("text")
+		.attr("x", 148*4+148/2)
+		.attr("y", -margin.top/2)
+		.text("% extranjeros")
+		.style("text-anchor", "left	")
+		.attr("font-size", "12px")
+		.attr("fill", "black")
+		.attr("font-weight", "bold");
+
+ 
 	function showTooltip(d) {
 		// Fill the tooltip
 		tooltip.html(
 			"<div><table class='tooltip-table'></div>" +
-					"<tr class='zero-row'><td><strong>" + d.zona + "</strong> (zona " + d.zona_id + ")</td></tr>" +
+					"<tr class='zero-row'><td><strong>" + d.zona + "</strong> (" + d.provincia + ", zona " + d.zona_id + ")</td><td></td></tr>" +
+					"<tr class='zero-row'><td></td><td>Público</td><td>Concertado-Privado</td></tr>" +
+					"<tr><td>% Becas material escolar</td><td style='text-align:right'>" + d.perc_bec_mat_escolar_pub + "% </td><td style='text-align:right'>" + d.perc_bec_mat_escolar_priv + "% </td></tr>" +
+					"<tr><td>% Becas comedor</td><td style='text-align:right'>" + d.perc_bec_comedor_pub + "% </td><td style='text-align:right'>" + d.perc_bec_comedor_priv + "% </td></tr>" +
+					"<tr><td>% extranjeros</td><td style='text-align:right'>" + d.perc_alum_ext_pub + "% </td><td style='text-align:right'>" + d.perc_alum_ext_priv + "% </td></tr>" +
 			"</table>")
 			.style("opacity", 1)
 
