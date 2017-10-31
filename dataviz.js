@@ -6,11 +6,11 @@ var screenwidth = d3.select("#vis").node().clientWidth;
 // set the dimensions and margins of the graph
 // Margin convention: https://bl.ocks.org/mbostock/3019563
 var margin = {top: 50, right: 10, bottom: 10, left:0},
-    width = screenwidth - margin.left - margin.right,
+    width = (isMobile ? (screenwidth*3) : screenwidth) - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var vis = d3.select("#vis");
-var chartWidth = screenwidth/9;
+var chartWidth = width/9;
 
 // sets scales
 var x = d3.scale.ordinal().rangePoints([0, width], 1),
@@ -129,16 +129,25 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 		.attr("x", chartWidth)
 		.attr("y", -margin.top/2)
 		.text("% becas Material escolar")
-		.attr("class", "axistitle");
+		.attr("class", "axistitle")
+		.style("text-anchor", "middle")
+		.attr("font-size", "14px")
+		.attr("fill", "black")
+		.attr("font-weight", "bold");
 	svg.append("text")
 		.attr("x", chartWidth*3)
 		.attr("y", -margin.top/2)
 		.text("% becas comedor")
-		.attr("class", "axistitle");
+		.attr("class", "axistitle")
+		.style("text-anchor", "middle")
+		.attr("font-size", "14px")
+		.attr("fill", "black")
+		.attr("font-weight", "bold");
 	svg.append("text")
 		.attr("x", chartWidth*5)
 		.attr("y", -margin.top/2)
 		.text("% extranjeros")
+		.attr("class", "axistitle")
 		.style("text-anchor", "middle")
 		.attr("font-size", "14px")
 		.attr("fill", "black")
