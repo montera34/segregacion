@@ -7,18 +7,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Segregación público-privada en educación zonas escolares de Euskadi</title>
 
-<!-- source code https://bl.ocks.org/jasondavies/1341281 -->
+<!-- source code based on https://bl.ocks.org/jasondavies/1341281 -->
 <meta charset="utf-8">
 <link href="style.css" rel="stylesheet">
+<!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<h1>Segregación público-privada en educación en zonas escolares de Euskadi</h1>
-<p>Cada línea es una zona escolar. Pasa el cursor para descubrir más información.</p>
-<div class="legend-barrios">
-	<p><span class="square square_araba"></span>Araba</p>
-	<p><span class="square square_gipuzkoa"></span>Gipuzkoa</p>
-	<p><span class="square square_bizkaia"></span>Bizkaia</p>
-</div>
+
+<main class="container">
+	<section class="vis-item" id="interactivo">
+		<header class="row vis-head">
+			<div class="col-md-12">
+				<h1>Segregación público-privada en educación en zonas escolares de Euskadi</h1>
+			</div>
+		</header>
+		<div class="row vis-body">
+			<div class="col-md-12">
+				<p>Cada línea es una zona escolar. Pasa el cursor para descubrir más información.</p>
+				<div class="legend-barrios">
+					<p><span class="square square_araba"></span>Araba</p>
+					<p><span class="square square_gipuzkoa"></span>Gipuzkoa</p>
+					<p><span class="square square_bizkaia"></span>Bizkaia</p>
+				</div>
+				<div id="vis"></div>
+			</div>
+		</div>
+	</section>
+</main>
+	
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="dataviz.js"></script>
+<script type="text/javascript" src="../stats.js"></script>
 </body>

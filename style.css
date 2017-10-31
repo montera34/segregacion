@@ -1,5 +1,6 @@
 svg {
   font: 10px sans-serif;
+  font-family: "Roboto Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .background path {
@@ -30,6 +31,12 @@ svg {
   text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
   cursor: move;
 }
+.axistitle {
+	text-anchor:middle;
+	font-size:14px;
+	fill:black;
+	font-weight:bold;
+}
 
 path:hover {
   stroke: #000 !important;
@@ -49,7 +56,7 @@ path:hover {
 }
 
 h1 {
-  font-size: 16px;
+  font-size: 2em !important;
   font-weight:bold;
 }
 p {
@@ -60,9 +67,9 @@ p {
 }
 .square {
 	width:40px;
-	height:5px;
+	height:10px;
 	float:left;
-	border: 4px white solid;
+	margin-right: 4px;
 }
 .bizkaia {
 }

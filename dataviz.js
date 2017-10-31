@@ -1,6 +1,6 @@
-var margin = {top: 50, right: 10, bottom: 10, left: 10},
+var margin = {top: 50, right: 10, bottom: 10, left:0},
     width = 1348 - margin.left - margin.right,
-    height = 650 - margin.top - margin.bottom
+    height = 550 - margin.top - margin.bottom
     chartWidth = 148;
 
 // sets scales
@@ -13,11 +13,11 @@ var line = d3.svg.line(),
     background,
     foreground;
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#vis").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(-50," + margin.top + ")");
     
 var tooltip = d3.select("body").append("div") 
 		.attr("class", "tooltip2")
@@ -120,18 +120,12 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 		.attr("x", chartWidth)
 		.attr("y", -margin.top/2)
 		.text("% becas Material escolar")
-		.style("text-anchor", "middle")
-		.attr("font-size", "14px")
-		.attr("fill", "black")
-		.attr("font-weight", "bold");
+		.attr("class", "axistitle");
 	svg.append("text")
 		.attr("x", chartWidth*3)
 		.attr("y", -margin.top/2)
 		.text("% becas comedor")
-		.style("text-anchor", "middle")
-		.attr("font-size", "14px")
-		.attr("fill", "black")
-		.attr("font-weight", "bold");
+		.attr("class", "axistitle");
 	svg.append("text")
 		.attr("x", chartWidth*5)
 		.attr("y", -margin.top/2)
@@ -175,17 +169,13 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 	function showTooltip(d) {
 		// Fill the tooltip
 		tooltip.html(
-			"<div><table class='tooltip-table'></div>" +
-					"<tr class='zero-row'><td colspan='3'><strong>" + d.zona + "</strong> (Alumnado: " + d.total_alumnado + ", " + d.provincia + ", zona " + d.zona_id + ")</td></tr>" +
-					"<tr class='zero-row'><td></td><td>Público</td><td>Concertado-Privado</td></tr>" +
-					"<tr><td>% Becas material escolar</td><td style='text-align:right'>" + d.perc_bec_mat_escolar_pub + "% </td><td style='text-align:right'>" + d.perc_bec_mat_escolar_priv + "% </td></tr>" +
+			"<div class='table-responsive'><h5><strong>" + d.zona + "</strong> (Alumnado: " + d.total_alumnado + ", " + d.provincia + ", zona " + d.zona_id + ")</h5>" +
+					"<table class='table table-condensed table-striped'><thead><tr><td></td><td>Público</td><td>Concertado-Privado</td></tr></thead>" +
+					"<tbody><tr><td>% Becas material escolar</td><td style='text-align:right'>" + d.perc_bec_mat_escolar_pub + "% </td><td style='text-align:right'>" + d.perc_bec_mat_escolar_priv + "% </td></tr>" +
 					"<tr><td>% Becas comedor</td><td style='text-align:right'>" + d.perc_bec_comedor_pub + "% </td><td style='text-align:right'>" + d.perc_bec_comedor_priv + "% </td></tr>" +
-					"<tr><td>% extranjeros</td><td style='text-align:right'>" + d.perc_alum_ext_pub + "% </td><td style='text-align:right'>" + d.perc_alum_ext_priv + "% </td></tr>" +
-			"</table>")
+					"<tr><td>% Extranjeros</td><td style='text-align:right'>" + d.perc_alum_ext_pub + "% </td><td style='text-align:right'>" + d.perc_alum_ext_priv + "% </td></tr></	tbody>" +
+			"</table></div>")
 			.style("opacity", 1)
-
-		//tooltip.style("left", "300px")
-		//tooltip.style("top", "6200px")
 
 		tooltip.style("left", (d3.event.pageX)+55 + "px")
 		tooltip.style("top", (d3.event.pageY)-55 + "px")
