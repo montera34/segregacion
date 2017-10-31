@@ -1,7 +1,16 @@
+//Prepare canvas size
+isMobile = innerWidth < 768;
+
+var screenwidth = d3.select("#vis").node().clientWidth;
+
+// set the dimensions and margins of the graph
+// Margin convention: https://bl.ocks.org/mbostock/3019563
 var margin = {top: 50, right: 10, bottom: 10, left:0},
-    width = 1348 - margin.left - margin.right,
-    height = 550 - margin.top - margin.bottom
-    chartWidth = 148;
+    width = screenwidth - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var vis = d3.select("#vis");
+var chartWidth = screenwidth/9;
 
 // sets scales
 var x = d3.scale.ordinal().rangePoints([0, width], 1),
@@ -17,7 +26,7 @@ var svg = d3.select("#vis").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
-    .attr("transform", "translate(-50," + margin.top + ")");
+    .attr("transform", "translate("+ margin.left +"," + margin.top + ")");
     
 var tooltip = d3.select("body").append("div") 
 		.attr("class", "tooltip2")
