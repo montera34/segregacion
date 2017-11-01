@@ -101,11 +101,20 @@ p {
 
 .axis_label {
 	text-anchor:middle;
-	font-size:12px;
+	font-size:1em;
 	fill:black;
 	font-weight:bold;
 }
 .legend p {
 	float:left;
 	margin-right:15px;
+}
+
+.vis-item {
+	padding: 70px 0;
+}
+.vis-head h2,
+.vis-head h3 {
+	text-transform: uppercase;
+	margin-top: 0;
 }
