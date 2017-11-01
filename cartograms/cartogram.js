@@ -20,9 +20,12 @@ var fontSize = d3.scaleLinear()
     .range([2,72.94])
 
 // Party
-var color = d3.scaleLinear()
-    .domain([0, 1, 44]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
-    .range(['#f5b022','#fff','#337F7F'])
+var colorPub = d3.scaleLinear()
+    .domain([1, 15]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .range(['#fff','#337F7F'])
+var colorPriv = d3.scaleLinear()
+    .domain([1, 15]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .range(['#fff','#f5b022'])
 
 var svg = d3.select("#vis").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -87,7 +90,16 @@ var path = d3.geoPath()
               .attr("height", d.area)
               .attr("x", -d.area / 2)
               .attr("y", -d.area / 2)
-              .attr("fill", color(d.properties.indice_desigualdad))
+              .attr("fill", function(d) {
+		            if  ( d.properties.indice_desigualdad == null || d.properties.indice_desigualdad == 44 )  {
+									 return "#337F7F";
+						    } else if ( d.properties.indice_desigualdad > 1 ) {
+									return colorPub(d.properties.indice_desigualdad)
+								} else {
+						   		return colorPriv(d.properties.perc_alum_ext_priv / d.properties.perc_alum_ext_publi)
+								}
+							})
+              //color(d.properties.indice_desigualdad)
               .attr("stroke", "#ccc")
               .attr("stroke-width", 1)
               .attr("rx", 1)
@@ -98,7 +110,7 @@ var path = d3.geoPath()
             d3.select(this)
                 .attr("text-anchor", "middle")
                 .attr("dy", 12)
-                .text(d.properties.zona.substring(0,7))
+                .text(d.properties.zona.substring(0,7)+".")
                 .style("fill", "black")
                 .style("font-size", fontSize(d.area) + "px")
                 .style("font-size", "11px")
@@ -106,12 +118,24 @@ var path = d3.geoPath()
 
       function showTooltip(d) {
           // Fill the tooltip
-          var desigualdad = (d.properties.indice_desigualdad == 33) ? "∞ [infinito, al no haber alumnado en red privada] " : d.properties.indice_desigualdad;
+          var desigualdad = (d.properties.indice_desigualdad == null ) ? "∞ [infinito, al no haber alumnado en red privada] " : d.properties.indice_desigualdad;
+					
+					if  ( desigualdad == "∞ [infinito, al no haber alumnado en red privada] " )  {  
+						desigualdad = "∞ [infinito, al no haber alumnado en red privada] ";
+					} else if ( desigualdad > 1 ) {
+						desigualdad = d.properties.indice_desigualdad;
+						cociente = "% pública / % privada";
+					} else {
+						desigualdad = d3.format(",.2f")(d.properties.perc_alum_ext_priv / d.properties.perc_alum_ext_publi )
+						cociente = "% privada / % pública";
+					}
+        
           var privado = (d.properties.perc_alum_ext_priv == null ) ? 0 : d.properties.perc_alum_ext_priv;
+
           tooltip.html("<div class='table-responsive'><strong>" + d.properties.zona + "</strong> (zona escolar " + d.properties.zona_id2 + ")</div>" +
             "<table class='table table-condensed table-striped'>" +
                 "<tr class='first-row'>" +
-                    "<td style='text-align:right'>"+ desigualdad +"</td><td>índice desigualdad extranjeros (% pública / % privada) </td>" +
+                    "<td style='text-align:right'>"+ desigualdad +"</td><td>índice desigualdad extranjeros (" + cociente + ")</td>" +
                 "</tr>" +
                 "<tr>" +
                     "<td style='text-align:right'>"+ d.properties.alum_ext_total +"</td><td>total alumnado extranjero</td>" +

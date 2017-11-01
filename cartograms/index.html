@@ -57,12 +57,12 @@ rect:hover {
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="https://lab.montera34.com/segregacion/">Segregación educación en Euskadi/</a> <a class="navbar-brand" href="#">Comparativa indicadores</a>
+			<a class="navbar-brand" href="https://lab.montera34.com/segregacion/">Segregación educación en Euskadi/</a> <a class="navbar-brand" href="#">Extranjeros</a>
 		</div>
 		<div class="collapse navbar-collapse" id="top-navbar-collapse">
 			<ul class="nav navbar-nav nabvar-left">
 				<li><a href="../index.html">Comparativa indicadores</a></li>
-				<li><a href="#">Comparativa en mapa</a></li>
+				<li><a href="#">Extranjeros</a></li>
 			</ul>
 		</div>
 	</div>
@@ -77,17 +77,23 @@ rect:hover {
 			</div>
 		</header>
 		<div class="row vis-body">
-			<div class="col-md-12">
+			<div class="col-md-9">
+				<figure><a href="../images/segregacion-extranjeros-red-pub-priv-euskadi_puntos.png"><img class="img-responsive" src="../images/segregacion-extranjeros-red-pub-priv-euskadi_puntos.png" /></a>
 				<p>
 					<strong>Tamaño de cuadrado</strong>: número de extranjeros en esa zona escolar.<br>
-					<strong>Color</strong>: índice de desigualdad de reparto entre red privada y red pública. Cociente entre porcentajes de alumnado extranjero: % Público / % Privado-concertada</p>
-					<div class="legend"> Índice desigualdad
-						<p><span class="square2" style="background-color:#f5b022;border:1px #666 solid;"></span>De 0 a 1</p>
-						<p><span class="square2" style="background-color:white;border:1px #666 solid;"></span>0</p>
-						<p><span class="square2" style="background-color:#337F7F;border:1px #666 solid;"></span>1 a 44</p>
-				</div>
-					<p>Naranja: más porcentaje en red privado-concertada en que pública. Verde: más porcentaje en red pública que privado-concertada.</p>
+					<strong>Color</strong>: utiliza misma escala de color que gráfico de arriba. Índice de desigualdad de reparto entre red privada y red pública. Cociente entre porcentajes de alumnado extranjero: % Pública / % Privado-concertada, y si es mayor en Privado-concertada se calcula % Privado-concertada / % Pública.
 				</p>
+				<!--
+				<div class="legend"> Índice desigualdad
+					<p><span class="square2" style="background-color:#f5b022;border:1px #666 solid;"></span>De 1 a 10.6</p>
+					<p><span class="square2" style="background-color:white;border:1px #666 solid;"></span>1</p>
+					<p><span class="square2" style="background-color:#337F7F;border:1px #666 solid;"></span>1 a 44</p>
+				</div>-->
+				<p>Naranja: más porcentaje en red privado-concertada en que pública. Verde: más porcentaje en red pública que privado-concertada.</p>
+
+				</figure>
+			</div>
+			<div class="col-md-12">
 				<div id="vis"></div>
 				<p>Datos del curso 2014-2015 para Educación básica (educación primaria y ESO).</p>
 				<p>Fuente de los datos: La educación Euskadi 2013-2015. Consejo Escolar de Euskadi. Departamento de educación. Gobierno Vasco. Vitoria-Gasteiz, 2016.</p>
