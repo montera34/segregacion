@@ -10,7 +10,7 @@ var margin = {top: 50, right: 10, bottom: 10, left:0},
     height = 500 - margin.top - margin.bottom;
 
 var vis = d3.select("#vis");
-var chartWidth = width/9;
+var chartWidth = width/7;
 
 // sets scales
 var x = d3.scale.ordinal().rangePoints([0, width], 1),
@@ -31,7 +31,7 @@ var svg = d3.select("#vis").append("svg")
 var tooltip = d3.select("body").append("div") 
 		.attr("class", "tooltip2")
 
-d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
+d3.csv("data/segregacion-escuela-euskadi_simple2.csv", function(error, zonas) {
 
   // Extract the list of dimensions and create a scale for each.
   x.domain(dimensions = d3.keys(zonas[0]).filter(function(d) {
@@ -70,6 +70,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
     .enter().append("g")
       .attr("class", "dimension")
       .attr("transform", function(d) { return "translate(" + x(d) + ")"; })
+/*
       .call(d3.behavior.drag()
         .origin(function(d) { return {x: x(d)}; })
         .on("dragstart", function(d) {
@@ -93,7 +94,9 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
               .delay(500)
               .duration(0)
               .attr("visibility", null);
-        }));
+        }))
+*/
+        ;
 
 	// Add rectangles to hide not interesting paths
   g.append("rect")
