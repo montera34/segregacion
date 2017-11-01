@@ -31,8 +31,8 @@ var tooltip = d3.select("body")
     .append("div")
     .attr("class", "tooltip")
 
-d3.json("limites-zonas-escolares-euskadi-con-variables-2014-15_simplify2.json", function(err, data) { //../data/output/limites-zonas-escolares-euskadi-con-variables-2014-15_simplify2.json
-//barrios-pamplona-wgs84-viviendas-poblacion.json
+d3.json("../data/output/limites-zonas-escolares-euskadi-con-variables-2014-15_simplify2.json", function(err, data) {
+
 // move projection inside json to be able to get data
 var projection = d3.geoMercator()
     .fitSize([width, height], topojson.feature(data, data.objects.	barrios));
@@ -44,14 +44,14 @@ var path = d3.geoPath()
     barrio = topojson.feature(data, data.objects.barrios).features
 
     // Rect size scale
-    rectSize.domain(d3.extent(barrio, function(d) {return d.properties.v_alum_ext_total }))
+    rectSize.domain(d3.extent(barrio, function(d) {return d.properties.alum_ext_total }))
 
     // 2. Create on each feature the centroid and the positions
     barrio.forEach(function(d) {
         d.pos = projection(d3.geoCentroid(d))
         d.x = d.pos[0]
         d.y = d.pos[1]
-        d.area = rectSize(d.properties.v_alum_ext_total) / .6 // Select how to scale the squares. Try and decide
+        d.area = rectSize(d.properties.alum_ext_total) / .6 // Select how to scale the squares. Try and decide
       // d.area = rectSize(d.properties.habitantes2015) / 2 // How we scale
     })
 
@@ -84,7 +84,7 @@ var path = d3.geoPath()
               .attr("height", d.area)
               .attr("x", -d.area / 2)
               .attr("y", -d.area / 2)
-              .attr("fill", color(d.properties.v_indice_desigualdad))
+              .attr("fill", color(d.properties.indice_desigualdad))
               .attr("stroke", "#ccc")
               .attr("rx", 2)
           })
@@ -105,16 +105,16 @@ var path = d3.geoPath()
           tooltip.html("<div class='tooltip-city'><strong>" + d.properties.zona + "</strong></div>" +
             "<table class='tooltip-table'>" +
                 "<tr class='first-row'>" +
-                    "<td><span class='table-n'>"+ d3.format(",.2f")(d.properties.v_indice_desigualdad) +"</span> índice desigualdad extranjeros </td>" +
+                    "<td><span class='table-n'>"+ d3.format(",.2f")(d.properties.indice_desigualdad) +"</span> índice desigualdad extranjeros </td>" +
                 "</tr>" +
                 "<tr>" +
-                    "<td>"+ d.properties.v_alum_ext_total +" total alumnado extranjero</td>" +
+                    "<td>"+ d.properties.alum_ext_total +" total alumnado extranjero</td>" +
                 "</tr>" +
                 "<tr>" +
-                    "<td>"+ d.properties.v_perc_alum_ext_publi +"% alumnado extranjero en red pública</td>" +
+                    "<td>"+ d.properties.perc_alum_ext_publi +"% alumnado extranjero en red pública</td>" +
                 "</tr>" +
                  "<tr>" +
-                    "<td>"+ d.properties.v_perc_alum_ext_priv +"% alumnado extranjero en red privado-concertada</td>" +
+                    "<td>"+ d.properties.perc_alum_ext_priv +"% alumnado extranjero en red privado-concertada</td>" +
                 "</tr>" +               
               "</table>")
             .style("opacity", 1)
