@@ -1,6 +1,7 @@
-var width = 1000,
-    height = 700,
-    padding = 2
+var margin = {top: 10, right: 10, bottom: 10, left:0},
+    width = 1000- margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom,
+    padding = 2;
 
 //var projection = d3.geoConicConformalSpain()
 //    .translate([width / 2, height / 2])
@@ -12,20 +13,22 @@ var width = 1000,
 
 // Rectangle size
 var rectSize = d3.scaleSqrt()
-    .range([3, 60]) //must calculate manually the relationship of the squares of this values to match the min and max value ofthe domains
+    .range([1, 85]) //must calculate manually the relationship of the squares of this values to match the min and max value ofthe domains
 
 // Font size scale
 var fontSize = d3.scaleLinear()
-    .range([8, 24])
+    .range([2,72.94])
 
 // Party
 var color = d3.scaleLinear()
-    .domain([0.1, 1, 2.5, 5, 7.5, 44]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
-    .range(['#f5b022','#E4F1E1','#9CCDC1','#63A6A0','#337F7F','#0D585F'])
+    .domain([0, 1, 44]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .range(['#f5b022','#fff','#337F7F'])
 
 var svg = d3.select("#vis").append("svg")
-    .attr("width", width)
-    .attr("height", height)
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate("+ margin.left +"," + margin.top + ")");
 
 var tooltip = d3.select("body")
     .append("div")
@@ -51,7 +54,7 @@ var path = d3.geoPath()
         d.pos = projection(d3.geoCentroid(d))
         d.x = d.pos[0]
         d.y = d.pos[1]
-        d.area = rectSize(d.properties.alum_ext_total) / .6 // Select how to scale the squares. Try and decide
+        d.area = rectSize(d.properties.alum_ext_total) / .7 // Select how to scale the squares. Try and decide
       // d.area = rectSize(d.properties.habitantes2015) / 2 // How we scale
     })
 
@@ -86,7 +89,8 @@ var path = d3.geoPath()
               .attr("y", -d.area / 2)
               .attr("fill", color(d.properties.indice_desigualdad))
               .attr("stroke", "#ccc")
-              .attr("rx", 2)
+              .attr("stroke-width", 1)
+              .attr("rx", 1)
           })
 
     rect.append("text")
@@ -94,7 +98,7 @@ var path = d3.geoPath()
             d3.select(this)
                 .attr("text-anchor", "middle")
                 .attr("dy", 12)
-                .text(d.properties.zona)
+                .text(d.properties.zona.substring(0,7))
                 .style("fill", "black")
                 .style("font-size", fontSize(d.area) + "px")
                 .style("font-size", "11px")
@@ -102,24 +106,26 @@ var path = d3.geoPath()
 
       function showTooltip(d) {
           // Fill the tooltip
-          tooltip.html("<div class='tooltip-city'><strong>" + d.properties.zona + "</strong></div>" +
-            "<table class='tooltip-table'>" +
+          var desigualdad = (d.properties.indice_desigualdad == 33) ? "∞ [infinito, al no haber alumnado en red privada] " : d.properties.indice_desigualdad;
+          var privado = (d.properties.perc_alum_ext_priv == null ) ? 0 : d.properties.perc_alum_ext_priv;
+          tooltip.html("<div class='table-responsive'><strong>" + d.properties.zona + "</strong> (zona escolar " + d.properties.zona_id2 + ")</div>" +
+            "<table class='table table-condensed table-striped'>" +
                 "<tr class='first-row'>" +
-                    "<td><span class='table-n'>"+ d3.format(",.2f")(d.properties.indice_desigualdad) +"</span> índice desigualdad extranjeros </td>" +
+                    "<td style='text-align:right'>"+ desigualdad +"</td><td>índice desigualdad extranjeros (% pública / % privada) </td>" +
                 "</tr>" +
                 "<tr>" +
-                    "<td>"+ d.properties.alum_ext_total +" total alumnado extranjero</td>" +
+                    "<td style='text-align:right'>"+ d.properties.alum_ext_total +"</td><td>total alumnado extranjero</td>" +
                 "</tr>" +
                 "<tr>" +
-                    "<td>"+ d.properties.perc_alum_ext_publi +"% alumnado extranjero en red pública</td>" +
+                    "<td style='text-align:right'>"+ d.properties.perc_alum_ext_publi  +"%</td><td>alumnado es extranjero en la red pública</td>" +
                 "</tr>" +
                  "<tr>" +
-                    "<td>"+ d.properties.perc_alum_ext_priv +"% alumnado extranjero en red privado-concertada</td>" +
+                    "<td style='text-align:right'>"+ privado +"%</td><td>alumnado es extranjero en la red privado-concertada</td>" +
                 "</tr>" +               
               "</table>")
             .style("opacity", 1)
 
-          tooltip.style("left", (d3.event.pageX - 20) + "px")
+          tooltip.style("left", (d3.event.pageX + 20) + "px")
           tooltip.style("top", (d3.event.pageY + 23) + "px")
         }
 

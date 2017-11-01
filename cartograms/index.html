@@ -73,14 +73,20 @@ rect:hover {
 	<section class="vis-item" id="interactivo">
 		<header class="row vis-head">
 			<div class="col-md-9">
-				<h1>Comparativa de presentica de alumnado extranjero en redes pública y pivado-concertada en zonas escolares de Euskadi</h1>
+				<h1>Comparativa de presencia de alumnado extranjero en redes pública y pivado-concertada en zonas escolares de Euskadi</h1>
 			</div>
 		</header>
 		<div class="row vis-body">
 			<div class="col-md-12">
 				<p>
-					Tamaño de cuadrado: número de extranjeros.<br>
-					Color: índice de desigualdad de reparto entre red privada y red pública.
+					<strong>Tamaño de cuadrado</strong>: número de extranjeros en esa zona escolar.<br>
+					<strong>Color</strong>: índice de desigualdad de reparto entre red privada y red pública. Cociente entre porcentajes de alumnado extranjero: % Público / % Privado-concertada</p>
+					<div class="legend"> Índice desigualdad
+						<p><span class="square2" style="background-color:#f5b022;border:1px #666 solid;"></span>De 0 a 1</p>
+						<p><span class="square2" style="background-color:white;border:1px #666 solid;"></span>0</p>
+						<p><span class="square2" style="background-color:#337F7F;border:1px #666 solid;"></span>1 a 44</p>
+				</div>
+					<p>Naranja: más porcentaje en red privado-concertada en que pública. Verde: más porcentaje en red pública que privado-concertada.</p>
 				</p>
 				<div id="vis"></div>
 				<p>Datos del curso 2014-2015 para Educación básica (educación primaria y ESO).</p>
@@ -89,6 +95,7 @@ rect:hover {
 		</div>
 	</section>
 </main>
+
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 <script src="https://unpkg.com/d3-composite-projections@1.0.2"></script>
