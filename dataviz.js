@@ -196,7 +196,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 			.style("opacity", 1)
 
 		tooltip.style("left", (d3.event.pageX)+55 + "px")
-		tooltip.style("top", (d3.event.pageY)-55 + "px")
+		tooltip.style("top", (d3.event.pageY)-155 + "px")
 	}
 
 	function hideTooltip(d) {
