@@ -45,10 +45,10 @@ path:hover {
 
 .tooltip2 {
   position: absolute;
-  background: white;
   font-size: 14px;
   padding: 10px;
   border: 1px solid #ccc;
+  background-color:rgba(255, 255, 255, 0.95)
 }
 
 .test {
@@ -67,9 +67,9 @@ p {
 }
 .square {
 	width:40px;
-	height:10px;
+	height:4px;
 	float:left;
-	margin-right: 4px;
+	margin: 4px 4px 0 0;
 }
 .bizkaia {
 }
@@ -86,7 +86,8 @@ p {
 .square_araba {
 	background-color:#f6ae01;
 }
-.media {
+.square_media {
+	background-color:#666;
 }
 
 #Bizkaia,#Gipuzkoa,#Araba,#Media {
@@ -104,7 +105,7 @@ p {
 	fill:black;
 	font-weight:bold;
 }
-.legend-barrios p {
+.legend p {
 	float:left;
 	margin-right:15px;
 }
