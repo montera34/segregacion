@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es-ES">
+
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presencia de alumnado extranjero en zonas escolares de Euskadi</title>
+
+<!-- Bootstrap -->
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+
+<style>
+.text-label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.label {
+  font-size: 20px;
+  fill: black;
+}
+
+.tooltip {
+  position: absolute;
+  background: white;
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+rect:hover {
+  stroke: black;
+  stroke-width: 2px;
+ }
+ 
+.Igeldo text{
+	fill:white !important;
+}
+.Miracruz-Bidebieta text{
+ z-index:2;
+}
+.Ategorrieta-Ulia rect{
+ z-index:-1;
+}
+</style>
+</head>
+<body>
+<header role="banner">
+	<nav id="top-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-collapse" aria-expanded="false">
+				<span class="sr-only">mostrar/ocultar menú</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="https://lab.montera34.com/segregacion/">Segregación educación en Euskadi/</a> <a class="navbar-brand" href="#">Comparativa indicadores</a>
+		</div>
+		<div class="collapse navbar-collapse" id="top-navbar-collapse">
+			<ul class="nav navbar-nav nabvar-left">
+				<li><a href="../index.html">Comparativa indicadores</a></li>
+				<li><a href="#">Comparativa en mapa</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+</header>
+
+<main class="container">
+	<section class="vis-item" id="interactivo">
+		<header class="row vis-head">
+			<div class="col-md-9">
+				<h1>Comparativa de presentica de alumnado extranjero en redes pública y pivado-concertada en zonas escolares de Euskadi</h1>
+			</div>
+		</header>
+		<div class="row vis-body">
+			<div class="col-md-12">
+				<p>
+					Tamaño de cuadrado: número de extranjeros.<br>
+					Color: índice de desigualdad de reparto entre red privada y red pública.
+				</p>
+				<div id="vis"></div>
+				<p>Datos del curso 2014-2015 para Educación básica (educación primaria y ESO).</p>
+				<p>Fuente de los datos: La educación Euskadi 2013-2015. Consejo Escolar de Euskadi. Departamento de educación. Gobierno Vasco. Vitoria-Gasteiz, 2016.</p>
+			</div>
+		</div>
+	</section>
+</main>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="https://unpkg.com/d3-composite-projections@1.0.2"></script>
+<script src="cartogram.js"></script>
+<script type="text/javascript" src="../stats.js"></script>
+</body>

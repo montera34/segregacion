@@ -1,0 +1,5187 @@
+{
+	"type": "Topology",
+	"objects": {
+		"barrios": {
+			"type": "GeometryCollection",
+			"geometries": [
+				{
+					"arcs": [
+						[
+							0,
+							1,
+							2,
+							3,
+							4,
+							5,
+							6,
+							7
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 262,
+						"zona": "Lasarte",
+						"zona_id2": "262",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 1064,
+						"v_alum_bec_comedor": 323,
+						"v_alum_mat_escolar_total": 2983,
+						"v_alum_comedor_total": 2660,
+						"v_perc_material_m15": 36,
+						"v_perc_comedor_m16": 12,
+						"v_perc_bec_mat_escolar_pub": 38,
+						"v_perc_bec_mat_escolar_priv": 29,
+						"v_dif_perc_bec_mat_escolar_dif": 9,
+						"v_perc_bec_comedor_pub": 15,
+						"v_perc_bec_comedor_priv": 3,
+						"v_dif_perc_bec_comedor": 12,
+						"v_total_alumnado": 1862,
+						"v_perc_alum_ext_publi": 7.7,
+						"v_perc_alum_ext_priv": 1.3,
+						"v_perc_alum_ext_todos": 5.9,
+						"v_indice_desigualdad": 6,
+						"v_alum_ext_total": 109,
+						"v_alum_ext_publi": 102,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": 7,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 93.6,
+						"v_perc_reparto_alum_ext_privada": 6.4
+					}
+				},
+				{
+					"arcs": [
+						[
+							10,
+							11,
+							12,
+							13,
+							14,
+							15,
+							16
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 271,
+						"zona": "Donostia–Margen-izquierda",
+						"zona_id2": "271",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 4404,
+						"v_alum_bec_comedor": 2327,
+						"v_alum_mat_escolar_total": 19262,
+						"v_alum_comedor_total": 15478,
+						"v_perc_material_m15": 23,
+						"v_perc_comedor_m16": 15,
+						"v_perc_bec_mat_escolar_pub": 32,
+						"v_perc_bec_mat_escolar_priv": 17,
+						"v_dif_perc_bec_mat_escolar_dif": 15,
+						"v_perc_bec_comedor_pub": 27,
+						"v_perc_bec_comedor_priv": 8,
+						"v_dif_perc_bec_comedor": 19,
+						"v_total_alumnado": 11265,
+						"v_perc_alum_ext_publi": 6,
+						"v_perc_alum_ext_priv": 3.4,
+						"v_perc_alum_ext_todos": 4.3,
+						"v_indice_desigualdad": 1.8,
+						"v_alum_ext_total": 489,
+						"v_alum_ext_publi": 247,
+						"v_alum_ext_kristau_eskola": 185,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": 57,
+						"v_perc_reparto_alum_ext_publi": 50.5,
+						"v_perc_reparto_alum_ext_privada": 49.5
+					}
+				},
+				{
+					"arcs": [
+						[
+							17,
+							18,
+							19,
+							-11,
+							20,
+							21,
+							22,
+							23
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 281,
+						"zona": "Renteria",
+						"zona_id2": "281",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 4752,
+						"v_alum_bec_comedor": 2507,
+						"v_alum_mat_escolar_total": 9845,
+						"v_alum_comedor_total": 8948,
+						"v_perc_material_m15": 48,
+						"v_perc_comedor_m16": 28,
+						"v_perc_bec_mat_escolar_pub": 53,
+						"v_perc_bec_mat_escolar_priv": 43,
+						"v_dif_perc_bec_mat_escolar_dif": 10,
+						"v_perc_bec_comedor_pub": 40,
+						"v_perc_bec_comedor_priv": 18,
+						"v_dif_perc_bec_comedor": 22,
+						"v_total_alumnado": 6475,
+						"v_perc_alum_ext_publi": 8.5,
+						"v_perc_alum_ext_priv": 2.2,
+						"v_perc_alum_ext_todos": 5.1,
+						"v_indice_desigualdad": 3.9,
+						"v_alum_ext_total": 333,
+						"v_alum_ext_publi": 258,
+						"v_alum_ext_kristau_eskola": 52,
+						"v_alum_ext_partaide": 20,
+						"v_alum_ext_otros_privados": 3,
+						"v_perc_reparto_alum_ext_publi": 77.5,
+						"v_perc_reparto_alum_ext_privada": 22.5
+					}
+				},
+				{
+					"arcs": [
+						[
+							24,
+							25,
+							26,
+							27,
+							28,
+							29
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 2,
+						"zona": "Uribarri",
+						"zona_id2": "B2",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 2585,
+						"v_alum_bec_comedor": 1695,
+						"v_alum_mat_escolar_total": 6291,
+						"v_alum_comedor_total": 5756,
+						"v_perc_material_m15": 41,
+						"v_perc_comedor_m16": 29,
+						"v_perc_bec_mat_escolar_pub": 59,
+						"v_perc_bec_mat_escolar_priv": 35,
+						"v_dif_perc_bec_mat_escolar_dif": 24,
+						"v_perc_bec_comedor_pub": 45,
+						"v_perc_bec_comedor_priv": 23,
+						"v_dif_perc_bec_comedor": 22,
+						"v_total_alumnado": 4156,
+						"v_perc_alum_ext_publi": 13.2,
+						"v_perc_alum_ext_priv": 4.1,
+						"v_perc_alum_ext_todos": 6.6,
+						"v_indice_desigualdad": 3.2,
+						"v_alum_ext_total": 275,
+						"v_alum_ext_publi": 151,
+						"v_alum_ext_kristau_eskola": 118,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": 6,
+						"v_perc_reparto_alum_ext_publi": 54.9,
+						"v_perc_reparto_alum_ext_privada": 45.1
+					}
+				},
+				{
+					"arcs": [
+						[
+							-28,
+							30,
+							31
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 3,
+						"zona": "Otxarkoaga-Txurdinaga",
+						"zona_id2": "B3",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 2418,
+						"v_alum_bec_comedor": 1399,
+						"v_alum_mat_escolar_total": 6062,
+						"v_alum_comedor_total": 4879,
+						"v_perc_material_m15": 40,
+						"v_perc_comedor_m16": 29,
+						"v_perc_bec_mat_escolar_pub": 64,
+						"v_perc_bec_mat_escolar_priv": 27,
+						"v_dif_perc_bec_mat_escolar_dif": 37,
+						"v_perc_bec_comedor_pub": 61,
+						"v_perc_bec_comedor_priv": 23,
+						"v_dif_perc_bec_comedor": 48,
+						"v_total_alumnado": 3629,
+						"v_perc_alum_ext_publi": 8.4,
+						"v_perc_alum_ext_priv": 2.3,
+						"v_perc_alum_ext_todos": 4.3,
+						"v_indice_desigualdad": 3.6,
+						"v_alum_ext_total": 156,
+						"v_alum_ext_publi": 100,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": 5,
+						"v_alum_ext_otros_privados": 51,
+						"v_perc_reparto_alum_ext_publi": 64.1,
+						"v_perc_reparto_alum_ext_privada": 35.9
+					}
+				},
+				{
+					"arcs": [
+						[
+							32,
+							-29,
+							-32,
+							33
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 4,
+						"zona": "Begoña",
+						"zona_id2": "B4",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 2045,
+						"v_alum_bec_comedor": 1203,
+						"v_alum_mat_escolar_total": 3717,
+						"v_alum_comedor_total": 3768,
+						"v_perc_material_m15": 55,
+						"v_perc_comedor_m16": 32,
+						"v_perc_bec_mat_escolar_pub": 65,
+						"v_perc_bec_mat_escolar_priv": 53,
+						"v_dif_perc_bec_mat_escolar_dif": 12,
+						"v_perc_bec_comedor_pub": 46,
+						"v_perc_bec_comedor_priv": 27,
+						"v_dif_perc_bec_comedor": 20,
+						"v_total_alumnado": 2517,
+						"v_perc_alum_ext_publi": 5.6,
+						"v_perc_alum_ext_priv": 4.4,
+						"v_perc_alum_ext_todos": 4.9,
+						"v_indice_desigualdad": 1.3,
+						"v_alum_ext_total": 123,
+						"v_alum_ext_publi": 60,
+						"v_alum_ext_kristau_eskola": 63,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 48.8,
+						"v_perc_reparto_alum_ext_privada": 51.2
+					}
+				},
+				{
+					"arcs": [
+						[
+							-25,
+							34,
+							35,
+							36,
+							37
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 6,
+						"zona": "Abando",
+						"zona_id2": "B6",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 2975,
+						"v_alum_bec_comedor": 1356,
+						"v_alum_mat_escolar_total": 11809,
+						"v_alum_comedor_total": 8343,
+						"v_perc_material_m15": 25,
+						"v_perc_comedor_m16": 16,
+						"v_perc_bec_mat_escolar_pub": 39,
+						"v_perc_bec_mat_escolar_priv": 21,
+						"v_dif_perc_bec_mat_escolar_dif": 18,
+						"v_perc_bec_comedor_pub": 38,
+						"v_perc_bec_comedor_priv": 9,
+						"v_dif_perc_bec_comedor": 29,
+						"v_total_alumnado": 6054,
+						"v_perc_alum_ext_publi": 19.7,
+						"v_perc_alum_ext_priv": 3.3,
+						"v_perc_alum_ext_todos": 7.4,
+						"v_indice_desigualdad": 5.9,
+						"v_alum_ext_total": 446,
+						"v_alum_ext_publi": 295,
+						"v_alum_ext_kristau_eskola": 151,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 66.1,
+						"v_perc_reparto_alum_ext_privada": 33.9
+					}
+				},
+				{
+					"arcs": [
+						[
+							38,
+							39,
+							-37,
+							40
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 8,
+						"zona": "Basurto-Zorroza",
+						"zona_id2": "B8",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 812,
+						"v_alum_bec_comedor": 640,
+						"v_alum_mat_escolar_total": 1129,
+						"v_alum_comedor_total": 1183,
+						"v_perc_material_m15": 72,
+						"v_perc_comedor_m16": 54,
+						"v_perc_bec_mat_escolar_pub": 72,
+						"v_perc_bec_mat_escolar_priv": 0,
+						"v_dif_perc_bec_mat_escolar_dif": 72,
+						"v_perc_bec_comedor_pub": 55,
+						"v_perc_bec_comedor_priv": 0,
+						"v_dif_perc_bec_comedor": 0,
+						"v_total_alumnado": 829,
+						"v_perc_alum_ext_publi": 10.1,
+						"v_perc_alum_ext_priv": null,
+						"v_perc_alum_ext_todos": 10.1,
+						"v_indice_desigualdad": null,
+						"v_alum_ext_total": 84,
+						"v_alum_ext_publi": 84,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 100,
+						"v_perc_reparto_alum_ext_privada": 0
+					}
+				},
+				{
+					"arcs": [
+						[
+							-40,
+							41,
+							-26,
+							-38
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 1,
+						"zona": "Deusto",
+						"zona_id2": "B1",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 2393,
+						"v_alum_bec_comedor": 1224,
+						"v_alum_mat_escolar_total": 7569,
+						"v_alum_comedor_total": 5069,
+						"v_perc_material_m15": 32,
+						"v_perc_comedor_m16": 24,
+						"v_perc_bec_mat_escolar_pub": 35,
+						"v_perc_bec_mat_escolar_priv": 27,
+						"v_dif_perc_bec_mat_escolar_dif": 8,
+						"v_perc_bec_comedor_pub": 36,
+						"v_perc_bec_comedor_priv": 13,
+						"v_dif_perc_bec_comedor": 23,
+						"v_total_alumnado": 3719,
+						"v_perc_alum_ext_publi": 5.6,
+						"v_perc_alum_ext_priv": 4.4,
+						"v_perc_alum_ext_todos": 5,
+						"v_indice_desigualdad": 1.3,
+						"v_alum_ext_total": 185,
+						"v_alum_ext_publi": 98,
+						"v_alum_ext_kristau_eskola": 87,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 53,
+						"v_perc_reparto_alum_ext_privada": 47
+					}
+				},
+				{
+					"arcs": [
+						[
+							42,
+							-41,
+							-36,
+							43
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 7,
+						"zona": "Rekalde",
+						"zona_id2": "B7",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 1772,
+						"v_alum_bec_comedor": 1204,
+						"v_alum_mat_escolar_total": 2666,
+						"v_alum_comedor_total": 2381,
+						"v_perc_material_m15": 66,
+						"v_perc_comedor_m16": 51,
+						"v_perc_bec_mat_escolar_pub": 65,
+						"v_perc_bec_mat_escolar_priv": 70,
+						"v_dif_perc_bec_mat_escolar_dif": -5,
+						"v_perc_bec_comedor_pub": 59,
+						"v_perc_bec_comedor_priv": 35,
+						"v_dif_perc_bec_comedor": 24,
+						"v_total_alumnado": 1744,
+						"v_perc_alum_ext_publi": 17,
+						"v_perc_alum_ext_priv": 20.4,
+						"v_perc_alum_ext_todos": 18.3,
+						"v_indice_desigualdad": 0.8,
+						"v_alum_ext_total": 319,
+						"v_alum_ext_publi": 184,
+						"v_alum_ext_kristau_eskola": 135,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 57.7,
+						"v_perc_reparto_alum_ext_privada": 42.3
+					}
+				},
+				{
+					"arcs": [
+						[
+							44,
+							-44,
+							-35,
+							-30,
+							-33
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 5,
+						"zona": "Ibaiondo",
+						"zona_id2": "B5",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 3881,
+						"v_alum_bec_comedor": 2327,
+						"v_alum_mat_escolar_total": 7990,
+						"v_alum_comedor_total": 6230,
+						"v_perc_material_m15": 49,
+						"v_perc_comedor_m16": 37,
+						"v_perc_bec_mat_escolar_pub": 53,
+						"v_perc_bec_mat_escolar_priv": 42,
+						"v_dif_perc_bec_mat_escolar_dif": 11,
+						"v_perc_bec_comedor_pub": 46,
+						"v_perc_bec_comedor_priv": 25,
+						"v_dif_perc_bec_comedor": 21,
+						"v_total_alumnado": 4530,
+						"v_perc_alum_ext_publi": 8.2,
+						"v_perc_alum_ext_priv": 11.6,
+						"v_perc_alum_ext_todos": 9.9,
+						"v_indice_desigualdad": 0.7,
+						"v_alum_ext_total": 450,
+						"v_alum_ext_publi": 186,
+						"v_alum_ext_kristau_eskola": 255,
+						"v_alum_ext_partaide": 9,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 41.3,
+						"v_perc_reparto_alum_ext_privada": 58.7
+					}
+				},
+				{
+					"arcs": [
+						[
+							-16,
+							45
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 272,
+						"zona": "Donostia-Margen Derecha",
+						"zona_id2": "272",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 2527,
+						"v_alum_bec_comedor": 1167,
+						"v_alum_mat_escolar_total": 7766,
+						"v_alum_comedor_total": 6060,
+						"v_perc_material_m15": 33,
+						"v_perc_comedor_m16": 19,
+						"v_perc_bec_mat_escolar_pub": 40,
+						"v_perc_bec_mat_escolar_priv": 28,
+						"v_dif_perc_bec_mat_escolar_dif": 12,
+						"v_perc_bec_comedor_pub": 32,
+						"v_perc_bec_comedor_priv": 12,
+						"v_dif_perc_bec_comedor": 20,
+						"v_total_alumnado": 4506,
+						"v_perc_alum_ext_publi": 6.4,
+						"v_perc_alum_ext_priv": 5.6,
+						"v_perc_alum_ext_todos": 5.9,
+						"v_indice_desigualdad": 1.1,
+						"v_alum_ext_total": 264,
+						"v_alum_ext_publi": 99,
+						"v_alum_ext_kristau_eskola": 162,
+						"v_alum_ext_partaide": 3,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 37.5,
+						"v_perc_reparto_alum_ext_privada": 62.5
+					}
+				},
+				{
+					"arcs": [
+						[
+							46,
+							47,
+							48,
+							49,
+							50
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 331,
+						"zona": "Amorebieta",
+						"zona_id2": "331",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 1178,
+						"v_alum_bec_comedor": 577,
+						"v_alum_mat_escolar_total": 4377,
+						"v_alum_comedor_total": 3843,
+						"v_perc_material_m15": 27,
+						"v_perc_comedor_m16": 15,
+						"v_perc_bec_mat_escolar_pub": 39,
+						"v_perc_bec_mat_escolar_priv": 20,
+						"v_dif_perc_bec_mat_escolar_dif": 19,
+						"v_perc_bec_comedor_pub": 30,
+						"v_perc_bec_comedor_priv": 9,
+						"v_dif_perc_bec_comedor": 21,
+						"v_total_alumnado": 2724,
+						"v_perc_alum_ext_publi": 10.5,
+						"v_perc_alum_ext_priv": 1.7,
+						"v_perc_alum_ext_todos": 4.2,
+						"v_indice_desigualdad": 6.2,
+						"v_alum_ext_total": 115,
+						"v_alum_ext_publi": 82,
+						"v_alum_ext_kristau_eskola": 30,
+						"v_alum_ext_partaide": 1,
+						"v_alum_ext_otros_privados": 2,
+						"v_perc_reparto_alum_ext_publi": 71.3,
+						"v_perc_reparto_alum_ext_privada": 28.7
+					}
+				},
+				{
+					"arcs": [
+						[
+							51,
+							52,
+							53,
+							54
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 423,
+						"zona": "Santurtzi",
+						"zona_id2": "423",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 2850,
+						"v_alum_bec_comedor": 1242,
+						"v_alum_mat_escolar_total": 6149,
+						"v_alum_comedor_total": 4995,
+						"v_perc_material_m15": 46,
+						"v_perc_comedor_m16": 25,
+						"v_perc_bec_mat_escolar_pub": 53,
+						"v_perc_bec_mat_escolar_priv": 41,
+						"v_dif_perc_bec_mat_escolar_dif": 12,
+						"v_perc_bec_comedor_pub": 39,
+						"v_perc_bec_comedor_priv": 14,
+						"v_dif_perc_bec_comedor": 25,
+						"v_total_alumnado": 3567,
+						"v_perc_alum_ext_publi": 5.5,
+						"v_perc_alum_ext_priv": 4.1,
+						"v_perc_alum_ext_todos": 4.7,
+						"v_indice_desigualdad": 1.3,
+						"v_alum_ext_total": 168,
+						"v_alum_ext_publi": 85,
+						"v_alum_ext_kristau_eskola": 58,
+						"v_alum_ext_partaide": 16,
+						"v_alum_ext_otros_privados": 9,
+						"v_perc_reparto_alum_ext_publi": 50.6,
+						"v_perc_reparto_alum_ext_privada": 49.4
+					}
+				},
+				{
+					"arcs": [
+						[
+							55,
+							56,
+							57,
+							58,
+							59,
+							60,
+							61,
+							62
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 421,
+						"zona": "Sestao",
+						"zona_id2": "421",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 1844,
+						"v_alum_bec_comedor": 1056,
+						"v_alum_mat_escolar_total": 2998,
+						"v_alum_comedor_total": 2860,
+						"v_perc_material_m15": 62,
+						"v_perc_comedor_m16": 37,
+						"v_perc_bec_mat_escolar_pub": 63,
+						"v_perc_bec_mat_escolar_priv": 59,
+						"v_dif_perc_bec_mat_escolar_dif": 4,
+						"v_perc_bec_comedor_pub": 42,
+						"v_perc_bec_comedor_priv": 28,
+						"v_dif_perc_bec_comedor": 14,
+						"v_total_alumnado": 2042,
+						"v_perc_alum_ext_publi": 8.2,
+						"v_perc_alum_ext_priv": 6,
+						"v_perc_alum_ext_todos": 7.3,
+						"v_indice_desigualdad": 1.4,
+						"v_alum_ext_total": 150,
+						"v_alum_ext_publi": 104,
+						"v_alum_ext_kristau_eskola": 46,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 69.3,
+						"v_perc_reparto_alum_ext_privada": 30.7
+					}
+				},
+				{
+					"arcs": [
+						[
+							-62,
+							63,
+							-53,
+							64
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 422,
+						"zona": "Portugalete",
+						"zona_id2": "422",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 2937,
+						"v_alum_bec_comedor": 1400,
+						"v_alum_mat_escolar_total": 7273,
+						"v_alum_comedor_total": 5578,
+						"v_perc_material_m15": 40,
+						"v_perc_comedor_m16": 25,
+						"v_perc_bec_mat_escolar_pub": 53,
+						"v_perc_bec_mat_escolar_priv": 30,
+						"v_dif_perc_bec_mat_escolar_dif": 23,
+						"v_perc_bec_comedor_pub": 37,
+						"v_perc_bec_comedor_priv": 14,
+						"v_dif_perc_bec_comedor": 23,
+						"v_total_alumnado": 4577,
+						"v_perc_alum_ext_publi": 6.4,
+						"v_perc_alum_ext_priv": 2.4,
+						"v_perc_alum_ext_todos": 4.2,
+						"v_indice_desigualdad": 2.6,
+						"v_alum_ext_total": 190,
+						"v_alum_ext_publi": 127,
+						"v_alum_ext_kristau_eskola": 63,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 66.8,
+						"v_perc_reparto_alum_ext_privada": 33.2
+					}
+				},
+				{
+					"arcs": [
+						[
+							65,
+							66,
+							67,
+							68,
+							69,
+							70
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 221,
+						"zona": "Eibar",
+						"zona_id2": "221",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 1721,
+						"v_alum_bec_comedor": 782,
+						"v_alum_mat_escolar_total": 4591,
+						"v_alum_comedor_total": 3600,
+						"v_perc_material_m15": 37,
+						"v_perc_comedor_m16": 22,
+						"v_perc_bec_mat_escolar_pub": 40,
+						"v_perc_bec_mat_escolar_priv": 32,
+						"v_dif_perc_bec_mat_escolar_dif": 8,
+						"v_perc_bec_comedor_pub": 29,
+						"v_perc_bec_comedor_priv": 7,
+						"v_dif_perc_bec_comedor": 22,
+						"v_total_alumnado": 2547,
+						"v_perc_alum_ext_publi": 11.5,
+						"v_perc_alum_ext_priv": 2.7,
+						"v_perc_alum_ext_todos": 8.4,
+						"v_indice_desigualdad": 4.3,
+						"v_alum_ext_total": 214,
+						"v_alum_ext_publi": 190,
+						"v_alum_ext_kristau_eskola": 24,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 88.8,
+						"v_perc_reparto_alum_ext_privada": 11.2
+					}
+				},
+				{
+					"arcs": [
+						[
+							71,
+							72,
+							73,
+							74,
+							75,
+							76,
+							77
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 412,
+						"zona": "Cruces",
+						"zona_id2": "412",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 2133,
+						"v_alum_bec_comedor": 1244,
+						"v_alum_mat_escolar_total": 4471,
+						"v_alum_comedor_total": 4636,
+						"v_perc_material_m15": 48,
+						"v_perc_comedor_m16": 27,
+						"v_perc_bec_mat_escolar_pub": 72,
+						"v_perc_bec_mat_escolar_priv": 38,
+						"v_dif_perc_bec_mat_escolar_dif": 34,
+						"v_perc_bec_comedor_pub": 48,
+						"v_perc_bec_comedor_priv": 18,
+						"v_dif_perc_bec_comedor": 29,
+						"v_total_alumnado": 3174,
+						"v_perc_alum_ext_publi": 7.2,
+						"v_perc_alum_ext_priv": 4.3,
+						"v_perc_alum_ext_todos": 5.1,
+						"v_indice_desigualdad": 1.7,
+						"v_alum_ext_total": 163,
+						"v_alum_ext_publi": 63,
+						"v_alum_ext_kristau_eskola": 27,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": 73,
+						"v_perc_reparto_alum_ext_publi": 38.7,
+						"v_perc_reparto_alum_ext_privada": 61.3
+					}
+				},
+				{
+					"arcs": [
+						[
+							78,
+							-13,
+							79,
+							-19,
+							80,
+							81,
+							82,
+							-1
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 261,
+						"zona": "Hernani",
+						"zona_id2": "261",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 1511,
+						"v_alum_bec_comedor": 840,
+						"v_alum_mat_escolar_total": 3464,
+						"v_alum_comedor_total": 3122,
+						"v_perc_material_m15": 44,
+						"v_perc_comedor_m16": 27,
+						"v_perc_bec_mat_escolar_pub": 42,
+						"v_perc_bec_mat_escolar_priv": 54,
+						"v_dif_perc_bec_mat_escolar_dif": -12,
+						"v_perc_bec_comedor_pub": 24,
+						"v_perc_bec_comedor_priv": 65,
+						"v_dif_perc_bec_comedor": -41,
+						"v_total_alumnado": 2226,
+						"v_perc_alum_ext_publi": 3.6,
+						"v_perc_alum_ext_priv": 38,
+						"v_perc_alum_ext_todos": 6.6,
+						"v_indice_desigualdad": 0.1,
+						"v_alum_ext_total": 147,
+						"v_alum_ext_publi": 74,
+						"v_alum_ext_kristau_eskola": 73,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 50.3,
+						"v_perc_reparto_alum_ext_privada": 49.7
+					}
+				},
+				{
+					"arcs": [
+						[
+							83,
+							-51,
+							84,
+							85,
+							86
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 342,
+						"zona": "Galdakao",
+						"zona_id2": "342",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 1286,
+						"v_alum_bec_comedor": 810,
+						"v_alum_mat_escolar_total": 3461,
+						"v_alum_comedor_total": 3109,
+						"v_perc_material_m15": 37,
+						"v_perc_comedor_m16": 26,
+						"v_perc_bec_mat_escolar_pub": 41,
+						"v_perc_bec_mat_escolar_priv": 20,
+						"v_dif_perc_bec_mat_escolar_dif": 21,
+						"v_perc_bec_comedor_pub": 30,
+						"v_perc_bec_comedor_priv": 10,
+						"v_dif_perc_bec_comedor": 20,
+						"v_total_alumnado": 2169,
+						"v_perc_alum_ext_publi": 4.1,
+						"v_perc_alum_ext_priv": 0.6,
+						"v_perc_alum_ext_todos": 3.4,
+						"v_indice_desigualdad": 6.7,
+						"v_alum_ext_total": 73,
+						"v_alum_ext_publi": 70,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": 3,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 95.9,
+						"v_perc_reparto_alum_ext_privada": 4.1
+					}
+				},
+				{
+					"arcs": [
+						[
+							87,
+							88,
+							89,
+							-74,
+							90,
+							91,
+							-56,
+							92,
+							93
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 394,
+						"zona": "Erandio",
+						"zona_id2": "394",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 1506,
+						"v_alum_bec_comedor": 857,
+						"v_alum_mat_escolar_total": 3227,
+						"v_alum_comedor_total": 2337,
+						"v_perc_material_m15": 47,
+						"v_perc_comedor_m16": 37,
+						"v_perc_bec_mat_escolar_pub": 45,
+						"v_perc_bec_mat_escolar_priv": 56,
+						"v_dif_perc_bec_mat_escolar_dif": -11,
+						"v_perc_bec_comedor_pub": 45,
+						"v_perc_bec_comedor_priv": 13,
+						"v_dif_perc_bec_comedor": 32,
+						"v_total_alumnado": 1612,
+						"v_perc_alum_ext_publi": 7.5,
+						"v_perc_alum_ext_priv": 5,
+						"v_perc_alum_ext_todos": 6.8,
+						"v_indice_desigualdad": 1.5,
+						"v_alum_ext_total": 110,
+						"v_alum_ext_publi": 88,
+						"v_alum_ext_kristau_eskola": 22,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 80,
+						"v_perc_reparto_alum_ext_privada": 20
+					}
+				},
+				{
+					"arcs": [
+						[
+							94,
+							-69
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 333,
+						"zona": "Ermua",
+						"zona_id2": "333",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 944,
+						"v_alum_bec_comedor": 344,
+						"v_alum_mat_escolar_total": 1798,
+						"v_alum_comedor_total": 1847,
+						"v_perc_material_m15": 53,
+						"v_perc_comedor_m16": 19,
+						"v_perc_bec_mat_escolar_pub": 54,
+						"v_perc_bec_mat_escolar_priv": 50,
+						"v_dif_perc_bec_mat_escolar_dif": 4,
+						"v_perc_bec_comedor_pub": 20,
+						"v_perc_bec_comedor_priv": 15,
+						"v_dif_perc_bec_comedor": 5,
+						"v_total_alumnado": 1313,
+						"v_perc_alum_ext_publi": 7.2,
+						"v_perc_alum_ext_priv": 6,
+						"v_perc_alum_ext_todos": 6.9,
+						"v_indice_desigualdad": 1.2,
+						"v_alum_ext_total": 90,
+						"v_alum_ext_publi": 66,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": 24,
+						"v_perc_reparto_alum_ext_publi": 73.3,
+						"v_perc_reparto_alum_ext_privada": 26.7
+					}
+				},
+				{
+					"arcs": [
+						[
+							95,
+							96,
+							97,
+							98,
+							99
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 124,
+						"zona": "Montaña alavesa",
+						"zona_id2": "124",
+						"v_provincia": "araba",
+						"v_alum_bec_mat_escolar": 118,
+						"v_alum_bec_comedor": 70,
+						"v_alum_mat_escolar_total": 228,
+						"v_alum_comedor_total": 246,
+						"v_perc_material_m15": 52,
+						"v_perc_comedor_m16": 28,
+						"v_perc_bec_mat_escolar_pub": 52,
+						"v_perc_bec_mat_escolar_priv": 0,
+						"v_dif_perc_bec_mat_escolar_dif": 52,
+						"v_perc_bec_comedor_pub": 28,
+						"v_perc_bec_comedor_priv": 0,
+						"v_dif_perc_bec_comedor": 28,
+						"v_total_alumnado": 156,
+						"v_perc_alum_ext_publi": 11.5,
+						"v_perc_alum_ext_priv": null,
+						"v_perc_alum_ext_todos": 11.5,
+						"v_indice_desigualdad": null,
+						"v_alum_ext_total": 18,
+						"v_alum_ext_publi": 18,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 100,
+						"v_perc_reparto_alum_ext_privada": 0
+					}
+				},
+				{
+					"arcs": [
+						[
+							-24,
+							100,
+							-22,
+							101
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 291,
+						"zona": "Bidasoa",
+						"zona_id2": "291",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 5068,
+						"v_alum_bec_comedor": 2741,
+						"v_alum_mat_escolar_total": 11780,
+						"v_alum_comedor_total": 10164,
+						"v_perc_material_m15": 43,
+						"v_perc_comedor_m16": 27,
+						"v_perc_bec_mat_escolar_pub": 45,
+						"v_perc_bec_mat_escolar_priv": 40,
+						"v_dif_perc_bec_mat_escolar_dif": 5,
+						"v_perc_bec_comedor_pub": 34,
+						"v_perc_bec_comedor_priv": 15,
+						"v_dif_perc_bec_comedor": 19,
+						"v_total_alumnado": 7350,
+						"v_perc_alum_ext_publi": 9.1,
+						"v_perc_alum_ext_priv": 4.1,
+						"v_perc_alum_ext_todos": 7.2,
+						"v_indice_desigualdad": 2.2,
+						"v_alum_ext_total": 530,
+						"v_alum_ext_publi": 416,
+						"v_alum_ext_kristau_eskola": 103,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": 11,
+						"v_perc_reparto_alum_ext_publi": 78.5,
+						"v_perc_reparto_alum_ext_privada": 21.5
+					}
+				},
+				{
+					"arcs": [
+						[
+							-87,
+							102,
+							103
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 352,
+						"zona": "Basauri",
+						"zona_id2": "352",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 3027,
+						"v_alum_bec_comedor": 1618,
+						"v_alum_mat_escolar_total": 6079,
+						"v_alum_comedor_total": 5525,
+						"v_perc_material_m15": 50,
+						"v_perc_comedor_m16": 29,
+						"v_perc_bec_mat_escolar_pub": 51,
+						"v_perc_bec_mat_escolar_priv": 45,
+						"v_dif_perc_bec_mat_escolar_dif": 6,
+						"v_perc_bec_comedor_pub": 33,
+						"v_perc_bec_comedor_priv": 16,
+						"v_dif_perc_bec_comedor": 17,
+						"v_total_alumnado": 3911,
+						"v_perc_alum_ext_publi": 5.1,
+						"v_perc_alum_ext_priv": 1.8,
+						"v_perc_alum_ext_todos": 4.4,
+						"v_indice_desigualdad": 2.9,
+						"v_alum_ext_total": 171,
+						"v_alum_ext_publi": 155,
+						"v_alum_ext_kristau_eskola": 13,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": 3,
+						"v_perc_reparto_alum_ext_publi": 90.6,
+						"v_perc_reparto_alum_ext_privada": 9.4
+					}
+				},
+				{
+					"arcs": [
+						[
+							104,
+							-47,
+							-84,
+							105,
+							-89,
+							106
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 381,
+						"zona": "Txorierri",
+						"zona_id2": "381",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 1722,
+						"v_alum_bec_comedor": 938,
+						"v_alum_mat_escolar_total": 11562,
+						"v_alum_comedor_total": 10243,
+						"v_perc_material_m15": 15,
+						"v_perc_comedor_m16": 9,
+						"v_perc_bec_mat_escolar_pub": 40,
+						"v_perc_bec_mat_escolar_priv": 9,
+						"v_dif_perc_bec_mat_escolar_dif": 31,
+						"v_perc_bec_comedor_pub": 26,
+						"v_perc_bec_comedor_priv": 5,
+						"v_dif_perc_bec_comedor": 21,
+						"v_total_alumnado": 7831,
+						"v_perc_alum_ext_publi": 4.4,
+						"v_perc_alum_ext_priv": 1.3,
+						"v_perc_alum_ext_todos": 1.9,
+						"v_indice_desigualdad": 3.4,
+						"v_alum_ext_total": 146,
+						"v_alum_ext_publi": 63,
+						"v_alum_ext_kristau_eskola": 28,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": 55,
+						"v_perc_reparto_alum_ext_publi": 43.2,
+						"v_perc_reparto_alum_ext_privada": 56.8
+					}
+				},
+				{
+					"arcs": [
+						[
+							107,
+							-94,
+							108
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 393,
+						"zona": "Uribe-Kosta",
+						"zona_id2": "393",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 1132,
+						"v_alum_bec_comedor": 814,
+						"v_alum_mat_escolar_total": 3323,
+						"v_alum_comedor_total": 3312,
+						"v_perc_material_m15": 34,
+						"v_perc_comedor_m16": 25,
+						"v_perc_bec_mat_escolar_pub": 38,
+						"v_perc_bec_mat_escolar_priv": 21,
+						"v_dif_perc_bec_mat_escolar_dif": 17,
+						"v_perc_bec_comedor_pub": 27,
+						"v_perc_bec_comedor_priv": 15,
+						"v_dif_perc_bec_comedor": 12,
+						"v_total_alumnado": 2330,
+						"v_perc_alum_ext_publi": 3,
+						"v_perc_alum_ext_priv": 2.2,
+						"v_perc_alum_ext_todos": 2.8,
+						"v_indice_desigualdad": 1.4,
+						"v_alum_ext_total": 66,
+						"v_alum_ext_publi": 54,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": 12,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 81.8,
+						"v_perc_reparto_alum_ext_privada": 18.2
+					}
+				},
+				{
+					"arcs": [
+						[
+							109,
+							110,
+							111
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 311,
+						"zona": "Bermeo",
+						"zona_id2": "311",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 1048,
+						"v_alum_bec_comedor": 736,
+						"v_alum_mat_escolar_total": 2527,
+						"v_alum_comedor_total": 2433,
+						"v_perc_material_m15": 41,
+						"v_perc_comedor_m16": 30,
+						"v_perc_bec_mat_escolar_pub": 40,
+						"v_perc_bec_mat_escolar_priv": 43,
+						"v_dif_perc_bec_mat_escolar_dif": -3,
+						"v_perc_bec_comedor_pub": 31,
+						"v_perc_bec_comedor_priv": 30,
+						"v_dif_perc_bec_comedor": 1,
+						"v_total_alumnado": 1772,
+						"v_perc_alum_ext_publi": 7.8,
+						"v_perc_alum_ext_priv": 7.1,
+						"v_perc_alum_ext_todos": 7.4,
+						"v_indice_desigualdad": 1.1,
+						"v_alum_ext_total": 131,
+						"v_alum_ext_publi": 60,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": 23,
+						"v_alum_ext_otros_privados": 48,
+						"v_perc_reparto_alum_ext_publi": 45.8,
+						"v_perc_reparto_alum_ext_privada": 54.2
+					}
+				},
+				{
+					"arcs": [
+						[
+							112,
+							-2,
+							-83,
+							113
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 263,
+						"zona": "Andoain",
+						"zona_id2": "263",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 1371,
+						"v_alum_bec_comedor": 389,
+						"v_alum_mat_escolar_total": 3512,
+						"v_alum_comedor_total": 2592,
+						"v_perc_material_m15": 39,
+						"v_perc_comedor_m16": 15,
+						"v_perc_bec_mat_escolar_pub": 57,
+						"v_perc_bec_mat_escolar_priv": 36,
+						"v_dif_perc_bec_mat_escolar_dif": 21,
+						"v_perc_bec_comedor_pub": 53,
+						"v_perc_bec_comedor_priv": 9,
+						"v_dif_perc_bec_comedor": 44,
+						"v_total_alumnado": 1850,
+						"v_perc_alum_ext_publi": 21.5,
+						"v_perc_alum_ext_priv": 1.9,
+						"v_perc_alum_ext_todos": 4.5,
+						"v_indice_desigualdad": 11.1,
+						"v_alum_ext_total": 84,
+						"v_alum_ext_publi": 53,
+						"v_alum_ext_kristau_eskola": 16,
+						"v_alum_ext_partaide": 15,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 63.1,
+						"v_perc_reparto_alum_ext_privada": 36.9
+					}
+				},
+				{
+					"arcs": [
+						[
+							114,
+							115,
+							116,
+							117,
+							118,
+							-100,
+							119,
+							120
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 141,
+						"zona": "Llanada oriental",
+						"zona_id2": "141",
+						"v_provincia": "araba",
+						"v_alum_bec_mat_escolar": 529,
+						"v_alum_bec_comedor": 210,
+						"v_alum_mat_escolar_total": 1125,
+						"v_alum_comedor_total": 1154,
+						"v_perc_material_m15": 47,
+						"v_perc_comedor_m16": 18,
+						"v_perc_bec_mat_escolar_pub": 47,
+						"v_perc_bec_mat_escolar_priv": 46,
+						"v_dif_perc_bec_mat_escolar_dif": 1,
+						"v_perc_bec_comedor_pub": 20,
+						"v_perc_bec_comedor_priv": 12,
+						"v_dif_perc_bec_comedor": 8,
+						"v_total_alumnado": 774,
+						"v_perc_alum_ext_publi": 13.5,
+						"v_perc_alum_ext_priv": 7.3,
+						"v_perc_alum_ext_todos": 12.3,
+						"v_indice_desigualdad": 1.9,
+						"v_alum_ext_total": 95,
+						"v_alum_ext_publi": 84,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": 11,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 88.4,
+						"v_perc_reparto_alum_ext_privada": 11.6
+					}
+				},
+				{
+					"arcs": [
+						[
+							121,
+							122,
+							123,
+							124
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 232,
+						"zona": "Alto Urola",
+						"zona_id2": "232",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 1273,
+						"v_alum_bec_comedor": 360,
+						"v_alum_mat_escolar_total": 3821,
+						"v_alum_comedor_total": 3521,
+						"v_perc_material_m15": 33,
+						"v_perc_comedor_m16": 10,
+						"v_perc_bec_mat_escolar_pub": 39,
+						"v_perc_bec_mat_escolar_priv": 30,
+						"v_dif_perc_bec_mat_escolar_dif": 9,
+						"v_perc_bec_comedor_pub": 16,
+						"v_perc_bec_comedor_priv": 7,
+						"v_dif_perc_bec_comedor": 9,
+						"v_total_alumnado": 2524,
+						"v_perc_alum_ext_publi": 7.4,
+						"v_perc_alum_ext_priv": 4.3,
+						"v_perc_alum_ext_todos": 5.4,
+						"v_indice_desigualdad": 1.7,
+						"v_alum_ext_total": 137,
+						"v_alum_ext_publi": 67,
+						"v_alum_ext_kristau_eskola": 12,
+						"v_alum_ext_partaide": 58,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 48.9,
+						"v_perc_reparto_alum_ext_privada": 51.1
+					}
+				},
+				{
+					"arcs": [
+						[
+							-125,
+							125,
+							126,
+							-67,
+							127,
+							128
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 212,
+						"zona": "Bergara",
+						"zona_id2": "212",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 902,
+						"v_alum_bec_comedor": 365,
+						"v_alum_mat_escolar_total": 3484,
+						"v_alum_comedor_total": 2984,
+						"v_perc_material_m15": 26,
+						"v_perc_comedor_m16": 12,
+						"v_perc_bec_mat_escolar_pub": 31,
+						"v_perc_bec_mat_escolar_priv": 17,
+						"v_dif_perc_bec_mat_escolar_dif": 14,
+						"v_perc_bec_comedor_pub": 18,
+						"v_perc_bec_comedor_priv": 3,
+						"v_dif_perc_bec_comedor": 15,
+						"v_total_alumnado": 2053,
+						"v_perc_alum_ext_publi": 12.1,
+						"v_perc_alum_ext_priv": 4.7,
+						"v_perc_alum_ext_todos": 9.2,
+						"v_indice_desigualdad": 2.6,
+						"v_alum_ext_total": 189,
+						"v_alum_ext_publi": 151,
+						"v_alum_ext_kristau_eskola": 29,
+						"v_alum_ext_partaide": 9,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 79.9,
+						"v_perc_reparto_alum_ext_privada": 20.1
+					}
+				},
+				{
+					"arcs": [
+						[
+							129,
+							130,
+							-128,
+							-66,
+							131,
+							132
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 222,
+						"zona": "Elgoibar",
+						"zona_id2": "222",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 1420,
+						"v_alum_bec_comedor": 610,
+						"v_alum_mat_escolar_total": 4256,
+						"v_alum_comedor_total": 3468,
+						"v_perc_material_m15": 33,
+						"v_perc_comedor_m16": 18,
+						"v_perc_bec_mat_escolar_pub": 36,
+						"v_perc_bec_mat_escolar_priv": 26,
+						"v_dif_perc_bec_mat_escolar_dif": 10,
+						"v_perc_bec_comedor_pub": 22,
+						"v_perc_bec_comedor_priv": 9,
+						"v_dif_perc_bec_comedor": 13,
+						"v_total_alumnado": 2394,
+						"v_perc_alum_ext_publi": 9.2,
+						"v_perc_alum_ext_priv": 5.9,
+						"v_perc_alum_ext_todos": 8.2,
+						"v_indice_desigualdad": 1.6,
+						"v_alum_ext_total": 197,
+						"v_alum_ext_publi": 156,
+						"v_alum_ext_kristau_eskola": 15,
+						"v_alum_ext_partaide": 26,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 79.2,
+						"v_perc_reparto_alum_ext_privada": 20.8
+					}
+				},
+				{
+					"arcs": [
+						[
+							-132,
+							-71,
+							133,
+							134,
+							135
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 321,
+						"zona": "Lea-Artibai",
+						"zona_id2": "321",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 1292,
+						"v_alum_bec_comedor": 628,
+						"v_alum_mat_escolar_total": 3843,
+						"v_alum_comedor_total": 3379,
+						"v_perc_material_m15": 34,
+						"v_perc_comedor_m16": 19,
+						"v_perc_bec_mat_escolar_pub": 35,
+						"v_perc_bec_mat_escolar_priv": 31,
+						"v_dif_perc_bec_mat_escolar_dif": 4,
+						"v_perc_bec_comedor_pub": 18,
+						"v_perc_bec_comedor_priv": 20,
+						"v_dif_perc_bec_comedor": -2,
+						"v_total_alumnado": 2415,
+						"v_perc_alum_ext_publi": 5.5,
+						"v_perc_alum_ext_priv": 9.3,
+						"v_perc_alum_ext_todos": 6.8,
+						"v_indice_desigualdad": 0.6,
+						"v_alum_ext_total": 165,
+						"v_alum_ext_publi": 87,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": 12,
+						"v_alum_ext_otros_privados": 66,
+						"v_perc_reparto_alum_ext_publi": 52.7,
+						"v_perc_reparto_alum_ext_privada": 47.3
+					}
+				},
+				{
+					"arcs": [
+						[
+							-135,
+							136,
+							-48,
+							-105,
+							137,
+							-110,
+							138
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 312,
+						"zona": "Urdaibai",
+						"zona_id2": "312",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 1143,
+						"v_alum_bec_comedor": 769,
+						"v_alum_mat_escolar_total": 3776,
+						"v_alum_comedor_total": 3463,
+						"v_perc_material_m15": 30,
+						"v_perc_comedor_m16": 22,
+						"v_perc_bec_mat_escolar_pub": 29,
+						"v_perc_bec_mat_escolar_priv": 32,
+						"v_dif_perc_bec_mat_escolar_dif": -3,
+						"v_perc_bec_comedor_pub": 22,
+						"v_perc_bec_comedor_priv": 22,
+						"v_dif_perc_bec_comedor": 0,
+						"v_total_alumnado": 2412,
+						"v_perc_alum_ext_publi": 5.6,
+						"v_perc_alum_ext_priv": 12.9,
+						"v_perc_alum_ext_todos": 9,
+						"v_indice_desigualdad": 0.4,
+						"v_alum_ext_total": 217,
+						"v_alum_ext_publi": 71,
+						"v_alum_ext_kristau_eskola": 96,
+						"v_alum_ext_partaide": 15,
+						"v_alum_ext_otros_privados": 35,
+						"v_perc_reparto_alum_ext_publi": 32.7,
+						"v_perc_reparto_alum_ext_privada": 67.3
+					}
+				},
+				{
+					"arcs": [
+						[
+							-107,
+							-88,
+							-108,
+							139,
+							-111,
+							-138
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 382,
+						"zona": "Mungia",
+						"zona_id2": "382",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 1110,
+						"v_alum_bec_comedor": 714,
+						"v_alum_mat_escolar_total": 3488,
+						"v_alum_comedor_total": 3365,
+						"v_perc_material_m15": 32,
+						"v_perc_comedor_m16": 21,
+						"v_perc_bec_mat_escolar_pub": 39,
+						"v_perc_bec_mat_escolar_priv": 24,
+						"v_dif_perc_bec_mat_escolar_dif": 15,
+						"v_perc_bec_comedor_pub": 29,
+						"v_perc_bec_comedor_priv": 14,
+						"v_dif_perc_bec_comedor": 15,
+						"v_total_alumnado": 2317,
+						"v_perc_alum_ext_publi": 4.7,
+						"v_perc_alum_ext_priv": 2.8,
+						"v_perc_alum_ext_todos": 3.7,
+						"v_indice_desigualdad": 1.7,
+						"v_alum_ext_total": 86,
+						"v_alum_ext_publi": 53,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": 14,
+						"v_alum_ext_otros_privados": 19,
+						"v_perc_reparto_alum_ext_publi": 61.6,
+						"v_perc_reparto_alum_ext_privada": 38.4
+					}
+				},
+				{
+					"arcs": [
+						[
+							140,
+							141,
+							142,
+							143,
+							-5,
+							144,
+							-114,
+							-82,
+							145,
+							146
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 251,
+						"zona": "Tolosa",
+						"zona_id2": "251",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 2747,
+						"v_alum_bec_comedor": 1204,
+						"v_alum_mat_escolar_total": 8265,
+						"v_alum_comedor_total": 7326,
+						"v_perc_material_m15": 33,
+						"v_perc_comedor_m16": 16,
+						"v_perc_bec_mat_escolar_pub": 38,
+						"v_perc_bec_mat_escolar_priv": 29,
+						"v_dif_perc_bec_mat_escolar_dif": 9,
+						"v_perc_bec_comedor_pub": 26,
+						"v_perc_bec_comedor_priv": 9,
+						"v_dif_perc_bec_comedor": 17,
+						"v_total_alumnado": 5212,
+						"v_perc_alum_ext_publi": 6.2,
+						"v_perc_alum_ext_priv": 5.2,
+						"v_perc_alum_ext_todos": 5.6,
+						"v_indice_desigualdad": 1.2,
+						"v_alum_ext_total": 293,
+						"v_alum_ext_publi": 144,
+						"v_alum_ext_kristau_eskola": 75,
+						"v_alum_ext_partaide": 74,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 49.1,
+						"v_perc_reparto_alum_ext_privada": 50.9
+					}
+				},
+				{
+					"arcs": [
+						[
+							149,
+							-118,
+							150,
+							-123,
+							151,
+							-142,
+							152,
+							-149,
+							153,
+							-147
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 231,
+						"zona": "Alto Oria",
+						"zona_id2": "231",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 2072,
+						"v_alum_bec_comedor": 826,
+						"v_alum_mat_escolar_total": 7545,
+						"v_alum_comedor_total": 6811,
+						"v_perc_material_m15": 27,
+						"v_perc_comedor_m16": 12,
+						"v_perc_bec_mat_escolar_pub": 30,
+						"v_perc_bec_mat_escolar_priv": 24,
+						"v_dif_perc_bec_mat_escolar_dif": 6,
+						"v_perc_bec_comedor_pub": 15,
+						"v_perc_bec_comedor_priv": 7,
+						"v_dif_perc_bec_comedor": 8,
+						"v_total_alumnado": 4694,
+						"v_perc_alum_ext_publi": 9.6,
+						"v_perc_alum_ext_priv": 7.1,
+						"v_perc_alum_ext_todos": 8.6,
+						"v_indice_desigualdad": 1.4,
+						"v_alum_ext_total": 402,
+						"v_alum_ext_publi": 270,
+						"v_alum_ext_kristau_eskola": 24,
+						"v_alum_ext_partaide": 108,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 67.2,
+						"v_perc_reparto_alum_ext_privada": 32.8
+					}
+				},
+				{
+					"arcs": [
+						[
+							-68,
+							-127,
+							154,
+							155,
+							156,
+							-49,
+							-137,
+							-134,
+							-70,
+							-95
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 332,
+						"zona": "Durango",
+						"zona_id2": "332",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 3307,
+						"v_alum_bec_comedor": 1540,
+						"v_alum_mat_escolar_total": 9625,
+						"v_alum_comedor_total": 8572,
+						"v_perc_material_m15": 34,
+						"v_perc_comedor_m16": 18,
+						"v_perc_bec_mat_escolar_pub": 41,
+						"v_perc_bec_mat_escolar_priv": 26,
+						"v_dif_perc_bec_mat_escolar_dif": 15,
+						"v_perc_bec_comedor_pub": 22,
+						"v_perc_bec_comedor_priv": 12,
+						"v_dif_perc_bec_comedor": 10,
+						"v_total_alumnado": 6052,
+						"v_perc_alum_ext_publi": 7.4,
+						"v_perc_alum_ext_priv": 4.3,
+						"v_perc_alum_ext_todos": 6.1,
+						"v_indice_desigualdad": 1.7,
+						"v_alum_ext_total": 369,
+						"v_alum_ext_publi": 258,
+						"v_alum_ext_kristau_eskola": 80,
+						"v_alum_ext_partaide": 25,
+						"v_alum_ext_otros_privados": 6,
+						"v_perc_reparto_alum_ext_publi": 69.9,
+						"v_perc_reparto_alum_ext_privada": 30.1
+					}
+				},
+				{
+					"arcs": [
+						[
+							157,
+							158,
+							-103,
+							-86,
+							159,
+							160
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 351,
+						"zona": "Arrigorriaga",
+						"zona_id2": "351",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 974,
+						"v_alum_bec_comedor": 538,
+						"v_alum_mat_escolar_total": 2476,
+						"v_alum_comedor_total": 2251,
+						"v_perc_material_m15": 39,
+						"v_perc_comedor_m16": 24,
+						"v_perc_bec_mat_escolar_pub": 39,
+						"v_perc_bec_mat_escolar_priv": 42,
+						"v_dif_perc_bec_mat_escolar_dif": -3,
+						"v_perc_bec_comedor_pub": 24,
+						"v_perc_bec_comedor_priv": 21,
+						"v_dif_perc_bec_comedor": 3,
+						"v_total_alumnado": 1626,
+						"v_perc_alum_ext_publi": 3.2,
+						"v_perc_alum_ext_priv": 4.1,
+						"v_perc_alum_ext_todos": 3.4,
+						"v_indice_desigualdad": 0.8,
+						"v_alum_ext_total": 55,
+						"v_alum_ext_publi": 44,
+						"v_alum_ext_kristau_eskola": 11,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 80,
+						"v_perc_reparto_alum_ext_privada": 20
+					}
+				},
+				{
+					"arcs": [
+						[
+							161
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 273,
+						"zona": "Donostia-Este",
+						"zona_id2": "273",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 2292,
+						"v_alum_bec_comedor": 1270,
+						"v_alum_mat_escolar_total": 4151,
+						"v_alum_comedor_total": 3973,
+						"v_perc_material_m15": 55,
+						"v_perc_comedor_m16": 32,
+						"v_perc_bec_mat_escolar_pub": 61,
+						"v_perc_bec_mat_escolar_priv": 49,
+						"v_dif_perc_bec_mat_escolar_dif": 12,
+						"v_perc_bec_comedor_pub": 44,
+						"v_perc_bec_comedor_priv": 22,
+						"v_dif_perc_bec_comedor": 22,
+						"v_total_alumnado": 2856,
+						"v_perc_alum_ext_publi": 12.7,
+						"v_perc_alum_ext_priv": 6.6,
+						"v_perc_alum_ext_todos": 9.4,
+						"v_indice_desigualdad": 1.9,
+						"v_alum_ext_total": 268,
+						"v_alum_ext_publi": 166,
+						"v_alum_ext_kristau_eskola": 62,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": 40,
+						"v_perc_reparto_alum_ext_publi": 61.9,
+						"v_perc_reparto_alum_ext_privada": 38.1
+					}
+				},
+				{
+					"arcs": [
+						[
+							-64,
+							-61,
+							162,
+							163,
+							-77,
+							164,
+							165,
+							-54
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 371,
+						"zona": "Trapaga",
+						"zona_id2": "371",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 1447,
+						"v_alum_bec_comedor": 723,
+						"v_alum_mat_escolar_total": 2607,
+						"v_alum_comedor_total": 2670,
+						"v_perc_material_m15": 56,
+						"v_perc_comedor_m16": 27,
+						"v_perc_bec_mat_escolar_pub": 70,
+						"v_perc_bec_mat_escolar_priv": 46,
+						"v_dif_perc_bec_mat_escolar_dif": 24,
+						"v_perc_bec_comedor_pub": 45,
+						"v_perc_bec_comedor_priv": 16,
+						"v_dif_perc_bec_comedor": 29,
+						"v_total_alumnado": 1880,
+						"v_perc_alum_ext_publi": 4.4,
+						"v_perc_alum_ext_priv": 0.7,
+						"v_perc_alum_ext_todos": 2.2,
+						"v_indice_desigualdad": 6.1,
+						"v_alum_ext_total": 41,
+						"v_alum_ext_publi": 33,
+						"v_alum_ext_kristau_eskola": 6,
+						"v_alum_ext_partaide": 1,
+						"v_alum_ext_otros_privados": 1,
+						"v_perc_reparto_alum_ext_publi": 80.5,
+						"v_perc_reparto_alum_ext_privada": 19.5
+					}
+				},
+				{
+					"arcs": [
+						[
+							166,
+							-55,
+							-166,
+							167
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 372,
+						"zona": "Abanto",
+						"zona_id2": "372",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 1758,
+						"v_alum_bec_comedor": 717,
+						"v_alum_mat_escolar_total": 4233,
+						"v_alum_comedor_total": 2752,
+						"v_perc_material_m15": 42,
+						"v_perc_comedor_m16": 26,
+						"v_perc_bec_mat_escolar_pub": 50,
+						"v_perc_bec_mat_escolar_priv": 34,
+						"v_dif_perc_bec_mat_escolar_dif": 16,
+						"v_perc_bec_comedor_pub": 30,
+						"v_perc_bec_comedor_priv": 18,
+						"v_dif_perc_bec_comedor": 12,
+						"v_total_alumnado": 2019,
+						"v_perc_alum_ext_publi": 2.2,
+						"v_perc_alum_ext_priv": 3.5,
+						"v_perc_alum_ext_todos": 2.6,
+						"v_indice_desigualdad": 0.6,
+						"v_alum_ext_total": 53,
+						"v_alum_ext_publi": 30,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": 23,
+						"v_perc_reparto_alum_ext_publi": 56.6,
+						"v_perc_reparto_alum_ext_privada": 43.4
+					}
+				},
+				{
+					"arcs": [
+						[
+							[
+								-143,
+								-152,
+								-122,
+								-129,
+								-131,
+								168,
+								169,
+								170
+							]
+						],
+						[
+							[
+								-153,
+								-141,
+								-154,
+								-148
+							]
+						]
+					],
+					"type": "MultiPolygon",
+					"properties": {
+						"zona_id": 241,
+						"zona": "Urola Medio",
+						"zona_id2": "241",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 1594,
+						"v_alum_bec_comedor": 379,
+						"v_alum_mat_escolar_total": 4900,
+						"v_alum_comedor_total": 4735,
+						"v_perc_material_m15": 33,
+						"v_perc_comedor_m16": 8,
+						"v_perc_bec_mat_escolar_pub": 31,
+						"v_perc_bec_mat_escolar_priv": 36,
+						"v_dif_perc_bec_mat_escolar_dif": -5,
+						"v_perc_bec_comedor_pub": 9,
+						"v_perc_bec_comedor_priv": 7,
+						"v_dif_perc_bec_comedor": 2,
+						"v_total_alumnado": 3266,
+						"v_perc_alum_ext_publi": 9.2,
+						"v_perc_alum_ext_priv": 9.4,
+						"v_perc_alum_ext_todos": 9.3,
+						"v_indice_desigualdad": 1,
+						"v_alum_ext_total": 304,
+						"v_alum_ext_publi": 178,
+						"v_alum_ext_kristau_eskola": 104,
+						"v_alum_ext_partaide": 22,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 58.6,
+						"v_perc_reparto_alum_ext_privada": 41.4
+					}
+				},
+				{
+					"arcs": [
+						[
+							-6,
+							-144,
+							-171,
+							171,
+							-169,
+							-130,
+							172
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 242,
+						"zona": "Costa",
+						"zona_id2": "242",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 2313,
+						"v_alum_bec_comedor": 791,
+						"v_alum_mat_escolar_total": 7515,
+						"v_alum_comedor_total": 6878,
+						"v_perc_material_m15": 31,
+						"v_perc_comedor_m16": 12,
+						"v_perc_bec_mat_escolar_pub": 37,
+						"v_perc_bec_mat_escolar_priv": 25,
+						"v_dif_perc_bec_mat_escolar_dif": 12,
+						"v_perc_bec_comedor_pub": 18,
+						"v_perc_bec_comedor_priv": 6,
+						"v_dif_perc_bec_comedor": 12,
+						"v_total_alumnado": 4843,
+						"v_perc_alum_ext_publi": 5.7,
+						"v_perc_alum_ext_priv": 2.4,
+						"v_perc_alum_ext_todos": 3.9,
+						"v_indice_desigualdad": 2.3,
+						"v_alum_ext_total": 191,
+						"v_alum_ext_publi": 128,
+						"v_alum_ext_kristau_eskola": 38,
+						"v_alum_ext_partaide": 25,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 67,
+						"v_perc_reparto_alum_ext_privada": 33
+					}
+				},
+				{
+					"arcs": [
+						[
+							173,
+							174,
+							175,
+							176,
+							-161
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 112,
+						"zona": "Llodio",
+						"zona_id2": "112",
+						"v_provincia": "araba",
+						"v_alum_bec_mat_escolar": 1246,
+						"v_alum_bec_comedor": 594,
+						"v_alum_mat_escolar_total": 3349,
+						"v_alum_comedor_total": 2777,
+						"v_perc_material_m15": 37,
+						"v_perc_comedor_m16": 21,
+						"v_perc_bec_mat_escolar_pub": 38,
+						"v_perc_bec_mat_escolar_priv": 35,
+						"v_dif_perc_bec_mat_escolar_dif": 3,
+						"v_perc_bec_comedor_pub": 26,
+						"v_perc_bec_comedor_priv": 15,
+						"v_dif_perc_bec_comedor": 11,
+						"v_total_alumnado": 1971,
+						"v_perc_alum_ext_publi": 7.5,
+						"v_perc_alum_ext_priv": 5.1,
+						"v_perc_alum_ext_todos": 6.4,
+						"v_indice_desigualdad": 1.5,
+						"v_alum_ext_total": 126,
+						"v_alum_ext_publi": 80,
+						"v_alum_ext_kristau_eskola": 44,
+						"v_alum_ext_partaide": 2,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 63.5,
+						"v_perc_reparto_alum_ext_privada": 36.5
+					}
+				},
+				{
+					"arcs": [
+						[
+							177,
+							178,
+							-176,
+							179,
+							180
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 111,
+						"zona": "Amurrio",
+						"zona_id2": "111",
+						"v_provincia": "araba",
+						"v_alum_bec_mat_escolar": 1031,
+						"v_alum_bec_comedor": 557,
+						"v_alum_mat_escolar_total": 2351,
+						"v_alum_comedor_total": 2219,
+						"v_perc_material_m15": 44,
+						"v_perc_comedor_m16": 25,
+						"v_perc_bec_mat_escolar_pub": 48,
+						"v_perc_bec_mat_escolar_priv": 35,
+						"v_dif_perc_bec_mat_escolar_dif": 13,
+						"v_perc_bec_comedor_pub": 33,
+						"v_perc_bec_comedor_priv": 14,
+						"v_dif_perc_bec_comedor": 19,
+						"v_total_alumnado": 1467,
+						"v_perc_alum_ext_publi": 8.3,
+						"v_perc_alum_ext_priv": 4.3,
+						"v_perc_alum_ext_todos": 6.7,
+						"v_indice_desigualdad": 1.9,
+						"v_alum_ext_total": 98,
+						"v_alum_ext_publi": 73,
+						"v_alum_ext_kristau_eskola": 15,
+						"v_alum_ext_partaide": 10,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 74.5,
+						"v_perc_reparto_alum_ext_privada": 25.5
+					}
+				},
+				{
+					"arcs": [
+						[
+							181
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 391392,
+						"zona": "Leioa-Getxo",
+						"zona_id2": "391_392",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 4139,
+						"v_alum_bec_comedor": 2662,
+						"v_alum_mat_escolar_total": 16546,
+						"v_alum_comedor_total": 14679,
+						"v_perc_material_m15": 25,
+						"v_perc_comedor_m16": 18,
+						"v_perc_bec_mat_escolar_pub": 38,
+						"v_perc_bec_mat_escolar_priv": 16,
+						"v_dif_perc_bec_mat_escolar_dif": 22,
+						"v_perc_bec_comedor_pub": 34,
+						"v_perc_bec_comedor_priv": 9,
+						"v_dif_perc_bec_comedor": 25,
+						"v_total_alumnado": 10575,
+						"v_perc_alum_ext_publi": 10,
+						"v_perc_alum_ext_priv": 2.4,
+						"v_perc_alum_ext_todos": 5.2,
+						"v_indice_desigualdad": 4.1,
+						"v_alum_ext_total": 530,
+						"v_alum_ext_publi": 392,
+						"v_alum_ext_kristau_eskola": 105,
+						"v_alum_ext_partaide": 11,
+						"v_alum_ext_otros_privados": 45,
+						"v_perc_reparto_alum_ext_publi": 74,
+						"v_perc_reparto_alum_ext_privada": 30.4
+					}
+				},
+				{
+					"arcs": [
+						[
+							[
+								182,
+								183,
+								184,
+								185
+							]
+						],
+						[
+							[
+								-175,
+								186,
+								187,
+								188,
+								189,
+								-180
+							]
+						],
+						[
+							[
+								190,
+								-116,
+								191,
+								192,
+								193
+							]
+						]
+					],
+					"type": "MultiPolygon",
+					"properties": {
+						"zona_id": 122,
+						"zona": "Vitoria-Norte",
+						"zona_id2": "122",
+						"v_provincia": "araba",
+						"v_alum_bec_mat_escolar": 3824,
+						"v_alum_bec_comedor": 1732,
+						"v_alum_mat_escolar_total": 8839,
+						"v_alum_comedor_total": 7408,
+						"v_perc_material_m15": 43,
+						"v_perc_comedor_m16": 23,
+						"v_perc_bec_mat_escolar_pub": 44,
+						"v_perc_bec_mat_escolar_priv": 41,
+						"v_dif_perc_bec_mat_escolar_dif": 3,
+						"v_perc_bec_comedor_pub": 31,
+						"v_perc_bec_comedor_priv": 6,
+						"v_dif_perc_bec_comedor": 25,
+						"v_total_alumnado": 5002,
+						"v_perc_alum_ext_publi": 16.4,
+						"v_perc_alum_ext_priv": 11.1,
+						"v_perc_alum_ext_todos": 14.6,
+						"v_indice_desigualdad": 1.5,
+						"v_alum_ext_total": 731,
+						"v_alum_ext_publi": 545,
+						"v_alum_ext_kristau_eskola": 186,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 74.6,
+						"v_perc_reparto_alum_ext_privada": 25.4
+					}
+				},
+				{
+					"arcs": [
+						[
+							195,
+							-188,
+							196,
+							197,
+							-193,
+							198,
+							199,
+							-185,
+							200,
+							-183,
+							201
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 121,
+						"zona": "Vitoria-Oeste",
+						"zona_id2": "121",
+						"v_provincia": "araba",
+						"v_alum_bec_mat_escolar": 4696,
+						"v_alum_bec_comedor": 1966,
+						"v_alum_mat_escolar_total": 10802,
+						"v_alum_comedor_total": 10050,
+						"v_perc_material_m15": 43,
+						"v_perc_comedor_m16": 20,
+						"v_perc_bec_mat_escolar_pub": 44,
+						"v_perc_bec_mat_escolar_priv": 43,
+						"v_dif_perc_bec_mat_escolar_dif": 1,
+						"v_perc_bec_comedor_pub": 25,
+						"v_perc_bec_comedor_priv": 7,
+						"v_dif_perc_bec_comedor": 18,
+						"v_total_alumnado": 7032,
+						"v_perc_alum_ext_publi": 11.3,
+						"v_perc_alum_ext_priv": 1.8,
+						"v_perc_alum_ext_todos": 8.2,
+						"v_indice_desigualdad": 6.3,
+						"v_alum_ext_total": 578,
+						"v_alum_ext_publi": 537,
+						"v_alum_ext_kristau_eskola": 36,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": 5,
+						"v_perc_reparto_alum_ext_publi": 92.9,
+						"v_perc_reparto_alum_ext_privada": 7.1
+					}
+				},
+				{
+					"arcs": [
+						[
+							-98,
+							202,
+							203,
+							204,
+							205,
+							206,
+							207
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 125,
+						"zona": "Alava occidental",
+						"zona_id2": "125",
+						"v_provincia": "araba",
+						"v_alum_bec_mat_escolar": 446,
+						"v_alum_bec_comedor": 323,
+						"v_alum_mat_escolar_total": 1012,
+						"v_alum_comedor_total": 1087,
+						"v_perc_material_m15": 44,
+						"v_perc_comedor_m16": 30,
+						"v_perc_bec_mat_escolar_pub": 45,
+						"v_perc_bec_mat_escolar_priv": 29,
+						"v_dif_perc_bec_mat_escolar_dif": 16,
+						"v_perc_bec_comedor_pub": 31,
+						"v_perc_bec_comedor_priv": 15,
+						"v_dif_perc_bec_comedor": 16,
+						"v_total_alumnado": 752,
+						"v_perc_alum_ext_publi": 7.6,
+						"v_perc_alum_ext_priv": 6.4,
+						"v_perc_alum_ext_todos": 7.4,
+						"v_indice_desigualdad": 1.2,
+						"v_alum_ext_total": 56,
+						"v_alum_ext_publi": 51,
+						"v_alum_ext_kristau_eskola": 5,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 91.1,
+						"v_perc_reparto_alum_ext_privada": 8.9
+					}
+				},
+				{
+					"arcs": [
+						[
+							[
+								208,
+								-207,
+								209,
+								-181,
+								-190
+							]
+						],
+						[
+							[
+								-200,
+								210,
+								-202,
+								-186
+							]
+						],
+						[
+							[
+								-156,
+								211,
+								-194,
+								-198,
+								212
+							]
+						]
+					],
+					"type": "MultiPolygon",
+					"properties": {
+						"zona_id": 123,
+						"zona": "Vitoria-Sureste",
+						"zona_id2": "123",
+						"v_provincia": "araba",
+						"v_alum_bec_mat_escolar": 6878,
+						"v_alum_bec_comedor": 3027,
+						"v_alum_mat_escolar_total": 22585,
+						"v_alum_comedor_total": 17588,
+						"v_perc_material_m15": 31,
+						"v_perc_comedor_m16": 17,
+						"v_perc_bec_mat_escolar_pub": 46,
+						"v_perc_bec_mat_escolar_priv": 19,
+						"v_dif_perc_bec_mat_escolar_dif": 27,
+						"v_perc_bec_comedor_pub": 35,
+						"v_perc_bec_comedor_priv": 5,
+						"v_dif_perc_bec_comedor": 30,
+						"v_total_alumnado": 12489,
+						"v_perc_alum_ext_publi": 21.2,
+						"v_perc_alum_ext_priv": 4.1,
+						"v_perc_alum_ext_todos": 10.6,
+						"v_indice_desigualdad": 5.2,
+						"v_alum_ext_total": 1330,
+						"v_alum_ext_publi": 1016,
+						"v_alum_ext_kristau_eskola": 310,
+						"v_alum_ext_partaide": 2,
+						"v_alum_ext_otros_privados": 2,
+						"v_perc_reparto_alum_ext_publi": 76.4,
+						"v_perc_reparto_alum_ext_privada": 23.6
+					}
+				},
+				{
+					"arcs": [
+						[
+							-57,
+							-92,
+							213,
+							-72,
+							-163,
+							-60,
+							214,
+							215
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 411,
+						"zona": "Barkaldo",
+						"zona_id2": "411",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 4368,
+						"v_alum_bec_comedor": 2216,
+						"v_alum_mat_escolar_total": 8812,
+						"v_alum_comedor_total": 8023,
+						"v_perc_material_m15": 50,
+						"v_perc_comedor_m16": 28,
+						"v_perc_bec_mat_escolar_pub": 50,
+						"v_perc_bec_mat_escolar_priv": 49,
+						"v_dif_perc_bec_mat_escolar_dif": 1,
+						"v_perc_bec_comedor_pub": 39,
+						"v_perc_bec_comedor_priv": 12,
+						"v_dif_perc_bec_comedor": 27,
+						"v_total_alumnado": 5097,
+						"v_perc_alum_ext_publi": 10.2,
+						"v_perc_alum_ext_priv": 7.6,
+						"v_perc_alum_ext_todos": 9.2,
+						"v_indice_desigualdad": 1.3,
+						"v_alum_ext_total": 467,
+						"v_alum_ext_publi": 312,
+						"v_alum_ext_kristau_eskola": 155,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 66.8,
+						"v_perc_reparto_alum_ext_privada": 33.2
+					}
+				},
+				{
+					"arcs": [
+						[
+							-191,
+							-212,
+							-155,
+							-126,
+							-124,
+							-151,
+							-117
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 211,
+						"zona": "Arrasate",
+						"zona_id2": "211",
+						"v_provincia": "gipuzkoa",
+						"v_alum_bec_mat_escolar": 1440,
+						"v_alum_bec_comedor": 489,
+						"v_alum_mat_escolar_total": 7129,
+						"v_alum_comedor_total": 6244,
+						"v_perc_material_m15": 20,
+						"v_perc_comedor_m16": 8,
+						"v_perc_bec_mat_escolar_pub": 28,
+						"v_perc_bec_mat_escolar_priv": 15,
+						"v_dif_perc_bec_mat_escolar_dif": 13,
+						"v_perc_bec_comedor_pub": 14,
+						"v_perc_bec_comedor_priv": 3,
+						"v_dif_perc_bec_comedor": 11,
+						"v_total_alumnado": 4423,
+						"v_perc_alum_ext_publi": 11.5,
+						"v_perc_alum_ext_priv": 3.6,
+						"v_perc_alum_ext_todos": 6.8,
+						"v_indice_desigualdad": 3.2,
+						"v_alum_ext_total": 302,
+						"v_alum_ext_publi": 210,
+						"v_alum_ext_kristau_eskola": 14,
+						"v_alum_ext_partaide": 78,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 69.5,
+						"v_perc_reparto_alum_ext_privada": 30.5
+					}
+				},
+				{
+					"arcs": [
+						[
+							216,
+							-158,
+							-177,
+							-179,
+							217,
+							-168,
+							-165,
+							-76
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 361,
+						"zona": "Encartaciones",
+						"zona_id2": "361",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 2271,
+						"v_alum_bec_comedor": 1248,
+						"v_alum_mat_escolar_total": 4723,
+						"v_alum_comedor_total": 4420,
+						"v_perc_material_m15": 48,
+						"v_perc_comedor_m16": 28,
+						"v_perc_bec_mat_escolar_pub": 52,
+						"v_perc_bec_mat_escolar_priv": 43,
+						"v_dif_perc_bec_mat_escolar_dif": 9,
+						"v_perc_bec_comedor_pub": 37,
+						"v_perc_bec_comedor_priv": 15,
+						"v_dif_perc_bec_comedor": 22,
+						"v_total_alumnado": 3064,
+						"v_perc_alum_ext_publi": 8.7,
+						"v_perc_alum_ext_priv": 3.2,
+						"v_perc_alum_ext_todos": 6.5,
+						"v_indice_desigualdad": 2.7,
+						"v_alum_ext_total": 198,
+						"v_alum_ext_publi": 157,
+						"v_alum_ext_kristau_eskola": 6,
+						"v_alum_ext_partaide": 19,
+						"v_alum_ext_otros_privados": 16,
+						"v_perc_reparto_alum_ext_publi": 79.3,
+						"v_perc_reparto_alum_ext_privada": 20.7
+					}
+				},
+				{
+					"arcs": [
+						[
+							-213,
+							-197,
+							-187,
+							-174,
+							-160,
+							-85,
+							-50,
+							-157
+						]
+					],
+					"type": "Polygon",
+					"properties": {
+						"zona_id": 341,
+						"zona": "Igorre",
+						"zona_id2": "341",
+						"v_provincia": "bizkaia",
+						"v_alum_bec_mat_escolar": 598,
+						"v_alum_bec_comedor": 374,
+						"v_alum_mat_escolar_total": 1907,
+						"v_alum_comedor_total": 1812,
+						"v_perc_material_m15": 31,
+						"v_perc_comedor_m16": 21,
+						"v_perc_bec_mat_escolar_pub": 32,
+						"v_perc_bec_mat_escolar_priv": 28,
+						"v_dif_perc_bec_mat_escolar_dif": 4,
+						"v_perc_bec_comedor_pub": 21,
+						"v_perc_bec_comedor_priv": 0,
+						"v_dif_perc_bec_comedor": 21,
+						"v_total_alumnado": 1184,
+						"v_perc_alum_ext_publi": 6.2,
+						"v_perc_alum_ext_priv": null,
+						"v_perc_alum_ext_todos": 6.2,
+						"v_indice_desigualdad": null,
+						"v_alum_ext_total": 73,
+						"v_alum_ext_publi": 73,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": null,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 100,
+						"v_perc_reparto_alum_ext_privada": 0
+					}
+				},
+				{
+					"arcs": [
+						[
+							[
+								-203,
+								-97,
+								218
+							]
+						],
+						[
+							[
+								219,
+								-205
+							]
+						]
+					],
+					"type": "MultiPolygon",
+					"properties": {
+						"zona_id": 131,
+						"zona": "Rioja alavesa",
+						"zona_id2": "131",
+						"v_provincia": "araba",
+						"v_alum_bec_mat_escolar": 964,
+						"v_alum_bec_comedor": 524,
+						"v_alum_mat_escolar_total": 1835,
+						"v_alum_comedor_total": 1800,
+						"v_perc_material_m15": 53,
+						"v_perc_comedor_m16": 29,
+						"v_perc_bec_mat_escolar_pub": 64,
+						"v_perc_bec_mat_escolar_priv": 36,
+						"v_dif_perc_bec_mat_escolar_dif": 28,
+						"v_perc_bec_comedor_pub": 35,
+						"v_perc_bec_comedor_priv": 20,
+						"v_dif_perc_bec_comedor": 15,
+						"v_total_alumnado": 1236,
+						"v_perc_alum_ext_publi": 26,
+						"v_perc_alum_ext_priv": 0.6,
+						"v_perc_alum_ext_todos": 15.5,
+						"v_indice_desigualdad": 44,
+						"v_alum_ext_total": 192,
+						"v_alum_ext_publi": 189,
+						"v_alum_ext_kristau_eskola": null,
+						"v_alum_ext_partaide": 3,
+						"v_alum_ext_otros_privados": null,
+						"v_perc_reparto_alum_ext_publi": 98.4,
+						"v_perc_reparto_alum_ext_privada": 1.6
+					}
+				}
+			]
+		}
+	},
+	"crs": {
+		"type": "name",
+		"properties": {
+			"name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+		}
+	},
+	"arcs": [
+		[
+			[
+				5753,
+				4606
+			],
+			[
+				23,
+				-97
+			]
+		],
+		[
+			[
+				5776,
+				4509
+			],
+			[
+				-94,
+				-93
+			]
+		],
+		[
+			[
+				5682,
+				4416
+			],
+			[
+				-137,
+				11
+			]
+		],
+		[
+			[
+				5545,
+				4427
+			],
+			[
+				5,
+				-5
+			]
+		],
+		[
+			[
+				5550,
+				4422
+			],
+			[
+				-97,
+				-19
+			]
+		],
+		[
+			[
+				5453,
+				4403
+			],
+			[
+				-17,
+				302
+			]
+		],
+		[
+			[
+				5436,
+				4705
+			],
+			[
+				73,
+				18
+			]
+		],
+		[
+			[
+				5509,
+				4723
+			],
+			[
+				244,
+				-117
+			]
+		],
+		[
+			[
+				5633,
+				4572
+			],
+			[
+				-1,
+				0
+			]
+		],
+		[
+			[
+				5632,
+				4572
+			],
+			[
+				1,
+				0
+			]
+		],
+		[
+			[
+				6073,
+				4746
+			],
+			[
+				54,
+				-222
+			]
+		],
+		[
+			[
+				6127,
+				4524
+			],
+			[
+				-28,
+				-24
+			]
+		],
+		[
+			[
+				6099,
+				4500
+			],
+			[
+				-157,
+				86
+			]
+		],
+		[
+			[
+				5942,
+				4586
+			],
+			[
+				-433,
+				137
+			]
+		],
+		[
+			[
+				5509,
+				4723
+			],
+			[
+				350,
+				150
+			]
+		],
+		[
+			[
+				5859,
+				4873
+			],
+			[
+				131,
+				-97
+			]
+		],
+		[
+			[
+				5990,
+				4776
+			],
+			[
+				83,
+				-30
+			]
+		],
+		[
+			[
+				6658,
+				4656
+			],
+			[
+				-180,
+				-336
+			],
+			[
+				-302,
+				52
+			]
+		],
+		[
+			[
+				6176,
+				4372
+			],
+			[
+				22,
+				77
+			]
+		],
+		[
+			[
+				6198,
+				4449
+			],
+			[
+				-71,
+				75
+			]
+		],
+		[
+			[
+				6073,
+				4746
+			],
+			[
+				2,
+				199
+			],
+			[
+				220,
+				185
+			]
+		],
+		[
+			[
+				6295,
+				5130
+			],
+			[
+				15,
+				-32
+			]
+		],
+		[
+			[
+				6310,
+				5098
+			],
+			[
+				22,
+				-60
+			]
+		],
+		[
+			[
+				6332,
+				5038
+			],
+			[
+				49,
+				-157
+			],
+			[
+				277,
+				-225
+			]
+		],
+		[
+			[
+				2059,
+				4522
+			],
+			[
+				-50,
+				39
+			]
+		],
+		[
+			[
+				2009,
+				4561
+			],
+			[
+				12,
+				48
+			]
+		],
+		[
+			[
+				2021,
+				4609
+			],
+			[
+				126,
+				-43
+			]
+		],
+		[
+			[
+				2147,
+				4566
+			],
+			[
+				-44,
+				-70
+			]
+		],
+		[
+			[
+				2103,
+				4496
+			],
+			[
+				-12,
+				18
+			]
+		],
+		[
+			[
+				2091,
+				4514
+			],
+			[
+				-32,
+				8
+			]
+		],
+		[
+			[
+				2147,
+				4566
+			],
+			[
+				49,
+				-101
+			]
+		],
+		[
+			[
+				2196,
+				4465
+			],
+			[
+				-93,
+				31
+			]
+		],
+		[
+			[
+				2071,
+				4401
+			],
+			[
+				20,
+				113
+			]
+		],
+		[
+			[
+				2196,
+				4465
+			],
+			[
+				-125,
+				-64
+			]
+		],
+		[
+			[
+				2059,
+				4522
+			],
+			[
+				-38,
+				-44
+			]
+		],
+		[
+			[
+				2021,
+				4478
+			],
+			[
+				-52,
+				13
+			]
+		],
+		[
+			[
+				1969,
+				4491
+			],
+			[
+				-19,
+				48
+			]
+		],
+		[
+			[
+				1950,
+				4539
+			],
+			[
+				59,
+				22
+			]
+		],
+		[
+			[
+				1860,
+				4356
+			],
+			[
+				8,
+				321
+			]
+		],
+		[
+			[
+				1868,
+				4677
+			],
+			[
+				82,
+				-138
+			]
+		],
+		[
+			[
+				1969,
+				4491
+			],
+			[
+				-109,
+				-135
+			]
+		],
+		[
+			[
+				1868,
+				4677
+			],
+			[
+				153,
+				-68
+			]
+		],
+		[
+			[
+				1964,
+				4266
+			],
+			[
+				-104,
+				90
+			]
+		],
+		[
+			[
+				2021,
+				4478
+			],
+			[
+				-57,
+				-212
+			]
+		],
+		[
+			[
+				2071,
+				4401
+			],
+			[
+				-107,
+				-135
+			]
+		],
+		[
+			[
+				5859,
+				4873
+			],
+			[
+				118,
+				64
+			],
+			[
+				13,
+				-161
+			]
+		],
+		[
+			[
+				2628,
+				4414
+			],
+			[
+				167,
+				176
+			]
+		],
+		[
+			[
+				2795,
+				4590
+			],
+			[
+				301,
+				-414
+			]
+		],
+		[
+			[
+				3096,
+				4176
+			],
+			[
+				-122,
+				-274
+			]
+		],
+		[
+			[
+				2974,
+				3902
+			],
+			[
+				-328,
+				430
+			]
+		],
+		[
+			[
+				2646,
+				4332
+			],
+			[
+				-18,
+				82
+			]
+		],
+		[
+			[
+				1481,
+				5016
+			],
+			[
+				176,
+				-116
+			]
+		],
+		[
+			[
+				1657,
+				4900
+			],
+			[
+				-59,
+				-71
+			]
+		],
+		[
+			[
+				1598,
+				4829
+			],
+			[
+				-109,
+				49
+			]
+		],
+		[
+			[
+				1489,
+				4878
+			],
+			[
+				-8,
+				138
+			]
+		],
+		[
+			[
+				1782,
+				4814
+			],
+			[
+				57,
+				-65
+			]
+		],
+		[
+			[
+				1839,
+				4749
+			],
+			[
+				-53,
+				4
+			]
+		],
+		[
+			[
+				1786,
+				4753
+			],
+			[
+				-29,
+				0
+			]
+		],
+		[
+			[
+				1757,
+				4753
+			],
+			[
+				-1,
+				-1
+			]
+		],
+		[
+			[
+				1756,
+				4752
+			],
+			[
+				-21,
+				-32
+			]
+		],
+		[
+			[
+				1735,
+				4720
+			],
+			[
+				-32,
+				45
+			]
+		],
+		[
+			[
+				1703,
+				4765
+			],
+			[
+				24,
+				77
+			]
+		],
+		[
+			[
+				1727,
+				4842
+			],
+			[
+				55,
+				-28
+			]
+		],
+		[
+			[
+				1703,
+				4765
+			],
+			[
+				-105,
+				64
+			]
+		],
+		[
+			[
+				1657,
+				4900
+			],
+			[
+				70,
+				-58
+			]
+		],
+		[
+			[
+				3915,
+				4289
+			],
+			[
+				105,
+				-175
+			]
+		],
+		[
+			[
+				4020,
+				4114
+			],
+			[
+				-195,
+				-123
+			]
+		],
+		[
+			[
+				3825,
+				3991
+			],
+			[
+				-30,
+				53
+			]
+		],
+		[
+			[
+				3795,
+				4044
+			],
+			[
+				-16,
+				156
+			]
+		],
+		[
+			[
+				3779,
+				4200
+			],
+			[
+				-10,
+				25
+			]
+		],
+		[
+			[
+				3769,
+				4225
+			],
+			[
+				146,
+				64
+			]
+		],
+		[
+			[
+				1723,
+				4702
+			],
+			[
+				133,
+				5
+			]
+		],
+		[
+			[
+				1856,
+				4707
+			],
+			[
+				2,
+				-3
+			]
+		],
+		[
+			[
+				1858,
+				4704
+			],
+			[
+				10,
+				-26
+			]
+		],
+		[
+			[
+				1868,
+				4678
+			],
+			[
+				-26,
+				-238
+			]
+		],
+		[
+			[
+				1842,
+				4440
+			],
+			[
+				-287,
+				96
+			]
+		],
+		[
+			[
+				1555,
+				4536
+			],
+			[
+				168,
+				165
+			]
+		],
+		[
+			[
+				1723,
+				4701
+			],
+			[
+				0,
+				1
+			]
+		],
+		[
+			[
+				5753,
+				4606
+			],
+			[
+				189,
+				-20
+			]
+		],
+		[
+			[
+				6099,
+				4500
+			],
+			[
+				99,
+				-51
+			]
+		],
+		[
+			[
+				6176,
+				4372
+			],
+			[
+				-81,
+				-376
+			]
+		],
+		[
+			[
+				6095,
+				3996
+			],
+			[
+				-151,
+				97
+			]
+		],
+		[
+			[
+				5944,
+				4093
+			],
+			[
+				48,
+				227
+			],
+			[
+				-216,
+				189
+			]
+		],
+		[
+			[
+				2234,
+				4534
+			],
+			[
+				394,
+				-120
+			]
+		],
+		[
+			[
+				2646,
+				4332
+			],
+			[
+				-329,
+				-240
+			]
+		],
+		[
+			[
+				2317,
+				4092
+			],
+			[
+				-29,
+				244
+			]
+		],
+		[
+			[
+				2288,
+				4336
+			],
+			[
+				-54,
+				198
+			]
+		],
+		[
+			[
+				1998,
+				5002
+			],
+			[
+				54,
+				-63
+			]
+		],
+		[
+			[
+				2052,
+				4939
+			],
+			[
+				-86,
+				-275
+			]
+		],
+		[
+			[
+				1966,
+				4664
+			],
+			[
+				-98,
+				14
+			]
+		],
+		[
+			[
+				1858,
+				4704
+			],
+			[
+				-2,
+				5
+			]
+		],
+		[
+			[
+				1856,
+				4709
+			],
+			[
+				-17,
+				40
+			]
+		],
+		[
+			[
+				1782,
+				4814
+			],
+			[
+				185,
+				206
+			]
+		],
+		[
+			[
+				1967,
+				5020
+			],
+			[
+				31,
+				-18
+			]
+		],
+		[
+			[
+				3795,
+				4044
+			],
+			[
+				-117,
+				32
+			],
+			[
+				101,
+				124
+			]
+		],
+		[
+			[
+				4644,
+				1747
+			],
+			[
+				35,
+				-240
+			],
+			[
+				-185,
+				-46
+			],
+			[
+				28,
+				-480
+			],
+			[
+				-144,
+				-105
+			],
+			[
+				-290,
+				154
+			],
+			[
+				-319,
+				-284
+			]
+		],
+		[
+			[
+				3769,
+				746
+			],
+			[
+				-218,
+				-25
+			]
+		],
+		[
+			[
+				3551,
+				721
+			],
+			[
+				60,
+				182
+			]
+		],
+		[
+			[
+				3611,
+				903
+			],
+			[
+				-44,
+				174
+			],
+			[
+				-241,
+				154
+			],
+			[
+				185,
+				261
+			],
+			[
+				-6,
+				247
+			]
+		],
+		[
+			[
+				3505,
+				1739
+			],
+			[
+				780,
+				123
+			],
+			[
+				62,
+				-233
+			],
+			[
+				297,
+				118
+			]
+		],
+		[
+			[
+				6332,
+				5038
+			],
+			[
+				-22,
+				60
+			]
+		],
+		[
+			[
+				6295,
+				5130
+			],
+			[
+				274,
+				118
+			],
+			[
+				200,
+				-273
+			],
+			[
+				57,
+				-264
+			],
+			[
+				-168,
+				-55
+			]
+		],
+		[
+			[
+				2288,
+				4336
+			],
+			[
+				-187,
+				85
+			]
+		],
+		[
+			[
+				2101,
+				4421
+			],
+			[
+				133,
+				113
+			]
+		],
+		[
+			[
+				2668,
+				4689
+			],
+			[
+				127,
+				-99
+			]
+		],
+		[
+			[
+				2234,
+				4534
+			],
+			[
+				-268,
+				130
+			]
+		],
+		[
+			[
+				2052,
+				4939
+			],
+			[
+				106,
+				9
+			],
+			[
+				393,
+				-274
+			],
+			[
+				117,
+				15
+			]
+		],
+		[
+			[
+				2379,
+				5501
+			],
+			[
+				-381,
+				-499
+			]
+		],
+		[
+			[
+				1967,
+				5020
+			],
+			[
+				-237,
+				201
+			],
+			[
+				388,
+				320
+			],
+			[
+				261,
+				-40
+			]
+		],
+		[
+			[
+				2971,
+				5301
+			],
+			[
+				-274,
+				-121
+			]
+		],
+		[
+			[
+				2697,
+				5180
+			],
+			[
+				-77,
+				396
+			]
+		],
+		[
+			[
+				2620,
+				5576
+			],
+			[
+				351,
+				-275
+			]
+		],
+		[
+			[
+				5570,
+				4408
+			],
+			[
+				112,
+				8
+			]
+		],
+		[
+			[
+				5944,
+				4093
+			],
+			[
+				-178,
+				-19
+			],
+			[
+				-196,
+				334
+			]
+		],
+		[
+			[
+				3448,
+				2263
+			],
+			[
+				-10,
+				197
+			]
+		],
+		[
+			[
+				3438,
+				2460
+			],
+			[
+				119,
+				291
+			]
+		],
+		[
+			[
+				3557,
+				2751
+			],
+			[
+				570,
+				11
+			],
+			[
+				223,
+				-60
+			]
+		],
+		[
+			[
+				4350,
+				2702
+			],
+			[
+				416,
+				-315
+			]
+		],
+		[
+			[
+				4766,
+				2387
+			],
+			[
+				60,
+				-355
+			],
+			[
+				-182,
+				-285
+			]
+		],
+		[
+			[
+				3505,
+				1739
+			],
+			[
+				72,
+				435
+			],
+			[
+				-121,
+				61
+			]
+		],
+		[
+			[
+				3456,
+				2235
+			],
+			[
+				-8,
+				28
+			]
+		],
+		[
+			[
+				4400,
+				3691
+			],
+			[
+				249,
+				-77
+			]
+		],
+		[
+			[
+				4649,
+				3614
+			],
+			[
+				-106,
+				-231
+			],
+			[
+				-49,
+				-443
+			],
+			[
+				-189,
+				-61
+			]
+		],
+		[
+			[
+				4305,
+				2879
+			],
+			[
+				22,
+				391
+			],
+			[
+				-72,
+				102
+			]
+		],
+		[
+			[
+				4255,
+				3372
+			],
+			[
+				145,
+				319
+			]
+		],
+		[
+			[
+				4255,
+				3372
+			],
+			[
+				-498,
+				174
+			]
+		],
+		[
+			[
+				3757,
+				3546
+			],
+			[
+				68,
+				445
+			]
+		],
+		[
+			[
+				4020,
+				4114
+			],
+			[
+				278,
+				-95
+			]
+		],
+		[
+			[
+				4298,
+				4019
+			],
+			[
+				102,
+				-328
+			]
+		],
+		[
+			[
+				4633,
+				4705
+			],
+			[
+				-16,
+				-413
+			]
+		],
+		[
+			[
+				4617,
+				4292
+			],
+			[
+				-178,
+				38
+			],
+			[
+				-141,
+				-311
+			]
+		],
+		[
+			[
+				3915,
+				4289
+			],
+			[
+				180,
+				258
+			],
+			[
+				22,
+				312
+			]
+		],
+		[
+			[
+				4117,
+				4859
+			],
+			[
+				516,
+				-154
+			]
+		],
+		[
+			[
+				3769,
+				4225
+			],
+			[
+				-225,
+				111
+			],
+			[
+				-233,
+				-24
+			]
+		],
+		[
+			[
+				3311,
+				4312
+			],
+			[
+				-50,
+				309
+			],
+			[
+				233,
+				173
+			],
+			[
+				66,
+				372
+			]
+		],
+		[
+			[
+				3560,
+				5166
+			],
+			[
+				166,
+				17
+			],
+			[
+				200,
+				-242
+			],
+			[
+				191,
+				-82
+			]
+		],
+		[
+			[
+				3311,
+				4312
+			],
+			[
+				-215,
+				-136
+			]
+		],
+		[
+			[
+				2668,
+				4689
+			],
+			[
+				-63,
+				331
+			],
+			[
+				92,
+				160
+			]
+		],
+		[
+			[
+				2971,
+				5301
+			],
+			[
+				197,
+				106
+			],
+			[
+				392,
+				-241
+			]
+		],
+		[
+			[
+				2379,
+				5501
+			],
+			[
+				241,
+				75
+			]
+		],
+		[
+			[
+				5083,
+				3566
+			],
+			[
+				-42,
+				50
+			]
+		],
+		[
+			[
+				5041,
+				3616
+			],
+			[
+				-42,
+				234
+			]
+		],
+		[
+			[
+				4999,
+				3850
+			],
+			[
+				181,
+				271
+			]
+		],
+		[
+			[
+				5180,
+				4121
+			],
+			[
+				273,
+				282
+			]
+		],
+		[
+			[
+				5550,
+				4422
+			],
+			[
+				20,
+				-14
+			]
+		],
+		[
+			[
+				6095,
+				3996
+			],
+			[
+				-22,
+				-342
+			],
+			[
+				-388,
+				-269
+			],
+			[
+				-73,
+				-217
+			]
+		],
+		[
+			[
+				5612,
+				3168
+			],
+			[
+				-310,
+				-58
+			],
+			[
+				-75,
+				451
+			],
+			[
+				-144,
+				5
+			]
+		],
+		[
+			[
+				5042,
+				3600
+			],
+			[
+				8,
+				-19
+			]
+		],
+		[
+			[
+				5050,
+				3581
+			],
+			[
+				-8,
+				19
+			]
+		],
+		[
+			[
+				5612,
+				3168
+			],
+			[
+				8,
+				-280
+			],
+			[
+				-230,
+				-54
+			],
+			[
+				-126,
+				-191
+			],
+			[
+				-334,
+				62
+			],
+			[
+				-164,
+				-318
+			]
+		],
+		[
+			[
+				4350,
+				2702
+			],
+			[
+				-45,
+				177
+			]
+		],
+		[
+			[
+				4649,
+				3614
+			],
+			[
+				207,
+				39
+			],
+			[
+				143,
+				197
+			]
+		],
+		[
+			[
+				5041,
+				3616
+			],
+			[
+				1,
+				-16
+			]
+		],
+		[
+			[
+				5050,
+				3581
+			],
+			[
+				33,
+				-15
+			]
+		],
+		[
+			[
+				3757,
+				3546
+			],
+			[
+				-641,
+				-122
+			],
+			[
+				110,
+				-312
+			]
+		],
+		[
+			[
+				3226,
+				3112
+			],
+			[
+				-170,
+				37
+			]
+		],
+		[
+			[
+				3056,
+				3149
+			],
+			[
+				52,
+				246
+			],
+			[
+				-134,
+				507
+			]
+		],
+		[
+			[
+				1827,
+				4167
+			],
+			[
+				142,
+				90
+			]
+		],
+		[
+			[
+				1969,
+				4257
+			],
+			[
+				132,
+				164
+			]
+		],
+		[
+			[
+				2317,
+				4092
+			],
+			[
+				-194,
+				-278
+			]
+		],
+		[
+			[
+				2123,
+				3814
+			],
+			[
+				-296,
+				353
+			]
+		],
+		[
+			[
+				5979,
+				4923
+			],
+			[
+				70,
+				19
+			],
+			[
+				74,
+				-96
+			],
+			[
+				-117,
+				-69
+			],
+			[
+				-27,
+				146
+			]
+		],
+		[
+			[
+				1735,
+				4720
+			],
+			[
+				-12,
+				-18
+			]
+		],
+		[
+			[
+				1723,
+				4702
+			],
+			[
+				0,
+				-1
+			]
+		],
+		[
+			[
+				1555,
+				4536
+			],
+			[
+				-107,
+				101
+			]
+		],
+		[
+			[
+				1448,
+				4637
+			],
+			[
+				41,
+				241
+			]
+		],
+		[
+			[
+				1143,
+				4771
+			],
+			[
+				4,
+				247
+			],
+			[
+				334,
+				-2
+			]
+		],
+		[
+			[
+				1448,
+				4637
+			],
+			[
+				-305,
+				134
+			]
+		],
+		[
+			[
+				4617,
+				4292
+			],
+			[
+				118,
+				7
+			]
+		],
+		[
+			[
+				4735,
+				4299
+			],
+			[
+				1,
+				0
+			]
+		],
+		[
+			[
+				4736,
+				4299
+			],
+			[
+				239,
+				-6
+			],
+			[
+				205,
+				-172
+			]
+		],
+		[
+			[
+				4736,
+				4299
+			],
+			[
+				-1,
+				0
+			]
+		],
+		[
+			[
+				4633,
+				4705
+			],
+			[
+				225,
+				94
+			],
+			[
+				393,
+				-139
+			],
+			[
+				185,
+				45
+			]
+		],
+		[
+			[
+				2123,
+				3814
+			],
+			[
+				388,
+				-226
+			],
+			[
+				84,
+				-394
+			]
+		],
+		[
+			[
+				2595,
+				3194
+			],
+			[
+				-401,
+				67
+			]
+		],
+		[
+			[
+				2194,
+				3261
+			],
+			[
+				-561,
+				520
+			],
+			[
+				-181,
+				63
+			]
+		],
+		[
+			[
+				1452,
+				3844
+			],
+			[
+				193,
+				84
+			],
+			[
+				182,
+				239
+			]
+		],
+		[
+			[
+				1831,
+				2641
+			],
+			[
+				-255,
+				193
+			],
+			[
+				-79,
+				184
+			],
+			[
+				-327,
+				18
+			],
+			[
+				46,
+				521
+			],
+			[
+				-189,
+				149
+			],
+			[
+				155,
+				226
+			]
+		],
+		[
+			[
+				1182,
+				3932
+			],
+			[
+				270,
+				-88
+			]
+		],
+		[
+			[
+				2194,
+				3261
+			],
+			[
+				-103,
+				-147
+			]
+		],
+		[
+			[
+				2091,
+				3114
+			],
+			[
+				-162,
+				-130
+			],
+			[
+				-98,
+				-343
+			]
+		],
+		[
+			[
+				1795,
+				4830
+			],
+			[
+				-65,
+				391
+			],
+			[
+				207,
+				-178
+			],
+			[
+				-142,
+				-213
+			]
+		],
+		[
+			[
+				3036,
+				2126
+			],
+			[
+				-42,
+				132
+			]
+		],
+		[
+			[
+				2994,
+				2258
+			],
+			[
+				60,
+				-4
+			]
+		],
+		[
+			[
+				3054,
+				2254
+			],
+			[
+				76,
+				10
+			]
+		],
+		[
+			[
+				3130,
+				2264
+			],
+			[
+				-94,
+				-138
+			]
+		],
+		[
+			[
+				2595,
+				3194
+			],
+			[
+				69,
+				-32
+			]
+		],
+		[
+			[
+				2664,
+				3162
+			],
+			[
+				-50,
+				-599
+			]
+		],
+		[
+			[
+				2614,
+				2563
+			],
+			[
+				-173,
+				-74
+			]
+		],
+		[
+			[
+				2441,
+				2489
+			],
+			[
+				-163,
+				64
+			],
+			[
+				-75,
+				414
+			],
+			[
+				-112,
+				147
+			]
+		],
+		[
+			[
+				3373,
+				2857
+			],
+			[
+				184,
+				-106
+			]
+		],
+		[
+			[
+				3438,
+				2460
+			],
+			[
+				-394,
+				54
+			]
+		],
+		[
+			[
+				3044,
+				2514
+			],
+			[
+				-10,
+				252
+			]
+		],
+		[
+			[
+				3034,
+				2766
+			],
+			[
+				146,
+				-138
+			],
+			[
+				193,
+				229
+			]
+		],
+		[
+			[
+				3456,
+				2235
+			],
+			[
+				-8,
+				28
+			]
+		],
+		[
+			[
+				2669,
+				2131
+			],
+			[
+				-317,
+				96
+			],
+			[
+				88,
+				261
+			],
+			[
+				174,
+				75
+			]
+		],
+		[
+			[
+				2664,
+				3162
+			],
+			[
+				349,
+				-40
+			]
+		],
+		[
+			[
+				3013,
+				3122
+			],
+			[
+				21,
+				-356
+			]
+		],
+		[
+			[
+				3044,
+				2514
+			],
+			[
+				141,
+				-228
+			]
+		],
+		[
+			[
+				3185,
+				2286
+			],
+			[
+				-55,
+				-22
+			]
+		],
+		[
+			[
+				3054,
+				2254
+			],
+			[
+				-60,
+				4
+			]
+		],
+		[
+			[
+				3036,
+				2126
+			],
+			[
+				-367,
+				5
+			]
+		],
+		[
+			[
+				3551,
+				721
+			],
+			[
+				-520,
+				-73
+			]
+		],
+		[
+			[
+				3031,
+				648
+			],
+			[
+				-336,
+				144
+			]
+		],
+		[
+			[
+				2695,
+				792
+			],
+			[
+				-231,
+				141
+			],
+			[
+				-147,
+				-35
+			]
+		],
+		[
+			[
+				2317,
+				898
+			],
+			[
+				-172,
+				318
+			],
+			[
+				-315,
+				60
+			],
+			[
+				-276,
+				360
+			],
+			[
+				-355,
+				1
+			],
+			[
+				-86,
+				223
+			],
+			[
+				36,
+				324
+			],
+			[
+				-166,
+				57
+			],
+			[
+				-190,
+				-176
+			],
+			[
+				-184,
+				220
+			],
+			[
+				230,
+				416
+			],
+			[
+				324,
+				-90
+			],
+			[
+				87,
+				-170
+			],
+			[
+				434,
+				40
+			]
+		],
+		[
+			[
+				1684,
+				2481
+			],
+			[
+				138,
+				-222
+			],
+			[
+				237,
+				-75
+			],
+			[
+				124,
+				-165
+			],
+			[
+				182,
+				180
+			]
+		],
+		[
+			[
+				2365,
+				2199
+			],
+			[
+				319,
+				-77
+			],
+			[
+				-44,
+				-329
+			],
+			[
+				-302,
+				-154
+			],
+			[
+				-7,
+				-169
+			],
+			[
+				286,
+				-222
+			],
+			[
+				72,
+				-190
+			],
+			[
+				267,
+				50
+			],
+			[
+				265,
+				-161
+			],
+			[
+				390,
+				-44
+			]
+		],
+		[
+			[
+				2441,
+				2489
+			],
+			[
+				-76,
+				-290
+			]
+		],
+		[
+			[
+				1684,
+				2481
+			],
+			[
+				147,
+				160
+			]
+		],
+		[
+			[
+				3185,
+				2286
+			],
+			[
+				215,
+				201
+			],
+			[
+				118,
+				-141
+			],
+			[
+				8,
+				-314
+			],
+			[
+				-100,
+				-290
+			],
+			[
+				-204,
+				-112
+			],
+			[
+				-390,
+				173
+			],
+			[
+				-191,
+				-9
+			],
+			[
+				28,
+				337
+			]
+		],
+		[
+			[
+				3226,
+				3112
+			],
+			[
+				147,
+				-255
+			]
+		],
+		[
+			[
+				3013,
+				3122
+			],
+			[
+				43,
+				27
+			]
+		],
+		[
+			[
+				1856,
+				4709
+			],
+			[
+				0,
+				-2
+			]
+		],
+		[
+			[
+				1756,
+				4752
+			],
+			[
+				1,
+				1
+			]
+		],
+		[
+			[
+				1757,
+				4753
+			],
+			[
+				29,
+				0
+			]
+		],
+		[
+			[
+				1842,
+				4440
+			],
+			[
+				127,
+				-183
+			]
+		],
+		[
+			[
+				1182,
+				3932
+			],
+			[
+				-326,
+				59
+			],
+			[
+				-223,
+				131
+			],
+			[
+				-284,
+				-231
+			],
+			[
+				-277,
+				-122
+			],
+			[
+				-72,
+				588
+			],
+			[
+				210,
+				208
+			],
+			[
+				633,
+				224
+			],
+			[
+				300,
+				-18
+			]
+		],
+		[
+			[
+				3769,
+				746
+			],
+			[
+				399,
+				-136
+			],
+			[
+				29,
+				-421
+			],
+			[
+				-340,
+				-173
+			],
+			[
+				-310,
+				-16
+			],
+			[
+				-497,
+				149
+			],
+			[
+				-19,
+				499
+			]
+		],
+		[
+			[
+				2695,
+				792
+			],
+			[
+				-192,
+				-294
+			],
+			[
+				-186,
+				400
+			]
+		]
+	],
+	"transform": {
+		"scale": [
+			0.0002485069940304229,
+			0.00017240126990472848
+		],
+		"translate": [
+			-3.43549756488734,
+			42.48360536531122
+		]
+	}
+}
