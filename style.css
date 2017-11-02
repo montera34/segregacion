@@ -60,7 +60,7 @@ h1 {
   font-weight:bold;
 }
 p {
-  font-size: 12px;
+  font-size: 0.9em;
 }
 .perc_bec_mat_escolar_pub, .perc_bec_comedor_pub, .perc_alum_ext_pub {
   display:none;	
@@ -124,3 +124,10 @@ p {
 	text-transform: uppercase;
 	margin-top: 0;
 }
+
+#bottom {
+	background-color: #f5f5f5;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
