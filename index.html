@@ -60,7 +60,13 @@
 		</div>
 		<div class="collapse navbar-collapse" id="top-navbar-collapse">
 			<ul class="nav navbar-nav nabvar-left">
-				<li><a href="#">Comparativa indicadores</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visualizaciones <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#indicadores">Comparativa indicadores</a></li>
+						<li><a href="#materialescolar">Becas material escolar</a></li>
+						<li><a href="#comedor">Becas comedor</a></li>
+					</ul>
+				</li>
 				<li><a href="cartograms/index.html">Extranjeros</a></li>
 			</ul>
 		</div>
@@ -69,7 +75,7 @@
 </header>
 
 <main class="container">
-	<section class="vis-item" id="ILP">
+	<section class="vis-item" id="info">
 		<header class="row vis-head">
 			<div class="col-md-12">
 				<h1>Análisis de cohesion e igualdad en sistema educativo en Euskadi</h1>
@@ -91,7 +97,7 @@
 		</div>
 	</section>
 
-	<section class="vis-item" id="interactivo">
+	<section class="vis-item" id="indicadores">
 		<header class="row vis-head">
 			<div class="col-md-12">
 				<h1>Segregación público-privada en educación en zonas escolares de Euskadi</h1>
@@ -113,7 +119,7 @@
 		</div>
 	</section>
 
-	<section class="vis-item" id="interactivo">
+	<section class="vis-item" id="otras">
 		<header class="row vis-head">
 			<div class="col-md-12">
 				<h1>Otras visualizaciones </h1>
@@ -121,9 +127,9 @@
 		</header>
 		<div class="row vis-body">
 			<div class="col-md-12">
-				<h2>Comparativa becas de material escolar</h2>
+				<h2 id="materialescolar">Comparativa becas de material escolar</h2>
 				<iframe width="100%" height="820" frameborder="0" src="https://numeroteca.carto.com/builder/2389a047-c81e-4a9e-adec-7df4367a7982/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-				<h2>Comparativa becas comedor</h2>
+				<h2 id="comedor">Comparativa becas comedor</h2>
 				<iframe width="100%" height="820" frameborder="0" src="https://numeroteca.carto.com/builder/593cfa1c-2b9b-4cf1-b3fb-b4199684533f/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 			</div>
 		</div>
@@ -159,7 +165,9 @@
 	</div>
 </footer>
 
-<script src="https://d3js.org/d3.v3.min.js"></script>
-<script src="dataviz.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/d3.v3.min.js"></script>
+<script type="text/javascript" src="dataviz.js"></script>
 <script type="text/javascript" src="stats.js"></script>
 </body>
