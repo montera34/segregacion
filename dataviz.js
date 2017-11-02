@@ -6,11 +6,11 @@ var screenwidth = d3.select("#vis").node().clientWidth;
 // set the dimensions and margins of the graph
 // Margin convention: https://bl.ocks.org/mbostock/3019563
 var margin = {top: 50, right: 10, bottom: 10, left:0},
-    width = (isMobile ? (screenwidth*3) : screenwidth) - margin.left - margin.right,
+    width = (isMobile ? (screenwidth*2) : screenwidth) - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var vis = d3.select("#vis");
-var chartWidth = width/7;
+var chartWidth = width/6; //change this depending on number of varables
 
 // sets scales
 var x = d3.scale.ordinal().rangePoints([0, width], 1),
@@ -31,11 +31,11 @@ var svg = d3.select("#vis").append("svg")
 var tooltip = d3.select("body").append("div") 
 		.attr("class", "tooltip2")
 
-d3.csv("data/segregacion-escuela-euskadi_simple2.csv", function(error, zonas) {
+d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 
   // Extract the list of dimensions and create a scale for each.
   x.domain(dimensions = d3.keys(zonas[0]).filter(function(d) {
-    return d != "zona" && (y[d] = d3.scale.linear()
+    return d != "zona" && d != "provincia" && d != "zona_id" && d != "total_alumnado" && (y[d] = d3.scale.linear() //removes from chart variables
         .domain(d3.extent(zonas, function(p) { return +p[d]; }))
         .range([height, 0]));
   }));
