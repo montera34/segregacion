@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.svg
+*.qgs
+*.prj
+*.qpj
+*.shp
+*.dbf
+*.cpg
+*.shx
