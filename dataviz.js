@@ -1,12 +1,12 @@
 //Prepare canvas size
-isMobile = innerWidth < 768;
+isMobile = innerWidth < 350;
 
 var screenwidth = d3.select("#vis").node().clientWidth;
 
 // set the dimensions and margins of the graph
 // Margin convention: https://bl.ocks.org/mbostock/3019563
 var margin = {top: 50, right: 10, bottom: 10, left:0},
-    width = (isMobile ? (screenwidth*2) : screenwidth) - margin.left - margin.right,
+    width = (isMobile ? (screenwidth*1.5) : screenwidth) - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var vis = d3.select("#vis");
