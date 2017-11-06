@@ -5,13 +5,12 @@ svg {
 
 .background path {
   fill: none;
-  stroke: #ddd;
+  stroke: #eee;
   shape-rendering: crispEdges;
 }
 
 .foreground path {
   fill: none;
-	stroke-width: 1.1px;
 }
 
 .brush .extent {
@@ -52,7 +51,7 @@ path:hover {
 }
 
 .test {
-	display:none;
+	display:none !important;
 }
 
 h1 {
@@ -108,7 +107,7 @@ p {
 	background-color:#666;
 }
 
-#Bizkaia,#Gipuzkoa,#Araba,#Media {
+#bizkaiamedia,#gipuzkoamedia,#arabamedia,#mediaponderada {
 	stroke-width: 4px;
 	stroke-dasharray: 6,6;
 }
@@ -127,8 +126,11 @@ p {
 	float:left;
 	margin-right:15px;
 }
-
-.Montaña-alavesa, .Basurto-Zorroza, .Igorre {
+#legend {
+	font-size:0.8em;
+}
+path.montañaalavesa, path.basurtozorroza, path.igorre {
+	display:none;
 }
 
 .vis-item {

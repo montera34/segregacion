@@ -31,11 +31,18 @@ var svg = d3.select("#vis").append("svg")
 var tooltip = d3.select("body").append("div") 
 		.attr("class", "tooltip2")
 
+//replaces spaces and .
+var replacement = function(d) { return d.replace(/\s+/g, '').replace(/\.+/g, '').replace(/\,+/g, '').replace(/[{()}]/g, '').replace(/\-+/g, '').toLowerCase();};
+
+//Legends
+var legend = d3.select("#legend");
+var zona = d3.select("#zona");
+
 d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 
   // Extract the list of dimensions and create a scale for each.
   x.domain(dimensions = d3.keys(zonas[0]).filter(function(d) {
-    return d != "zona" && d != "provincia" && d != "zona_id" && d != "total_alumnado" && (y[d] = d3.scale.linear() //removes from chart variables
+    return d != "zona" && d != "provincia" && d != "zona_id" && d != "total_alumnado" && d != "municipios_barrios" && (y[d] = d3.scale.linear() //removes from chart variables
         .domain(d3.extent(zonas, function(p) { return +p[d]; }))
         .range([height, 0]));
   }));
@@ -48,7 +55,8 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
     .enter().append("path")
       .attr("d", path)
       .attr("fill","none")
-    	.attr("class",function(d) { return d.zona;} );
+      .attr("stroke","#999")
+			.attr("class",function(d) { return replacement(d.zona);} );
 			
   // Add foreground lines for focus.
   foreground = svg.append("g")
@@ -57,10 +65,11 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
       .data(zonas)
     .enter().append("path")
       .attr("d", path)
-      .attr("class",function(d) { return d.zona + " "+ d.provincia;} ) // colorea líneas según color de provincia
+      .attr("class",function(d) { return replacement(d.zona) + " "+ d.provincia;} ) // colorea líneas según color de provincia
       .attr("stroke", function(d) { return d.provincia == "araba" ? "#f6ae01" : d.provincia == "gipuzkoa" ? "#4199cb" : d.provincia == "bizkaia" ? "#da5455" : "#666"; })
       .attr("fill","none")
-      .attr("id",function(d) { return d.zona;} ) // colorea líneas según color de provincia
+      .attr("stroke-width","1.1px")
+      .attr("id",function(d) { return replacement(d.zona);} ) // colorea líneas según color de provincia
       .on("mousemove", showTooltip) // AÑADIR EVENTO SHOW TOOLTIP
 			.on("mouseout", hideTooltip); // OCULTAR TOOLTIP
 
@@ -131,7 +140,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 	svg.append("text")
 		.attr("x", chartWidth)
 		.attr("y", -margin.top/2)
-		.text("% becas Material escolar")
+		.text("% becas material escolar")
 		.attr("class", "axistitle")
 		.style("text-anchor", "middle")
 		.attr("font-size", "14px")
@@ -195,17 +204,38 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 					"<tbody><tr><td>% Becas material escolar</td><td style='text-align:right'>" + d.perc_bec_mat_escolar_pub + "% </td><td style='text-align:right'>" + d.perc_bec_mat_escolar_priv + "% </td></tr>" +
 					"<tr><td>% Becas comedor</td><td style='text-align:right'>" + d.perc_bec_comedor_pub + "% </td><td style='text-align:right'>" + d.perc_bec_comedor_priv + "% </td></tr>" +
 					"<tr><td>% Extranjeros</td><td style='text-align:right'>" + d.perc_alum_ext_pub + "% </td><td style='text-align:right'>" + d.perc_alum_ext_priv + "% </td></tr></	tbody>" +
+					"<tr><td colspan='3'>Composición zona: " + d.municipios_barrios + "</td></tr></tbody>" +
 			"</table></div>")
 			.style("opacity", 1)
 
 		tooltip.style("left", (d3.event.pageX)+55 + "px")
-		tooltip.style("top", (d3.event.pageY)-155 + "px")
+		tooltip.style("top", (d3.event.pageY)-255 + "px")
 	}
 
 	function hideTooltip(d) {
 		// Hide tooltip
 		tooltip.style("opacity", 0)
 	}
+
+	// Selecciona zona (dropdown menu)
+	legend.selectAll('div')
+		.data(zonas)
+		.enter().append("li").append("a")
+		.attr("class", function(d) { return "inactive " + replacement(d.zona);})
+		.text(function(d) { return d.zona;})
+		.on('click',function(d) { //when click on name
+			legend.select('.btn-success').attr('class','inactive');
+			svg.selectAll('svg .foreground path').style("visibility","hidden").attr("stroke-width","1.1px");
+			svg.selectAll('svg .foreground path.'+ replacement(d.zona))
+				.style("opacity",1)
+				.style("visibility","visible").attr("stroke-width","5px"); //selecciona path que coincide con la zona seleccionada
+			d3.select(this).attr("class","btn-success"); //adds class success to button
+			if ( d.perc_alum_ext_priv == "") {
+				zona.select("p").html("<strong>"+d.zona+"</strong>. No hay centros privados en esta zona");
+			} else {
+				zona.select("p").html("<strong>"+d.zona+"</strong>"); //write in description
+			}
+		});
 });
 
 function position(d) {

@@ -130,19 +130,32 @@
 
 	<section class="vis-item" id="indicadores">
 		<header class="row vis-head">
-			<div class="col-md-9 col-md-offset-1">
+			<div class="col-md-9">
 				<h1>Comparativa de indicadores en redes escolares pública y privado concertada en Euskadi por zona escolar <a href="#indicadores">#</a></h1>
 			</div>
 		</header>
 		<div class="row vis-body">
-			<div class="col-md-9 col-md-offset-1">
+			<div class="col-md-9">
 				<p>Cada línea representa una zona escolar. La inclinación de la pendiente indica la diferencia entre los porcentajes en las redes pública y privado-concertada. Más inclinación indica más diferencia entre redes. Pasa el cursor para descubrir más información.</p>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-6">
 				<div class="legend">
 					<p><span class="square square_araba"></span>Araba</p>
 					<p><span class="square square_gipuzkoa"></span>Gipuzkoa</p>
 					<p><span class="square square_bizkaia"></span>Bizkaia</p>
 					<p><span class="square square_media"></span>Media (ponderada)</p>
 				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="dropdown"> 
+					<button class="btn btn-default dropdown-toggle btn-xs" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Selecciona zona escolar <span class="caret"></span></button>
+					<ul id="legend" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div id="zona"><p>Todas las zonas</p></div>
 			</div>
 			<div class="clearfix"></div>
 			<div class="col-md-12">

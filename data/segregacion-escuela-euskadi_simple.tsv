@@ -1,64 +1,64 @@
-zona	perc_bec_mat_escolar_pub	perc_bec_mat_escolar_priv	perc_bec_comedor_pub	perc_bec_comedor_priv	perc_alum_ext_pub	perc_alum_ext_priv	zona_id	total_alumnado	provincia
-Amurrio	48	35	33	14	8.3	4.3	111	1467	araba
-Llodio	38	35	26	15	7.5	5.1	112	1971	araba
-Vitoria-Oeste	44	43	25	7	11.3	1.8	121	7032	araba
-Vitoria-Norte	44	41	31	6	16.4	11.1	122	5002	araba
-Vitoria-Sureste	46	19	35	5	21.2	4.1	123	12489	araba
-Montaña-alavesa	52	0	28	0	11.5		124	156	araba
-Araba/Álava-occidental	45	29	31	15	7.6	6.4	125	752	araba
-Rioja-alavesa	64	36	35	20	26	0.6	131	1236	araba
-Llanada-oriental	47	46	20	12	13.5	7.3	141	774	araba
-Arrasate	28	15	14	3	11.5	3.6	211	4423	gipuzkoa
-Bergara	31	17	18	3	12.1	4.7	212	2053	gipuzkoa
-Eibar	40	32	29	7	11.5	2.7	221	2547	gipuzkoa
-Elgoibar	36	26	22	9	9.2	5.9	222	2394	gipuzkoa
-Alto-Oria	30	24	15	7	9.6	7.1	231	4694	gipuzkoa
-Alto-Urola	39	30	16	7	7.4	4.3	232	2524	gipuzkoa
-Urola-Medio	31	36	9	7	9.2	9.4	241	3266	gipuzkoa
-Kosta	37	25	18	6	5.7	2.4	242	4843	gipuzkoa
-Tolosa	38	29	26	9	6.2	5.2	251	5212	gipuzkoa
-Hernani	42	54	24	65	3.6	38	261	2226	gipuzkoa
-Lasartealdea	38	29	15	3	7.7	1.3	262	1862	gipuzkoa
-Andoain	57	36	53	9	21.5	1.9	263	1850	gipuzkoa
-Donostia–Margen-izquierda	32	17	27	8	6	3.4	271	11265	gipuzkoa
-Donostia–Margen-derecha	40	28	32	12	6.4	5.6	272	4506	gipuzkoa
-Donostia–Este	61	49	44	22	12.7	6.6	273	2856	gipuzkoa
-Renteria	53	43	40	18	8.5	2.2	281	6475	gipuzkoa
-Bidasoa	45	40	34	15	9.1	4.1	291	7350	gipuzkoa
-Bermeo	40	43	31	30	7.8	7.1	311	1772	bizkaia
-Urdaibai	29	32	22	22	5.6	12.9	312	2412	bizkaia
-Lea-Artibai	35	31	18	20	5.5	9.3	321	2415	bizkaia
-Amorebieta	39	20	30	9	10.5	1.7	331	2724	bizkaia
-Durango	41	26	22	12	7.4	4.3	332	6052	bizkaia
-Ermua	54	50	20	15	7.2	6	333	1313	bizkaia
-Igorre	32	28	21	0	6.2		341	1184	bizkaia
-Galdakao	41	20	30	10	4.1	0.6	342	2169	bizkaia
-Arrigorriaga	39	42	24	21	3.2	4.1	351	1626	bizkaia
-Basauri	51	45	33	16	5.1	1.8	352	3911	bizkaia
-Encartaciones	52	43	37	15	8.7	3.2	361	3064	bizkaia
-Trapaga	70	46	45	16	4.4	0.7	371	1880	bizkaia
-Abanto	50	34	30	18	2.2	3.5	372	2019	bizkaia
-Txorierri	40	9	26	5	4.4	1.3	381	7831	bizkaia
-Mungia	39	24	29	14	4.7	2.8	382	2317	bizkaia
-Uribe-Kosta	38	16	34	9	3	2.2	393	10575	bizkaia
-Erandio	38	21	27	15	7.5	5	394	2330	bizkaia
-Barakaldo	45	56	45	13	10.2	7.6	411	1612	bizkaia
-Cruces	50	49	39	12	7.2	4.3	412	5097	bizkaia
-Sestao	72	38	48	18	8.2	6	421	3174	bizkaia
-Portugalete	63	59	42	28	6.4	2.4	422	2042	bizkaia
-Santurtzi	53	30	37	14	5.5	4.1	423	4577	bizkaia
-Leioa-Getxo	53	41	39	14	10	2.4	391	3567	bizkaia
-Deusto	35	27	36	13	5.6	4.4	1	3719	bizkaia
-Uribarri	59	35	45	23	13.2	4.1	2	4156	bizkaia
-Txurdinaga-Otxarkoaga	64	27	61	23	8.4	2.3	3	3629	bizkaia
-Begoña	65	53	46	27	5.6	4.4	4	2517	bizkaia
-Ibaiondo	53	42	46	25	8.2	11.6	5	4530	bizkaia
-Abando	39	21	38	9	19.7	3.3	6	6054	bizkaia
-Rekalde	65	70	59	35	17	20.4	7	1744	bizkaia
-Basurto-Zorroza	72	0	55	0	10.1		8	829	bizkaia
-test	0	0	0	0	0	0	0	30879	
-test	72	72	72	72	38	0	0	70346	
-Araba	45.5	30.7	30.9	7.7	16.3	4.8	100	30879	araba
-Gipuzkoa	39	29.5	26.2	11.4	8.5	5.4	200	70346	gipuzkoa
-Bizkaia	47	31.5	35.6	15	8.1	4.3	300	102841	bizkaia
-Media	44	30.7	31.7	12.6	9.5	4.7	-		media
+zona	perc_bec_mat_escolar_pub	perc_bec_mat_escolar_priv	perc_bec_comedor_pub	perc_bec_comedor_priv	perc_alum_ext_pub	perc_alum_ext_priv	zona_id	total_alumnado	provincia	municipios_barrios
+Amurrio	48	35	33	14	8.3	4.3	111	1467	araba	Aiara, Amurrio, Artziniega, Okondo, Orduña
+Llodio	38	35	26	15	7.5	5.1	112	1971	araba	Llodio, Orozko
+Vitoria Oeste	44	43	25	7	11.3	1.8	121	7032	araba	Gasteizk, Zigoitia, Zuia
+Vitoria Norte	44	41	31	6	16.4	11.1	122	5002	araba	Arrazua, Gasteiz
+Vitoria Sureste	46	19	35	5	21.2	4.1	123	12489	araba	Alegria-Dulantzi, Gasteiz, Legutiano, Urkabustaiz
+Montaña alavesa	52	0	28	0	11.5		124	156	araba	Arraia-Maeztu, Kanpezu
+Araba/Álava occidental	45	29	31	15	7.6	6.4	125	752	araba	Erribera Beitia, Iruña Oka, Valdegovia
+Rioja alavesa	64	36	35	20	26	0.6	131	1236	araba	Elciego, Labastida, Laguardia, Lantziego, Lapuebla, Mañueta, Oion
+Llanada oriental	47	46	20	12	13.5	7.3	141	774	araba	Agurain, Asparrena
+Arrasate	28	15	14	3	11.5	3.6	211	4423	gipuzkoa	Aramaio, Aretxabaleta, Arrasate, Eskoriatza, Oñate
+Bergara	31	17	18	3	12.1	4.7	212	2053	gipuzkoa	Antzuola, Bergara, Elgeta, Soraluze
+Eibar	40	32	29	7	11.5	2.7	221	2547	gipuzkoa	Eibar
+Elgoibar	36	26	22	9	9.2	5.9	222	2394	gipuzkoa	Deba, Elgoibar, Mendaro, Mutriku
+Alto-Oria	30	24	15	7	9.6	7.1	231	4694	gipuzkoa	Ataun, Beasain, Gabiria, Idiazabal, Itsasondo, Lazkao, Legorreta, Olaberria, Ordizia, Ormaiztegi, Segura, Zaldibia, Zegama, Zerain
+Alto-Urola	39	30	16	7	7.4	4.3	232	2524	gipuzkoa	Legazpi, Urretxu, Zumarraga
+Urola-Medio	31	36	9	7	9.2	9.4	241	3266	gipuzkoa	Azkoitia, Azpeitia, Errezil, Zestoa
+Kosta	37	25	18	6	5.7	2.4	242	4843	gipuzkoa	Aia, Aizarnazabal, Getaria, Orio, Zarautz, Zestoa, Zumaia
+Tolosa	38	29	26	9	6.2	5.2	251	5212	gipuzkoa	Abaltzisketa, Aduna, Albiztur, Alegia, Alkiza, Altzo, Amezketa, Anoeta, Asteasu, Berastegi, Berrobi, Bidegoyan, Ibarra, Ikaztegieta, Irura, Lizartza, Tolosa, Villabona, Zizurkil
+Hernani	42	54	24	65	3.6	38	261	2226	gipuzkoa	Hernani, Urnieta
+Lasartealdea	38	29	15	3	7.7	1.3	262	1862	gipuzkoa	Lasarte-Oria, Usurbil
+Andoain	57	36	53	9	21.5	1.9	263	1850	gipuzkoa	Andoain, Urnieta
+Donostia Margen izquierda	32	17	27	8	6	3.4	271	11265	gipuzkoa	Donostia
+Donostia Margen derecha	40	28	32	12	6.4	5.6	272	4506	gipuzkoa	Donostia
+Donostia Este	61	49	44	22	12.7	6.6	273	2856	gipuzkoa	Donostia, Pasaia
+Renteria	53	43	40	18	8.5	2.2	281	6475	gipuzkoa	Errenteria, Lezo, Oiartzun
+Bidasoa	45	40	34	15	9.1	4.1	291	7350	gipuzkoa	Hondarribia, Irun
+Bermeo	40	43	31	30	7.8	7.1	311	1772	bizkaia	Bermeo, Mundaka
+Urdaibai	29	32	22	22	5.6	12.9	312	2412	bizkaia	Arratzu, Busturia, Gautegiz, Gernika, Muxika
+Lea-Artibai	35	31	18	20	5.5	9.3	321	2415	bizkaia	Amoroto, Aulesti, Berriatua, Etxebarria, Ispaster, Lekeitio, Markina, Munitibar, Ondarroa
+Amorebieta	39	20	30	9	10.5	1.7	331	2724	bizkaia	Amorebieta
+Durango	41	26	22	12	7.4	4.3	332	6052	bizkaia	Abadiño, Atxondo, Berriz, Durango, Elorrio, Iurreta, Mallabia, Otxandio, Zaldibar
+Ermua	54	50	20	15	7.2	6	333	1313	bizkaia	Ermua
+Igorre	32	28	21	0	6.2		341	1184	bizkaia	Areatza, Artea, Dima, Igorre, Lemoa, Zeanuri, Zeberio
+Galdakao	41	20	30	10	4.1	0.6	342	2169	bizkaia	Galdakao
+Arrigorriaga	39	42	24	21	3.2	4.1	351	1626	bizkaia	Arrankudiaga, Arrigorriaga, Orduña, Ugao, Zaratamo
+Basauri	51	45	33	16	5.1	1.8	352	3911	bizkaia	Basaur, Etxebarri
+Encartaciones	52	43	37	15	8.7	3.2	361	3064	bizkaia	Alonsotegi, Artzentales, Balmaseda, Gordexola, Güeñes, Karrantza, Sopuerta, Trucios, Zalla
+Trapaga	70	46	45	16	4.4	0.7	371	1880	bizkaia	Ortuella, Valle de Trapaga,
+Abanto	50	34	30	18	2.2	3.5	372	2019	bizkaia	Abanto y Ciérvena, Muskiz
+Txorierri	40	9	26	5	4.4	1.3	381	7831	bizkaia	Derio, Larrabetzu, Lezama, Loiu, Sondika, Zamudio
+Mungia	39	24	29	14	4.7	2.8	382	2317	bizkaia	Bakio, Gatika, Laukiz, Mungia
+Uribe-Kosta	38	16	34	9	3	2.2	393	10575	bizkaia	
+Erandio	38	21	27	15	7.5	5	394	2330	bizkaia	Erandio
+Barakaldo	45	56	45	13	10.2	7.6	411	1612	bizkaia	Barakaldo
+Cruces	50	49	39	12	7.2	4.3	412	5097	bizkaia	Barakaldo
+Sestao	72	38	48	18	8.2	6	421	3174	bizkaia	Sestao
+Portugalete	63	59	42	28	6.4	2.4	422	2042	bizkaia	Portugalete
+Santurtzi	53	30	37	14	5.5	4.1	423	4577	bizkaia	Santurtzi
+Leioa-Getxo	53	41	39	14	10	2.4	391-392	3567	bizkaia	Leioa, Getxo, Berango, Getxo, Leioa
+Deusto	35	27	36	13	5.6	4.4	1	3719	bizkaia	Bilbao
+Uribarri	59	35	45	23	13.2	4.1	2	4156	bizkaia	Bilbao
+Txurdinaga-Otxarkoaga	64	27	61	23	8.4	2.3	3	3629	bizkaia	Bilbao
+Begoña	65	53	46	27	5.6	4.4	4	2517	bizkaia	Bilbao
+Ibaiondo	53	42	46	25	8.2	11.6	5	4530	bizkaia	Bilbao
+Abando	39	21	38	9	19.7	3.3	6	6054	bizkaia	Bilbao
+Rekalde	65	70	59	35	17	20.4	7	1744	bizkaia	Bilbao
+Basurto-Zorroza	72	0	55	0	10.1		8	829	bizkaia	Bilbao
+test	0	0	0	0	0	0	0	30879		
+test	72	72	72	72	38	38	0	70346		
+Araba (media)	45.5	30.7	30.9	7.7	16.3	4.8	100	30879	araba	
+Gipuzkoa (media)	39	29.5	26.2	11.4	8.5	5.4	200	70346	gipuzkoa	
+Bizkaia (media)	47	31.5	35.6	15	8.1	4.3	300	102841	bizkaia	
+Media ponderada	44	30.7	31.7	12.6	9.5	4.7	-		media	
