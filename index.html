@@ -62,6 +62,7 @@
 			<ul class="nav navbar-nav nabvar-left">
 				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visualizaciones <span class="caret"></span></a>
 					<ul class="dropdown-menu">
+						<li><a href="#repartoredes">Reparto redes educativas</a></li>
 						<li><a href="#indicadores">Comparativa indicadores</a></li>
 						<li><a href="#materialescolar">Becas material escolar</a></li>
 						<li><a href="#comedor">Becas comedor</a></li>
@@ -98,42 +99,43 @@
 <main class="container">
 	<section class="vis-item" id="info">
 		<header class="row vis-head">
-			<div class="col-md-12">
+			<div class="col-md-7 col-md-offset-2 ">
 				<h1>Análisis de cohesión e igualdad en sistema educativo en Euskadi</h1>
 			</div>
 		</header>
 		<div class="row vis-body">
 			<div class="col-md-7 col-md-offset-2">
-				<h2>Estas visualizaciones</h2>
-				<p>Montera34 analiza mediante los siguientes gráficos y mapas la segregación educativa en Euskadi en las redes pública y privada. Estas visualizaciones serán usadas por la Iniciativa legislativa popular para mejorar la cohesión en el sistema educativo.</p>
-				<figure>
-					<a href="cartograms"><img class="img-responsive" src="images/segregacion-redes-educativas-euskadi-barras.png" /></a>
-					<figcaption>Porcentaje de alumnado extranjero en la Educación Básica (Ed. Primaria y ESO) según las redes educativas. Curso 2014-15.</figcaption>
-				</figure>
-<iframe id="datawrapper-chart-uAF1G" src="https://datawrapper.dwcdn.net/uAF1G/3/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" style="width: 0; min-width: 100% !important;" height="418"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["uAF1G"]={},window.datawrapper["uAF1G"].embedDeltas={"100":530,"200":474,"300":446,"400":446,"500":418,"600":418,"700":418,"800":418,"900":418,"1000":418},window.datawrapper["uAF1G"].iframe=document.getElementById("datawrapper-chart-uAF1G"),window.datawrapper["uAF1G"].iframe.style.height=window.datawrapper["uAF1G"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["uAF1G"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("uAF1G"==b)window.datawrapper["uAF1G"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
-				<h2>Los datos</h2>
-				<p>Para estudiar la desigualdad entre las redes pública y privado-concertada de centros educativos en Euskadi hemos partido de los datos contenidos en el informe <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937">La educación Euskadi 2013-2015</a> del Consejo Escolar de Euskadi. Hemos tomado los indicadores por zonas escolares de alumnado extranjero, alumnado becario de material escolar y de comedor para que nos ayuden a entender las diferencias entre las redes.</p> 
-				<p>Para utilizar los datos hemos tenido que pasar a formato reutilizable las tablas contenidas en PDF. Para construir los mapas hemos tenido que crear los contornos de las zonas escolares, que no estaban disponibles en ninguna de las bases de datos abiertas en Euskadi. Estos </p>
-				<p>De este modo este pequeño informe cumple una doble función: analizar los datos de desigualdad y liberlarlos para que otras personas puedan usarlos. Los datos limpios, liberados <a href="https://github.com/montera34/segregacion/tree/master/data">pueden descargarse de este respositorio</a>.</p>
 				<h2>Iniciativa legislativa popular</h2>
 				<h3>ILP PARA MEJORAR LA COHESIÓN Y LA IGUALDAD EN EL SISTEMA EDUCATIVO</h3>
 				<p>En Euskadi hay una de las mayores redes educativas privado-concertadas de toda Europa, con una cuota del 50% del alumnado. Sin embargo, esta realidad no revela suficientemente qué tipo de alumnado atiende cada una de las redes.</p>
 				<p><a href="https://www.ilpeskolainklusiboa.eus/es/">Campaña de recogida de 10.000 firmas</a> para hacer posible que llegue al parlamento.</p>
 				<h3>EUSKAL HEZKUNTZA SISTEMAN KOHESIOA ETA BERDINTASUNA HOBETZEKO HLE</h3>
 				<p>Euskadin Europako sare pribatu-itunpeko hedatuenetariko bat daukagu, ikasleriaren %50ari arreta emanez. Halere, egoera honek ez du ondoegi adierazten zer ezberdintasunak dauden sare bakoitzeko ikasleen artean.</p>
-				<p><a href="https://www.ilpeskolainklusiboa.eus/">10.000 sinadura biltzeko kanpaina</a>.</p>
+				<p><a href="https://www.ilpeskolainklusiboa.eus/">10.000 sinadura biltzeko kanpaina</a> legebiltzarrean eztabaidatu dezaten.</p>
+				<h2>Estas visualizaciones</h2>
+				<p>Montera34 analiza mediante los siguientes gráficos y mapas la segregación educativa en Euskadi en las redes pública y privada. Estas visualizaciones serán usadas por la Iniciativa legislativa popular para mejorar la cohesión en el sistema educativo.</p>
+				<h2 id="repartoredes">Reparto alumnado extranjero por redes educativas <a href="#repartoredes">#</a></h2>
+				<figure>
+					<a href="images/segregacion-redes-educativas-euskadi-barras.png"><img class="img-responsive" src="images/segregacion-redes-educativas-euskadi-barras.png" /></a>
+					<figcaption>Porcentaje de alumnado extranjero en la Educación Básica (Ed. Primaria y ESO) según las redes educativas. Curso 2014-15.</figcaption>
+				</figure>
+<iframe id="datawrapper-chart-uAF1G" src="https://datawrapper.dwcdn.net/uAF1G/3/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" style="width: 0; min-width: 100% !important;" height="418"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["uAF1G"]={},window.datawrapper["uAF1G"].embedDeltas={"100":530,"200":474,"300":446,"400":446,"500":418,"600":418,"700":418,"800":418,"900":418,"1000":418},window.datawrapper["uAF1G"].iframe=document.getElementById("datawrapper-chart-uAF1G"),window.datawrapper["uAF1G"].iframe.style.height=window.datawrapper["uAF1G"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["uAF1G"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("uAF1G"==b)window.datawrapper["uAF1G"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
+				<h2>Los datos</h2>
+				<p>Para estudiar la desigualdad entre las redes pública y privado-concertada de centros educativos en Euskadi hemos partido de los datos contenidos en el informe <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937">La educación Euskadi 2013-2015</a> del Consejo Escolar de Euskadi. Hemos tomado los indicadores por zonas escolares de alumnado extranjero, alumnado becario de material escolar y de comedor para que nos ayuden a entender las diferencias entre las redes.</p> 
+				<p>Para utilizar los datos hemos tenido que pasar a formato reutilizable las tablas contenidas en PDF. Para construir los mapas hemos tenido que crear los contornos de las zonas escolares, que no estaban disponibles en ninguna de las bases de datos abiertas en Euskadi.</p>
+				<p>De este modo este pequeño informe cumple una doble función: analizar los datos de desigualdad y liberlarlos para que otras personas puedan usarlos. Los datos limpios, liberados <a href="https://github.com/montera34/segregacion/tree/master/data">pueden descargarse de este respositorio</a>.</p>
 				</div>
 		</div>
 	</section>
 
 	<section class="vis-item" id="indicadores">
 		<header class="row vis-head">
-			<div class="col-md-9">
-				<h1>Comparativa de indicadores en redes escolares pública y privado concertada en Euskadi por zona escolar</h1>
+			<div class="col-md-9 col-md-offset-1">
+				<h1>Comparativa de indicadores en redes escolares pública y privado concertada en Euskadi por zona escolar <a href="#indicadores">#</a></h1>
 			</div>
 		</header>
 		<div class="row vis-body">
-			<div class="col-md-9">
+			<div class="col-md-9 col-md-offset-1">
 				<p>Cada línea representa una zona escolar. La inclinación de la pendiente indica la diferencia entre los porcentajes en las redes pública y privado-concertada. Más inclinación indica más diferencia entre redes. Pasa el cursor para descubrir más información.</p>
 				<div class="legend">
 					<p><span class="square square_araba"></span>Araba</p>
@@ -147,7 +149,7 @@
 				<div id="vis"></div>
 			</div>
 			<div class="clearfix"></div>
-			<div class="col-md-9">
+			<div class="col-md-9 col-md-offset-1">
 				<p>Datos del curso 2014-2015. Los datos de alumnado becado son para todas las etapas. El de número de alumnado extranjero para Educación básica (educación primaria y ESO). Las zonas escolares de Montaña alavesa, Igorre y Basurto-Zorroza no aparecen representadas al no tener oferta privada.</p>
 				<p>Fuente de los datos: <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937">La educación Euskadi 2013-2015</a>. Consejo Escolar de Euskadi. Departamento de educación. Gobierno Vasco. Vitoria-Gasteiz, 2016.</p>
 			</div>
@@ -156,23 +158,23 @@
 
 	<section class="vis-item" id="otras">
 		<header class="row vis-head">
-			<div class="col-md-12">
+			<div class="col-md-7 col-md-offset-2">
 				<h1>Indicadores por separado</h1>
 			</div>
 		</header>
 		<div class="row vis-body">
-			<div class="col-md-9">
-				<h2 id="comedor">Alumnado extranjero</h2>
+			<div class="col-md-9 col-md-offset-1">
+				<h2 id="extranjero">Alumnado extranjero <a href="#extranjero">#</a></h2>
 				<p><a href="cartograms">Hemos dedicado una sección al alumnado extranjero</a>.</p>
 				<figure><a href="cartograms"><img class="img-responsive" src="images/segregacion-extranjeros-red-pub-priv-euskadi_puntos.png" /></a></figure>
 				<figure><a href="cartograms"><img class="img-responsive" src="images/cartograma-segregacion-ered-publica-privada-xtranjeros-euskadi.png" /></a></figure>
 			</div>
 			<div class="clearfix"></div>
 			<div class="col-md-12">
-				<h2 id="materialescolar">Comparativa becas de material escolar</h2>
+				<h2 id="materialescolar">Comparativa becas de material escolar <a href="#materialescolar">#</a></h2>
 				<iframe width="100%" height="820" frameborder="0" src="https://numeroteca.carto.com/builder/2389a047-c81e-4a9e-adec-7df4367a7982/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 				<p><a href="https://numeroteca.carto.com/builder/2389a047-c81e-4a9e-adec-7df4367a7982/embed">Ver mapa a pantalla completa.</a></p>
-				<h2 id="comedor">Comparativa becas comedor</h2>
+				<h2 id="comedor">Comparativa becas comedor <a href="#comedor">#</a</h2>
 				<iframe width="100%" height="820" frameborder="0" src="https://numeroteca.carto.com/builder/593cfa1c-2b9b-4cf1-b3fb-b4199684533f/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 				<p><a href="https://numeroteca.carto.com/builder/593cfa1c-2b9b-4cf1-b3fb-b4199684533f/embed">Ver mapa a pantalla completa.</a></p>
 			</div>
