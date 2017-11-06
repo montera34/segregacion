@@ -12,8 +12,10 @@ var margin = {top: 10, right: 10, bottom: 10, left:0},
 //  .translate([width / 2, height / 2])
 
 // Rectangle size
+//must calculate manually the relationship of the squares of this values to match the min and max value ofthe domains
+// first value is the minimum size of square side, and the second the maximun size of square side
 var rectSize = d3.scaleSqrt()
-    .range([1, 85]) //must calculate manually the relationship of the squares of this values to match the min and max value ofthe domains
+    .range([3, 109])
 
 // Font size scale
 var fontSize = d3.scaleLinear()
@@ -21,10 +23,10 @@ var fontSize = d3.scaleLinear()
 
 // Party
 var colorPub = d3.scaleLinear()
-    .domain([1, 15]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .domain([1, 11.1]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
     .range(['#fff','#337F7F'])
 var colorPriv = d3.scaleLinear()
-    .domain([1, 15]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .domain([1, 11.1]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
     .range(['#fff','#f5b022'])
 
 var svg = d3.select("#vis").append("svg")
@@ -37,11 +39,10 @@ var tooltip = d3.select("body")
     .append("div")
     .attr("class", "tooltip")
 
-d3.json("../data/output/limites-zonas-escolares-euskadi-con-variables-2014-15_simplify2.json", function(err, data) {
+d3.json("limites-zonas-escolares-euskadi-con-variables-2014-15_simplify2.json", function(err, data) {
 
 // move projection inside json to be able to get data
-var projection = d3.geoMercator()
-    .fitSize([width, height], topojson.feature(data, data.objects.	barrios));
+var projection = d3.geoMercator().fitSize([width, height], topojson.feature(data, data.objects.barrios));
 
 var path = d3.geoPath()
     .projection(projection);
@@ -57,7 +58,7 @@ var path = d3.geoPath()
         d.pos = projection(d3.geoCentroid(d))
         d.x = d.pos[0]
         d.y = d.pos[1]
-        d.area = rectSize(d.properties.alum_ext_total) / .7 // Select how to scale the squares. Try and decide
+        d.area = rectSize(d.properties.alum_ext_total) / .9 // Select how to scale the squares. Try and decide
       // d.area = rectSize(d.properties.habitantes2015) / 2 // How we scale
     })
 
@@ -71,7 +72,7 @@ var path = d3.geoPath()
         .force("collide", collide)
 
     // 4. Number of simulations
-    for (var i = 0; i < 120; ++i) simulation.tick()
+    for (var i = 0; i < 200; ++i) simulation.tick()
 
     // 5. Paint the cartogram
     var rect = svg.selectAll("g")
@@ -91,8 +92,10 @@ var path = d3.geoPath()
               .attr("x", -d.area / 2)
               .attr("y", -d.area / 2)
               .attr("fill", function(d) {
-		            if  ( d.properties.indice_desigualdad == null || d.properties.indice_desigualdad == 44 )  {
-									 return "#337F7F";
+		            if  ( d.properties.indice_desigualdad == null)  {
+									return "#b76e79";
+								} else if  ( d.properties.indice_desigualdad == 44 )  {
+									return "#337F7F";
 						    } else if ( d.properties.indice_desigualdad > 1 ) {
 									return colorPub(d.properties.indice_desigualdad)
 								} else {
@@ -101,8 +104,8 @@ var path = d3.geoPath()
 							})
               //color(d.properties.indice_desigualdad)
               .attr("stroke", "#ccc")
-              .attr("stroke-width", 1)
-              .attr("rx", 1)
+              .attr("stroke-width", 0.5)
+              .attr("rx", 0.5)
           })
 
     rect.append("text")
@@ -118,10 +121,11 @@ var path = d3.geoPath()
 
       function showTooltip(d) {
           // Fill the tooltip
-          var desigualdad = (d.properties.indice_desigualdad == null ) ? "∞ [infinito, al no haber alumnado en red privada] " : d.properties.indice_desigualdad;
-					
-					if  ( desigualdad == "∞ [infinito, al no haber alumnado en red privada] " )  {  
-						desigualdad = "∞ [infinito, al no haber alumnado en red privada] ";
+          var desigualdad = (d.properties.indice_desigualdad == null ) ? "--" : d.properties.indice_desigualdad;
+
+					if  ( desigualdad == "--" ) {
+						desigualdad = "--";
+						cociente = "valor nulo al no haber centros privados concertados";
 					} else if ( desigualdad > 1 ) {
 						desigualdad = d.properties.indice_desigualdad;
 						cociente = "% pública / % privada";
@@ -130,7 +134,7 @@ var path = d3.geoPath()
 						cociente = "% privada / % pública";
 					}
         
-          var privado = (d.properties.perc_alum_ext_priv == null ) ? 0 : d.properties.perc_alum_ext_priv;
+          var privado = (d.properties.perc_alum_ext_priv == null ) ? "-- " : d.properties.perc_alum_ext_priv;
 
           tooltip.html("<div class='table-responsive'><strong>" + d.properties.zona + "</strong> (zona escolar " + d.properties.zona_id2 + ")</div>" +
             "<table class='table table-condensed table-striped'>" +
