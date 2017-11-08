@@ -1,12 +1,13 @@
 //Prepare canvas size
-isMobile = innerWidth < 350;
+isSmall = innerWidth < 350;
+isMobile = innerWidth < 758;
 
 var screenwidth = d3.select("#vis").node().clientWidth;
 
 // set the dimensions and margins of the graph
 // Margin convention: https://bl.ocks.org/mbostock/3019563
 var margin = {top: 50, right: 10, bottom: 10, left:0},
-    width = (isMobile ? (screenwidth*1.5) : screenwidth) - margin.left - margin.right,
+    width = (isSmall ? (screenwidth*1.5) : screenwidth) - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var vis = d3.select("#vis");
@@ -127,6 +128,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
       .text(function(d) { return d; });
 
   // Add and store a brush for each axis.
+  if ( !isMobile ) { // makes brush only work for non mobile devices
   g.append("g")
       .attr("class", "brush")
       .each(function(d) {
@@ -135,6 +137,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
     .selectAll("rect")
       .attr("x", -8)
       .attr("width", 16);
+	}
 
   // rótulos secciones
 	svg.append("text")
