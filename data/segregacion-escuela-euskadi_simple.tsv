@@ -4,7 +4,7 @@ Llodio	38	35	26	15	7.5	5.1	112	1971	araba	Llodio, Orozko
 Vitoria Oeste	44	43	25	7	11.3	1.8	121	7032	araba	Gasteizk, Zigoitia, Zuia
 Vitoria Norte	44	41	31	6	16.4	11.1	122	5002	araba	Arrazua, Gasteiz
 Vitoria Sureste	46	19	35	5	21.2	4.1	123	12489	araba	Alegria-Dulantzi, Gasteiz, Legutiano, Urkabustaiz
-Montaña alavesa	52	0	28	0	11.5		124	156	araba	Arraia-Maeztu, Kanpezu
+Montaña alavesa	52		28	0	11.5		124	156	araba	Arraia-Maeztu, Kanpezu
 Araba/Álava occidental	45	29	31	15	7.6	6.4	125	752	araba	Erribera Beitia, Iruña Oka, Valdegovia
 Rioja alavesa	64	36	35	20	26	0.6	131	1236	araba	Elciego, Labastida, Laguardia, Lantziego, Lapuebla, Mañueta, Oion
 Llanada oriental	47	46	20	12	13.5	7.3	141	774	araba	Agurain, Asparrena
@@ -31,7 +31,7 @@ Lea-Artibai	35	31	18	20	5.5	9.3	321	2415	bizkaia	Amoroto, Aulesti, Berriatua, Et
 Amorebieta	39	20	30	9	10.5	1.7	331	2724	bizkaia	Amorebieta
 Durango	41	26	22	12	7.4	4.3	332	6052	bizkaia	Abadiño, Atxondo, Berriz, Durango, Elorrio, Iurreta, Mallabia, Otxandio, Zaldibar
 Ermua	54	50	20	15	7.2	6	333	1313	bizkaia	Ermua
-Igorre	32	28	21	0	6.2		341	1184	bizkaia	Areatza, Artea, Dima, Igorre, Lemoa, Zeanuri, Zeberio
+Igorre	32		21		6.2		341	1184	bizkaia	Areatza, Artea, Dima, Igorre, Lemoa, Zeanuri, Zeberio
 Galdakao	41	20	30	10	4.1	0.6	342	2169	bizkaia	Galdakao
 Arrigorriaga	39	42	24	21	3.2	4.1	351	1626	bizkaia	Arrankudiaga, Arrigorriaga, Orduña, Ugao, Zaratamo
 Basauri	51	45	33	16	5.1	1.8	352	3911	bizkaia	Basaur, Etxebarri
@@ -55,7 +55,7 @@ Begoña	65	53	46	27	5.6	4.4	4	2517	bizkaia	Bilbao
 Ibaiondo	53	42	46	25	8.2	11.6	5	4530	bizkaia	Bilbao
 Abando	39	21	38	9	19.7	3.3	6	6054	bizkaia	Bilbao
 Rekalde	65	70	59	35	17	20.4	7	1744	bizkaia	Bilbao
-Basurto-Zorroza	72	0	55	0	10.1		8	829	bizkaia	Bilbao
+Basurto-Zorroza	72		55	0	10.1		8	829	bizkaia	Bilbao
 test	0	0	0	0	0	0	0	30879		
 test	72	72	72	72	38	38	0	70346		
 Araba (media)	45.5	30.7	30.9	7.7	16.3	4.8	100	30879	araba	
