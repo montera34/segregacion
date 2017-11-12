@@ -40,6 +40,7 @@ svg {
 path:hover {
   stroke: #000 !important;
   stroke-width:4px;
+  cursor: pointer;
 }
 
 .tooltip2 {
@@ -47,7 +48,8 @@ path:hover {
   font-size: 14px;
   padding: 10px;
   border: 1px solid #ccc;
-  background-color:rgba(255, 255, 255, 0.95)
+  background-color:rgba(255, 255, 255, 0.95);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .test {
@@ -252,4 +254,8 @@ figcaption {
 }
 .top-segregacion {
 	background-image: url(images/top-segregacion-escolar-euskadi.png);
+}
+
+.perc_bec_mat_escolar_pubx, .perc_bec_mat_escolar_privx, .perc_bec_comedor_pubx, .perc_bec_comedor_privx, .perc_alum_ext_pubx, .perc_alum_ext_privx, .total_alumnadox {
+	text-align:right;
 }
