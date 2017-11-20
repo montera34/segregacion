@@ -135,8 +135,7 @@ p {
   max-height: 350px;
   overflow-y: auto;
 }
-}
-path.montañaalavesa, path.basurtozorroza, path.igorre {
+path.basurtozorroza, path.igorre, path.montañaalavesa  {
 	display:none;
 }
 
