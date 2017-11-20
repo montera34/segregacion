@@ -132,6 +132,9 @@ p {
 }
 #legend {
 	font-size:0.8em;
+  max-height: 350px;
+  overflow-y: auto;
+}
 }
 path.montañaalavesa, path.basurtozorroza, path.igorre {
 	display:none;
@@ -264,4 +267,7 @@ figcaption {
 }
 .perc_bec_mat_escolar_pubx, .perc_bec_mat_escolar_privx, .perc_bec_comedor_pubx, .perc_bec_comedor_privx, .perc_alum_ext_pubx, .perc_alum_ext_privx, .total_alumnadox {
 	text-align:right;
+}
+#dropdownMenu1 {
+background-color:#FF0;
 }
