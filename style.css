@@ -71,12 +71,14 @@ h4 {
   font-size: 1.1em !important;
 }
 
-
 p {
   font-size: 1em;
 }
 .perc_bec_mat_escolar_pub, .perc_bec_comedor_pub, .perc_alum_ext_pub {
   display:none;	
+}
+.alum_ext_pub, .alum_ext_kristau_eskola, .alum_ext_partaide, .alum_ext_otros_priv {
+  display:none;
 }
 .square {
 	width:40px;
@@ -114,7 +116,7 @@ p {
 	stroke-dasharray: 6,6;
 }
 
-.axis_title  {
+#indicadores .axis_title  {
 	display:none;
 }
 
@@ -247,15 +249,19 @@ figcaption {
 }
 #top {
 	background-size: cover;
-	height: 700px;
+	height: 400px;
 	display: table;
-	color: #fff;
 	margin-bottom: 0;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 .top-segregacion {
 	background-image: url(images/top-segregacion-escolar-euskadi.png);
 }
-
+.top-segregacion p.desc, .top-segregacion h1 {
+	color:#000;
+	text-shadow: 0px 0px 3px #FFF;
+	background-color: rgb(255,255,255,0.85);
+}
 .perc_bec_mat_escolar_pubx, .perc_bec_mat_escolar_privx, .perc_bec_comedor_pubx, .perc_bec_comedor_privx, .perc_alum_ext_pubx, .perc_alum_ext_privx, .total_alumnadox {
 	text-align:right;
 }
