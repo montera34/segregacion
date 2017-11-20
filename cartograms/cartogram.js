@@ -15,29 +15,82 @@ var margin = {top: 10, right: 10, bottom: 10, left:0},
 //must calculate manually the relationship of the squares of this values to match the min and max value ofthe domains
 // first value is the minimum size of square side, and the second the maximun size of square side
 var rectSize = d3.scaleSqrt()
-    .range([3, 109])
+    .range([5, 44])
 
 // Font size scale
 var fontSize = d3.scaleLinear()
     .range([2,72.94])
 
-// Party
+// Color
 var colorPub = d3.scaleLinear()
-    .domain([1, 11.1]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .domain([1, 25]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
     .range(['#fff','#337F7F'])
 var colorPriv = d3.scaleLinear()
-    .domain([1, 11.1]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .domain([1, 25]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
     .range(['#fff','#f5b022'])
 
-var svg = d3.select("#vis").append("svg")
+// Adds cartogram svg
+var svg = d3.select("#cartogram").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate("+ margin.left +"," + margin.top + ")");
 
+// Adds tooltip
 var tooltip = d3.select("body")
     .append("div")
     .attr("class", "tooltip")
+
+//Append a definition element to your SVG
+var defs = svg.append("defs");
+
+//Append a linearGradient element to the defs and give it a unique id
+var linearGradient = defs.append("linearGradient")
+    .attr("id", "linear-gradient")
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "100%")
+    .attr("y2", "0%");
+var linearGradient2 = defs.append("linearGradient")
+    .attr("id", "linear-gradient2")
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "100%")
+    .attr("y2", "0%");
+
+//Set the color for the start (0%)
+linearGradient.append("stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#fff"); //light blue
+
+//Set the color for the end (100%)
+linearGradient.append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#337F7F"); //dark blue
+
+//Set the color for the start (0%)
+linearGradient2.append("stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#fff"); //light blue
+
+//Set the color for the end (100%)
+linearGradient2.append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#f5b022"); //dark blue
+
+//Draw the rectangle and fill with gradient
+svg.append("rect")
+	.attr("width", 300)
+	.attr("height", 20)
+  .attr("x", 0)
+  .attr("y", height - 100)
+	.style("fill", "url(#linear-gradient)");
+svg.append("rect")
+	.attr("width", 300)
+	.attr("height", 20)
+  .attr("x", 0)
+  .attr("y", height - 80)
+	.style("fill", "url(#linear-gradient2)");
 
 d3.json("limites-zonas-escolares-euskadi-con-variables-2014-15_simplify2.json", function(err, data) {
 
@@ -51,14 +104,14 @@ var path = d3.geoPath()
     barrio = topojson.feature(data, data.objects.barrios).features
 
     // Rect size scale
-    rectSize.domain(d3.extent(barrio, function(d) {return d.properties.alum_ext_total }))
+    rectSize.domain(d3.extent(barrio, function(d) {return d.properties.perc_alum_ext_todos }))
 
     // 2. Create on each feature the centroid and the positions
     barrio.forEach(function(d) {
         d.pos = projection(d3.geoCentroid(d))
         d.x = d.pos[0]
         d.y = d.pos[1]
-        d.area = rectSize(d.properties.alum_ext_total) / .9 // Select how to scale the squares. Try and decide
+        d.area = rectSize(d.properties.total_alumnado) / 20 // Select how to scale the squares. Try and decide
       // d.area = rectSize(d.properties.habitantes2015) / 2 // How we scale
     })
 
@@ -94,6 +147,13 @@ var path = d3.geoPath()
               .attr("fill", function(d) {
 		            if  ( d.properties.indice_desigualdad == null)  {
 									return "#b76e79";
+						    } else if ( d.properties.indice_desigualdad > 1 ) {
+									return colorPub(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv)
+								} else {
+						   		return colorPriv(d.properties.perc_alum_ext_priv - d.properties.perc_alum_ext_publi)
+								}
+
+								/* Colorea por indice_desigualdad
 								} else if  ( d.properties.indice_desigualdad == 44 )  {
 									return "#337F7F";
 						    } else if ( d.properties.indice_desigualdad > 1 ) {
@@ -101,9 +161,10 @@ var path = d3.geoPath()
 								} else {
 						   		return colorPriv(d.properties.perc_alum_ext_priv / d.properties.perc_alum_ext_publi)
 								}
+								*/
 							})
               //color(d.properties.indice_desigualdad)
-              .attr("stroke", "#ccc")
+              .attr("stroke", "#aaa")
               .attr("stroke-width", 0.5)
               .attr("rx", 0.5)
           })
@@ -128,9 +189,13 @@ var path = d3.geoPath()
 						cociente = "valor nulo al no haber centros privados concertados";
 					} else if ( desigualdad > 1 ) {
 						desigualdad = d.properties.indice_desigualdad;
+						diferencia = d3.format(",.1f")(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv);
+						diferencia_explica = "% pública - % privada";
 						cociente = "% pública / % privada";
 					} else {
 						desigualdad = d3.format(",.2f")(d.properties.perc_alum_ext_priv / d.properties.perc_alum_ext_publi )
+						diferencia = d3.format(",.1f")(d.properties.perc_alum_ext_priv - d.properties.perc_alum_ext_publi)
+						diferencia_explica = "% privada - % pública";
 						cociente = "% privada / % pública";
 					}
         
@@ -149,7 +214,16 @@ var path = d3.geoPath()
                 "</tr>" +
                  "<tr>" +
                     "<td style='text-align:right'>"+ privado +"%</td><td>alumnado es extranjero en la red privado-concertada</td>" +
-                "</tr>" +               
+                "</tr>" +
+								"<tr>" +
+                    "<td style='text-align:right'>"+ d.properties.perc_alum_ext_todos +"%</td><td>alumnado es extranjero en ambas redes</td>" +
+                "</tr>" +
+								"<tr>" +
+                    "<td style='text-align:right'>"+ diferencia +"</td><td>"+ diferencia_explica + "</td>" +
+                "</tr>" +
+								"<tr>" +
+                    "<td style='text-align:right'>"+ d.properties.total_alumnado +"</td><td> alumnado</td>" +
+                "</tr>" +
               "</table>")
             .style("opacity", 1)
 
