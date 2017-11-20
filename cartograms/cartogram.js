@@ -23,10 +23,10 @@ var fontSize = d3.scaleLinear()
 
 // Color
 var colorPub = d3.scaleLinear()
-    .domain([1, 25]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .domain([1, 26]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
     .range(['#fff','red'])
 var colorPriv = d3.scaleLinear()
-    .domain([1, 25]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .domain([1, 38]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
     .range(['#fff','blue'])
 
 // Adds cartogram svg
@@ -36,6 +36,15 @@ var svg = d3.select("#cartogram").append("svg")
   .append("g")
     .attr("transform", "translate("+ margin.left +"," + margin.top + ")");
 
+//Adds Background image
+var background = svg.append('g').attr('id','backgroundimage');
+background.append("image")
+	.attr("xlink:href", "../images/leyenda-segregacion-extranjeros-red-pub-priv-euskadi.png")
+	.attr("x", 0)
+	.attr("y", height- 361)
+	.attr("width", "278")
+	.attr("height", "311");
+
 var rectangulos = svg.append('g').attr('id','rectangulos');
 var rectangulos2 = svg.append('g').attr('id','rectangulos2');
 
@@ -43,57 +52,6 @@ var rectangulos2 = svg.append('g').attr('id','rectangulos2');
 var tooltip = d3.select("body")
     .append("div")
     .attr("class", "tooltip")
-
-//Append a definition element to your SVG
-var defs = svg.append("defs");
-
-//Append a linearGradient element to the defs and give it a unique id
-var linearGradient = defs.append("linearGradient")
-    .attr("id", "linear-gradient")
-    .attr("x1", "0%")
-    .attr("y1", "0%")
-    .attr("x2", "100%")
-    .attr("y2", "0%");
-var linearGradient2 = defs.append("linearGradient")
-    .attr("id", "linear-gradient2")
-    .attr("x1", "0%")
-    .attr("y1", "0%")
-    .attr("x2", "100%")
-    .attr("y2", "0%");
-
-//Set the color for the start (0%)
-linearGradient.append("stop")
-    .attr("offset", "0%")
-    .attr("stop-color", "#fff"); //light blue
-
-//Set the color for the end (100%)
-linearGradient.append("stop")
-    .attr("offset", "100%")
-    .attr("stop-color", "red"); //dark blue
-
-//Set the color for the start (0%)
-linearGradient2.append("stop")
-    .attr("offset", "0%")
-    .attr("stop-color", "#fff"); //light blue
-
-//Set the color for the end (100%)
-linearGradient2.append("stop")
-    .attr("offset", "100%")
-    .attr("stop-color", "blue"); //dark blue
-
-//Draw the rectangle and fill with gradient
-svg.append("rect")
-	.attr("width", 300)
-	.attr("height", 20)
-  .attr("x", 0)
-  .attr("y", height - 100)
-	.style("fill", "url(#linear-gradient)");
-svg.append("rect")
-	.attr("width", 300)
-	.attr("height", 20)
-  .attr("x", 0)
-  .attr("y", height - 80)
-	.style("fill", "url(#linear-gradient2)");
 
 d3.json("limites-zonas-escolares-euskadi-con-variables-2014-15_simplify2.json", function(err, data) {
 
@@ -155,11 +113,9 @@ var path = d3.geoPath()
               .attr("y", -d.area / 2)
               .attr("fill", function(d) {
 		            if  ( d.properties.indice_desigualdad == null)  {
-									return "#b76e79";
-								} else if ( d.properties.indice_desigualdad > 1 ) {
-									return colorPub(d.properties.perc_alum_ext_publi)
+									return "#CCC";
 								} else {
-							 		return colorPriv(d.properties.perc_alum_ext_priv)
+									return colorPub(d.properties.perc_alum_ext_publi)
 								}
 
 								/* Colorea por indice_desigualdad
@@ -187,11 +143,9 @@ var path = d3.geoPath()
               .attr("y", -d.area / 2)
               .attr("fill", function(d) {
 		            if  ( d.properties.indice_desigualdad == null)  {
-									return "#b76e79";
-								} else if ( d.properties.indice_desigualdad > 1 ) {
-									return colorPriv(d.properties.perc_alum_ext_priv)
+									return "#CCC";
 								} else {
-									return colorPub(d.properties.perc_alum_ext_publi)
+									return colorPriv(d.properties.perc_alum_ext_priv)
 								}
 							})
               .attr("stroke", "#aaa")
@@ -233,23 +187,23 @@ var path = d3.geoPath()
 
           tooltip.html("<div class='table-responsive'><strong>" + d.properties.zona + "</strong> (zona escolar " + d.properties.zona_id2 + ")</div>" +
             "<table class='table table-condensed table-striped'>" +
-                "<tr class='first-row'>" +
+                "<tr>" +
+                    "<td style='text-align:right'><strong>"+ d.properties.perc_alum_ext_publi  +"%</strong></td><td>alumnado es extranjero en la red <strong>pública</strong></td>" +
+                "</tr>" +
+                 "<tr>" +
+                    "<td style='text-align:right'><strong>"+ privado +"%</strong></td><td>alumnado es extranjero en la red <strong>privado-concertada</strong></td>" +
+                "</tr>" +
+								"<tr>" +
+                    "<td style='text-align:right'>"+ d.properties.perc_alum_ext_todos +"%</td><td>alumnado es extranjero de media</td>" +
+                "</tr>" +
+								"<tr>" +
+                    "<td style='text-align:right'>"+ diferencia +"</td><td>diferencia % ("+ diferencia_explica + ")</td>" +
+                "</tr>" +
+                "<tr>" +
                     "<td style='text-align:right'>"+ desigualdad +"</td><td>índice desigualdad extranjeros (" + cociente + ")</td>" +
                 "</tr>" +
                 "<tr>" +
                     "<td style='text-align:right'>"+ d.properties.alum_ext_total +"</td><td>total alumnado extranjero</td>" +
-                "</tr>" +
-                "<tr>" +
-                    "<td style='text-align:right'>"+ d.properties.perc_alum_ext_publi  +"%</td><td>alumnado es extranjero en la red pública</td>" +
-                "</tr>" +
-                 "<tr>" +
-                    "<td style='text-align:right'>"+ privado +"%</td><td>alumnado es extranjero en la red privado-concertada</td>" +
-                "</tr>" +
-								"<tr>" +
-                    "<td style='text-align:right'>"+ d.properties.perc_alum_ext_todos +"%</td><td>alumnado es extranjero en ambas redes</td>" +
-                "</tr>" +
-								"<tr>" +
-                    "<td style='text-align:right'>"+ diferencia +"</td><td>"+ diferencia_explica + "</td>" +
                 "</tr>" +
 								"<tr>" +
                     "<td style='text-align:right'>"+ d.properties.total_alumnado +"</td><td> alumnado</td>" +
