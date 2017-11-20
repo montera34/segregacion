@@ -23,10 +23,10 @@ var fontSize = d3.scaleLinear()
 
 // Color
 var colorPub = d3.scaleLinear()
-    .domain([1, 26]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .domain([1, 40]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
     .range(['#fff','red'])
 var colorPriv = d3.scaleLinear()
-    .domain([1, 38]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .domain([1, 40]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
     .range(['#fff','blue'])
 
 // Adds cartogram svg
