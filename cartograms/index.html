@@ -67,7 +67,10 @@ rect:hover {
   stroke: black;
   stroke-width: 2px;
  }
- 
+rect {
+  opacity:0.7;
+}
+
 .Igeldo text{
 	fill:white !important;
 }
@@ -76,6 +79,9 @@ rect:hover {
 }
 .Ategorrieta-Ulia rect{
  z-index:-1;
+}
+#rectangulos2 {
+	mix-blend-mode: multiply;
 }
 </style>
 
@@ -134,7 +140,7 @@ rect:hover {
 				</div>-->
 			</div>
 			<div class="col-md-12">
-				<div id="vis"></div>
+				<div id="cartogram"></div>
 				<p>Datos del curso 2014-2015 para Educación básica (educación primaria y ESO).</p>
 				<p>Fuente de los datos: La educación Euskadi 2013-2015. Consejo Escolar de Euskadi. Departamento de educación. Gobierno Vasco. Vitoria-Gasteiz, 2016.</p>
 			</div>
@@ -149,7 +155,7 @@ rect:hover {
 			<ul class="list-inline">
 				<li><img src="../images/m34.logo.png" alt="Logo Montera34" /></li>
 			</ul>
-			<p><small>Estas visualizaciones ha nsido realizadas por Montera34. El proyecto es una iniciativa de la <a href="https://www.ilpeskolainklusiboa.eus/es/">ILP Eskola Inklusivoa</a>.</small></p>
+			<p><small>Estas visualizaciones han sido realizadas por Montera34. El proyecto es una iniciativa de la <a href="https://www.ilpeskolainklusiboa.eus/es/">ILP Eskola Inklusivoa</a>.</small></p>
 		</div>
 		<div class="col-md-3">
 			<p><img src="../images/cc.logo.png" alt="Logos Creative Commons" /></p>
@@ -174,8 +180,8 @@ rect:hover {
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/d3.v4.min.js"></script>
-<script type="text/javascript" src="https://d3js.org/topojson.v1.min.js"></script>
-<script type="text/javascript" src="https://unpkg.com/d3-composite-projections@1.0.2"></script>
+<script type="text/javascript" src="../js/topojson.v1.min.js"></script>
+<script type="text/javascript" src="../js/d3-composite-projections@1.0.2"></script>
 <script type="text/javascript" src="cartogram.js"></script>
 <script type="text/javascript" src="../stats.js"></script>
 </body>

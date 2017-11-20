@@ -24,10 +24,10 @@ var fontSize = d3.scaleLinear()
 // Color
 var colorPub = d3.scaleLinear()
     .domain([1, 25]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
-    .range(['#fff','#337F7F'])
+    .range(['#fff','red'])
 var colorPriv = d3.scaleLinear()
     .domain([1, 25]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
-    .range(['#fff','#f5b022'])
+    .range(['#fff','blue'])
 
 // Adds cartogram svg
 var svg = d3.select("#cartogram").append("svg")
@@ -35,6 +35,9 @@ var svg = d3.select("#cartogram").append("svg")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate("+ margin.left +"," + margin.top + ")");
+
+var rectangulos = svg.append('g').attr('id','rectangulos');
+var rectangulos2 = svg.append('g').attr('id','rectangulos2');
 
 // Adds tooltip
 var tooltip = d3.select("body")
@@ -66,7 +69,7 @@ linearGradient.append("stop")
 //Set the color for the end (100%)
 linearGradient.append("stop")
     .attr("offset", "100%")
-    .attr("stop-color", "#337F7F"); //dark blue
+    .attr("stop-color", "red"); //dark blue
 
 //Set the color for the start (0%)
 linearGradient2.append("stop")
@@ -76,7 +79,7 @@ linearGradient2.append("stop")
 //Set the color for the end (100%)
 linearGradient2.append("stop")
     .attr("offset", "100%")
-    .attr("stop-color", "#f5b022"); //dark blue
+    .attr("stop-color", "blue"); //dark blue
 
 //Draw the rectangle and fill with gradient
 svg.append("rect")
@@ -128,14 +131,20 @@ var path = d3.geoPath()
     for (var i = 0; i < 200; ++i) simulation.tick()
 
     // 5. Paint the cartogram
-    var rect = svg.selectAll("g")
+    var rect = rectangulos.selectAll("g")
         .data(barrio)
         .enter()
         .append("g")
         .attr("class", function(d) { return "zona: " + d.properties.zona })
         .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")" })
-        .on("mousemove", showTooltip) // AÑADIR EVENTO SHOW TOOLTIP
-        .on("mouseout", hideTooltip) // OCULTAR TOOLTIP
+
+    var rect2 = rectangulos2.selectAll("g")
+        .data(barrio)
+        .enter()
+        .append("g")
+        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")" })
+          .on("mousemove", showTooltip) // AÑADIR EVENTO SHOW TOOLTIP
+					.on("mouseout", hideTooltip) // OCULTAR TOOLTIP
 
     rect.append("rect")
         .each(function(d) {
@@ -147,10 +156,10 @@ var path = d3.geoPath()
               .attr("fill", function(d) {
 		            if  ( d.properties.indice_desigualdad == null)  {
 									return "#b76e79";
-						    } else if ( d.properties.indice_desigualdad > 1 ) {
-									return colorPub(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv)
+								} else if ( d.properties.indice_desigualdad > 1 ) {
+									return colorPub(d.properties.perc_alum_ext_publi)
 								} else {
-						   		return colorPriv(d.properties.perc_alum_ext_priv - d.properties.perc_alum_ext_publi)
+							 		return colorPriv(d.properties.perc_alum_ext_priv)
 								}
 
 								/* Colorea por indice_desigualdad
@@ -159,11 +168,32 @@ var path = d3.geoPath()
 						    } else if ( d.properties.indice_desigualdad > 1 ) {
 									return colorPub(d.properties.indice_desigualdad)
 								} else {
-						   		return colorPriv(d.properties.perc_alum_ext_priv / d.properties.perc_alum_ext_publi)
+							 		return colorPriv(d.properties.perc_alum_ext_priv / d.properties.perc_alum_ext_publi)
 								}
 								*/
 							})
               //color(d.properties.indice_desigualdad)
+              .attr("stroke", "#aaa")
+              .attr("stroke-width", 0.5)
+              .attr("rx", 0.5)
+          })
+
+    rect2.append("rect")
+        .each(function(d) {
+            d3.select(this)
+              .attr("width", d.area)
+              .attr("height", d.area)
+              .attr("x", -d.area / 2)
+              .attr("y", -d.area / 2)
+              .attr("fill", function(d) {
+		            if  ( d.properties.indice_desigualdad == null)  {
+									return "#b76e79";
+								} else if ( d.properties.indice_desigualdad > 1 ) {
+									return colorPriv(d.properties.perc_alum_ext_priv)
+								} else {
+									return colorPub(d.properties.perc_alum_ext_publi)
+								}
+							})
               .attr("stroke", "#aaa")
               .attr("stroke-width", 0.5)
               .attr("rx", 0.5)
@@ -174,7 +204,7 @@ var path = d3.geoPath()
             d3.select(this)
                 .attr("text-anchor", "middle")
                 .attr("dy", 12)
-                .text(d.properties.zona.substring(0,7)+".")
+                .text(d.properties.zona.substring(0,6)+".")
                 .style("fill", "black")
                 .style("font-size", fontSize(d.area) + "px")
                 .style("font-size", "11px")
