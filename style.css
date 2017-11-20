@@ -260,7 +260,7 @@ figcaption {
 .top-segregacion p.desc, .top-segregacion h1 {
 	color:#000;
 	text-shadow: 0px 0px 3px #FFF;
-	background-color: rgb(255,255,255,0.85);
+	background-color: rgb(255,255,255);
 }
 .perc_bec_mat_escolar_pubx, .perc_bec_mat_escolar_privx, .perc_bec_comedor_pubx, .perc_bec_comedor_privx, .perc_alum_ext_pubx, .perc_alum_ext_privx, .total_alumnadox {
 	text-align:right;
