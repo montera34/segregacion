@@ -1,6 +1,6 @@
 var margin = {top: 10, right: 10, bottom: 10, left:0},
-    width = 1000- margin.left - margin.right,
-    height = 770 - margin.top - margin.bottom,
+    width = 900- margin.left - margin.right,
+    height = 750 - margin.top - margin.bottom,
     padding = 2;
 
 //var projection = d3.geoConicConformalSpain()
