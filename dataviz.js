@@ -206,7 +206,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 					"<table class='table table-condensed table-striped'><thead><tr><td></td><td>Público</td><td>Concertado-Privado</td></tr></thead>" +
 					"<tbody><tr><td>% Becas material escolar</td><td style='text-align:right'>" + d.perc_bec_mat_escolar_pub + "% </td><td style='text-align:right'>" + d.perc_bec_mat_escolar_priv + "% </td></tr>" +
 					"<tr><td>% Becas comedor</td><td style='text-align:right'>" + d.perc_bec_comedor_pub + "% </td><td style='text-align:right'>" + d.perc_bec_comedor_priv + "% </td></tr>" +
-					"<tr><td>% Extranjeros</td><td style='text-align:right'>" + d.perc_alum_ext_pub + "% </td><td style='text-align:right'>" + d.perc_alum_ext_priv + "% </td></tr></	tbody>" +
+					"<tr><td>% Alumnado extranjero</td><td style='text-align:right'>" + d.perc_alum_ext_pub + "% </td><td style='text-align:right'>" + d.perc_alum_ext_priv + "% </td></tr></	tbody>" +
 					"<tr><td colspan='3'>Composición zona: " + d.municipios_barrios + "</td></tr></tbody>" +
 			"</table></div>")
 			.style("opacity", 1)
