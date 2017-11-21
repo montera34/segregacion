@@ -1,0 +1,68 @@
+---
+title: "Segregación escolar en Euskadi"
+author: "montera34"
+date: "November 21, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library("MASS")
+library("tidyverse")
+segreg = read.csv("data/output/2014-15-variables-escolares-euskadi.csv")
+attach(segreg)
+```
+
+## R Markdown
+
+
+```{r cars}
+```
+
+## Comparativa variables
+
+```{r pressure, echo=FALSE , warning=FALSE}
+ggplot(data = segreg, mapping = aes(x = perc_alum_ext_pub, y = perc_alum_ext_priv)) + 
+  coord_cartesian(ylim = c(0, 40),xlim = c(0, 40)) +
+  scale_colour_manual(values=c("#f6ae01", "#4199cb","#da5455")) +
+  geom_abline(intercept=0,slope=1, colour="grey") +
+  geom_point(aes(colour = provincia,size = total_alumnado)) +
+  labs(title = "% alumnado extranjero") +
+  geom_text(aes(label=zona),size = 3, colour="black", nudge_x = 0.7, nudge_y = 1,fill = provincia)
+
+ggplot(data = segreg, mapping = aes(x = perc_bec_comedor_pub, y = perc_bec_comedor_priv)) + 
+  coord_cartesian(ylim = c(0, 70),xlim = c(0, 70)) +
+  scale_colour_manual(values=c("#f6ae01", "#4199cb","#da5455")) +
+  geom_abline(intercept=0,slope=1, colour="grey") +
+  geom_point(aes(colour = provincia,size = total_alumnado)) +
+  labs(title = "% alumnado con beca de comedor") +
+  geom_text(aes(label=zona),size = 3, colour="black", nudge_x = 0.7, nudge_y = 1,fill = provincia)
+
+ggplot(data = segreg, mapping = aes(x = perc_bec_mat_escolar_pub, y = perc_bec_mat_escolar_priv)) + 
+  coord_cartesian(ylim = c(0, 70),xlim = c(0, 70)) +
+  scale_colour_manual(values=c("#f6ae01", "#4199cb","#da5455")) +
+  geom_abline(intercept=0,slope=1, colour="grey") +
+  geom_point(aes(colour = provincia,size = total_alumnado)) +
+  labs(title = "% alumnado con beca de material escolar") +
+  geom_text(aes(label=zona),size = 3, colour="black", nudge_x = 0.7, nudge_y = 1,fill = provincia)
+
+ggplot(data = segreg, mapping = aes(x = perc_alum_ext_pub- perc_alum_ext_priv, y = perc_bec_mat_escolar_pub - perc_bec_mat_escolar_priv)) + 
+  coord_cartesian(ylim = c(-20, 40),xlim = c(-40, 30)) +
+  scale_colour_manual(values=c("#f6ae01", "#4199cb","#da5455")) +
+  geom_point(aes(colour = provincia)) +
+  labs(title = "comparativa diferencias extranjeros vs beca material escolar") +
+  geom_text(aes(label=zona),size = 2, colour="black", nudge_x = 0.7, nudge_y = 1,fill = provincia)
+
+ggplot(data = segreg, mapping = aes(x = perc_alum_ext_pub / perc_alum_ext_priv, y = perc_bec_mat_escolar_pub / perc_bec_mat_escolar_priv)) + 
+  coord_cartesian(ylim = c(0, 5),xlim = c(0, 15)) +
+  scale_colour_manual(values=c("#f6ae01", "#4199cb","#da5455")) +
+  geom_point(aes(colour = provincia)) +
+  labs(title = "comparativa diferencias extranjeros vs beca material escolar") +
+  geom_text(aes(label=zona),size = 2, colour="black", nudge_x = 0.7, nudge_y = 1,fill = provincia)
+
+ggplot(data = segreg, mapping = aes(x = perc_alum_ext_pub - perc_alum_ext_priv, y = perc_bec_comedor_pub - perc_bec_comedor_priv)) + 
+  coord_cartesian(ylim = c(-40, 50),xlim = c(-40, 30)) +
+  scale_colour_manual(values=c("#f6ae01", "#4199cb","#da5455")) +
+  geom_point(aes(colour = provincia)) +
+  labs(title = "comparativa diferencias extranjeros vs beca comedor") +
+  geom_text(aes(label=zona),size = 2, colour="black", nudge_x = 0.7, nudge_y = 1,fill = provincia)
+```
