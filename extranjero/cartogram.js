@@ -129,8 +129,8 @@ var path = d3.geoPath()
 								*/
 							})
               //color(d.properties.indice_desigualdad)
-              .attr("stroke", "#aaa")
-              .attr("stroke-width", 0.5)
+              .attr("stroke", "#CCC")
+              .attr("stroke-width", 1)
               .attr("rx", 0.5)
           })
 
@@ -148,8 +148,8 @@ var path = d3.geoPath()
 									return colorPriv(d.properties.perc_alum_ext_priv)
 								}
 							})
-              .attr("stroke", "#aaa")
-              .attr("stroke-width", 0.5)
+              .attr("stroke", "#CCC")
+              .attr("stroke-width", 1)
               .attr("rx", 0.5)
           })
 
