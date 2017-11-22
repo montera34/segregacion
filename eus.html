@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es-ES">
+
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Segregación público-privada en educación zonas escolares de Euskadi</title>
+
+<!-- source code based on https://bl.ocks.org/jasondavies/1341281 -->
+<meta charset="utf-8">
+<link href="style.css" rel="stylesheet">
+<!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Fontawesome -->
+<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- generic meta -->
+<meta content="Montera34" name="author" />
+<meta content="Análisis educación Euskadi: redes pública vs privada-concertada" name="description" />
+<meta content="educación, privado, público, concertado, extranjeros" name="keywords" />
+<!-- facebook meta -->
+<meta property="og:title" content="Análisis educación Euskadi: redes pública vs privada-concertada" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Un análisis gráfico de la segregación entre centros públicos y privados en Euskadi." />
+<meta name="og:image" content="https://lab.montera34.com/segregacionescolar/images/segregacion-publico-privada-para-ilp.png" />
+<meta property="og:url" content="https://lab.montera34.com/segregacionescolar/" />
+<!-- twitter meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@montera34">
+<meta property="twitter:site:id" content="137677992" />
+<meta name="twitter:title" content="Análisis educación Euskadi: redes pública vs privada-concertadaa" />
+<meta name="twitter:description" content="Un análisis gráfico de la segregación entre centros públicos y privados en Euskadi." />
+<meta name="twitter:creator" content="@montera34">
+<meta name="twitter:image" content="https://lab.montera34.com/segregacionescolar/images/segregacion-publico-privada-para-ilp.png" />
+
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+<link type="image/png" sizes="256x256" href="favicon.png" rel="icon" />
+</head>
+<body>
+
+<header role="banner">
+	<nav id="top-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-collapse" aria-expanded="false">
+				<span class="sr-only">mostrar/ocultar menú</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="https://lab.montera34.com/segregacionescolar/">Eskola segregazioa, Euskadi/</a><a class="navbar-brand" href="#">Konparatiba</a>
+		</div>
+		<div class="collapse navbar-collapse" id="top-navbar-collapse">
+			<ul class="nav navbar-nav nabvar-left">
+				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bistaratzeak <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#europa">Contexto europeo</a></li>
+						<li><a href="#espana">Contexto español</a></li>
+						<li><a href="#repartoredes">Reparto redes Euskadi	</a></li>
+						<li><a href="#indicadores">Comparativa indicadores</a></li>
+						<li><a href="#extranjero">Alumnado extranjero</a></li>
+						<li><a href="#materialescolar">Becas material escolar</a></li>
+						<li><a href="#comedor">Becas comedor</a></li>
+					</ul>
+				</li>
+				<li><a href="extranjero/index.html">Atzerriko kasleak</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="index.html">Es</a></li>
+				<li><a href="#">Eus</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+</header>
+
+<div id="top" class="bgimg top-segregacion">
+	<div class="bginner container-fluid">
+		<div class="bgcontainer">
+			<header class="col-md-12">
+				<h1>Eskola segregazioa, Euskadi</h1>
+			</header>
+			<div class="col-md-4">
+				<p class="desc">Euskadin Europako sare pribatu-itunpeko hedatuenetariko bat daukagu, ikasleriaren %50ari arreta emanez. Halere, egoera honek ez du ondoegi adierazten zer ezberdintasunak dauden sare bakoitzeko ikasleen artean.</p>
+			</div>
+			<div class="col-md-3">
+				<p class="desc">Campaña de recogida de 10.000 firmas para hacer posible que llegue al parlamento.</p>
+				<p class="desc">10.000 sinadura biltzeko kanpaina legebiltzarrean eztabaidatu dezaten</p>
+				<p><a class="vis-btn" href="https://www.ilpeskolainklusiboa.eus/">Firma ILP</a></p>
+			</div>
+			<div class="col-md-3">
+				<p class="desc">Iradokizunik, komentariorik, proposamenik, zuzenletarik, datu gehiago al duzu?</p>
+				<p><a class="vis-btn" href="https://montera34.com/contacto">Kontaktatu</a></p>
+			</div>
+			<div class="col-md-2">
+				<p class="desc">Montera34ren hurrengo tailer eta txostenen berri izan nahi duzu?</p>
+				<p><a class="vis-btn" href="https://montera34.com/suscribete">Izena eman </a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<main class="container">
+	<section class="vis-item" id="info">
+		<header class="row vis-head">
+			<div class="col-md-7 col-md-offset-2">
+				<h1>Euskadiko hezkuntza sistemaren kohesio eta berdintadunaren inguruko hausnarketa</h1>
+			</div>
+		</header>
+		<div class="row vis-body">
+			<div class="col-md-7 col-md-offset-2">
+				<h3>EUSKAL HEZKUNTZA SISTEMAN KOHESIOA ETA BERDINTASUNA HOBETZEKO HLE</h3>
+				<p>Euskadin Europako sare pribatu-itunpeko hedatuenetariko bat daukagu, ikasleriaren %50ari arreta emanez. Halere, egoera honek ez du ondoegi adierazten zer ezberdintasunak dauden sare bakoitzeko ikasleen artean.</p>
+				<p><a href="https://www.ilpeskolainklusiboa.eus/">10.000 sinadura biltzeko kanpaina</a> legebiltzarrean eztabaidatu dezaten.</p>
+		</div>
+	</section>
+</main>
+
+<footer id="bottom">
+	<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="list-inline">
+				<li><img src="images/m34.logo.png" alt="Logo Montera34" /></li>
+			</ul>
+			<p><small>Estas visualizaciones han sido realizadas por Montera34. El proyecto es una iniciativa de la <a href="https://www.ilpeskolainklusiboa.eus/es/">ILP Eskola Inklusivoa</a>.</small></p>
+		</div>
+		<div class="col-md-3">
+			<p><img src="images/cc.logo.png" alt="Logos Creative Commons" /></p>
+			<p><small>El contenido de los informes está disponible bajo licencia <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</small></p>
+		</div>
+		<div class="col-md-3">
+			<p><img src="images/code.logo.png" alt="Logo código" /></p>
+			<p><small>Los datos de estas visualizaciones han sido obtenidos a partir de PDF, limpiados, liberados y <a href="https://github.com/montera34/segregacion/tree/master/data">pueden descargarse</a>. <br>El código de este informe está igualmente <a href="https://github.com/montera34/segregacion/">disponible bajo licencia GNU GPL3</a>.</small></p>
+		</div>
+		<div class="col-md-3">
+			<p><img src="images/net.logo.png" alt="Logo red" /></p>
+			<p><small>Más visualizaciones:</small></p>
+			<ul class="list-unstyled">
+				<li><small><a href="http://lab.montera34.com/segregacionescolar/extranjero">Extranjeros</a></small></li>
+			</ul>
+		</div>
+
+	</div>
+	</div>
+</footer>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/d3.v3.min.js"></script>
+<script type="text/javascript" src="dataviz.js"></script>
+<script type="text/javascript" src="stats.js"></script>
+<script type="text/javascript" src="js/list.min.js"></script>
+<script>
+var options = {
+  valueNames: [ 'id','zona', 'perc_bec_mat_escolar_pubx', 'perc_bec_mat_escolar_privx', 'perc_bec_comedor_pubx', 'perc_bec_comedor_privx', 'perc_alum_ext_pubx', 'perc_alum_ext_privx', 'total_alumnadox', 'provinciax', 'municipios_barriosx' ]
+};
+var userList = new List('zonastable', options);
+</script>
+</body>
