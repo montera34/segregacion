@@ -47,20 +47,12 @@
 <body>
 
 	<section id="indicadores">
-		<header class="row vis-head">
-			<div class="col-md-10">
-				<h1>Comparativa de alumnado con becas de material escolar, comedor y alumnado extranjero en redes escolares pública y privada por zona escolar <a href="#indicadores">#</a></h1>
+		<div class="row">
+			<div class="col-md-5 col-xs-7">
+				<p><img class="img-responsive" src="images/arrow-down.png" style="float:left;margin:0 4px 0 0;"/> Zonas con <strong>más</strong> % en centros públicos que privados.<br>
+				<img class="img-responsive" src="images/arrow-up.png" style="float:left;margin:0 4px 0 0;"/> Zonas con <strong>menos</strong> % en centros públicos que privados.</p>
 			</div>
-		</header>
-		<div class="row vis-body">
-			<div class="col-md-4">
-				<p>Cada línea representa una zona escolar.<br>La pendiente indica la diferencia de porcentaje entre red pública y privada.</p>
-			</div>
-			<div class="col-md-5">
-				<p><figure><img class="img-responsive" src="images/arrow-down.png" style="float:left;margin:0 4px 0 0;"/></figure> Zonas con <strong>más</strong> % en centros públicos que privados.<br>
-				<figure><img class="img-responsive" src="images/arrow-up.png" style="float:left;margin:0 4px 0 0;"/></figure> Zonas con <strong>menos</strong> % en centros públicos que privados.</p>
-			</div>
-			<div class="col-md-3">
+			<div class="col-md-5 col-xs-5">
 				<p><span class="glyphicon glyphicon glyphicon-hand-up" aria-hidden="true"></span> Pasa el cursor para descubrir más información sobre cada zona.</p>
 			</div>
 			<div class="clearfix"></div>
@@ -72,30 +64,26 @@
 					<p><span class="square square_media"></span>Media (ponderada)</p>
 				</div>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2 col-xs-4 col-xs-offset-2">
 				<div class="dropdown"> 
 					<button class="btn btn-default dropdown-toggle btn-xs" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Selecciona zona escolar <span class="caret"></span></button>
 					<ul id="legend" class="dropdown-menu" aria-labelledby="dropdownMenu1">
 					</ul>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-3 col-xs-6">
 				<div id="zona"><p>Todas las zonas</p></div>
 			</div>
 			<div class="clearfix"></div>
 			<div class="col-md-12">
 				<div id="vis"></div>
 			</div>
-			<div class="clearfix"></div>
-			<div class="col-md-7 col-md-offset-2">
-				<p><small>Datos del curso 2014-2015. Los datos de alumnado becado son para todas las etapas. Los de alumnado extranjero son de Educación básica (educación primaria y ESO). Las zonas escolares de Montaña alavesa, Igorre y Basurto-Zorroza no aparecen representadas al no tener oferta privada.</small></p>
-				<p><small>Fuente de los datos: <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937">La educación Euskadi 2013-2015</a>. Consejo Escolar de Euskadi. Departamento de educación. Gobierno Vasco. Vitoria-Gasteiz, 2016.</small></p>
-			</div>
 		</div>
 	</section>
 
 </main>
 
+<script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/d3.v3.min.js"></script>
 <script type="text/javascript" src="dataviz.js"></script>
