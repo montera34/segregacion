@@ -13,6 +13,22 @@ var margin = {top: 50, right: 10, bottom: 10, left:0},
 var vis = d3.select("#vis");
 var chartWidth = width/6; //change this depending on number of varables
 
+// language
+
+var becasMaterial = "% Becas material escolar",
+becasComedor = "% Becas comedor",
+alumnadoExtranjero = "% alumando extranjero",
+publico = "público",
+privadoConcertado = "privado-concertado";
+	
+if (lengua == "eu" ) {
+  var becasMaterial = "Material didaktikoko beken %",
+	becasComedor = "Jantokiko beken %";
+	alumnadoExtranjero = "Atzerriko kasleen %",
+	publico = "publikoa",
+	privadoConcertado = "pribatu-itunpekoa";
+}
+
 // sets scales
 var x = d3.scale.ordinal().rangePoints([0, width], 1),
     y = {},
@@ -143,7 +159,8 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 	svg.append("text")
 		.attr("x", chartWidth)
 		.attr("y", -margin.top/2)
-		.text("% becas material escolar")
+		.text(becasMaterial)
+		//.text(becasMaterial)
 		.attr("class", "axistitle")
 		.style("text-anchor", "middle")
 		.attr("font-size", "14px")
@@ -152,7 +169,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 	svg.append("text")
 		.attr("x", chartWidth*3)
 		.attr("y", -margin.top/2)
-		.text("% becas comedor")
+		.text(becasComedor)
 		.attr("class", "axistitle")
 		.style("text-anchor", "middle")
 		.attr("font-size", "14px")
@@ -161,7 +178,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 	svg.append("text")
 		.attr("x", chartWidth*5)
 		.attr("y", -margin.top/2)
-		.text("% extranjeros")
+		.text(alumnadoExtranjero)
 		.attr("class", "axistitle")
 		.style("text-anchor", "middle")
 		.attr("font-size", "14px")
@@ -172,41 +189,41 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 	svg.append("text")
 		.attr("x", chartWidth/2)
 		.attr("y", -margin.top/6)
-		.text("Público")
+		.text(publico)
 		.attr("class","axis_label");
 	svg.append("text")
 		.attr("x", chartWidth+chartWidth/2)
 		.attr("y", -margin.top/6)
-		.text("Privado-concertado")
+		.text(privadoConcertado)
 		.attr("class","axis_label");
 	svg.append("text")
 		.attr("x", chartWidth/2+chartWidth*2)
 		.attr("y", -margin.top/6)
-		.text("Público")
+		.text(publico)
 		.attr("class","axis_label");
 	svg.append("text")
 		.attr("x", chartWidth+chartWidth/2+chartWidth*2)
 		.attr("y", -margin.top/6)
-		.text("Privado-concertado")
+		.text(privadoConcertado)
 		.attr("class","axis_label");
 	svg.append("text")
 		.attr("x", chartWidth/2+chartWidth*4)
 		.attr("y", -margin.top/6)
-		.text("Público")
+		.text(publico)
 		.attr("class","axis_label");
 	svg.append("text")
 		.attr("x", chartWidth+chartWidth/2+chartWidth*4)
 		.attr("y", -margin.top/6)
-		.text("Privado-concertado")
+		.text(privadoConcertado)
 		.attr("class","axis_label");
 	function showTooltip(d) {
 		// Fill the tooltip
 		tooltip.html(
 			"<div class='table-responsive'><h5><strong>" + d.zona + "</strong> (Alumnado: " + d.total_alumnado + ", " + d.provincia + ", zona " + d.zona_id + ")</h5>" +
-					"<table class='table table-condensed table-striped'><thead><tr><td></td><td>Público</td><td>Concertado<br>Privado</td></tr></thead>" +
-					"<tbody><tr><td>% Becas material escolar</td><td style='text-align:right'>" + d.perc_bec_mat_escolar_pub + "% </td><td style='text-align:right'>" + d.perc_bec_mat_escolar_priv + "% </td></tr>" +
-					"<tr><td>% Becas comedor</td><td style='text-align:right'>" + d.perc_bec_comedor_pub + "% </td><td style='text-align:right'>" + d.perc_bec_comedor_priv + "% </td></tr>" +
-					"<tr><td>% Alumnado extranjero</td><td style='text-align:right'>" + d.perc_alum_ext_pub + "% </td><td style='text-align:right'>" + d.perc_alum_ext_priv + "% </td></tr></	tbody>" +
+					"<table class='table table-condensed table-striped'><thead><tr><td></td><td>" + publico + "</td><td>" + privadoConcertado + "</td></tr></thead>" +
+					"<tbody><tr><td>" + becasMaterial + "</td><td style='text-align:right'>" + d.perc_bec_mat_escolar_pub + "% </td><td style='text-align:right'>" + d.perc_bec_mat_escolar_priv + "% </td></tr>" +
+					"<tr><td>" + becasComedor + "</td><td style='text-align:right'>" + d.perc_bec_comedor_pub + "% </td><td style='text-align:right'>" + d.perc_bec_comedor_priv + "% </td></tr>" +
+					"<tr><td>" + alumnadoExtranjero + "</td><td style='text-align:right'>" + d.perc_alum_ext_pub + "% </td><td style='text-align:right'>" + d.perc_alum_ext_priv + "% </td></tr></	tbody>" +
 					"<tr><td colspan='3'>Composición zona: " + d.municipios_barrios + "</td></tr></tbody>" +
 			"</table></div>")
 			.style("opacity", 1)
