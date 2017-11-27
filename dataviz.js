@@ -72,7 +72,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
     .enter().append("path")
       .attr("d", path)
       .attr("fill","none")
-      .attr("stroke","#999")
+      .attr("stroke","#AAA")
 			.attr("class",function(d) { return replacement(d.zona);} );
 			
   // Add foreground lines for focus.
@@ -247,13 +247,15 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 		.attr("id", function(d) { return "id" + replacement(d.zona);})
 		.text(function(d) { return d.zona;})
 		.on('click',function(d) { //when click on name
-			legend.select('.btn-success').attr('class','inactive');
+			legend.select('.btn-activo').attr('class','inactive');
 			svg.selectAll('svg .foreground path').style("visibility","hidden").attr("stroke-width","1.1px");
 			svg.selectAll('svg .foreground path.'+ replacement(d.zona))
 				.style("opacity",1)
-				.style("visibility","visible").attr("stroke-width","1px"); //selecciona path que coincide con la zona seleccionada
-			d3.select(this).attr("class","btn-success"); //adds class success to button
-			if ( d.perc_alum_ext_priv == "") {
+				.style("visibility","visible").attr("stroke-width","1.5px"); //selecciona path que coincide con la zona seleccionada
+			d3.select(this).attr("class","btn-activo"); //adds class success to button
+			if ( d.zona == "Todas") {
+				zona.select("p").html("<strong>Todas las zonas</strong>");
+			} else if ( d.perc_alum_ext_priv == "") {
 				zona.select("p").html("<strong>"+d.zona+"</strong>. No hay centros privados en esta zona");
 			} else {
 				zona.select("p").html("<strong>"+d.zona+"</strong>"); //write in description

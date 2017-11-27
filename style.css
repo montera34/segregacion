@@ -57,11 +57,11 @@ path:hover {
 }
 
 h1 {
-  font-size: 2em !important;
+  font-size: 2.1em !important;
   font-weight:bold;
 }
 h2 {
-  font-size: 1.6em !important;
+  font-size: 1.7em !important;
   font-weight:bold;
 }
 h3 {
@@ -135,7 +135,7 @@ p {
   max-height: 350px;
   overflow-y: auto;
 }
-path.basurtozorroza, path.igorre, path.montañaalavesa  {
+path.basurtozorroza, path.igorre, path.montañaalavesa, path#todas, .background path.todas {
 	display:none;
 }
 
@@ -251,13 +251,16 @@ figcaption {
 }
 #top {
 	background-size: cover;
-	height: 400px;
+	height: 450px;
 	display: table;
 	margin-bottom: 0;
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 .top-segregacion {
-	background-image: url(images/top-segregacion-escolar-euskadi.png);
+	background-image: url(images/top-segregacion-escolar-euskadi-2.png);
+}
+.top-segregacion h1 {
+	font-weight:bold;
 }
 .top-segregacion p.desc, .top-segregacion h1 {
 	color:#000;
@@ -270,3 +273,13 @@ figcaption {
 .vis-head h1 {
 	font-weight:bold;
 }
+#idtodas, #idaraba, #idgipuzkoa, #idbizkaia, #idarabamedia, #idgipuzkoamedia, #idbizkaiamedia, #idmediaponderada {
+	font-weight:bold;
+}
+li #idtodas, li #idbizkaia {
+	border-bottom: 1px solid #ccc;
+}
+.btn-activo {
+	background-color:#FF0;
+}
+
