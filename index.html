@@ -8,7 +8,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Segregación público-privada en educación zonas escolares de Euskadi</title>
+<title>Análisis de cohesión e igualdad del sistema educativo en Euskadi</title>
 
 <!-- source code based on https://bl.ocks.org/jasondavies/1341281 -->
 <meta charset="utf-8">
@@ -87,11 +87,13 @@
 <div id="top" class="bgimg top-segregacion">
 	<div class="bginner container-fluid">
 		<div class="bgcontainer">
-			<header class="col-md-12">
-				<h1>Segregación escolar en Euskadi</h1>
+			<header class="col-md-6	">
+				<h1>Análisis de cohesión e igualdad del sistema educativo en Euskadi</h1>
 			</header>
+			<div class="clearfix"></div>
 			<div class="col-md-4">
 				<p class="desc">En Euskadi hay una de las mayores redes educativas privado-concertadas de toda Europa, con una cuota del 50% del alumnado. Sin embargo, esta realidad no revela suficientemente qué tipo de alumnado atiende cada una de las redes.</p>
+				<p class="desc">Trabajo de visualización encargado por ILP Eskola Inklusiboa al colectivo Montera34</p>
 			</div>
 			<div class="col-md-3">
 				<p class="desc">Campaña de recogida de 10.000 firmas para hacer posible que llegue al parlamento vasco.</p>
@@ -112,12 +114,6 @@
 <main class="container">
 
 	<section class="vis-item" id="info">
-		<header class="row vis-head">
-			<div class="col-md-7 col-md-offset-2">
-				<h1>Análisis de cohesión e igualdad en sistema educativo en Euskadi</h1>
-				<p>Trabajo de visualización encargado por ILP Eskola Inklusiboa a Montera34.</p>
-			</div>
-			<div class="clearfix"></div>
 			<div class="col-md-3 col-md-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-heading">Índice de visualizaciones</div>
@@ -134,7 +130,12 @@
 					</div>
 				</div>
 			</div>
-		</header>
+			<div class="clearfix"></div>
+			<header class="row vis-head">
+				<div class="col-md-7 col-md-offset-2">
+					<h1>Análisis de cohesión e igualdad del sistema educativo en Euskadi</h1>
+				</div>
+			</header>
 		<div class="row vis-body">
 			<div class="col-md-7 col-md-offset-2">
 				<h2>Iniciativa legislativa popular</h2>
@@ -143,7 +144,7 @@
 				<h2>Autoría de las visualizaciones</h2>
 				<p>Montera34 analiza mediante los siguientes gráficos y mapas la segregación educativa en Euskadi en las redes pública y privada. Estas visualizaciones serán usadas por la Iniciativa legislativa popular Eskola Inklusiboa.</p>
 				<h2>Fuente de los datos</h2>
-				<p>Para estudiar la desigualdad entre las redes pública y privado-concertada de centros educativos en Euskadi hemos partido de los datos contenidos en el informe <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937">La educación Euskadi 2013-2015</a> del Consejo Escolar de Euskadi. Hemos tomado los indicadores por zonas escolares de alumnado extranjero, alumnado becario de material escolar y de comedor para que nos ayuden a entender las diferencias entre las redes.</p> 
+				<p>Para estudiar la desigualdad entre las redes pública y privado-concertada de centros educativos en Euskadi hemos partido de los datos contenidos en el informe <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937">La educación en Euskadi 2013-2015</a> del Consejo Escolar de Euskadi. Hemos tomado los indicadores por zonas escolares de alumnado extranjero, alumnado becario de material escolar y de comedor para que nos ayuden a entender las diferencias entre las redes.</p>
 				<p>Para utilizar los datos hemos tenido que pasar a formato reutilizable las tablas contenidas en PDF. Para construir los mapas hemos tenido que crear los contornos de las zonas escolares, que no estaban disponibles en ninguna de las bases de datos abiertas en Euskadi.</p>
 				<p>De este modo este pequeño informe cumple una doble función: analizar los datos de desigualdad y liberlarlos para que otras personas puedan usarlos. Los datos limpios, liberados <a href="https://github.com/montera34/segregacion/tree/master/data">pueden descargarse de este repositorio</a>.</p>
 				</div>
@@ -430,10 +431,8 @@ total alumnado
 			</div>
 			<div class="clearfix"></div>
 			<div class="col-md-8 col-md-offset-2">
-				<p>Las datos por zonas escolares (los únicos disponibles) ocultan situaciones variadas en cada uno de los centros, pero predomina un porcentaje mayor de alumnado becado en la red pública, aunque existen excepciones. Además las zonas escolares de Montaña alavesa, Igorre y Basurto-Zorroza no tienen oferta privada, por lo que no es posible realizar la comparativa. Pasa el cursor para ver la información.</p>
-				<hr>
 				<p><small>Datos del curso 2014-2015 para Educación básica (educación primaria y ESO).</small></p>
-				<p><small>Fuente de los datos: La educación Euskadi 2013-2015. Consejo Escolar de Euskadi. Departamento de educación. Gobierno Vasco. Vitoria-Gasteiz, 2016.</small></p>
+				<p><small>Fuente de los datos: La educación en Euskadi 2013-2015. Consejo Escolar de Euskadi. Departamento de educación. Gobierno Vasco. Vitoria-Gasteiz, 2016.</small></p>
 				<!--<figure><a href="extranjero"><img class="img-responsive" src="images/cartograma-extranjeros-red-publica-privada-2014-15_completo.png" /></a></figure>-->
 			</div>
 		</div>
@@ -472,6 +471,7 @@ total alumnado
 			<div class="col-md-12">
 				<iframe width="100%" height="820" frameborder="0" src="https://numeroteca.carto.com/builder/2389a047-c81e-4a9e-adec-7df4367a7982/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 				<p><a href="https://numeroteca.carto.com/builder/2389a047-c81e-4a9e-adec-7df4367a7982/embed">Ver mapa a pantalla completa.</a></p>
+				<p>Las datos por zonas escolares (los únicos disponibles) ocultan situaciones variadas en cada uno de los centros escolares, pero predomina un porcentaje mayor de alumnado becado en la red pública, aunque existen excepciones. Además, las zonas escolares de Montaña alavesa, Igorre y Basurto-Zorroza no tienen oferta privada, por lo que no es posible realizar la comparativa. Pasa el cursor para ver la información.</p>
 			</div>
 		</div>
 	</section>
@@ -486,6 +486,7 @@ total alumnado
 			<div class="col-md-12">
 				<iframe width="100%" height="820" frameborder="0" src="https://numeroteca.carto.com/builder/593cfa1c-2b9b-4cf1-b3fb-b4199684533f/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 				<p><a href="https://numeroteca.carto.com/builder/593cfa1c-2b9b-4cf1-b3fb-b4199684533f/embed">Ver mapa a pantalla completa.</a></p>
+				<p>Las datos por zonas escolares (los únicos disponibles) ocultan situaciones variadas en cada uno de los centros escolares, pero predomina un porcentaje mayor de alumnado becado en la red pública, aunque existen excepciones. Además, las zonas escolares de Montaña alavesa, Igorre y Basurto-Zorroza no tienen oferta privada, por lo que no es posible realizar la comparativa. Pasa el cursor para ver la información.</p>
 			</div>
 		</div>
 	</section>
