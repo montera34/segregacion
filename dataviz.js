@@ -258,7 +258,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 			} else if ( d.perc_alum_ext_priv == "") {
 				zona.select("p").html("<strong>"+d.zona+"</strong>. No hay centros privados en esta zona");
 			} else {
-				zona.select("p").html("<strong>"+d.zona+"</strong>"); //write in description
+				zona.select("p").html("<strong>"+d.zona+"</strong>. Composición: " + d.municipios_barrios); //write in description
 			}
 		});
 });
