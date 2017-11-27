@@ -61,18 +61,18 @@ h1 {
   font-weight:bold;
 }
 h2 {
-  font-size: 1.5em !important;
+  font-size: 1.6em !important;
   font-weight:bold;
 }
 h3 {
-  font-size: 1.2em !important;
+  font-size: 1.4em !important;
 }
 h4 {
-  font-size: 1.1em !important;
+  font-size: 1.2em !important;
 }
 
 p {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 .perc_bec_mat_escolar_pub, .perc_bec_comedor_pub, .perc_alum_ext_pub {
   display:none;	
@@ -267,6 +267,6 @@ figcaption {
 .perc_bec_mat_escolar_pubx, .perc_bec_mat_escolar_privx, .perc_bec_comedor_pubx, .perc_bec_comedor_privx, .perc_alum_ext_pubx, .perc_alum_ext_privx, .total_alumnadox {
 	text-align:right;
 }
-#dropdownMenu1 {
-background-color:#FF0;
+.vis-head h1 {
+	font-weight:bold;
 }
