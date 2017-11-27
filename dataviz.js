@@ -82,7 +82,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
       .data(zonas)
     .enter().append("path")
       .attr("d", path)
-      .attr("class",function(d) { return replacement(d.zona) + " "+ d.provincia;} ) // colorea líneas según color de provincia
+      .attr("class",function(d) { return replacement(d.zona) + " todas "+ d.provincia;} ) // colorea líneas según color de provincia
       .attr("stroke", function(d) { return d.provincia == "araba" ? "#f6ae01" : d.provincia == "gipuzkoa" ? "#4199cb" : d.provincia == "bizkaia" ? "#da5455" : "#666"; })
       .attr("fill","none")
       .attr("stroke-width","1.1px")
@@ -239,16 +239,19 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 
 	// Selecciona zona (dropdown menu)
 	legend.selectAll('div')
+	
+	legend.selectAll('div')
 		.data(zonas)
 		.enter().append("li").append("a")
 		.attr("class", function(d) { return "inactive " + replacement(d.zona);})
+		.attr("id", function(d) { return "id" + replacement(d.zona);})
 		.text(function(d) { return d.zona;})
 		.on('click',function(d) { //when click on name
 			legend.select('.btn-success').attr('class','inactive');
 			svg.selectAll('svg .foreground path').style("visibility","hidden").attr("stroke-width","1.1px");
 			svg.selectAll('svg .foreground path.'+ replacement(d.zona))
 				.style("opacity",1)
-				.style("visibility","visible").attr("stroke-width","5px"); //selecciona path que coincide con la zona seleccionada
+				.style("visibility","visible").attr("stroke-width","1px"); //selecciona path que coincide con la zona seleccionada
 			d3.select(this).attr("class","btn-success"); //adds class success to button
 			if ( d.perc_alum_ext_priv == "") {
 				zona.select("p").html("<strong>"+d.zona+"</strong>. No hay centros privados en esta zona");
