@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es-ES">
+
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alumnado extranjero en zonas escolares de Euskadi</title>
+
+<!-- Bootstrap -->
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Fontawesome -->
+<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- generic meta -->
+<meta content="Montera34" name="author" />
+<meta content="Análisis educación Euskadi: extranjeros en red pública y privada" name="description" />
+<meta content="educación, privado, público, concertado, extranjeros" name="keywords" />
+<!-- facebook meta -->
+<meta property="og:title" content="Análisis educación Euskadi: extranjeros en red pública y privada" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Un análisis gráfico del porcentaje de extranjero en ambas redes." />
+<meta name="og:image" content="https://lab.montera34.com/segregacionescolar/images/cartograma-segregacion-ered-publica-privada-xtranjeros-euskadi.png" />
+<meta property="og:url" content="https://lab.montera34.com/segregacionescolar/extranjero" />
+<!-- twitter meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@montera34">
+<meta property="twitter:site:id" content="137677992" />
+<meta name="twitter:title" content="Análisis educación Euskadi: extranjeros en red pública y privada" />
+<meta name="twitter:description" content="Un análisis gráfico del porcentaje de extranjero en ambas redes." />
+<meta name="twitter:creator" content="@montera34">
+<meta name="twitter:image" content="https://lab.montera34.com/segregacion/images/cartograma-segregacionescolar-ered-publica-privada-xtranjeros-euskadi.png" />
+
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="image/png" sizes="256x256" href="../favicon.png" rel="icon" />
+<style>
+.text-label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.label {
+  font-size: 20px;
+  fill: black;
+}
+
+.tooltip {
+  position: absolute;
+  background: white;
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color:rgba(255, 255, 255, 0.95);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+rect:hover {
+  stroke: black;
+  stroke-width: 2px;
+ }
+rect {
+  opacity:0.7;
+  shape-rendering: crispEdges;
+}
+
+#rectangulos2 {
+	mix-blend-mode: multiply;
+}
+</style>
+
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="image/png" sizes="256x256" href="../favicon.png" rel="icon" />
+</head>
+<body>
+<div id="cartogram"></div>
+
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/d3.v4.min.js"></script>
+<script type="text/javascript" src="../js/topojson.v1.min.js"></script>
+<script type="text/javascript" src="../js/d3-composite-projections.js"></script>
+<script type="text/javascript" src="cartogram-becas-comedor.js"></script>
+<script type="text/javascript" src="../stats.js"></script>
+</body>
