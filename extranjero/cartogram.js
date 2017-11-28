@@ -1,21 +1,20 @@
-var margin = {top: 10, right: 10, bottom: 10, left:0},
-    width = 900- margin.left - margin.right,
-    height = 750 - margin.top - margin.bottom,
+// cartograma basado en original de https://martingonzalez.net/
+
+//Prepare canvas size
+isMobile = innerWidth < 758;
+
+var screenwidth = d3.select("#cartogram").node().clientWidth;
+
+var margin = {top: 20, right: 10, bottom: 10, left:0},
+    width = (isMobile ? (screenwidth+100) : screenwidth) - margin.left - margin.right,
+    height = 710 - margin.top - margin.bottom,
     padding = 2;
-
-//var projection = d3.geoConicConformalSpain()
-//    .translate([width / 2, height / 2])
-//    .scale(3500)
-
-//  .scale(width / 2 / Math.PI)
-//  .scale(300)
-//  .translate([width / 2, height / 2])
 
 // Rectangle size
 //must calculate manually the relationship of the squares of this values to match the min and max value ofthe domains
 // first value is the minimum size of square side, and the second the maximun size of square side
 var rectSize = d3.scaleSqrt()
-    .range([5, 44])
+    .range([5, 43])
 
 // Font size scale
 var fontSize = d3.scaleLinear()
@@ -23,10 +22,10 @@ var fontSize = d3.scaleLinear()
 
 // Color
 var colorPub = d3.scaleLinear()
-    .domain([1, 40]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .domain([1, 40])
     .range(['#fff','red'])
 var colorPriv = d3.scaleLinear()
-    .domain([1, 40]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .domain([1, 40])
     .range(['#fff','blue'])
 
 // Adds cartogram svg
@@ -65,14 +64,14 @@ var path = d3.geoPath()
     barrio = topojson.feature(data, data.objects.barrios).features
 
     // Rect size scale
-    rectSize.domain(d3.extent(barrio, function(d) {return d.properties.perc_alum_ext_todos }))
+    rectSize.domain(d3.extent(barrio, function(d) {return d.properties.total_alumnado }))
 
     // 2. Create on each feature the centroid and the positions
     barrio.forEach(function(d) {
         d.pos = projection(d3.geoCentroid(d))
         d.x = d.pos[0]
         d.y = d.pos[1]
-        d.area = rectSize(d.properties.total_alumnado) / 20 // Select how to scale the squares. Try and decide
+        d.area = rectSize(d.properties.total_alumnado) / 0.65// Select how to scale the squares. Try and decide
       // d.area = rectSize(d.properties.habitantes2015) / 2 // How we scale
     })
 
@@ -93,7 +92,7 @@ var path = d3.geoPath()
         .data(barrio)
         .enter()
         .append("g")
-        .attr("class", function(d) { return "zona: " + d.properties.zona })
+        .attr("class", function(d) { return "zona " + d.properties.zona + " z" + d.properties.zona_id })
         .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")" })
 
     var rect2 = rectangulos2.selectAll("g")
@@ -117,18 +116,7 @@ var path = d3.geoPath()
 								} else {
 									return colorPub(d.properties.perc_alum_ext_publi)
 								}
-
-								/* Colorea por indice_desigualdad
-								} else if  ( d.properties.indice_desigualdad == 44 )  {
-									return "#337F7F";
-						    } else if ( d.properties.indice_desigualdad > 1 ) {
-									return colorPub(d.properties.indice_desigualdad)
-								} else {
-							 		return colorPriv(d.properties.perc_alum_ext_priv / d.properties.perc_alum_ext_publi)
-								}
-								*/
 							})
-              //color(d.properties.indice_desigualdad)
               .attr("stroke", "#CCC")
               .attr("stroke-width", 1)
               .attr("rx", 0.5)
@@ -219,7 +207,6 @@ var path = d3.geoPath()
         // Hide tooltip
         tooltip.style("opacity", 0)
       }
-
 })
 
 // From http://bl.ocks.org/mbostock/4055889
