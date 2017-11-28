@@ -3,7 +3,7 @@ isMobile = innerWidth < 758;
 
 var screenwidth = d3.select("#cartogram").node().clientWidth;
 
-var margin = {top: 10, right: 10, bottom: 10, left:0},
+var margin = {top: 20, right: 10, bottom: 10, left:0},
     width = (isMobile ? (screenwidth+100) : screenwidth) - margin.left - margin.right,
     height = 710 - margin.top - margin.bottom,
     padding = 2;
@@ -20,7 +20,7 @@ var margin = {top: 10, right: 10, bottom: 10, left:0},
 //must calculate manually the relationship of the squares of this values to match the min and max value ofthe domains
 // first value is the minimum size of square side, and the second the maximun size of square side
 var rectSize = d3.scaleSqrt()
-    .range([5, 44])
+    .range([5, 43])
 
 // Font size scale
 var fontSize = d3.scaleLinear()
@@ -28,10 +28,10 @@ var fontSize = d3.scaleLinear()
 
 // Color
 var colorPub = d3.scaleLinear()
-    .domain([1, 40]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .domain([1, 65]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
     .range(['#fff','red'])
 var colorPriv = d3.scaleLinear()
-    .domain([1, 40]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .domain([1, 65]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
     .range(['#fff','blue'])
 
 // Adds cartogram svg
@@ -44,7 +44,7 @@ var svg = d3.select("#cartogram").append("svg")
 //Adds Background image
 var background = svg.append('g').attr('id','backgroundimage');
 background.append("image")
-	.attr("xlink:href", "../images/leyenda-segregacion-extranjeros-red-pub-priv-euskadi.png")
+	.attr("xlink:href", "../images/leyenda-becas-red-pub-priv-euskadi.png")
 	.attr("x", 0)
 	.attr("y", height- 361)
 	.attr("width", "278")
@@ -70,14 +70,14 @@ var path = d3.geoPath()
     barrio = topojson.feature(data, data.objects.barrios).features
 
     // Rect size scale
-    rectSize.domain(d3.extent(barrio, function(d) {return d.properties.perc_alum_ext_todos }))
+    rectSize.domain(d3.extent(barrio, function(d) {return d.properties.total_alumnado }))
 
     // 2. Create on each feature the centroid and the positions
     barrio.forEach(function(d) {
         d.pos = projection(d3.geoCentroid(d))
         d.x = d.pos[0]
         d.y = d.pos[1]
-        d.area = rectSize(d.properties.total_alumnado) / 20 // Select how to scale the squares. Try and decide
+        d.area = rectSize(d.properties.total_alumnado) / 0.65// Select how to scale the squares. Try and decide
       // d.area = rectSize(d.properties.habitantes2015) / 2 // How we scale
     })
 
@@ -120,7 +120,7 @@ var path = d3.geoPath()
 		            if  ( d.properties.indice_desigualdad == null)  {
 									return "#CCC";
 								} else {
-									return colorPub(d.properties.perc_alum_ext_publi)
+									return colorPub(d.properties.perc_bec_comedor_pub)
 								}
 
 								/* Colorea por indice_desigualdad
@@ -150,7 +150,7 @@ var path = d3.geoPath()
 		            if  ( d.properties.indice_desigualdad == null)  {
 									return "#CCC";
 								} else {
-									return colorPriv(d.properties.perc_alum_ext_priv)
+									return colorPriv(d.properties.perc_bec_comedor_priv)
 								}
 							})
               .attr("stroke", "#CCC")
@@ -193,22 +193,13 @@ var path = d3.geoPath()
           tooltip.html("<div class='table-responsive'><strong>" + d.properties.zona + "</strong> (zona escolar " + d.properties.zona_id2 + ")</div>" +
             "<table class='table table-condensed table-striped'>" +
                 "<tr>" +
-                    "<td style='text-align:right'><strong>"+ d.properties.perc_alum_ext_publi  +"%</strong></td><td>alumnado es extranjero en la red <strong>pública</strong></td>" +
+                    "<td style='text-align:right'><strong>"+ d.properties.perc_bec_comedor_pub +"%</strong></td><td>alumnado becado comedor en la red <strong>pública</strong></td>" +
                 "</tr>" +
-                 "<tr>" +
-                    "<td style='text-align:right'><strong>"+ privado +"%</strong></td><td>alumnado es extranjero en la red <strong>privado-concertada</strong></td>" +
+               "<tr>" +
+                    "<td style='text-align:right'><strong>"+ d.properties.perc_bec_comedor_priv +"%</strong></td><td>alumnado becado comedor en la red <strong>privada</strong></td>" +
                 "</tr>" +
-								"<tr>" +
-                    "<td style='text-align:right'>"+ d.properties.perc_alum_ext_todos +"%</td><td>alumnado es extranjero de media</td>" +
-                "</tr>" +
-								"<tr>" +
-                    "<td style='text-align:right'>"+ diferencia +"</td><td>diferencia % ("+ diferencia_explica + ")</td>" +
-                "</tr>" +
-                "<tr>" +
-                    "<td style='text-align:right'>"+ desigualdad +"</td><td>índice desigualdad extranjeros (" + cociente + ")</td>" +
-                "</tr>" +
-                "<tr>" +
-                    "<td style='text-align:right'>"+ d.properties.alum_ext_total +"</td><td>total alumnado extranjero</td>" +
+               "<tr>" +
+                    "<td style='text-align:right'><strong>"+ d.properties.perc_bec_comedor_pub - d.properties.perc_bec_comedor_priv +"</strong></td><td> diferencia pública - privada</td>" +
                 "</tr>" +
 								"<tr>" +
                     "<td style='text-align:right'>"+ d.properties.total_alumnado +"</td><td> alumnado</td>" +
@@ -224,61 +215,6 @@ var path = d3.geoPath()
         // Hide tooltip
         tooltip.style("opacity", 0)
       }
-	
-	
-  // Assign a listener to the resize event
-  window.onresize = resize;
-  
-  window.addEventListener('resize', debounce(resize, 300));
-
-  function resize() {
-    // Update width & height
-    width = d3.select("#cartogram").node().clientWidth - margin.left - margin.right,
-    height = width - margin.top - margin.bottom;
-
-
-    width = select(selection$$1).node().clientWidth;
-    height = height;
-
-    svg.attr("width", width).attr("height", height);
-
-		var projection = d3.geoMercator().fitSize([width, height], topojson.feature(data, data.objects.barrios));
-
-
-    // Rect size scale
-    var rectSize = scaleSqrt().range([5, squareScale(width)]).domain(d3.extent(barrio, function(d) {return d.properties.perc_alum_ext_todos }));
-
-    // 2. Create on each feature the centroid and the positions
-    barrio.forEach(function(d) {
-        d.pos = projection(d3.geoCentroid(d))
-        d.x = d.pos[0]
-        d.y = d.pos[1]
-        d.area = rectSize(d.properties.total_alumnado) / 20 // Select how to scale the squares. Try and decide
-      // d.area = rectSize(d.properties.habitantes2015) / 2 // How we scale
-    })
-
-    // 3. Collide force
-    var simulation = d3.forceSimulation(barrio)
-        .force("x", d3.forceX(function(d) { return d.pos[0] }).strength(.1))
-        .force("y", d3.forceY(function(d) { return d.pos[1] }).strength(.1))
-        .force("collide", collide)
-
-    // 4. Number of simulations
-    for (var i = 0; i < 120; ++i) {
-      simulation.tick();
-    }rect.data(prov).attr("transform", function (d) {
-      return "translate(" + d.x + "," + d.y + ")";
-    });
-
-
-    rectangulos.selectAll("g").each(function (d) {
-      select(this).attr("width", d.area).attr("height", d.area).attr("x", -d.area / 2).attr("y", -d.area / 2);
-    });
-    
-		//mueve leyenda si es mobile
-    legend.attr('transform', isMobile ? 'translate(' + (width - 135) + ',' + (height - 30) + ')' : 'translate(' + (width - 225) + ',' + (height - 40) + ')');
-
-  }
 })
 
 // From http://bl.ocks.org/mbostock/4055889
