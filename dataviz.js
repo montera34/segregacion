@@ -24,7 +24,7 @@ privadoConcertado = "privado-concertado";
 if (lengua == "eu" ) {
   var becasMaterial = "Material didaktikoko beken %",
 	becasComedor = "Jantokiko beken %";
-	alumnadoExtranjero = "Atzerriko kasleen %",
+	alumnadoExtranjero = "Atzerriko ikasleen %",
 	publico = "publikoa",
 	privadoConcertado = "pribatu-itunpekoa";
 }
