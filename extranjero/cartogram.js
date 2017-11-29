@@ -5,12 +5,12 @@ isMobile = innerWidth < 758;
 
 var screenwidth = d3.select("#cartogram").node().clientWidth;
 
-var margin = {top: 20, right: 0, bottom: 0, left: 0},
+var margin = {top: 0, right: 0, bottom: 0, left: 0},
     //width = (isMobile ? (screenwidth+100) : screenwidth) - margin.left - margin.right,
-    width = 900 - margin.left - margin.right,
-    ratio = 1.02,
+    width = 1100 - margin.left - margin.right,
+    ratio = 1,
     height = width*ratio - margin.top - margin.bottom,
-    padding = 2;
+    padding = 3;
 var square = 70
 
 // Rectangle size
@@ -21,8 +21,8 @@ var rectSize = d3.scaleSqrt()
 
 // Line size
 var lineSize = d3.scaleLinear()
-		.domain([0,30])
-    .range([0,square*2])
+		.domain([0,42])
+    .range([0,square])
 
 // Font size scale
 var fontSize = d3.scaleLinear()
@@ -64,10 +64,42 @@ defs.append("marker")
 	.attr("markerHeight",4)
 	.attr("orient","auto")
 	.append("path")
-	.attr("d", "M0,-5L5,0L0,5")
-	.attr("class","arrowHead")
-	.attr("fill-opacity","0")
-	.attr("stroke","grey")
+		.attr("d", "M0,-5L5,0L0,5")
+		.attr("class","arrowHead")
+		.attr("fill-opacity","0")
+		.attr("stroke","grey")
+
+defs.append("marker")
+	.attr("id","markerCircle")
+	.attr("refX",2)
+	.attr("refY",2)
+	.attr("markerWidth",4)
+	.attr("markerHeight",4)
+	.attr("orient","auto")
+	.append("circle")
+		.attr("class","circleHead")
+		.attr("fill-opacity","1")
+		.attr("fill","#bd0017")
+		.attr("stroke","none")
+		.attr("cx",2)
+		.attr("cy",2)
+		.attr("r",0.8)
+
+defs.append("marker")
+	.attr("id","markerCirclePriv")
+	.attr("refX",2)
+	.attr("refY",2)
+	.attr("markerWidth",4)
+	.attr("markerHeight",4)
+	.attr("orient","auto")
+	.append("circle")
+		.attr("class","circleHead")
+		.attr("fill-opacity","1")
+		.attr("fill","#00F")
+		.attr("stroke","none")
+		.attr("cx",2)
+		.attr("cy",2)
+		.attr("r",0.8)
 
 var rectangulos = svg.append('g').attr('id','rectangulos');
 var rectangulos2 = svg.append('g').attr('id','rectangulos2');
@@ -102,7 +134,7 @@ var path = d3.geoPath()
         d.y = d.pos[1]
         // Select how to scale the squares. Try and decide
        // d.area = rectSize(d.properties.total_alumnado) / 0.75
-        d.area = square
+        d.area = square / 1.1
         //d.lsize = lineSize(Math.abs(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_publi)) no se usa
     })
 
@@ -140,27 +172,29 @@ var path = d3.geoPath()
         .data(barrio)
         .enter()
         .append("g")
-        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")" })
+        .attr("transform", function(d) { return "translate(" + (d.x - square/2) + "," + d.y + ")" })
           .on("mousemove", showTooltip) // AÑADIR EVENTO SHOW TOOLTIP
 					.on("mouseout", hideTooltip) // OCULTAR TOOLTIP
 
 		arrows.append("line")
 		  .each(function(d) {
 		  		var desigualdad = (d.properties.indice_desigualdad == null ) ? 0 : d.properties.indice_desigualdad;
-		  		var value = lineSize(Math.abs(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv));
+					var value = lineSize(Math.abs(d.properties.perc_alum_ext_priv));
 		  		if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
 		  			value = 0;
 		  		}
 		      d3.select(this)
 		        .attr("width", square)
 		        .attr("height", square)
-		        .attr("x1", 0)
+		        .attr("x1", lineSize(d.properties.perc_alum_ext_publi))
 		        .attr("y1", 25)
-		        .attr("x2", function(d) { return (desigualdad > 1) ? value : -value; })
+		        .attr("x2", value)
 		        .attr("y2", 25)
 		        .attr("class", Math.abs(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv))
-		        .attr("marker-end","url(#arrow)")
-		        .attr("fill","#F00")
+		        .attr("marker-end","url(#markerCirclePriv)")
+		        .attr("marker-start","url(#markerCircle)")
+		        .attr("fill","#bd0017")
+		        .attr("stroke-opacity","0.7")
 		        .attr("stroke", function(d) {
 		          var desigualdad = (d.properties.indice_desigualdad == null ) ? "--" : d.properties.indice_desigualdad;
 							color = "#000";
@@ -176,7 +210,7 @@ var path = d3.geoPath()
 							}
 		      		return color;
 		        })
-		        .attr("stroke-width", 3);
+		        .attr("stroke-width", 4)
 		      })
 
   rect.append("rect")
@@ -184,8 +218,10 @@ var path = d3.geoPath()
             d3.select(this)
               .attr("width", d.area)
               .attr("height", d.area)
-              .attr("x", -d.area / 2)
-              .attr("y", -d.area / 2)
+              .attr("x", -square / 2)
+              .attr("y", -square / 2)
+              //.attr("x", -d.area / 2)
+              //.attr("y", -d.area / 2)
               /*.attr("fill", function(d) {
 		            if  ( d.properties.indice_desigualdad == null)  {
 									return "#CCC";
@@ -193,8 +229,8 @@ var path = d3.geoPath()
 									return colorPub(d.properties.perc_alum_ext_publi)
 								}
 							})*/
-							.attr("fill", "#FFF")
-              .attr("stroke", "#FFF")
+							.attr("fill", "#eee")
+              .attr("stroke", "#fff")
               .attr("stroke-width", 1)
               .attr("rx", 0.5)
           })
@@ -218,16 +254,60 @@ var path = d3.geoPath()
               .attr("rx", 0.5)
           })
 */
+		// Texto de zona
+		arrows.append("text")
+			.each(function(d) {
+			//var zona = ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) ? " " : d.properties.zona;
+			d3.select(this)
+				.attr("text-anchor", "left")
+				.attr("dy", 12)
+				.attr("dx", "4px")
+				.text(d.properties.zona.substring(0,10)+".")
+				.style("fill", "black")
+				.style("font-size", "13px");
+		})
+		// texto diferenciea
     arrows.append("text")
-        .each(function(d) {
-        		var zona = ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) ? " " : d.properties.zona; 
-            d3.select(this)
-                .attr("text-anchor", "middle")
-                .attr("dy", 12)
-                .text(zona.substring(0,11)+".")
-                .style("fill", "black")
-                .style("font-size", "14px")
-        })
+      .each(function(d) {
+				var zona = ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) ? " " : d.properties.zona;
+        d3.select(this)
+          .attr("text-anchor", "middle")
+		      .attr("dy", -13)
+		      .attr("dx", square/2)
+		      .text(d3.format(",.0f")(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv) + "%")
+		      .style("fill", function(d) {
+						var desigualdad = (d.properties.indice_desigualdad == null ) ? 0 : d.properties.indice_desigualdad;
+						var colora = ( desigualdad > 1 ) ? "#bd0017" : "blue";
+						return colora;
+						}
+		      )
+		      .style("font-size", "13px")
+		      })
+		// % de red pública
+/*    arrows.append("text")
+      .each(function(d) {
+				var zona = ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) ? " " : d.properties.zona;
+        d3.select(this)
+          .attr("text-anchor", "left")
+		      .attr("dy", 30)
+		      .attr("dx", lineSize(d.properties.perc_alum_ext_publi) + 4)
+		      .text(d.properties.perc_alum_ext_publi + "%")
+		      .style("fill", "red")
+		      .style("font-size", "11px")
+      })
+		// % de red privada
+    arrows.append("text")
+      .each(function(d) {
+				var zona = ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) ? " " : d.properties.zona;
+        d3.select(this)
+          .attr("text-anchor", "right")
+		      .attr("dy", 30)
+		      .attr("dx", lineSize(d.properties.perc_alum_ext_priv) - 12)
+		      .text(d3.format(",.0f")(d.properties.perc_alum_ext_priv))
+		      .style("fill", "blue")
+		      .style("font-size", "11px")
+      })
+*/
 
       function showTooltip(d) {
           // Fill the tooltip
@@ -262,7 +342,7 @@ var path = d3.geoPath()
                     "<td style='text-align:right'>"+ d.properties.perc_alum_ext_todos +"%</td><td>alumnado es extranjero de media</td>" +
                 "</tr>" +
 								"<tr>" +
-                    "<td style='text-align:right'>"+ diferencia +"</td><td>diferencia % ("+ diferencia_explica + ")</td>" +
+                    "<td style='text-align:right'><strong>"+ diferencia +"</strong></td><td>diferencia % ("+ diferencia_explica + ")</td>" +
                 "</tr>" +
                 "<tr>" +
                     "<td style='text-align:right'>"+ desigualdad +"</td><td>índice desigualdad extranjeros (" + cociente + ")</td>" +
