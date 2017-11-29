@@ -44,14 +44,14 @@ var svg = d3.select("#cartogram").append("svg")
     .attr("transform", "translate("+ margin.left +"," + margin.top + ")");
 
 //Adds Background image
-/*var background = svg.append('g').attr('id','backgroundimage');
+var background = svg.append('g').attr('id','backgroundimage');
 background.append("image")
-	.attr("xlink:href", "../images/leyenda-segregacion-extranjeros-red-pub-priv-euskadi.png")
-	.attr("x", 0)
-	.attr("y", height- 361)
-	.attr("width", "278")
+	.attr("xlink:href", "../images/leyenda-flechas-segregacion-extranjeros-red-pub-priv-euskadi.png")
+	.attr("x", width-400)
+	.attr("y", -80)
+	.attr("width", "350")
 	.attr("height", "311");
-*/
+
 // Adds arrows
 defs = svg.append("defs");
 
@@ -191,7 +191,13 @@ var path = d3.geoPath()
 		        .attr("x2", value)
 		        .attr("y2", 25)
 		        .attr("class", Math.abs(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv))
-		        .attr("marker-end","url(#markerCirclePriv)")
+		        .attr("marker-end", function(d) {
+				      if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
+							endMarker = "";
+							} else { endMarker = "url(#markerCirclePriv)" }
+				      return endMarker;
+				      }
+		        )
 		        .attr("marker-start","url(#markerCircle)")
 		        .attr("fill","#bd0017")
 		        .attr("stroke-opacity","0.7")
@@ -262,11 +268,14 @@ var path = d3.geoPath()
 				.attr("text-anchor", "left")
 				.attr("dy", 12)
 				.attr("dx", "4px")
-				.text(d.properties.zona.substring(0,10)+".")
+				.text( function(d) {
+					var punto = (d.properties.zona.length > 10)? "." : "";
+					return d.properties.zona.substring(0,10) + punto;
+					})
 				.style("fill", "black")
 				.style("font-size", "13px");
 		})
-		// texto diferenciea
+		// texto diferencia
     arrows.append("text")
       .each(function(d) {
 				var zona = ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) ? " " : d.properties.zona;
@@ -274,7 +283,14 @@ var path = d3.geoPath()
           .attr("text-anchor", "middle")
 		      .attr("dy", -13)
 		      .attr("dx", square/2)
-		      .text(d3.format(",.0f")(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv) + "%")
+		      .text(
+		      function(d) {
+				      if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
+							texto = "";
+							} else { texto = d3.format(",.0f")(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv) + "%" }
+				      return texto;
+				      }
+		      )
 		      .style("fill", function(d) {
 						var desigualdad = (d.properties.indice_desigualdad == null ) ? 0 : d.properties.indice_desigualdad;
 						var colora = ( desigualdad > 1 ) ? "#bd0017" : "blue";
