@@ -273,7 +273,8 @@ var path = d3.geoPath()
 					return d.properties.zona.substring(0,10) + punto;
 					})
 				.style("fill", "black")
-				.style("font-size", "13px");
+				.style("font-size", "13px")
+				.style("pointer-events","none");
 		})
 		// texto diferencia
     arrows.append("text")
