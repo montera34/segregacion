@@ -5,16 +5,24 @@ isMobile = innerWidth < 758;
 
 var screenwidth = d3.select("#cartogram").node().clientWidth;
 
-var margin = {top: 20, right: 10, bottom: 10, left:0},
-    width = (isMobile ? (screenwidth+100) : screenwidth) - margin.left - margin.right,
-    height = 710 - margin.top - margin.bottom,
+var margin = {top: 20, right: 0, bottom: 0, left: 0},
+    //width = (isMobile ? (screenwidth+100) : screenwidth) - margin.left - margin.right,
+    width = 900 - margin.left - margin.right,
+    ratio = 1.02,
+    height = width*ratio - margin.top - margin.bottom,
     padding = 2;
+var square = 70
 
 // Rectangle size
 //must calculate manually the relationship of the squares of this values to match the min and max value ofthe domains
 // first value is the minimum size of square side, and the second the maximun size of square side
 var rectSize = d3.scaleSqrt()
-    .range([5, 43])
+    .range([5, 100])
+
+// Line size
+var lineSize = d3.scaleLinear()
+		.domain([0,30])
+    .range([0,square*2])
 
 // Font size scale
 var fontSize = d3.scaleLinear()
@@ -36,16 +44,34 @@ var svg = d3.select("#cartogram").append("svg")
     .attr("transform", "translate("+ margin.left +"," + margin.top + ")");
 
 //Adds Background image
-var background = svg.append('g').attr('id','backgroundimage');
+/*var background = svg.append('g').attr('id','backgroundimage');
 background.append("image")
 	.attr("xlink:href", "../images/leyenda-segregacion-extranjeros-red-pub-priv-euskadi.png")
 	.attr("x", 0)
 	.attr("y", height- 361)
 	.attr("width", "278")
 	.attr("height", "311");
+*/
+// Adds arrows
+defs = svg.append("defs");
+
+defs.append("marker")
+	.attr("id","arrow")
+	.attr("viewBox","0 -5 10 10")
+	.attr("refX",5)
+	.attr("refY",0)
+	.attr("markerWidth",4)
+	.attr("markerHeight",4)
+	.attr("orient","auto")
+	.append("path")
+	.attr("d", "M0,-5L5,0L0,5")
+	.attr("class","arrowHead")
+	.attr("fill-opacity","0")
+	.attr("stroke","grey")
 
 var rectangulos = svg.append('g').attr('id','rectangulos');
 var rectangulos2 = svg.append('g').attr('id','rectangulos2');
+var flechas = svg.append('g').attr('id','flechas');
 
 // Adds tooltip
 var tooltip = d3.select("body")
@@ -66,13 +92,18 @@ var path = d3.geoPath()
     // Rect size scale
     rectSize.domain(d3.extent(barrio, function(d) {return d.properties.total_alumnado }))
 
+    // Line size scale
+    // lineSize.domain(d3.extent(barrio, function(d) {return d.properties.total_alumnado })) TODO, as there is no "dif" variable for extranjeros
+
     // 2. Create on each feature the centroid and the positions
     barrio.forEach(function(d) {
         d.pos = projection(d3.geoCentroid(d))
         d.x = d.pos[0]
         d.y = d.pos[1]
-        d.area = rectSize(d.properties.total_alumnado) / 0.65// Select how to scale the squares. Try and decide
-      // d.area = rectSize(d.properties.habitantes2015) / 2 // How we scale
+        // Select how to scale the squares. Try and decide
+       // d.area = rectSize(d.properties.total_alumnado) / 0.75
+        d.area = square
+        //d.lsize = lineSize(Math.abs(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_publi)) no se usa
     })
 
     // Font size scale
@@ -85,7 +116,7 @@ var path = d3.geoPath()
         .force("collide", collide)
 
     // 4. Number of simulations
-    for (var i = 0; i < 200; ++i) simulation.tick()
+    for (var i = 0; i < 100; ++i) simulation.tick()
 
     // 5. Paint the cartogram
     var rect = rectangulos.selectAll("g")
@@ -94,8 +125,18 @@ var path = d3.geoPath()
         .append("g")
         .attr("class", function(d) { return "zona " + d.properties.zona + " z" + d.properties.zona_id })
         .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")" })
+          .on("mousemove", showTooltip) // AÑADIR EVENTO SHOW TOOLTIP
+					.on("mouseout", hideTooltip) // OCULTAR TOOLTIP
 
-    var rect2 = rectangulos2.selectAll("g")
+/*    var rect2 = rectangulos2.selectAll("g")
+        .data(barrio)
+        .enter()
+        .append("g")
+        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")" })
+          .on("mousemove", showTooltip) // AÑADIR EVENTO SHOW TOOLTIP
+					.on("mouseout", hideTooltip) // OCULTAR TOOLTIP
+*/		
+		var arrows = flechas.selectAll("g")
         .data(barrio)
         .enter()
         .append("g")
@@ -103,26 +144,62 @@ var path = d3.geoPath()
           .on("mousemove", showTooltip) // AÑADIR EVENTO SHOW TOOLTIP
 					.on("mouseout", hideTooltip) // OCULTAR TOOLTIP
 
-    rect.append("rect")
+		arrows.append("line")
+		  .each(function(d) {
+		  		var desigualdad = (d.properties.indice_desigualdad == null ) ? 0 : d.properties.indice_desigualdad;
+		  		var value = lineSize(Math.abs(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv));
+		  		if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
+		  			value = 0;
+		  		}
+		      d3.select(this)
+		        .attr("width", square)
+		        .attr("height", square)
+		        .attr("x1", 0)
+		        .attr("y1", 25)
+		        .attr("x2", function(d) { return (desigualdad > 1) ? value : -value; })
+		        .attr("y2", 25)
+		        .attr("class", Math.abs(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv))
+		        .attr("marker-end","url(#arrow)")
+		        .attr("fill","#F00")
+		        .attr("stroke", function(d) {
+		          var desigualdad = (d.properties.indice_desigualdad == null ) ? "--" : d.properties.indice_desigualdad;
+							color = "#000";
+							if  ( desigualdad == "--" ) {
+								desigualdad = "--";
+								color = "#FFF";
+							} else if ( desigualdad > 1 ) {
+								desigualdad = d.properties.indice_desigualdad;
+								color = "#F00";
+							} else {
+								desigualdad = d.properties.indice_desigualdad;
+								color = "#00F";
+							}
+		      		return color;
+		        })
+		        .attr("stroke-width", 3);
+		      })
+
+  rect.append("rect")
         .each(function(d) {
             d3.select(this)
               .attr("width", d.area)
               .attr("height", d.area)
               .attr("x", -d.area / 2)
               .attr("y", -d.area / 2)
-              .attr("fill", function(d) {
+              /*.attr("fill", function(d) {
 		            if  ( d.properties.indice_desigualdad == null)  {
 									return "#CCC";
 								} else {
 									return colorPub(d.properties.perc_alum_ext_publi)
 								}
-							})
-              .attr("stroke", "#CCC")
+							})*/
+							.attr("fill", "#FFF")
+              .attr("stroke", "#FFF")
               .attr("stroke-width", 1)
               .attr("rx", 0.5)
           })
 
-    rect2.append("rect")
+/*	    rect2.append("rect")
         .each(function(d) {
             d3.select(this)
               .attr("width", d.area)
@@ -140,16 +217,16 @@ var path = d3.geoPath()
               .attr("stroke-width", 1)
               .attr("rx", 0.5)
           })
-
-    rect.append("text")
+*/
+    arrows.append("text")
         .each(function(d) {
+        		var zona = ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) ? " " : d.properties.zona; 
             d3.select(this)
                 .attr("text-anchor", "middle")
                 .attr("dy", 12)
-                .text(d.properties.zona.substring(0,7)+".")
+                .text(zona.substring(0,11)+".")
                 .style("fill", "black")
-                .style("font-size", fontSize(d.area) + "px")
-                .style("font-size", "11px")
+                .style("font-size", "14px")
         })
 
       function showTooltip(d) {
