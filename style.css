@@ -282,4 +282,6 @@ li #idtodas, li #idbizkaia {
 .btn-activo {
 	background-color:#FF0;
 }
-
+.localizacion {
+	font-size:1.1em !important;
+}
