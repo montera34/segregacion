@@ -137,7 +137,7 @@ var path = d3.geoPath()
         d.y = d.pos[1]
         // Select how to scale the squares. Try and decide
        // d.area = rectSize(d.properties.total_alumnado) / 0.75
-        d.area = square / 1.1
+        d.area = square / 1
         //d.lsize = lineSize(Math.abs(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_publi)) no se usa
     })
 
@@ -211,7 +211,7 @@ var path = d3.geoPath()
 								color = "#CCC";
 							} else if ( desigualdad > 1 ) {
 								desigualdad = d.properties.indice_desigualdad;
-								color = "#F00";
+								color = "#bd0017";
 							} else {
 								desigualdad = d.properties.indice_desigualdad;
 								color = "#00F";

@@ -21,7 +21,7 @@ var rectSize = d3.scaleSqrt()
 
 // Line size
 var lineSize = d3.scaleLinear()
-		.domain([0,65])
+		.domain([0,72])
     .range([0,square])
 
 // Font size scale
@@ -188,9 +188,9 @@ var path = d3.geoPath()
 		      d3.select(this)
 		        .attr("width", square)
 		        .attr("height", square)
-		        .attr("x1", lineSize(d.properties.perc_bec_comedor_pub))
+		        .attr("x1", lineSize(d.properties.perc_bec_mat_escolar_pub))
 		        .attr("y1", 25)
-		        .attr("x2", lineSize(d.properties.perc_bec_comedor_priv))
+		        .attr("x2", lineSize(d.properties.perc_bec_mat_escolar_priv))
 		        .attr("y2", 25)
 		        .attr("marker-end", function(d) {
 				      if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
@@ -207,7 +207,7 @@ var path = d3.geoPath()
 							if  ( desigualdad == "--" ) {
 								desigualdad = "--";
 								color = "#EEE";
-							} else if ( (d.properties.perc_bec_comedor_pub - d.properties.perc_bec_comedor_priv) > 0 ) {
+							} else if ( (d.properties.perc_bec_mat_escolar_pub - d.properties.perc_bec_mat_escolar_priv) > 0 ) {
 								desigualdad = d.properties.indice_desigualdad;
 								color = "#bd0017";
 							} else {
@@ -287,13 +287,13 @@ var path = d3.geoPath()
 		      function(d) {
 				      if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
 							texto = "";
-							} else { texto = d3.format(",.0f")(d.properties.perc_bec_comedor_pub - d.properties.perc_bec_comedor_priv) + "%" }
+							} else { texto = d3.format(",.0f")(d.properties.perc_bec_mat_escolar_pub - d.properties.perc_bec_mat_escolar_priv) + "%" }
 				      return texto;
 				      }
 		      )
 		      .style("fill", function(d) {
 						var desigualdad = (d.properties.indice_desigualdad == null ) ? 0 : d.properties.indice_desigualdad;
-						var colora = ( (d.properties.perc_bec_comedor_pub - d.properties.perc_bec_comedor_priv) > 0 ) ? "#bd0017" : "blue";
+						var colora = ( (d.properties.perc_bec_mat_escolar_pub - d.properties.perc_bec_mat_escolar_priv) > 0 ) ? "#bd0017" : "blue";
 						return colora;
 						}
 		      )
@@ -327,31 +327,30 @@ var path = d3.geoPath()
 
       function showTooltip(d) {
           // Fill the tooltip
-					if  ( d.properties.perc_bec_comedor_priv == null ) {
+					if  ( d.properties.perc_bec_mat_escolar_priv == null ) {
 						diferencia = "--";
 						cociente = "valor nulo al no haber centros privados concertados";
-					} else if ( (d.properties.perc_bec_comedor_pub - d.properties.perc_bec_comedor_priv) > 0 ) {
-						diferencia = d3.format(",.1f")(d.properties.perc_bec_comedor_pub - d.properties.perc_bec_comedor_priv);
-						privado = d.properties.perc_bec_comedor_priv;
+					} else if ( (d.properties.perc_bec_mat_escolar_pub - d.properties.perc_bec_mat_escolar_priv) > 0 ) {
+						diferencia = d3.format(",.1f")(d.properties.perc_bec_mat_escolar_pub - d.properties.perc_bec_mat_escolar_priv);
 						diferencia_explica = "% pública - % privada";
 						cociente = "% pública / % privada";
 						color = "rgb(189,0,23,0.4)";
 					} else {
-						diferencia = d3.format(",.1f")(d.properties.perc_bec_comedor_pub- d.properties.perc_bec_comedor_priv);
+						diferencia = d3.format(",.1f")(d.properties.perc_bec_mat_escolar_pub- d.properties.perc_bec_mat_escolar_priv);
 						diferencia_explica = "% pública - % privada";
 						cociente = "% privada / % pública";
 						color = "rgb(0,0,255,0.4)";
 					}
         
-          var privado = (d.properties.perc_bec_comedor_priv == null ) ? "-- " : d.properties.perc_bec_comedor_priv;
+          var privado = (d.properties.perc_bec_mat_escolar_priv == null ) ? "-- " : d.properties.perc_bec_mat_escolar_priv;
 
           tooltip.html("<div class='table-responsive'><strong>" + d.properties.zona + "</strong> (zona escolar " + d.properties.zona_id2 + ", " + d.properties.provincia + ")</div>" +
             "<table class='table table-condensed'>" +
                 "<tr>" +
-                    "<td style='text-align:right;color:#bd0017'><strong>"+ d.properties.perc_bec_comedor_pub  +"%</strong></td><td>alumnado becado comedor en la red <strong>pública</strong></td>" +
+                    "<td style='text-align:right;color:#bd0017'><strong>"+ d.properties.perc_bec_mat_escolar_pub  +"%</strong></td><td>alumnado becado material escolar en la red <strong>pública</strong></td>" +
                 "</tr>" +
                  "<tr>" +
-                    "<td style='text-align:right;color:#00F'><strong>"+ privado +"%</strong></td><td>alumnado becado comedor en la red <strong>privado-concertada</strong></td>" +
+                    "<td style='text-align:right;color:#00F'><strong>"+ privado +"%</strong></td><td>alumnado becado material escolar en la red <strong>privado-concertada</strong></td>" +
                 "</tr>" +
 								"<tr style='background-color:" + color + "'>" +
                     "<td style='text-align:right'><strong>"+ diferencia +"</strong></td><td>diferencia % ("+ diferencia_explica + ")</td>" +
