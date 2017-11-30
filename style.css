@@ -230,6 +230,9 @@ figcaption {
 	font-weight: bold;
 	text-transform: uppercase;
 }
+.navbar-brand {
+	font-size: 16px !important;
+}
 .bgimg {
 	background-repeat: none;
 	font-size: 17px;
@@ -261,6 +264,7 @@ figcaption {
 }
 .top-segregacion h1 {
 	font-weight:bold;
+  margin-top: 2em !important;
 }
 .top-segregacion p.desc, .top-segregacion h1 {
 	color:#000;
