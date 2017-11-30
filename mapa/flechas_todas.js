@@ -10,7 +10,8 @@ var margin = {top: 0, right: 0, bottom: 0, left: 0},
     width = 1100 - margin.left - margin.right,
     ratio = 1,
     height = width*ratio - margin.top - margin.bottom,
-    padding = 3;
+    margen = 14,
+    padding = 4;
 var square = 70
 
 // Rectangle size
@@ -21,11 +22,11 @@ var rectSize = d3.scaleSqrt()
 
 // Line size
 var lineSize = d3.scaleLinear()
-		.domain([0,42])
-    .range([0,square])
+		.domain([0,72])
+    .range([0,square-margen])
 var lineSizeBeca = d3.scaleLinear()
 		.domain([0,72])
-    .range([0,square])
+    .range([0,square-margen])
 
 // Font size scale
 var fontSize = d3.scaleLinear()
@@ -52,7 +53,7 @@ var svg = d3.select("#cartogram").append("svg")
 //Adds Background image
 var background = svg.append('g').attr('id','backgroundimage');
 background.append("image")
-	.attr("xlink:href", "../images/leyenda-flechas-segregacion-extranjeros-red-pub-priv-euskadi.png")
+	.attr("xlink:href", "../images/leyenda-flechas-segregacion-todas-red-pub-priv-euskadi.png")
 	.attr("x", width-500)
 	.attr("y", -80)
 	.attr("width", "400")
@@ -193,9 +194,9 @@ var path = d3.geoPath()
 		        .attr("width", square)
 		        .attr("height", square)
 		        .attr("x1", lineSizeBeca(d.properties.perc_bec_mat_escolar_pub))
-		        .attr("y1", 15)
+		        .attr("y1", - square/2 + 25)
 		        .attr("x2", lineSizeBeca(d.properties.perc_bec_mat_escolar_priv))
-		        .attr("y2", 15)
+		        .attr("y2", - square/2 + 25)
 		        .attr("marker-end", function(d) {
 				      if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
 							endMarker = "";
@@ -234,9 +235,9 @@ var path = d3.geoPath()
 		        .attr("width", square)
 		        .attr("height", square)
 		        .attr("x1", lineSizeBeca(d.properties.perc_bec_comedor_pub))
-		        .attr("y1", 22.5)
+		        .attr("y1", - square/2 + 45)
 		        .attr("x2", lineSizeBeca(d.properties.perc_bec_comedor_priv))
-		        .attr("y2", 22.5)
+		        .attr("y2", - square/2 + 45)
 		        .attr("marker-end", function(d) {
 				      if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
 							endMarker = "";
@@ -323,7 +324,7 @@ var path = d3.geoPath()
 							.attr("fill", "#eee")
               .attr("stroke", "#fff")
               .attr("stroke-width", 1)
-              .attr("rx", 0.5)
+              .attr("rx", 0.7)
           })
 
 /*	    rect2.append("rect")
@@ -351,14 +352,15 @@ var path = d3.geoPath()
 			//var zona = ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) ? " " : d.properties.zona;
 			d3.select(this)
 				.attr("text-anchor", "left")
-				.attr("dy", 4)
+				.attr("dy", -square/2 + 14)
 				.attr("dx", "4px")
 				.text( function(d) {
 					var punto = (d.properties.zona.length > 10)? "." : "";
 					return d.properties.zona.substring(0,10) + punto;
 					})
 				.style("fill", "black")
-				.style("font-size", "13px");
+				.style("font-size", "13px")
+				.attr("pointer-events","none");
 		})
 
 		// texto diferencia 1: Material escolar
@@ -366,9 +368,9 @@ var path = d3.geoPath()
       .each(function(d) {
 				var zona = ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) ? " " : d.properties.zona;
         d3.select(this)
-          .attr("text-anchor", "left")
-		      .attr("dy", -13)
-		      .attr("dx", 0)
+          .attr("text-anchor", "end")
+		      .attr("dy", - square/2 + 29)
+		      .attr("dx", square)
 		      .text(
 		      function(d) {
 				      if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
@@ -387,16 +389,16 @@ var path = d3.geoPath()
 						return colora;
 						}
 		      )
-		      .style("font-size", "14px")
+		      .style("font-size", "10px")
 		      })
 		// texto diferencia 2
     arrows.append("text")
       .each(function(d) {
 				var zona = ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) ? " " : d.properties.zona;
         d3.select(this)
-          .attr("text-anchor", "middle")
-		      .attr("dy", -13)
-		      .attr("dx", square/2)
+          .attr("text-anchor", "end")
+		      .attr("dy", - square/2 + 49)
+		      .attr("dx", square)
 		      .text(
 		      function(d) {
 				      if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
@@ -415,7 +417,7 @@ var path = d3.geoPath()
 						return colora;
 						}
 		      )
-		      .style("font-size", "14px")
+		      .style("font-size", "10px")
 		      })
 		// texto diferencia 3: extranjero
     arrows.append("text")
@@ -423,7 +425,7 @@ var path = d3.geoPath()
 				var zona = ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) ? " " : d.properties.zona;
         d3.select(this)
           .attr("text-anchor", "end")
-		      .attr("dy", -13)
+		      .attr("dy", 34)
 		      .attr("dx", square)
 		      .text(
 		      function(d) {
@@ -442,7 +444,7 @@ var path = d3.geoPath()
 						return colora;
 						}
 		      )
-		      .style("font-size", "14px")
+		      .style("font-size", "10px")
 		      })
 		// % de red pública
 /*    arrows.append("text")
