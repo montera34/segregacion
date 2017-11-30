@@ -11,8 +11,8 @@ var margin = {top: 0, right: 0, bottom: 0, left: 0},
     ratio = 1,
     height = width*ratio - margin.top - margin.bottom,
     margen = 14,
-    padding = 4;
-var square = 70
+    padding = 3;
+var square = 67
 
 // Rectangle size
 //must calculate manually the relationship of the squares of this values to match the min and max value ofthe domains
