@@ -35,6 +35,9 @@ var colorPub = d3.scaleLinear()
 var colorPriv = d3.scaleLinear()
     .domain([1, 40])
     .range(['#fff','blue'])
+var colorTot= d3.scaleLinear()
+    .domain([1, 19])
+    .range(['#fff','#555'])
 
 // Adds cartogram svg
 var svg = d3.select("#cartogram").append("svg")
@@ -47,9 +50,9 @@ var svg = d3.select("#cartogram").append("svg")
 var background = svg.append('g').attr('id','backgroundimage');
 background.append("image")
 	.attr("xlink:href", "../images/leyenda-flechas-segregacion-extranjeros-red-pub-priv-euskadi.png")
-	.attr("x", width-400)
+	.attr("x", width-500)
 	.attr("y", -80)
-	.attr("width", "350")
+	.attr("width", "400")
 	.attr("height", "311");
 
 // Adds arrows
@@ -179,7 +182,7 @@ var path = d3.geoPath()
 		arrows.append("line")
 		  .each(function(d) {
 		  		var desigualdad = (d.properties.indice_desigualdad == null ) ? 0 : d.properties.indice_desigualdad;
-					var value = lineSize(Math.abs(d.properties.perc_alum_ext_priv));
+					var value = lineSize(d.properties.perc_alum_ext_priv);
 		  		if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
 		  			value = 0;
 		  		}
@@ -203,10 +206,9 @@ var path = d3.geoPath()
 		        .attr("stroke-opacity","0.7")
 		        .attr("stroke", function(d) {
 		          var desigualdad = (d.properties.indice_desigualdad == null ) ? "--" : d.properties.indice_desigualdad;
-							color = "#000";
 							if  ( desigualdad == "--" ) {
 								desigualdad = "--";
-								color = "#FFF";
+								color = "#CCC";
 							} else if ( desigualdad > 1 ) {
 								desigualdad = d.properties.indice_desigualdad;
 								color = "#F00";
@@ -228,14 +230,14 @@ var path = d3.geoPath()
               .attr("y", -square / 2)
               //.attr("x", -d.area / 2)
               //.attr("y", -d.area / 2)
-              /*.attr("fill", function(d) {
+              .attr("fill", function(d) {
 		            if  ( d.properties.indice_desigualdad == null)  {
 									return "#CCC";
 								} else {
-									return colorPub(d.properties.perc_alum_ext_publi)
+									return colorTot(d.properties.perc_alum_ext_todos)
 								}
-							})*/
-							.attr("fill", "#eee")
+							})
+							//.attr("fill", "#eee")
               .attr("stroke", "#fff")
               .attr("stroke-width", 1)
               .attr("rx", 0.5)
@@ -282,7 +284,7 @@ var path = d3.geoPath()
         d3.select(this)
           .attr("text-anchor", "middle")
 		      .attr("dy", -13)
-		      .attr("dx", square/2)
+		      .attr("dx", square/2-4)
 		      .text(
 		      function(d) {
 				      if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
@@ -297,7 +299,7 @@ var path = d3.geoPath()
 						return colora;
 						}
 		      )
-		      .style("font-size", "13px")
+		      .style("font-size", "14px")
 		      })
 		// % de red pública
 /*    arrows.append("text")
@@ -337,27 +339,29 @@ var path = d3.geoPath()
 						diferencia = d3.format(",.1f")(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv);
 						diferencia_explica = "% pública - % privada";
 						cociente = "% pública / % privada";
+						color = "rgb(189,0,23,0.4)";
 					} else {
 						desigualdad = d3.format(",.2f")(d.properties.perc_alum_ext_priv / d.properties.perc_alum_ext_publi )
 						diferencia = d3.format(",.1f")(d.properties.perc_alum_ext_priv - d.properties.perc_alum_ext_publi)
 						diferencia_explica = "% privada - % pública";
 						cociente = "% privada / % pública";
+						color = "rgb(0,0,255,0.4)";
 					}
         
           var privado = (d.properties.perc_alum_ext_priv == null ) ? "-- " : d.properties.perc_alum_ext_priv;
 
-          tooltip.html("<div class='table-responsive'><strong>" + d.properties.zona + "</strong> (zona escolar " + d.properties.zona_id2 + ")</div>" +
-            "<table class='table table-condensed table-striped'>" +
+          tooltip.html("<div class='table-responsive'><strong>" + d.properties.zona + "</strong> (zona escolar " + d.properties.zona_id2 + ", " + d.properties.provincia + ")</div>" +
+            "<table class='table table-condensed'>" +
                 "<tr>" +
-                    "<td style='text-align:right'><strong>"+ d.properties.perc_alum_ext_publi  +"%</strong></td><td>alumnado es extranjero en la red <strong>pública</strong></td>" +
+                    "<td style='text-align:right;color:#bd0017'><strong>"+ d.properties.perc_alum_ext_publi  +"%</strong></td><td>alumnado es extranjero en la red <strong>pública</strong></td>" +
                 "</tr>" +
                  "<tr>" +
-                    "<td style='text-align:right'><strong>"+ privado +"%</strong></td><td>alumnado es extranjero en la red <strong>privado-concertada</strong></td>" +
+                    "<td style='text-align:right;color:#00F'><strong>"+ privado +"%</strong></td><td>alumnado es extranjero en la red <strong>privado-concertada</strong></td>" +
                 "</tr>" +
 								"<tr>" +
                     "<td style='text-align:right'>"+ d.properties.perc_alum_ext_todos +"%</td><td>alumnado es extranjero de media</td>" +
                 "</tr>" +
-								"<tr>" +
+								"<tr style='background-color:" + color + "'>" +
                     "<td style='text-align:right'><strong>"+ diferencia +"</strong></td><td>diferencia % ("+ diferencia_explica + ")</td>" +
                 "</tr>" +
                 "<tr>" +
