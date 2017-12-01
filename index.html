@@ -347,11 +347,13 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3" style="margin-top:30px;">
-				<p>Podemos comparar estas mismas tres variables ubicando cada una de las zonas escolares según su posición geográfica. Cada uno de los indicadores - becas material escolar, becas comedor, presencia alumnado extranjero - está representada por una línea que muestra la diferencia entre porcentajes de la red pública (rojo) y privada (azul).</p>
+				<p>Podemos comparar estas mismas tres variables ubicando cada una de las zonas escolares según su posición geográfica. Cada uno de los indicadores - becas material escolar, becas comedor, presencia alumnado extranjero - está representada por una línea que muestra la diferencia entre porcentajes de la red pública (rojo) y privada (azul). <a href="#mapacomparativo">Link a este gráfico</a>.</p>
+			<p class="bg-warning prime"><span class="glyphicon glyphicon glyphicon-hand-up" aria-hidden="true"></span> Pasa el cursor para descubrir más información sobre cada zona.</p>
 			</div>
 			<div class="clearfix"></div>
-			<div class="col-md-12">
-				<iframe src="https://numeroteca.github.io/segregacionescolar/mapa/todas_embed.html" width="100%" style="overflow:hidden;max-width:none;border:1px solid white;height:924px;"></iframe>
+			<div id="mapacomparativo" class="col-md-12 vis-item">
+				<iframe src="https://numeroteca.github.io/segregacionescolar/mapa/todas_embed.html" width="100%" style="overflow:hidden;max-width:none;border:1px solid white;height:1000px;"></iframe>
+				<a href="mapa/todas.html">Ver mapa en página separada</a>.
 				<hr>
 				<p><small>Datos del curso 2014-2015. Los datos de alumnado becado son para todas las etapas. Los de alumnado extranjero son de Educación básica (educación primaria y ESO). Las zonas escolares de Montaña alavesa, Igorre y Basurto-Zorroza no aparecen representadas al no tener oferta privada.</small></p>
 				<p><small>Fuente de los datos: <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937">La educación en Euskadi 2013-2015</a>. Consejo Escolar de Euskadi. Departamento de educación. Gobierno Vasco. Vitoria-Gasteiz, 2016.</small></p>
@@ -485,13 +487,13 @@ total alumnado
 		<div class="row vis-body">
 			<div class="col-md-6 col-md-offset-3">
 				<p>En vez utilizar un mapa convencional, donde se sobrerepresentan regiones extensas pero con poco alumnado hemos representado cada zona escolar con una cuadrado. Su <strong>tamaño</strong> depende de la cantidad de alumnado, su <strong>intensidad</strong> del porcentaje de alumnado extranjero y su <strong>color</strong> de si la red pública o privada tienen más porcentaje.</p>
-				<p>Se aprecia la zona con más presencia de extranjeros en red privada (Hernani).</p>
 				<p>Se considera extranjera a una persona nacida fuera de España.</p>
 				<p><small><span class="glyphicon glyphicon glyphicon-hand-up" aria-hidden="true"></span> Pasa el cursor para descubrir más información sobre cada zona.</small></p>
 			</div>
 			<div class="clearfix"></div>
 			<div class="col-md-11 col-md-offset-1">
-				<iframe src="https://numeroteca.github.io/segregacionescolar/extranjero/index_embed.html" width="100%" style="overflow:hidden;max-width:none;border:1px solid white;height:750px;"></iframe>
+				<iframe src="https://numeroteca.github.io/segregacionescolar/cartogramas/index_embed.html" width="100%" style="overflow:hidden;max-width:none;border:1px solid white;height:750px;"></iframe>
+				<a href="cartogramas/index.html">Ver mapa en página separada</a>.
 			</div>
 			<div class="clearfix"></div>
 			<div class="col-md-12">
@@ -530,7 +532,7 @@ total alumnado
 		</div>
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-					<p>En este otro gráfico puedes ver también las diferencias entre las zonas escolares en otro formato:</p>
+					<p>En este otro gráfico puedes ver también las diferencias entre las zonas escolares en diferente formato:</p>
 				<iframe id="datawrapper-chart-XM3mi" src="//datawrapper.dwcdn.net/XM3mi/2/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" style="width: 0; min-width: 100% !important;" height="1349"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["XM3mi"]={},window.datawrapper["XM3mi"].embedDeltas={"100":1652,"200":1478,"300":1405,"400":1377,"500":1377,"600":1349,"700":1349,"800":1349,"900":1349,"1000":1321},window.datawrapper["XM3mi"].iframe=document.getElementById("datawrapper-chart-XM3mi"),window.datawrapper["XM3mi"].iframe.style.height=window.datawrapper["XM3mi"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["XM3mi"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("XM3mi"==b)window.datawrapper["XM3mi"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
 				<!--p>Posicionando estos gráficos en su ubicación relativa en el mapa obtenemos:</p>
 				<p class="bg-warning"><span class="glyphicon glyphicon glyphicon-hand-up" aria-hidden="true"></span> Pasa el cursor para descubrir más información sobre cada zona.</p-->
@@ -574,7 +576,7 @@ total alumnado
 				<p>Las datos por zonas escolares (los únicos disponibles) ocultan situaciones variadas en cada uno de los centros escolares, pero predomina un porcentaje mayor de alumnado becado en la red pública, aunque existen excepciones. Además, las zonas escolares de Montaña alavesa, Igorre y Basurto-Zorroza no tienen oferta privada, por lo que no es posible realizar la comparativa. Pasa el cursor para ver la información.</p>
 			</div>
 			<div class="col-md-6 col-md-offset-3">
-				<p>Las diferencias entre las zonas se aprecian mejor en el siguiente gráfico:</p>
+				<p>En este otro gráfico puedes ver también las diferencias entre las zonas escolares en diferente formato:</p>
 				<iframe id="datawrapper-chart-1EMd8" src="//datawrapper.dwcdn.net/1EMd8/2/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" style="width: 0; min-width: 100% !important;" height="1371"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["1EMd8"]={},window.datawrapper["1EMd8"].embedDeltas={"100":1758,"200":1528,"300":1427,"400":1399,"500":1399,"600":1371,"700":1371,"800":1371,"900":1371,"1000":1371},window.datawrapper["1EMd8"].iframe=document.getElementById("datawrapper-chart-1EMd8"),window.datawrapper["1EMd8"].iframe.style.height=window.datawrapper["1EMd8"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["1EMd8"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("1EMd8"==b)window.datawrapper["1EMd8"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
 			</div>
 		</div>
@@ -600,7 +602,7 @@ total alumnado
 				<p><a href="https://numeroteca.carto.com/builder/593cfa1c-2b9b-4cf1-b3fb-b4199684533f/embed">Ver mapa a pantalla completa.</a></p>
 			</div>
 			<div class="col-md-6 col-md-offset-3">
-				<p>Las diferencias entre las zonas se aprecian mejor en el siguiente gráfico:</p>
+				<p>En este otro gráfico puedes ver también las diferencias entre las zonas escolares en diferente formato:</p>
 				<iframe id="datawrapper-chart-09ft8" src="//datawrapper.dwcdn.net/09ft8/2/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" style="width: 0; min-width: 100% !important;" height="1349"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["09ft8"]={},window.datawrapper["09ft8"].embedDeltas={"100":1736,"200":1478,"300":1405,"400":1377,"500":1377,"600":1349,"700":1349,"800":1349,"900":1349,"1000":1349},window.datawrapper["09ft8"].iframe=document.getElementById("datawrapper-chart-09ft8"),window.datawrapper["09ft8"].iframe.style.height=window.datawrapper["09ft8"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["09ft8"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("09ft8"==b)window.datawrapper["09ft8"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
 			</div>
 		</div>
@@ -628,8 +630,8 @@ total alumnado
 			<p><img src="images/net.logo.png" alt="Logo red" /></p>
 			<p><small>Más visualizaciones:</small></p>
 			<ul class="list-unstyled">
-				<li><small><a href="mapa/extranjero.html">Extranjero</a></small></li>
-				<li><small><a href="cartogramas/index.html">Cartogramas: becas comedor y material escolar, alumnado extranjero</a></small></li>
+				<li><small><a href="mapa/extranjero.html">Alumado extranjero</a></small></li>
+				<li><small><a href="cartogramas/index.html">Cartogramas: becas comedor y material escolar + alumnado extranjero</a></small></li>
 			</ul>
 		</div>
 
