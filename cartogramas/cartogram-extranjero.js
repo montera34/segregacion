@@ -45,6 +45,17 @@ background.append("image")
 	.attr("width", "278")
 	.attr("height", "311");
 
+// Title
+var title = svg.append('g').attr('id','title');
+title.append("text")
+		.attr("text-anchor", "end")
+		.attr("dy", 10)
+		.attr("dx", width)
+		.text("Presencia alumnado extranjero")
+		.style("fill", "black")
+		.style("font-size", "18px");
+
+// Creates groups for rectangles
 var rectangulos = svg.append('g').attr('id','rectangulos');
 var rectangulos2 = svg.append('g').attr('id','rectangulos2');
 
@@ -158,7 +169,10 @@ var path = d3.geoPath()
             d3.select(this)
                 .attr("text-anchor", "middle")
                 .attr("dy", 12)
-                .text(d.properties.zona.substring(0,7)+".")
+								.text( function(d) {
+									var punto = (d.properties.zona.length > 7)? "." : "";
+									return d.properties.zona.substring(0,7) + punto;
+								})
                 .style("fill", "black")
                 .style("font-size", fontSize(d.area) + "px")
                 .style("font-size", "11px")
