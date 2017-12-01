@@ -5,13 +5,13 @@ isMobile = innerWidth < 758;
 
 var screenwidth = d3.select("#cartogram").node().clientWidth;
 
-var margin = {top: 0, right: 0, bottom: 0, left: 0},
+var margin = {top: 80, right: 0, bottom: 0, left: 0},
     //width = (isMobile ? (screenwidth+100) : screenwidth) - margin.left - margin.right,
     width = 1100 - margin.left - margin.right,
-    ratio = 1,
+    ratio = 0.84,
     height = width*ratio - margin.top - margin.bottom,
     margen = 14,
-    padding = 3;
+    padding = 4;
 var square = 67
 
 // Rectangle size
@@ -54,10 +54,20 @@ var svg = d3.select("#cartogram").append("svg")
 var background = svg.append('g').attr('id','backgroundimage');
 background.append("image")
 	.attr("xlink:href", "../images/leyenda-flechas-segregacion-todas-red-pub-priv-euskadi.png")
-	.attr("x", width-500)
-	.attr("y", -80)
+	.attr("x", width-530)
+	.attr("y", -margin.top-80)
 	.attr("width", "400")
 	.attr("height", "311");
+
+// Title
+var title = svg.append('g').attr('id','title');
+title.append("text")
+		.attr("text-anchor", "left")
+		.attr("dy", -60)
+		.attr("dx", 10)
+		.text("Comparativa becas material escolar, comedor y alumnado extranjero")
+		.style("fill", "black")
+		.style("font-size", "18px");
 
 // Adds arrows
 defs = svg.append("defs");
@@ -235,9 +245,9 @@ var path = d3.geoPath()
 		        .attr("width", square)
 		        .attr("height", square)
 		        .attr("x1", lineSizeBeca(d.properties.perc_bec_comedor_pub))
-		        .attr("y1", - square/2 + 45)
+		        .attr("y1", - square/2 + 44)
 		        .attr("x2", lineSizeBeca(d.properties.perc_bec_comedor_priv))
-		        .attr("y2", - square/2 + 45)
+		        .attr("y2", - square/2 + 44)
 		        .attr("marker-end", function(d) {
 				      if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
 							endMarker = "";
@@ -275,9 +285,9 @@ var path = d3.geoPath()
 		        .attr("width", square)
 		        .attr("height", square)
 		        .attr("x1", lineSize(d.properties.perc_alum_ext_publi))
-		        .attr("y1", 30)
+		        .attr("y1", 28)
 		        .attr("x2",lineSize(d.properties.perc_alum_ext_priv))
-		        .attr("y2", 30)
+		        .attr("y2", 28)
 		        .attr("class", Math.abs(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv))
 		        .attr("marker-end", function(d) {
 				      if ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) {
@@ -397,7 +407,7 @@ var path = d3.geoPath()
 				var zona = ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) ? " " : d.properties.zona;
         d3.select(this)
           .attr("text-anchor", "end")
-		      .attr("dy", - square/2 + 49)
+		      .attr("dy", - square/2 + 48)
 		      .attr("dx", square)
 		      .text(
 		      function(d) {
@@ -425,7 +435,7 @@ var path = d3.geoPath()
 				var zona = ( d.properties.zona == "Igorre" || d.properties.zona == "Montaña alavesa" || d.properties.zona == "Basurto-Zorroza" ) ? " " : d.properties.zona;
         d3.select(this)
           .attr("text-anchor", "end")
-		      .attr("dy", 34)
+		      .attr("dy", 32)
 		      .attr("dx", square)
 		      .text(
 		      function(d) {
@@ -516,7 +526,7 @@ var path = d3.geoPath()
                     "<td style='text-align:right;color:#00F'><strong>"+ privado +"%</strong></td><td>alumnado es extranjero en la red <strong>privado-concertada</strong></td>" +
                 "</tr>" +
 								"<tr>" +
-                    "<td style='text-align:right'>"+ d.properties.total_alumnado +"</td><td> alumnado</td>" +
+                    "<td style='text-align:right'>"+ d.properties.total_alumnado +"</td><td> alumnado (educación básica)</td>" +
                 "</tr>" +
               "</table>")
             .style("opacity", 1)

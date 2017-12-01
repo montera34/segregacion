@@ -21,7 +21,7 @@ var rectSize = d3.scaleSqrt()
 
 // Line size
 var lineSize = d3.scaleLinear()
-		.domain([0,42])
+		.domain([0,38])
     .range([0,square])
 
 // Font size scale
@@ -54,6 +54,16 @@ background.append("image")
 	.attr("y", -80)
 	.attr("width", "400")
 	.attr("height", "311");
+
+// Title
+var title = svg.append('g').attr('id','title');
+title.append("text")
+		.attr("text-anchor", "left")
+		.attr("dy", 20)
+		.attr("dx", 0)
+		.text("Presencia alumnado extranjero")
+		.style("fill", "black")
+		.style("font-size", "18px");
 
 // Adds arrows
 defs = svg.append("defs");
