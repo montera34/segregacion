@@ -231,7 +231,10 @@ figcaption {
 	text-transform: uppercase;
 }
 .navbar-brand {
-	font-size: 16px !important;
+	font-size: 15px !important;
+}
+.nav > li > a {
+	padding-right:9px !important;
 }
 .bgimg {
 	background-repeat: none;
@@ -288,4 +291,7 @@ li #idtodas, li #idbizkaia {
 }
 .localizacion {
 	font-size:1.1em !important;
+}
+.prime {
+	margin-top:30px;
 }
