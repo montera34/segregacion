@@ -265,8 +265,8 @@
 				<p>En este gráfico se representan cada zona escolar de Euskadi con una línea para cada una de las tres variables: becas material escolar, becas comedor y alumnado extranjero. Su pendiente indica la diferencia de porcentaje entre la red pública y la privada, su color a qué provincia pertenece.</p>
 			</div>
 		</div>
-		<div class="row vis-body">
-			<div class="col-md-7">
+		<div class="row vis-body" id="pendientes">
+			<div class="col-md-7 prime">
 				<h2>Diferencia de porcentaje de alumnado con becas de material escolar, comedor y alumnado extranjero en zonas escolares</h2>
 			</div>
 			<div class="col-md-3 col-md-offset-2">
@@ -302,16 +302,27 @@
 			<div class="col-md-4">
 				<p><figure><img class="img-responsive" src="images/arrow-up.png" style="float:left;margin:0 4px 0 0;"/></figure> Zonas con <strong>menos</strong> % en centros públicos que privados.</p>
 			</div>
-			<div class="col-md-4">
-				<p><small>Inserta este gráfico: <input id="embed_code" class="span3" value="<iframe style='width: 1280px; height: 700px; max-width: none; overflow: hidden; border: 1px solid white;' src='https://montera34.github.io/segregacionescolar/index_embed.html'></iframe>" rel="tooltip" title="Copy + Paste" type="text"></small></p>
+			<div class="col-md-4 text-right">
+				<a role="button" data-toggle="collapse" href="#sharependientes" aria-expanded="false" aria-controls="collapseExample">
+					<span class="glyphicon glyphicon-share" aria-hidden="true"></span> Compartir
+				</a>
+				<p id="sharependientes" class="collapse text-left"><small><a href="#pendientes">Link a este gráfico</a><br>Inserta este gráfico: <input id="embed_code" class="span3" value="<iframe style='width: 100%; height: 800px; max-width: none; overflow: hidden; border: 1px solid white;' src='https://montera34.github.io/segregacionescolar/index_embed.html'></iframe>" rel="tooltip" title="Copy + Paste" type="text"></small></p>
 			</div>
-
 			<div class="clearfix"></div>
 			<div class="col-md-12">
 				<hr>
-				<p><small>Datos del curso 2014-2015. Los datos de alumnado becado son para todas las etapas. Los de alumnado extranjero son de Educación básica (educación primaria y ESO). Las zonas escolares de Montaña alavesa, Igorre y Basurto-Zorroza no aparecen representadas al no tener oferta privada.</small></p>
-				<p><small>Fuente de los datos: <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937">La educación en Euskadi 2013-2015</a>. Consejo Escolar de Euskadi. Departamento de educación. Gobierno Vasco. Vitoria-Gasteiz, 2016.</small></p>
 			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-8">
+				<p>
+					<small>Datos del curso 2014-2015. Alumnado becado: todas las etapas. Alumnado extranjero: Educación básica (educación primaria y ESO).<br>
+					Fuente de los datos: <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937">La educación en Euskadi 2013-2015</a>. Consejo Escolar de Euskadi. Departamento de educación. Gobierno Vasco. Vitoria-Gasteiz, 2016.</small>
+				</p>
+			</div>
+			<div class="col-md-4">
+				<p><small>Las zonas escolares de Montaña alavesa, Igorre y Basurto-Zorroza no aparecen representadas al no tener oferta privada.</p>
+			</div>
+			<div class="clearfix"></div>
 			<div class="col-md-6 col-md-offset-3">
 				<p>Se puede ver que la mayoría de las líneas tiene una pendiente negativa (<img src="images/arrow-down.png" style="display:inline-block;height:12px;"/>), quiere decir que hay más alumnado extranjero, más alumnado con becas de comedor y de material escolar en la red pública que en la privado-concertada en esas zonas escolares.</p>
 			</div>
