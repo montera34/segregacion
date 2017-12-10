@@ -5,7 +5,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Comparativa variables en zonas escolares de Euskadi</title>
+<title>Alumnado extranjero en zonas escolares de Euskadi</title>
 
 <!-- Bootstrap -->
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -68,24 +68,15 @@
 rect:hover {
   stroke: black;
   stroke-width: 2px;
-  cursor:pointer;
  }
 rect {
   opacity:0.7;
   shape-rendering: crispEdges;
+  cursor:pointer;
 }
 
-.Miracruz-Bidebieta text{
- z-index:2;
-}
-.Ategorrieta-Ulia rect{
- z-index:-1;
-}
 #rectangulos2 {
 	mix-blend-mode: multiply;
-}
-.arrow{
-	stroke-width:5;
 }
 </style>
 
@@ -93,17 +84,13 @@ rect {
 <link type="image/png" sizes="256x256" href="../favicon.png" rel="icon" />
 </head>
 <body>
+<div id="cartogram"></div>
 
-<main>
-	<div id="cartogram"></div>
-</main>
-
-<script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/d3.v4.min.js"></script>
 <script type="text/javascript" src="../js/topojson.v1.min.js"></script>
 <script type="text/javascript" src="../js/d3-composite-projections.js"></script>
-<script type="text/javascript" src="../js/lang_es.js"></script>
-<script type="text/javascript" src="flechas_todas.js"></script>
+<script type="text/javascript" src="../js/lang_eu.js"></script>
+<script type="text/javascript" src="cartogram-extranjero.js"></script>
 <script type="text/javascript" src="../stats.js"></script>
 </body>

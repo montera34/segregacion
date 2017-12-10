@@ -50,10 +50,41 @@ var svg = d3.select("#cartogram").append("svg")
   .append("g")
     .attr("transform", "translate("+ margin.left +"," + margin.top + ")");
 
+// language
+var zonaEscolar = "zona escolar",
+alumnadoExtPub = "alumnado es extranjero en la red <strong>pública</strong>",
+alumnadoExtPriv = "alumnado extranjero en la red <strong>privada</strong>" , 
+alumnadoExtMedia = "alumnado extranjero de media",
+diferencia = "diferencia",
+indiceDes = "índice desigualdad extranjeros",
+totalExt = "total alumnado extranjero",
+alumnado = "alumnado (educación básica)",
+alumnadoExtranjero = "% alumando extranjero",
+presenciaExt = "Presencia alumnado extranjero",
+publico = "público",
+privada = "privado",
+tit = "Comparativa becas material escolar, comedor y alumnado extranjero",
+legendImgUrl = "../images/leyenda-flechas-segregacion-todas-red-pub-priv-euskadi.png";
+	
+if (lengua == "eu" ) {
+	var zonaEscolar = "eskola-zona",
+	alumnadoExtPub = "atzerritar ikasleria sare publikoan",
+	alumnadoExtPriv = "atzerritar ikasleria" , 
+	alumnadoExtMedia = "atzerritar ikasleria batezbeste",
+	diferencia = "aldea",
+	indiceDes = "atzerritarren ezberdintasuna",
+	totalExt = "atzerritar ikasleria guztira",
+	alumnado = "ikasleria (educación básica)",
+	alumnadoExtranjero = "% alumando extranjero",
+	presenciaExt = "Atzeeritar ikasleen presentzia",
+	tit = "Konparatiba: eskola materialaren bekak, jantokia eta atzerritar ikasleak",
+	legendImgUrl = "../images/leyenda-flechas-segregacion-todas-red-pub-priv-euskadi_eu.png";
+}
+
 //Adds Background image
 var background = svg.append('g').attr('id','backgroundimage');
 background.append("image")
-	.attr("xlink:href", "../images/leyenda-flechas-segregacion-todas-red-pub-priv-euskadi.png")
+	.attr("xlink:href", legendImgUrl)
 	.attr("x", width-530)
 	.attr("y", -margin.top-80)
 	.attr("width", "400")
@@ -65,7 +96,7 @@ title.append("text")
 		.attr("text-anchor", "left")
 		.attr("dy", -60)
 		.attr("dx", 10)
-		.text("Comparativa becas material escolar, comedor y alumnado extranjero")
+		.text(tit)
 		.style("fill", "black")
 		.style("font-size", "18px");
 
@@ -505,7 +536,7 @@ var path = d3.geoPath()
         
           var privado = (d.properties.perc_alum_ext_priv == null ) ? "-- " : d.properties.perc_alum_ext_priv;
 
-          tooltip.html("<div class='table-responsive'><strong>" + d.properties.zona + "</strong> (zona escolar " + d.properties.zona_id2 + ", " + d.properties.provincia + ")</div>" +
+          tooltip.html("<div class='table-responsive'><strong>" + d.properties.zona + "</strong> (" + zonaEscolar + " " + d.properties.zona_id2 + ", " + d.properties.provincia + ")</div>" +
             "<table class='table table-condensed'>" +
                "<tr>" +
                     "<td style='text-align:right;color:#bd0017'><strong>"+ d.properties.perc_bec_mat_escolar_pub  +"%</strong></td><td>alumnado becado material escolar en la red <strong>pública</strong></td>" +
@@ -520,13 +551,14 @@ var path = d3.geoPath()
                     "<td style='text-align:right;color:#00F'><strong>"+ d.properties.perc_bec_comedor_priv +"%</strong></td><td>alumnado becado comedor en la red <strong>privado-concertada</strong></td>" +
                 "</tr>" +
                 "<tr>" +
-                    "<td style='text-align:right;color:#bd0017'><strong>"+ d.properties.perc_alum_ext_publi  +"%</strong></td><td>alumnado es extranjero en la red <strong>pública</strong></td>" +
+                    "<td style='text-align:right;color:#bd0017'><strong>"+ d.properties.perc_alum_ext_publi  +"%</strong></td><td>" + alumnadoExtPub + "</td>" +
                 "</tr>" +
                  "<tr>" +
-                    "<td style='text-align:right;color:#00F'><strong>"+ privado +"%</strong></td><td>alumnado es extranjero en la red <strong>privado-concertada</strong></td>" +
+                    "<td style='text-align:right;color:#00F'><strong>"+ privado +"%</strong></td><td>" + alumnadoExtPriv + "</td>" +
+                "</tr>" +
                 "</tr>" +
 								"<tr>" +
-                    "<td style='text-align:right'>"+ d.properties.total_alumnado +"</td><td> alumnado (educación básica)</td>" +
+                    "<td style='text-align:right'>"+ d.properties.total_alumnado +"</td><td>" +  alumnado + "</td>" +
                 "</tr>" +
               "</table>")
             .style("opacity", 1)

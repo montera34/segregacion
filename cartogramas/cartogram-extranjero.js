@@ -11,6 +11,33 @@ var margin = {top: 10, right: 10, bottom: 10, left:0},
 //  .scale(300)
 //  .translate([width / 2, height / 2])
 
+// language
+var zonaEscolar = "zona escolar",
+alumnadoExtPub = "alumnado es extranjero en la red <strong>pública</strong>",
+alumnadoExtPriv = "alumnado extranjero en la red <strong>privada</strong>" , 
+alumnadoExtMedia = "alumnado extranjero de media",
+diferencia = "diferencia",
+indiceDes = "índice desigualdad extranjeros",
+totalExt = "total alumnado extranjero",
+alumnado = "alumnado",
+alumnadoExtranjero = "% alumando extranjero",
+presenciaExt = "Presencia alumnado extranjero",
+legendImgUrl = "../images/leyenda-segregacion-extranjeros-red-pub-priv-euskadi.png";
+	
+if (lengua == "eu" ) {
+	var zonaEscolar = "eskola-zona",
+	alumnadoExtPub = "atzerritar ikasleria sare publikoan",
+	alumnadoExtPriv = "atzerritar ikasleria" , 
+	alumnadoExtMedia = "atzerritar ikasleria batezbeste",
+	diferencia = "aldea",
+	indiceDes = "atzerritarren ezberdintasuna",
+	totalExt = "atzerritar ikasleria guztira",
+	alumnado = "ikasleria",
+	alumnadoExtranjero = "% alumando extranjero",
+	presenciaExt = "Atzeeritar ikasleen presentzia",
+	legendImgUrl = "../images/leyenda-segregacion-extranjeros-red-pub-priv-euskadi_eu.png";
+}
+
 // Rectangle size
 //must calculate manually the relationship of the squares of this values to match the min and max value ofthe domains
 // first value is the minimum size of square side, and the second the maximun size of square side
@@ -39,7 +66,7 @@ var svg = d3.select("#cartogram").append("svg")
 //Adds Background image
 var background = svg.append('g').attr('id','backgroundimage');
 background.append("image")
-	.attr("xlink:href", "../images/leyenda-segregacion-extranjeros-red-pub-priv-euskadi.png")
+	.attr("xlink:href", legendImgUrl)
 	.attr("x", 0)
 	.attr("y", height- 361)
 	.attr("width", "278")
@@ -51,7 +78,7 @@ title.append("text")
 		.attr("text-anchor", "end")
 		.attr("dy", 10)
 		.attr("dx", width)
-		.text("Presencia alumnado extranjero")
+		.text(presenciaExt)
 		.style("fill", "black")
 		.style("font-size", "18px");
 
@@ -187,40 +214,52 @@ var path = d3.geoPath()
 						cociente = "valor nulo al no haber centros privados concertados";
 					} else if ( desigualdad > 1 ) {
 						desigualdad = d.properties.indice_desigualdad;
-						diferencia = d3.format(",.1f")(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv);
-						diferencia_explica = "% pública - % privada";
-						cociente = "% pública / % privada";
+						diferenciaVal = d3.format(",.1f")(d.properties.perc_alum_ext_publi - d.properties.perc_alum_ext_priv);
+						diferencia_explica = (lengua == "eu" ) ? "% publikoa - % pribatua" : "% pública - % privada";
+						cociente = (lengua == "eu" ) ? "% publikoa / % pribatua" : "% pública / % privada";
 					} else {
 						desigualdad = d3.format(",.2f")(d.properties.perc_alum_ext_priv / d.properties.perc_alum_ext_publi )
-						diferencia = d3.format(",.1f")(d.properties.perc_alum_ext_priv - d.properties.perc_alum_ext_publi)
-						diferencia_explica = "% privada - % pública";
-						cociente = "% privada / % pública";
+						diferenciaVal = d3.format(",.1f")(d.properties.perc_alum_ext_priv - d.properties.perc_alum_ext_publi)
+						diferencia_explica = (lengua == "eu" ) ? "% pribatua - % publikoa" : "% privada - % pública";
+						cociente = (lengua == "eu" ) ? "% pribatua / % publikoa" : "% privada / % pública";
 					}
         
           var privado = (d.properties.perc_alum_ext_priv == null ) ? "-- " : d.properties.perc_alum_ext_priv;
 
-          tooltip.html("<div class='table-responsive'><strong>" + d.properties.zona + "</strong> (zona escolar " + d.properties.zona_id2 + ")</div>" +
+/* var zonaEscolar = "zona escolar",
+alumnadoExtPub = "alumnado extranjero en la red pública",
+alumnadoExtPriv = "alumnado extranjero en la red privado-concertada" , 
+alumnadoExtMedia = "alumnado extranjero de media",
+diferenciaPubPriv = "diferencia % (% público - % privado)",
+indiceDes = "índice desigualdad extranjeros (% publica / % privado)",
+totalExt = "total alumnado extranjero",
+alumnado = "alumnado",
+alumnadoExtranjero = "% alumando extranjero",
+presenciaExt = "Presencia alumnado extranjero";
+	*/
+
+          tooltip.html("<div class='table-responsive'><strong>" + d.properties.zona + "</strong> (" +zonaEscolar + " " + d.properties.zona_id2 + ")</div>" +
             "<table class='table table-condensed table-striped'>" +
                 "<tr>" +
-                    "<td style='text-align:right'><strong>"+ d.properties.perc_alum_ext_publi  +"%</strong></td><td>alumnado es extranjero en la red <strong>pública</strong></td>" +
+                    "<td style='text-align:right'><strong>"+ d.properties.perc_alum_ext_publi  +"%</strong></td><td> " + alumnadoExtPub + "</td>" +
                 "</tr>" +
                  "<tr>" +
-                    "<td style='text-align:right'><strong>"+ privado +"%</strong></td><td>alumnado es extranjero en la red <strong>privado-concertada</strong></td>" +
+                    "<td style='text-align:right'><strong>"+ privado +"%</strong></td><td>" + alumnadoExtPriv +  " </td>" +
                 "</tr>" +
 								"<tr>" +
-                    "<td style='text-align:right'>"+ d.properties.perc_alum_ext_todos +"%</td><td>alumnado es extranjero de media</td>" +
+                    "<td style='text-align:right'>"+ d.properties.perc_alum_ext_todos +"%</td><td>" + alumnadoExtMedia + "</td>" +
                 "</tr>" +
 								"<tr>" +
-                    "<td style='text-align:right'>"+ diferencia +"</td><td>diferencia % ("+ diferencia_explica + ")</td>" +
+                    "<td style='text-align:right'>"+ diferenciaVal +"</td><td>" + diferencia + "% ("+ diferencia_explica + ")</td>" +
                 "</tr>" +
                 "<tr>" +
-                    "<td style='text-align:right'>"+ desigualdad +"</td><td>índice desigualdad extranjeros (" + cociente + ")</td>" +
+                    "<td style='text-align:right'>"+ desigualdad +"</td><td>" + indiceDes + " (" + cociente + ")</td>" +
                 "</tr>" +
                 "<tr>" +
-                    "<td style='text-align:right'>"+ d.properties.alum_ext_total +"</td><td>total alumnado extranjero</td>" +
+                    "<td style='text-align:right'>"+ d.properties.alum_ext_total +"</td><td>" + totalExt + "</td>" +
                 "</tr>" +
 								"<tr>" +
-                    "<td style='text-align:right'>"+ d.properties.total_alumnado +"</td><td> alumnado</td>" +
+                    "<td style='text-align:right'>"+ d.properties.total_alumnado +"</td><td>" + alumnado + "</td>" +
                 "</tr>" +
               "</table>")
             .style("opacity", 1)

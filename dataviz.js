@@ -14,7 +14,6 @@ var vis = d3.select("#vis");
 var chartWidth = width/6; //change this depending on number of varables
 
 // language
-
 var becasMaterial = "% Becas material escolar",
 becasComedor = "% Becas comedor",
 alumnadoExtranjero = "% alumando extranjero",

@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="eu">
-<script type="text/javascript">
-
-</script>
 
 <head>
 <meta charset="UTF-8" />
@@ -16,7 +13,7 @@
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Fontawesome -->
-<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,21 +56,17 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="https://lab.montera34.com/segregacionescolar/">Eskola segregazioa, Euskadi</a>
+			<a class="navbar-brand" href="https://lab.montera34.com/segregacionescolar/eus.html">Eskola segregazioa, Euskadi</a>
 		</div>
 		<div class="collapse navbar-collapse" id="top-navbar-collapse">
 			<ul class="nav navbar-nav nabvar-left">
-				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bistaratzeak <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#europa">Europar testuingurua</a></li>
-						<li><a href="#espana">Espainiar testuingurua</a></li>
-						<li><a href="#repartoredes">Hezkuntza-sareen banaketa</a></li>
-						<li><a href="#indicadores">Adierazleen konparatiba</a></li>
-						<li><a href="#extranjero">Atzerriko ikasleak</a></li>
-						<li><a href="#materialescolar">Material didaktikoko bekak</a></li>
-						<li><a href="#comedor">Jantokiko bekak</a></li>
-					</ul>
-				</li>
+				<li><a href="#europa">Europa</a></li>
+				<li><a href="#espana">Espainia</a></li>
+				<li><a href="#repartoredes">Sareak Euskadi</a></li>
+				<li><a href="#indicadores">Konparatiba</a></li>
+				<li><a href="#extranjero">Atzerritarrak</a></li>
+				<li><a href="#materialescolar">Eskola mat.</a></li>
+				<li><a href="#comedor">Jantokia</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="index.html" style="font-weight:normal">Es</a></li>
@@ -112,32 +105,41 @@
 </div>
 
 <main class="container">
+
 	<section class="vis-item" id="info">
-		<div class="col-md-3 col-md-offset-2">
+		<div class="col-md-5 col-md-offset-3">
 			<div class="panel panel-default">
-				<div class="panel-heading">Bistaratzeen aurkibidea</div>
+				<div class="panel-heading">Aurkibidea</div>
 				<div class="panel-body">
 					<ul>
+						<li><a href="#sobre">Proiektuari buruz</a></li>
 						<li><a href="#europa">Europar testuingurua</a></li>
 						<li><a href="#espana">Espainiar testuingurua</a></li>
-						<li><a href="#repartoredes">Hezkuntza-sareen banaketa</a></li>
-						<li><a href="#indicadores">Adierazleen konparatiba</a></li>
-						<li><a href="#extranjero">Atzerriko ikasleak</a></li>
-						<li><a href="#materialescolar">Material didaktikoko bekak</a></li>
-						<li><a href="#comedor">Jantokiko bekak</a></li>
+					</ul>
+					Euskadi
+					<ul>
+						<li><a href="#repartoredes">Hezkuntza-sare publiko eta pribatuaren banaketa</a></li>
+						<li><a href="#indicadores">Konparatiba: atzerritarrak, eskola materiala eta jantokia</a></li>
+						<li>Aldagaien hausnarketa bereiztua
+							<ul>
+								<li><a href="#extranjero">Atzerriko ikasleak</a></li>
+								<li><a href="#materialescolar">Material didaktikoko bekak</a></li>
+								<li><a href="#comedor">Jantokiko bekak</a></li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="clearfix"></div>
-		<header class="row vis-head">
-			<div class="col-md-7 col-md-offset-2">
+		<header id="sobre" class="row vis-head">
+			<div class="col-md-6 col-md-offset-3">
 				<h1>Euskadiko hezkuntza sistemaren kohesio eta berdintadunaren inguruko hausnarketa</h1>
 			</div>
 		</header>
 		<div class="row vis-body">
-			<div class="col-md-7 col-md-offset-2">
-				<h2>Euskal hezkuntza sisteman kohesioa eta berdintasuna hobeteko HLE</h2>
+			<div class="col-md-6 col-md-offset-3">
+				<h3>Euskal hezkuntza sisteman kohesioa eta berdintasuna hobeteko HLE</h3>
 				<p>Euskadin Europako sare pribatu-itunpeko hedatuenetariko bat daukagu, ikasleriaren %50ari arreta emanez. Halere, egoera honek ez du ondoegi adierazten zer ezberdintasunak dauden sare bakoitzeko ikasleen artean.</p>
 				<p><a href="https://www.ilpeskolainklusiboa.eus/">10.000 sinadura biltzeko kanpaina</a> legebiltzarrean eztabaidatu dezaten.</p>
 				<h2>Bistaratzeen egileak</h2>
@@ -153,14 +155,15 @@ Ikasle etorkinen eskola eremuak, eskola materialarengatik eta jantoki bekak jaso
 
 	<section class="vis-item" id="europa">
 		<header class="row vis-head">
-			<div class="col-md-7 col-md-offset-2">
-				<figure>
-					<img class="img-responsive" src="images/mapa-europa.png" />
-				</figure>			
-				<h1>Europar testuingua: ikasle banaketa sareetan, publikoa, itunpekoa eta pribatua Estatuka <a href="#europa">#</a></h1>
+			<div class="col-md-2 col-md-offset-3">
+				<span class="label label-default localizacion">Europar testuingurua</span>
 			</div>
 			<div class="clearfix"></div>
-			<div class="col-md-7 col-md-offset-2">
+			<div class="col-md-6 col-md-offset-3">
+				<h1>Sare publiko eta pribatuaren arteko ikasleen banaketa Euskadin <a href="#europa">#</a></h1>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-6 col-md-offset-3">
 				<p>Espainiar estatuan nabarmentzekoa da Europako itunpeko hezkuntza sare haundienetariko bat dagoela.</p>
 			</div>
 			<div class="clearfix"></div>
@@ -177,14 +180,14 @@ Ikasle etorkinen eskola eremuak, eskola materialarengatik eta jantoki bekak jaso
 	
 	<section class="vis-item" id="espana">
 		<header class="row vis-head">
-			<div class="col-md-7 col-md-offset-2">
-				<figure>
-					<img class="img-responsive" src="images/mapa-spain.png" />
-				</figure>
-				<h1>Espainiarr testuingua: ikasle banaketa sareetan, publikoa, itunpekoa eta pribatua erkidegoka <a href="#espana">#</a></h1>
+			<div class="col-md-2 col-md-offset-3">
+				<span class="label label-default localizacion">Espainiar testuingurua</span>
+			</div>
+			<div class="col-md-6 col-md-offset-3">
+				<h1>Espainiar testuingua: ikasle banaketa sareetan, publikoa, itunpekoa eta pribatua erkidegoka <a href="#espana">#</a></h1>
 			</div>
 			<div class="clearfix"></div>
-			<div class="col-md-7 col-md-offset-2">
+			<div class="col-md-6 col-md-offset-3">
 				<p>Euskadin nabarmentzekoa da Espainiar estatuko itunpeko hezkuntza sare haundiena dagoela.</p>
 				<iframe id="datawrapper-chart-0Og02" src="//datawrapper.dwcdn.net/0Og02/2/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" style="width: 0; min-width: 100% !important;" height="602"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["0Og02"]={},window.datawrapper["0Og02"].embedDeltas={"100":770,"200":686,"300":630,"400":602,"500":602,"600":602,"700":574,"800":574,"900":574,"1000":574},window.datawrapper["0Og02"].iframe=document.getElementById("datawrapper-chart-0Og02"),window.datawrapper["0Og02"].iframe.style.height=window.datawrapper["0Og02"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["0Og02"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("0Og02"==b)window.datawrapper["0Og02"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
 					<p>Espainiako hezkuntza sareak. Datuen iturria: Datos y cifras 2016. Hezkuntza Ministerioa. <a href="https://www.mecd.gob.es/servicios-al-ciudadano-mecd/dms/mecd/servicios-al-ciudadano-mecd/estadisticas/educacion/indicadores-publicaciones-sintesis/datos-cifras/Datosycifras1617esp.pdf">2017/18 urtera eguneratutako datuak</a>.</p>
@@ -194,14 +197,14 @@ Ikasle etorkinen eskola eremuak, eskola materialarengatik eta jantoki bekak jaso
 
 	<section class="vis-item" id="repartoredes">
 		<header class="row vis-head">
-			<div class="col-md-7 col-md-offset-2">
-				<figure>
-					<img class="img-responsive" src="images/mapa-euskadi.png" />
-				</figure>			
+			<div class="col-md-2 col-md-offset-3">
+				<span class="label label-default localizacion">Euskadi</span>
+			</div>
+			<div class="col-md-6 col-md-offset-3">
 				<h1>Hezkuntza-sareengatiko banaketa: Publikoa, Kristau Eskola eta Partaide-Ikastolen Elkartea <a href="#repartoredes">#</a></h1>
 			</div>
 			<div class="clearfix"></div>
-			<div class="col-md-7 col-md-offset-2">
+			<div class="col-md-6 col-md-offset-3">
 				<p>Euskadiko ikasleria sare publikoan (100.843) eta pribatua-itunpekoan (103.223) erdi bana banatzen dira. Azken honek Kristau Eskolak, ikastetxe erlijioso kristauen patronalak, 54.318 ikaslek osatutakoa, eta Partaide-Ikastolen Elkarteak, ikastolen elkargoak, 26.939 ikasle dituena, osatzen dute; gainontzekoa, beste patronalek jasotzen dute (21.966).</p>
 				<figure>
 					<a href="images/segregacion-redes-educativas-euskadi-barras_eu.png"><img class="img-responsive" src="images/segregacion-redes-educativas-euskadi-barras_eu.png" /></a>
@@ -217,29 +220,29 @@ Ikasle etorkinen eskola eremuak, eskola materialarengatik eta jantoki bekak jaso
 		</div>
 	</section>
 
-	<figure>
-		<img class="img-responsive" src="images/mapa-euskadi-zonas.png" />
-	</figure>
-
 	<section class="vis-item" id="indicadores">
 		<header class="row vis-head">
-			<div class="col-md-12">
-				<h1>Euskadiko eskola eremuko hezkuntza sare publiko eta pribatu-itunpekoa arteko alderatzea: Eskola materialentzako bekak, jangela bekak, atzerriko ikasleria <a href="#indicadores">#</a></h1>
+			<div class="col-md-2 col-md-offset-3">
+				<span class="label label-default localizacion">Euskadi: eskola guneak</span>
+			</div>
+			<div class="col-md-6 col-md-offset-3">
+				<h1>Euskadiko eskola eremuko hezkuntza sare publiko eta pribatu-itunpekoa arteko alderatzea <a href="#indicadores">#</a></h1>
 			</div>
 		</header>
-		<div class="row vis-body">
-			<div class="col-md-4">
-				<p>Lerro bakoitzak eskola eremu bati dagokio.<br>Maldak sare publiko eta pribatuen arteko ezberdintasuna erakusten du.</p>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<p>Grafiko honetan Euskadiko eskola-gune bakoitzak lerro bati dagokio, hiru aldagaietan: eskola-materialaren bekak, jantokiko bekak eta atzerriko ikasleak. Maldak sare publiko eta pribatuen arteko ezberdintasuna erakusten du, koloreak zein lurraldekoa den.</p>
 			</div>
-			<div class="col-md-5">
-				<p><figure><img class="img-responsive" src="images/arrow-down.png" style="float:left;margin:0 4px 0 0;"/></figure> Ikastetxe publikoetan pribatuetan baino <strong>% handiagoa</strong> duen eremua.<br>
-				<figure><img class="img-responsive" src="images/arrow-up.png" style="float:left;margin:0 4px 0 0;"/></figure> Ikastetxe publikoetan pribatuetan baino <strong>% txikiagoa</strong> duen eremua.</p>
+		</div>
+		<div class="row vis-body" id="pendientes">
+			<div class="col-md-7 prime">
+				<h2>Atzerritarrak, eskola materialaren bekak eta jantokiko beken portzentaje aldea eskola-guneka</h2>
 			</div>
-			<div class="col-md-3">
-				<p><span class="glyphicon glyphicon glyphicon-hand-up" aria-hidden="true"></span> Pasatu kurtsorea zona bakoitzari buruz informazio gehiago jasotzeko.</p>
+			<div class="col-md-3 col-md-offset-2">
+				<p class="bg-warning prime"><span class="glyphicon glyphicon glyphicon-hand-up" aria-hidden="true"></span> Pasatu kurtsorea zona bakoitzari buruz informazio gehiago jasotzeko.</p>
 			</div>
 			<div class="clearfix"></div>
-			<div class="col-md-6">
+			<div class="col-md-6 col-xs-12">
 				<div class="legend">
 					<p><span class="square square_araba"></span>Araba</p>
 					<p><span class="square square_gipuzkoa"></span>Gipuzkoa</p>
@@ -247,14 +250,14 @@ Ikasle etorkinen eskola eremuak, eskola materialarengatik eta jantoki bekak jaso
 					<p><span class="square square_media"></span>Batezbestekoa (aztertuta)</p>
 				</div>
 			</div>
-			<div class="col-md-2">
-				<div class="dropdown"> 
+			<div class="col-md-2 col-xs-6">
+				<div class="dropdown text-right">
 					<button class="btn btn-default dropdown-toggle btn-xs" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="background-color:#FF0;">Aukeratu eskola-zona <span class="caret"></span></button>
 					<ul id="legend" class="dropdown-menu" aria-labelledby="dropdownMenu1">
 					</ul>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 col-xs-6">
 				<div id="zona"><p>Zona guztiak</p></div>
 			</div>
 			<div class="clearfix"></div>
@@ -262,22 +265,45 @@ Ikasle etorkinen eskola eremuak, eskola materialarengatik eta jantoki bekak jaso
 				<div id="vis"></div>
 			</div>
 			<div class="clearfix"></div>
-			<div class="col-md-7 col-md-offset-2">
-				<p>Irudian ikus daitekenez, lerro gehienek beherantzko malda daukate (<img src="images/arrow-down.png" style="display:inline-block;height:12px;"/>), eskola eskualde guztietan, sare publikoan pribatu-itunpekoan baino ikasle atzerritar eta edo eskola materialerako bekadun gehiago daudela esan nahi du.</p>
+			<div class="col-md-5">
+				<p><small>
+					<img class="img-responsive" src="images/arrow-down.png" style="float:left;margin:0 4px 0 0;"/> Ikastetxe publikoetan pribatuetan baino <strong>% handiagoa</strong> duen eremua.<br>
+					<img class="img-responsive" src="images/arrow-up.png" style="float:left;margin:0 4px 0 0;"/> Ikastetxe publikoetan pribatuetan baino <strong>% txikiagoa</strong> duen eremua.</small>
+				</p>
+			</div>
+			<div class="col-md-4 col-md-offset-3 text-right">
+				<a role="button" data-toggle="collapse" href="#sharependientes" aria-expanded="false" aria-controls="collapseExample">
+					<span class="glyphicon glyphicon-share" aria-hidden="true"></span> Partekatu
+				</a>
+				<p id="sharependientes" class="collapse text-left"><small><a href="#pendientes">Grafiko honetan lotura</a><br>Inserta este gráfico: <input id="embed_code" class="span3" value="<iframe style='width: 100%; height: 800px; max-width: none; overflow: hidden; border: 1px solid white;' src='https://montera34.github.io/segregacionescolar/eus_embed.html'></iframe>" rel="tooltip" title="Copy + Paste" type="text"></small></p>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-12">
 				<hr>
-				<p><small>2014-2015 ikasturteko datuak. Beka daukaten ikasleen datuak etapa guztientzat dira. Atzerriko ikasleak Oinarrizko Hezkuntzakoak dira (Derrigorrezko Lehen Hezkuntza eta Derrigorrezko Bigarren Hezkuntza). Arabako Mendialdea, Igorre eta Basurto-Zorroza eskola-zonak ez daude adierazita, eskaintza pribatua ez dagoelako.</small></p>
-				<p><small>Datuen iturria: <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937"> Euskadiko Hezkuntzari Buruzko Txostena 2013-2015</a>, Euskadiko Eskola Kontseilua. Hezkuntza Saila. Eusko jaurlaritza. Vitoria-Gasteiz, 2016.</small></p>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-8">
+				<p>
+					<small>2014-2015 ikasturteko datuak. Beka daukaten ikasleen datuak etapa guztientzat dira. Atzerriko ikasleak Oinarrizko Hezkuntzakoak dira (Derrigorrezko Lehen Hezkuntza eta Derrigorrezko Bigarren Hezkuntza).</small><br>
+					<small>Datuen iturria: <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937"> Euskadiko Hezkuntzari Buruzko Txostena 2013-2015</a>, Euskadiko Eskola Kontseilua. Hezkuntza Saila. Eusko jaurlaritza. Vitoria-Gasteiz, 2016.</small>
+				</p>
+			</div>
+			<div class="col-md-4">
+				<p><small>Arabako Mendialdea, Igorre eta Basurto-Zorroza eskola-zonak ez daude adierazita, eskaintza pribatua ez dagoelako.</small></p>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-6 col-md-offset-3">
+				<p>Irudian ikus daitekenez, lerro gehienek beherantzko malda daukate (<img src="images/arrow-down.png" style="display:inline-block;height:12px;"/>), eskola eskualde guztietan, sare publikoan pribatu-itunpekoan baino ikasle atzerritar eta edo eskola materialerako bekadun gehiago daudela esan nahi du.</p>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12	">
+			<div class="col-md-6 col-md-offset-3">
 				<a class="btn btn-default" role="button" data-toggle="collapse" href="#imagenespendiente" aria-expanded="false" aria-controls="collapseExample">
 					Partekatzeko irudiak <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
 				</a>
-				<div class="collapse" id="tableredes">
 			</div>
 			<div class="clearfix"></div>
-			<div class="collapse" id="imagenespendiente">
+			<div class="collapse col-md-12" id="imagenespendiente">
 				<h3>Aldagai bereiztuak</h3>
 				<p>Grafikoko irudi bat prestatu dugu aldagaiko:</p>
 				<div class="col-md-4">
@@ -301,12 +327,40 @@ Ikasle etorkinen eskola eremuak, eskola materialarengatik eta jantoki bekak jaso
 			</div>	
 		</div>
 		<div class="row">
+			<div class="col-md-6 col-md-offset-3" style="margin-top:30px;">
+				<p>Aldagai hiru hauek eskola-gune bakoitza geografikoki kokatuz konpara ditzakegu. Aldagai bakoitza - eskola-materialaren bekak, jantokiko bekak, atzerritar ikasleen presentzia - sare publikoa (gorria) eta pribatuaren (urdina) arteko portzentaje aldea adierazten duen marra batekin irudikatzen da. <a href="#mapacomparativo">Grafiko honetan lotura</a>.</p>
+			<p class="bg-warning prime"><span class="glyphicon glyphicon glyphicon-hand-up" aria-hidden="true"></span> Pasatu kurtsorea gune bakoitzari buruz informazio gehiago jasotzeko.</p>
+			</div>
+			<div class="clearfix"></div>
+			<div id="mapacomparativo" class="col-md-12 vis-item">
+				<iframe src="https://montera34.github.io/segregacionescolar/mapa/todas_embed_eus.html" width="100%" style="overflow:hidden;max-width:none;border:1px solid white;height:1000px;"></iframe>
+			<div class="clearfix"></div>
+			<div class="col-md-8">
+				<a href="mapa/todas.html">Mapa orri bereiztuan ikusi</a>.
+			</div>
+			<div class="col-md-4 text-right">
+				<a role="button" data-toggle="collapse" href="#sharemapatodas" aria-expanded="false" aria-controls="collapseExample">
+					<span class="glyphicon glyphicon-share" aria-hidden="true"></span> Compartir
+				</a>
+				<p id="sharemapatodas" class="collapse text-left"><small><a href="#mapacomparativo">Grafiko honetan lotura</a><br>Inserta este gráfico: <input id="embed_code" class="span3" value="<iframe style='width: 100%; height:1000px; max-width: none; overflow: hidden; border: 1px solid white;' src='https://montera34.github.io/segregacionescolar/mapa/todas_embed_eus.html'></iframe>" rel="tooltip" title="Copy + Paste" type="text"></small></p>
+			</div>
+			<div class="clearfix"></div>
 			<div class="col-md-12">
+				<p>
+					<small>2014-2015 ikasturteko datuak. Beka daukaten ikasleen datuak etapa guztientzat dira. Atzerriko ikasleak Oinarrizko Hezkuntzakoak dira (Derrigorrezko Lehen Hezkuntza eta Derrigorrezko Bigarren Hezkuntza).</small><br>
+					<small>Datuen iturria: <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937"> Euskadiko Hezkuntzari Buruzko Txostena 2013-2015</a>, Euskadiko Eskola Kontseilua. Hezkuntza Saila. Eusko jaurlaritza. Vitoria-Gasteiz, 2016.</small>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
 				<h2>Ikusi datu guztiak dauzkan taula</h2>
 				<a class="btn btn-default" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 					Datu guztiak dauzkan taula <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
 				</a>
-				<div class="collapse" id="collapseExample">
+			</div>
+			<div class="clearfix"></div>
+			<div class="collapse col-md-12" id="collapseExample">
 <div id="zonastable">
 <p><input class="search" placeholder="Buscar" /> Ordena por 
 <button class="sort btn btn-default btn-xs" data-sort="id">
@@ -415,25 +469,42 @@ total alumnado
 
 	<section class="vis-item" id="extranjero">
 		<header class="row vis-head">
-			<div class="col-md-8 col-md-offset-2">
+			<div class="col-md-2 col-md-offset-3">
+				<span class="label label-default localizacion">Euskadi: eskola guneak</span>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-6 col-md-offset-3">
 				<h1>Ikasle atzerritarrak sare publiko eta pribatuan <a href="#extranjero">#</a></h1>
 			</div>
 		</header>
 		<div class="row vis-body">
-			<div class="col-md-8 col-md-offset-2">
-				<p>Mapa konbentzional bat erabili ordez, eskualde zabalak baino ikasle gutxikoak adierazten diren tokietan, eskola-zona bakoitza karratu baten bidez azaldu dugu. Bere tamaina ikasleen kopuruaren menpe dago, eta bere kolorea, ikasle atzerritarren menpe.</p>
+			<div class="col-md-6 col-md-offset-3">
+				<p>Mapa konbentzional bat erabili ordez, eskualde zabalak baino ikasle gutxikoak adierazten diren tokietan, eskola-zona bakoitza karratu baten bidez azaldu dugu. Bere <strong>tamaina</strong> ikasleen kopuruaren menpe dago, <strong>intensidadea</strong>, ikasle atzerritarren arabera, eta bere <strong>kolorea</strong>, sare publikoak edo pribatuak portzentaje haundiagoa duen menpe.</p>
 				<p>Espainiatik kanpo jaiotako pertsona atzerritarra konsideratzen da.</p>
-				<p><span class="glyphicon glyphicon glyphicon-hand-up" aria-hidden="true"></span> Pasatu kurtsorea zona bakoitzari buruz informazio gehiago jasotzeko.</p>
+				<p><small><span class="glyphicon glyphicon glyphicon-hand-up" aria-hidden="true"></span> Pasatu kurtsorea zona bakoitzari buruz informazio gehiago jasotzeko.</small></p>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-11 col-md-offset-1 vis-body" id="cartogramext">
+				<iframe src="https://montera34.github.io/segregacionescolar/cartogramas/index_embed_eus.html" width="100%" style="overflow:hidden;max-width:none;border:1px solid white;height:750px;"></iframe>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-8">
+				<a href="cartogramas/index.html">Mapa orri bereiztuan ikusi</a>.
+			</div>
+			<div class="col-md-4 text-right">
+				<a role="button" data-toggle="collapse" href="#sharecartogramext" aria-expanded="false" aria-controls="collapseExample">
+					<span class="glyphicon glyphicon-share" aria-hidden="true"></span> Partekatu
+				</a>
+				<p id="sharecartogramext" class="collapse text-left"><small><a href="#cartogramext">Grafiko honetan lotura</a><br>Inserta este gráfico: <input id="embed_code" class="span3" value="<iframe style='width: 100%;height:750px; max-width: none; overflow: hidden; border: 1px solid white;' src='https://montera34.github.io/segregacionescolar/cartogramas/index_embed_eus.html'></iframe>" rel="tooltip" title="Copy + Paste" type="text"></small></p>
 			</div>
 			<div class="clearfix"></div>
 			<div class="col-md-12">
-				<iframe src="https://numeroteca.github.io/segregacionescolar/extranjero/index_embed.html" width="100%" style="overflow:hidden;max-width:none;border:1px solid white;height:750px;"></iframe>
+				<p><small>Oinarrizko Hezkuntzarako 2014-2015 ikasturteko datuak (Derrigorrezko Lehenengo Hezkuntza eta Derrigorrezko Bigarren Hezkuntza).</small><br>
+				<small>Datuen iturria: <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937"> Euskadiko Hezkuntzari Buruzko Txostena 2013-2015</a>, Euskadiko Eskola Kontseilua. Hezkuntza Saila. Eusko jaurlaritza. Vitoria-Gasteiz, 2016.</small></p>
 			</div>
 			<div class="clearfix"></div>
-			<div class="col-md-8 col-md-offset-2">
-				<p><small>Oinarrizko Hezkuntzarako 2014-2015 ikasturteko datuak (Derrigorrezko Lehenengo Hezkuntza eta Derrigorrezko Bigarren Hezkuntza).</small></p>
-				<p><small>Datuen iturria: <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937"> Euskadiko Hezkuntzari Buruzko Txostena 2013-2015</a>, Euskadiko Eskola Kontseilua. Hezkuntza Saila. Eusko jaurlaritza. Vitoria-Gasteiz, 2016.</small></p>
-				<!--<figure><a href="extranjero"><img class="img-responsive" src="images/cartograma-extranjeros-red-publica-privada-2014-15_completo.png" /></a></figure>-->
+			<div class="col-md-6 col-md-offset-3">
+				<p class="prime">Grafiko berbera deskonposatuta ikus daiteke ikasle atzerritarren presentzia ikusteko sare publikoan (gorria), pribatua-itunpekoa (urdina) edo bien konbinazioa.</p>
 			</div>
 		</div>
 		<div class="row">
@@ -459,34 +530,69 @@ total alumnado
 				</figure>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<p>Grafiko honetan eskola-guneen aldeak formatu ezberdinenan ikus ditzakezu:</p>
+				<iframe id="datawrapper-chart-AfXAl" src="//datawrapper.dwcdn.net/AfXAl/1/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" style="width: 0; min-width: 100% !important;" height="1349"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["AfXAl"]={},window.datawrapper["AfXAl"].embedDeltas={"100":1624,"200":1450,"300":1377,"400":1349,"500":1349,"600":1349,"700":1349,"800":1321,"900":1321,"1000":1321},window.datawrapper["AfXAl"].iframe=document.getElementById("datawrapper-chart-AfXAl"),window.datawrapper["AfXAl"].iframe.style.height=window.datawrapper["AfXAl"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["AfXAl"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("AfXAl"==b)window.datawrapper["AfXAl"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
+				<p class="prime"><a href="mapa/extranjero_embed_eus.html">Atzerritar ikasleen presentziari buzruzko beste grafiko bat ikusteko</a>.</p>
+			</div>
+		</div>
 	</section>
 
 	<section class="vis-item" id="materialescolar">
 		<header class="row vis-head">
-			<div class="col-md-9">
+			<div class="col-md-2 col-md-offset-3">
+				<span class="label label-default localizacion">Euskadi: eskola guneak</span>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-6 col-md-offset-3">
 				<h1 id="materialescolar">Material didaktikoko beken alderaketa <a href="#materialescolar">#</a></h1>
 			</div>
 		</header>
-		<div class="row">	
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<p>Mapa honek eskola-materialeko ikasle bekadun protzentaje aldea adierzten du "bekadun % sare publikoa - bekadun % sare pribatua". Tonu berdeagoek (+) sare publikoan ikasle bekadun gehiago daudela adierazten dute eta tonu laranjagoak (-) pribatu-itunpekoan. Intensidade txikiagoa.</p>
+			</div>
+			<div class="clearfix"></div>
 			<div class="col-md-12">
 				<iframe width="100%" height="820" frameborder="0" src="https://numeroteca.carto.com/builder/2389a047-c81e-4a9e-adec-7df4367a7982/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 				<p><a href="https://numeroteca.carto.com/builder/2389a047-c81e-4a9e-adec-7df4367a7982/embed">Ikusi mapa pantaila osorik.</a></p>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-6 col-md-offset-3">
 				<p>Eskola  zonaldeko datuek (eskuragarri dauden bakarrak) zentro bakoitzaren egoera ezberdinak ezkutatzen dute. Baina orokorki sare publikoan bekadun  portzentai haundiagoa, nahiz eta salbuespenak egon. Aparte Arabako Mendialdea, Igorre eta Basurto-Zorroza eskola-zonaldetan eskaintza pribaturik ez dagoenez, ez da egin konparaziorik. Pasatu kurtsorea informazioa ikusteko.</p>
+			</div>
+			<div class="col-md-6 col-md-offset-3">
+				<p>Grafiko honetan eskola-guneen arteko aldeak formatu ezberdinenan ikus ditzakezu:</p>
+				<iframe id="datawrapper-chart-NpUrG" src="//datawrapper.dwcdn.net/NpUrG/1/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" style="width: 0; min-width: 100% !important;" height="1371"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["NpUrG"]={},window.datawrapper["NpUrG"].embedDeltas={"100":1702,"200":1500,"300":1427,"400":1399,"500":1371,"600":1371,"700":1371,"800":1371,"900":1371,"1000":1343},window.datawrapper["NpUrG"].iframe=document.getElementById("datawrapper-chart-NpUrG"),window.datawrapper["NpUrG"].iframe.style.height=window.datawrapper["NpUrG"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["NpUrG"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("NpUrG"==b)window.datawrapper["NpUrG"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
 			</div>
 		</div>
 	</section>
 
 	<section class="vis-item" id="comedor">
 		<header class="row vis-head">
-			<div class="col-md-9">
+			<div class="col-md-2 col-md-offset-3">
+				<span class="label label-default localizacion">Euskadi: eskola guneak</span>
+			</div>
+			<div class="col-md-6 col-md-offset-3">
 				<h1 id="comedor">Jantokiko beken alderaketa <a href="#comedor">#</a></h1>
 			</div>
 		</header>
 		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<p>Mapa honek bekadun protzentaje aldea adierzten du "bekadun % sare publikoa - bekadun % sare pribatua". Tonu berdeagoek (+) sare publikoan ikasle bekadun gehiago daudela adierazten dute eta tonu laranjagoak (-) pribatu-itunpekoan. Intensidade txikiagoa.</p>
+			</div>
+			<div class="clearfix"></div>
 			<div class="col-md-12">
 				<iframe width="100%" height="820" frameborder="0" src="https://numeroteca.carto.com/builder/593cfa1c-2b9b-4cf1-b3fb-b4199684533f/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-				<p><a href="https://numeroteca.carto.com/builder/593cfa1c-2b9b-4cf1-b3fb-b4199684533f/embed">Ikusi mapa pantaila osorik.</a></p>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-6 col-md-offset-3">
 				<p>Eskola  zonaldeko datuek (eskuragarri dauden bakarrak) zentro bakoitzaren egoera ezberdinak ezkutatzen dute. Baina orokorki sare publikoan bekadun  portzentai haundiagoa, nahiz eta salbuespenak egon. Aparte Arabako Mendialdea, Igorre eta Basurto-Zorroza eskola-zonaldetan eskaintza pribaturik ez dagoenez, ez da egin konparaziorik. Pasatu kurtsorea informazioa ikusteko.</p>
+			</div>
+			<div class="col-md-6 col-md-offset-3">
+				<p>Grafiko honetan eskola-guneen arteko aldeak formatu ezberdinenan ikus ditzakezuo:</p>
+				<iframe id="datawrapper-chart-1xDCT" src="//datawrapper.dwcdn.net/1xDCT/1/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" style="width: 0; min-width: 100% !important;" height="1349"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["1xDCT"]={},window.datawrapper["1xDCT"].embedDeltas={"100":1652,"200":1450,"300":1405,"400":1377,"500":1349,"600":1349,"700":1349,"800":1349,"900":1321,"1000":1321},window.datawrapper["1xDCT"].iframe=document.getElementById("datawrapper-chart-1xDCT"),window.datawrapper["1xDCT"].iframe.style.height=window.datawrapper["1xDCT"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["1xDCT"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("1xDCT"==b)window.datawrapper["1xDCT"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
 			</div>
 		</div>
 	</section>
