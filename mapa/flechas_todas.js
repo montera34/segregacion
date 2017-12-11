@@ -74,11 +74,11 @@ legendImgUrl = "../images/leyenda-flechas-segregacion-todas-red-pub-priv-euskadi
 if (lengua == "eu" ) {
 	var zonaEscolar = "eskola-zona",
 	alumMatPub = "eskola-materialeko bekadun ikasleak sare <strong>publikoan</strong>",
-	alumMatPriv = "eskola-materialeko bekadun ikasleak sare <strong>pribatu</strong>",
+	alumMatPriv = "eskola-materialeko bekadun ikasleak sare <strong>pribatuan</strong>",
 	alumComPub = "jantokiko bekadun ikasleak sare <strong>publikoan</strong>",
-	alumComPriv = "jantokiko bekadun ikasleak sare <strong>pribatu</strong>",
+	alumComPriv = "jantokiko bekadun ikasleak sare <strong>pribatuan</strong>",
 	alumnadoExtPub = "ikasle atzerritarrak sare <strong>publikoan</strong>",
-	alumnadoExtPriv = "ikasle atzerritarrak sare <strong>pribatu</strong>" , 
+	alumnadoExtPriv = "ikasle atzerritarrak sare <strong>pribatuan</strong>" , 
 	alumnado = "ikasleria (oinarrizko hezkuntza)",
 
 	alumnadoExtMedia = "atzerritar ikasleria batezbeste",
