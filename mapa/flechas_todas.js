@@ -52,13 +52,18 @@ var svg = d3.select("#cartogram").append("svg")
 
 // language
 var zonaEscolar = "zona escolar",
+alumnadoExtMedia = "alumnado extranjero de media",
+alumMatPub = "alumnado becado material escolar en la red pública",
+alumMatPriv = "alumnado becado material escolar en la red privado-concertada",
+alumComPub = "alumnado becado comedor en la red pública",
+alumComPriv = "alumnado becado comedor en la red privado-concertada",
 alumnadoExtPub = "alumnado es extranjero en la red <strong>pública</strong>",
 alumnadoExtPriv = "alumnado extranjero en la red <strong>privada</strong>" , 
-alumnadoExtMedia = "alumnado extranjero de media",
+alumnado = "alumnado (educación básica)",
 diferencia = "diferencia",
 indiceDes = "índice desigualdad extranjeros",
 totalExt = "total alumnado extranjero",
-alumnado = "alumnado (educación básica)",
+
 alumnadoExtranjero = "% alumando extranjero",
 presenciaExt = "Presencia alumnado extranjero",
 publico = "público",
@@ -68,13 +73,18 @@ legendImgUrl = "../images/leyenda-flechas-segregacion-todas-red-pub-priv-euskadi
 	
 if (lengua == "eu" ) {
 	var zonaEscolar = "eskola-zona",
-	alumnadoExtPub = "atzerritar ikasleria sare publikoan",
-	alumnadoExtPriv = "atzerritar ikasleria" , 
+	alumMatPub = "eskola-materialeko bekadun ikasleak sare <strong>publikoan</strong>",
+	alumMatPriv = "eskola-materialeko bekadun ikasleak sare <strong>pribatu</strong>",
+	alumComPub = "jantokiko bekadun ikasleak sare <strong>publikoan</strong>",
+	alumComPriv = "jantokiko bekadun ikasleak sare <strong>pribatu</strong>",
+	alumnadoExtPub = "ikasle atzerritarrak sare <strong>publikoan</strong>",
+	alumnadoExtPriv = "ikasle atzerritarrak sare <strong>pribatu</strong>" , 
+	alumnado = "ikasleria (oinarrizko hezkuntza)",
+
 	alumnadoExtMedia = "atzerritar ikasleria batezbeste",
 	diferencia = "aldea",
 	indiceDes = "atzerritarren ezberdintasuna",
 	totalExt = "atzerritar ikasleria guztira",
-	alumnado = "ikasleria (educación básica)",
 	alumnadoExtranjero = "% alumando extranjero",
 	presenciaExt = "Atzeeritar ikasleen presentzia",
 	tit = "Konparatiba: eskola materialaren bekak, jantokia eta atzerritar ikasleak",
@@ -539,16 +549,16 @@ var path = d3.geoPath()
           tooltip.html("<div class='table-responsive'><strong>" + d.properties.zona + "</strong> (" + zonaEscolar + " " + d.properties.zona_id2 + ", " + d.properties.provincia + ")</div>" +
             "<table class='table table-condensed'>" +
                "<tr>" +
-                    "<td style='text-align:right;color:#bd0017'><strong>"+ d.properties.perc_bec_mat_escolar_pub  +"%</strong></td><td>alumnado becado material escolar en la red <strong>pública</strong></td>" +
+                    "<td style='text-align:right;color:#bd0017'><strong>"+ d.properties.perc_bec_mat_escolar_pub  +"%</strong></td><td>" + alumMatPub + "</td>" +
                 "</tr>" +
                  "<tr>" +
-                    "<td style='text-align:right;color:#00F'><strong>"+ d.properties.perc_bec_mat_escolar_priv +"%</strong></td><td>alumnado becado material escolar en la red <strong>privado-concertada</strong></td>" +
+                    "<td style='text-align:right;color:#00F'><strong>"+ d.properties.perc_bec_mat_escolar_priv +"%</strong></td><td>" + alumMatPriv + "</td>" +
                 "</tr>" +
                 "<tr>" +
-                    "<td style='text-align:right;color:#bd0017'><strong>"+ d.properties.perc_bec_comedor_pub  +"%</strong></td><td>alumnado becado comedor en la red <strong>pública</strong></td>" +
+                    "<td style='text-align:right;color:#bd0017'><strong>"+ d.properties.perc_bec_comedor_pub  +"%</strong></td><td>" + alumComPub + "</td>" +
                 "</tr>" +
                  "<tr>" +
-                    "<td style='text-align:right;color:#00F'><strong>"+ d.properties.perc_bec_comedor_priv +"%</strong></td><td>alumnado becado comedor en la red <strong>privado-concertada</strong></td>" +
+                    "<td style='text-align:right;color:#00F'><strong>"+ d.properties.perc_bec_comedor_priv +"%</strong></td><td>" + alumComPriv + "</td>" +
                 "</tr>" +
                 "<tr>" +
                     "<td style='text-align:right;color:#bd0017'><strong>"+ d.properties.perc_alum_ext_publi  +"%</strong></td><td>" + alumnadoExtPub + "</td>" +
