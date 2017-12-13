@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="es-ES">
+<html dir="ltr" lang="eu">
 
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alumnado extranjero en zonas escolares de Euskadi</title>
+<title>Ikasle atzerritarrak sare publiko eta pribatuan</title>
 
 <!-- Bootstrap -->
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,19 +25,19 @@
 
 <!-- generic meta -->
 <meta content="Montera34" name="author" />
-<meta content="Análisis educación Euskadi: extranjeros en red pública y privada" name="description" />
+<meta content="Ikasle atzerritarrak sare publiko eta pribatuan" name="description" />
 <meta content="educación, privado, público, concertado, extranjeros" name="keywords" />
 <!-- facebook meta -->
-<meta property="og:title" content="Análisis educación Euskadi: extranjeros en red pública y privada" />
+<meta property="og:title" content="Ikasle atzerritarrak sare publiko eta pribatuan" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="Un análisis gráfico del porcentaje de extranjero en ambas redes." />
 <meta name="og:image" content="https://lab.montera34.com/segregacionescolar/images/cartograma-extranjeros-red-publica-privada-2014-15.png" />
-<meta property="og:url" content="https://lab.montera34.com/segregacionescolar/extranjero" />
+<meta property="og:url" content="https://lab.montera34.com/segregacionescolar/cartogramas/index_eus.html" />
 <!-- twitter meta -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@montera34">
 <meta property="twitter:site:id" content="137677992" />
-<meta name="twitter:title" content="Análisis educación Euskadi: extranjeros en red pública y privada" />
+<meta name="twitter:title" content="Ikasle atzerritarrak sare publiko eta pribatuan" />
 <meta name="twitter:description" content="Un análisis gráfico del porcentaje de extranjero en ambas redes." />
 <meta name="twitter:creator" content="@montera34">
 <meta name="twitter:image" content="https://lab.montera34.com/segregacion/images/cartograma-extranjeros-red-publica-privada-2014-15.png" />
@@ -107,11 +107,15 @@ line:hover {
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="https://lab.montera34.com/segregacionescolar/">Segregación escolar Euskadi/</a> <a class="navbar-brand" href="#">Cartogramas</a>
+			<a class="navbar-brand" href="https://lab.montera34.com/segregacionescolar/eus.html">Eskola segregazioa, Euskadi/</a> <a class="navbar-brand" href="#">Cartogramas</a>
 		</div>
 		<div class="collapse navbar-collapse" id="top-navbar-collapse">
 			<ul class="nav navbar-nav nabvar-left">
-				<li><a href="../index.html">Comparativa indicadores</a></li>
+				<li><a href="../eus.html">Konparatiba</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="index.html" style="font-weight:normal">Es</a></li>
+				<li><a href="#">Eus</a></li>
 			</ul>
 		</div>
 	</div>
@@ -122,13 +126,13 @@ line:hover {
 	<section class="vis-item" id="interactivo">
 		<header class="row vis-head">
 			<div class="col-md-9">
-				<h1>Presencia de alumnado extranjero en redes pública y pivado-concertada en zonas escolares de Euskadi</h1>
+				<h1>Ikasle atzerritarrak sare publiko eta pribatuan</h1>
 			</div>
 		</header>
 		<div class="row vis-body">
 			<div class="col-md-12">
-				<p>Se considera extranjera a una persona nacida fuera de España.</p>
-				<p class="bg-warning"><span class="glyphicon glyphicon glyphicon-hand-up" aria-hidden="true"></span> Pasa el cursor para descubrir más información sobre cada zona.</p>
+				<p>Espainiatik kanpo jaiotako pertsona atzerritarra konsideratzen da.</p>
+				<p class="bg-warning"><span class="glyphicon glyphicon glyphicon-hand-up" aria-hidden="true"></span> Pasatu kurtsorea zona bakoitzari buruz informazio gehiago jasotzeko.</p>
 			</div>
 			<div class="col-md-12">
 				<div id="cartogram"></div>
@@ -136,30 +140,30 @@ line:hover {
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<p><small>Datos del curso 2014-2015 para Educación básica (educación primaria y ESO).</small></p>
-				<p><small>Fuente de los datos: La educación Euskadi 2013-2015. Consejo Escolar de Euskadi. Departamento de educación. Gobierno Vasco. Vitoria-Gasteiz, 2016.</small></p>
+				<p><small>Oinarrizko Hezkuntzarako 2014-2015 ikasturteko datuak (Derrigorrezko Lehenengo Hezkuntza eta Derrigorrezko Bigarren Hezkuntza).</small><br>
+				<small>Datuen iturria: <a href="http://www.consejoescolardeeuskadi.hezkuntza.net/c/document_library/get_file?uuid=ea15c830-b320-4199-8a35-424f3060533e&groupId=17937"> Euskadiko Hezkuntzari Buruzko Txostena 2013-2015</a>, Euskadiko Eskola Kontseilua. Hezkuntza Saila. Eusko jaurlaritza. Vitoria-Gasteiz, 2016.</small></p>
 			</div>
 		</div>
-		<div class="row">		
+		<div class="row">
 			<div class="col-md-4">
-				<h3>% Alumnado extranjero en red pública</h3>
+				<h3>Sare publikoko ikasle atzerritarren %</h3>
 				<figure>
 					<a href="../images/cartograma-extranjeros-red-publica-2014-15.png"><img class="img-responsive" src="../images/cartograma-extranjeros-red-publica-2014-15.png" alt="Porcentaje de alumnado extranjero en red pública" /></a>
-					<figcaption>Cada cuadrado representa una zona escolar, tamaño proporcional a alumnado.</figcaption>
+					<figcaption>Karratu bakoitzak eskola-zona bat adierazten du, ikasleriaren araberako tamainakoa.</figcaption>
 				</figure>
 			</div>
 			<div class="col-md-4">
-				<h3>% Alumnado extranjero en red privada</h3>
+				<h3>Sare pribatuko ikasle atzerritarren %</h3>
 				<figure>
 					<a href="../images/cartograma-extranjeros-red-privada-2014-15.png"><img class="img-responsive" src="../images/cartograma-extranjeros-red-privada-2014-15.png" alt="Porcentaje de alumnado extranjero en red privada" /></a>
-					<figcaption>Cada cuadrado representa una zona escolar, tamaño proporcional a alumnado.</figcaption>
+					<figcaption>Karratu bakoitzak eskola-zona bat adierazten du, ikasleriaren araberako tamainakoa.</figcaption>
 				</figure>
 			</div>
 			<div class="col-md-4">
-				<h3>% Alumnado extranjero en pública y privada</h3>
+				<h3>Sare publiko bai pribatuko ikasle atzerritarren %</h3>
 				<figure>
 					<a href="../images/cartograma-extranjeros-red-publica-privada-2014-15.png"><img class="img-responsive" src="../images/cartograma-extranjeros-red-publica-privada-2014-15.png" alt="Porcentaje de alumnado extranjero en red pública y privada" /></a>
-					<figcaption>Cada cuadrado representa una zona escolar, tamaño proporcional a alumnado.</figcaption>
+					<figcaption>Karratu bakoitzak eskola-zona bat adierazten du, ikasleriaren araberako tamainakoa.</figcaption>
 				</figure>
 			</div>
 		</div>
@@ -184,23 +188,23 @@ line:hover {
 	<div class="row">
 		<div class="col-md-3">
 			<ul class="list-inline">
-				<li><img src="../images/m34.logo.png" alt="Logo Montera34" /></li>
+				<li><img src="images/m34.logo.png" alt="Logo Montera34" /></li>
 			</ul>
-			<p><small>Estas visualizaciones han sido realizadas por Montera34. El proyecto es una iniciativa de la <a href="https://www.ilpeskolainklusiboa.eus/es/">ILP Eskola Inklusivoa</a>.</small></p>
+			<p><small>Bistaratze hauek Montera34-k egindakoak dira. Proiektua <a href="https://www.ilpeskolainklusiboa.eus/es/">ILP Eskola Inklusivoa</a> ekimen bat da. .</small></p>
 		</div>
 		<div class="col-md-3">
-			<p><img src="../images/cc.logo.png" alt="Logos Creative Commons" /></p>
-			<p><small>El contenido de los informes está disponible bajo licencia <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</small></p>
+			<p><img src="images/cc.logo.png" alt="Logos Creative Commons" /></p>
+			<p><small>Txostenen edukia erabil daiteke <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 nazioarteko</a> lizentziaren menpe. .</small></p>
 		</div>
 		<div class="col-md-3">
-			<p><img src="../images/code.logo.png" alt="Logo código" /></p>
-			<p><small>Los datos de estas visualizaciones han sido obtenidos a partir de PDF, limpiados, liberados y <a href="https://github.com/montera34/segregacion/tree/master/data">pueden descargarse</a>. <br>El código de este informe está igualmente <a href="https://github.com/montera34/segregacion/">disponible bajo licencia GNU GPL3</a>.</small></p>
+			<p><img src="images/code.logo.png" alt="Logo código" /></p>
+			<p><small>Bistaratze hauen datuak PDFen bidez lortu izan dira. Garbi eta aske utzita daude <a href="https://github.com/montera34/segregacion/tree/master/data">eta deskargatu daitezke</a>. <br>Txosten honen kodea ere erabiltzeko moduan dago <a href="https://github.com/montera34/segregacion/">GNU GPL3 lizentziaren menpe.</a>.</small></p>
 		</div>
 		<div class="col-md-3">
-			<p><img src="../images/net.logo.png" alt="Logo red" /></p>
-			<p><small>Más visualizaciones:</small></p>
+			<p><img src="images/net.logo.png" alt="Logo red" /></p>
+			<p><small>Bistaratze gehiago:</small></p>
 			<ul class="list-unstyled">
-				<li><small><a href="http://lab.montera34.com/segregacionescolar/">Comparativa indicadores</a></small></li>
+				<li><small><a href="http://lab.montera34.com/segregacionescolar/extranjero">Atzerriko ikasleak</a></small></li>
 			</ul>
 		</div>
 
@@ -213,7 +217,7 @@ line:hover {
 <script type="text/javascript" src="../js/d3.v4.min.js"></script>
 <script type="text/javascript" src="../js/topojson.v1.min.js"></script>
 <script type="text/javascript" src="../js/d3-composite-projections.js"></script>
-<script type="text/javascript" src="../js/lang_es.js"></script>
+<script type="text/javascript" src="../js/lang_eu.js"></script>
 <script type="text/javascript" src="cartogram-extranjero.js"></script>
 <script type="text/javascript" src="../stats.js"></script>
 </body>
