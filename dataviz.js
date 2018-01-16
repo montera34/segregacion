@@ -16,7 +16,7 @@ var chartWidth = width/6; //change this depending on number of varables
 // language
 var becasMaterial = "% Becas material escolar",
 becasComedor = "% Becas comedor",
-alumnadoExtranjero = "% alumando extranjero",
+alumnadoExtranjero = "% alumnado extranjero",
 publico = "público",
 privadoConcertado = "privado-concertado";
 	
@@ -250,7 +250,7 @@ d3.tsv("data/segregacion-escuela-euskadi_simple.tsv", function(error, zonas) {
 			svg.selectAll('svg .foreground path').style("visibility","hidden").attr("stroke-width","1.1px");
 			svg.selectAll('svg .foreground path.'+ replacement(d.zona))
 				.style("opacity",1)
-				.style("visibility","visible").attr("stroke-width","1.5px"); //selecciona path que coincide con la zona seleccionada
+				.style("visibility","visible").attr("stroke-width","1.1px"); //selecciona path que coincide con la zona seleccionada
 			d3.select(this).attr("class","btn-activo"); //adds class success to button
 			if ( d.zona == "Todas") {
 				zona.select("p").html("<strong>Todas las zonas</strong>");
