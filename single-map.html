@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Single map</title>
+    <script src='https://d3js.org/d3.v3.min.js'></script>
+    <script type="text/javascript" src="/js/topojson.v1.min.js"></script>
+    <style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    #vis {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    #vis div {
+        float: left;
+        position: relative;
+    }
+    #vis path {
+        fill: #2ca25f;
+        stroke: #FFF;
+        stroke-width: 1px;
+    }
+    #vis p.legend {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-weight: bold;
+        font-size: 11px;
+    }
+    </style>
+</head>
+<body>
+	<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script></script>
+	<script type="text/javascript" src="https://d3js.org/topojson.v1.min.js"></script>
+
+    <div id="maps"></div>
+    
+    <script>
+    // basado en https://bost.ocks.org/mike/map/
+var width = 400,
+    height = 400;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .style("background-color","#EFEFEF")
+
+var color = d3.scaleLinear()
+    .domain([0, 72]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .range(['#fff','#053874'])
+    
+d3.json("data/output/limites-zonas-escolares-euskadi-con-variables-2014-15_simplify3.json", function(error, uk) {
+	// topojson creado con y simplificado con http://mapshaper.org/
+  if (error) return console.error(error);
+
+	var subunits = topojson.feature(uk, uk.objects.barrios);
+	
+	var projection = d3.geo.mercator()
+    .scale(12000)
+    .center([-2.5,43])
+    .translate([width / 2, height / 2]);
+  
+  var path = d3.geo.path()
+    .projection(projection);
+
+ 	svg.append("path")
+    .datum(subunits)
+    .attr("d", path)
+    .attr("stroke", "grey");
+    
+	svg.selectAll(".subunit")
+		  .data(subunits.features)
+		.enter().append("path")
+		  .attr("class", function(d) { return "subunit z" + d.properties.zona_id; })
+		  .attr("fill", function(d) { return color(d.properties.perc_bec_mat_escolar_pub); })
+		  .attr("d", path);
+    
+});
+    
+    </script>
+</body>
+
+</html>
