@@ -1,8 +1,8 @@
 zona	perc_bec_mat_escolar_pub	perc_bec_mat_escolar_priv	perc_bec_comedor_pub	perc_bec_comedor_priv	perc_alum_ext_pub	perc_alum_ext_priv	zona_id	total_alumnado	provincia	municipios_barrios
 Todas								place
-Araba
-Gipuzkoa
-Bizkaia
+Araba								
+Gipuzkoa								
+Bizkaia								
 Amurrio	48	35	33	14	8.3	4.3	111	1467	araba	Aiara, Amurrio, Artziniega, Okondo, Orduña
 Llodio	38	35	26	15	7.5	5.1	112	1971	araba	Llodio, Orozko
 Vitoria Oeste	44	43	25	7	11.3	1.8	121	7032	araba	Gasteizk, Zigoitia, Zuia
