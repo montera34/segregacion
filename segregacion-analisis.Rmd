@@ -1,24 +1,256 @@
 ---
 title: "Segregación escolar en Euskadi"
 author: "montera34"
-date: "November 21, 2017"
+date: "Enero, 2017"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup }
 library("MASS")
 library("tidyverse")
+
 segreg = read.csv("data/output/2014-15-variables-escolares-euskadi.csv")
-attach(segreg)
+
 ```
 
-## R Markdown
+# Análisis para conocer los datos
 
+Este documento es un ejemplo de los primeros tanteos para acercarse a entender los datos que hemos extraído para el ejercicio *3.  Educación pública-privada: abriendo datos abiertos*.
 
-```{r cars}
+Partimos de un archivo con `r length(segreg)` variables y `rnrow(segreg)` zonas escolares.
+
+```{r table_wikitoki, echo = FALSE}
+library(knitr,quietly=T)
+knitr::kable(
+  segreg[c(1:5),],
+  caption = "Las primeras zonas escolares"
+)
+
+segreglimpio = segreg[-c(6,33,57),] #elimina los que no tienen red privada
+# Me quedo con las variables que me interesan en un data.frame reducido:
+segreglimpio = segreglimpio[,c(10,11,13,14,17,18,2,3,16),]
+attach(segreglimpio)
 ```
+
+## Primeros tanteos
+
+Explorar cantidad de zonas, zonas por provincia, alumnado en cada zona, cómo representar el histograma de una variable.
+
+```{r previsualizar1}
+# previsualizando los datos
+
+# alumnos por provincia, número de alumnos por zona y % extanjeros en privada
+# ggplot(data = segreglimpio) + 
+#   geom_point(mapping = aes(x = total_alumnado, y = perc_alum_ext_priv)) + 
+#   facet_wrap(~ provincia, nrow = 1)
+
+# cantidad de zonas escolares por provincia
+ggplot(data = segreglimpio) + 
+  geom_bar(mapping = aes(x = provincia)) +
+  labs(title = "cantidad de zonas por provincia")
+
+#cantidad de alumnos por provincia
+ggplot(segreglimpio) +
+  geom_bar(stat='identity', aes(x = provincia, y = total_alumnado, fill=provincia )) +
+  labs(x = "provincia", y = "alumnos") +
+  labs(title = "cantidad de alumnos por provincia")
+
+#cantidad de alumnos por zona
+ggplot(segreglimpio) +
+  geom_bar(stat='identity', aes(x = reorder(zona, total_alumnado), y = total_alumnado, fill=provincia )) +
+  labs(x = "zona", y = "alumnos") +
+  labs(title = "cantidad de alumnos por zona") +
+  coord_flip()
+
+# medias de % de extranjeros 
+# ggplot(data = segreglimpio) + 
+#   stat_summary(
+#     mapping = aes(x = provincia, y = perc_alum_ext_pub),
+#     fun.ymin = min,
+#     fun.ymax = max,
+#     fun.y = median
+#   )
+# ggplot(data = segreglimpio, mapping = aes(x = provincia, y = perc_alum_ext_pub)) + 
+#   geom_boxplot()
+
+# histograma
+ggplot(data = segreglimpio) +
+  geom_histogram(mapping = aes(x = perc_alum_ext_pub), binwidth = 1) +
+  labs(title = "Histograma para una variable: porcentaje de alumnado extranjero en red pública")
+
+# ggplot(segreglimpio) +
+#   geom_density(aes(perc_alum_ext_pub, color=provincia)) + 
+#   geom_density(aes(perc_alum_ext_priv, color=provincia)) 
+```
+
+Ahora vamos a cambiar el formato en que vienen los datos para poder realizar otras operaciones. usaremos *melt* de la librería *reshape*.
+
+```{r previsualizar2}
+require(reshape)
+# convierte los datos a dos columnas: nombre de variable y valor
+segregprepara <-segreglimpio
+#se renombran los nombres de las variables para simplificar
+colnames(segregprepara) = c("material_pub","material_priv","comedor_pub","comedor_priv","extran_pub","extran_priv","zona","provincia","alumnado")
+segregm <- melt(segregprepara[,-9])
+
+knitr::kable(
+  segregm[c(1:2),],
+  caption = "Primeras líneas del data frame"
+)
+```
+
+Las visualizaciones muestras las variables: cada punto es un valor de una variable de una zona escolar.
+```{r previsualizar2b}
+ggplot(segregm) + 
+  geom_point(mapping = aes(x = variable, y = value, colour=provincia), position = "jitter", alpha = 8/10, size = 2) + 
+  labs(y = "porcentaje", x = "variables") +
+  coord_cartesian(ylim = c(0, 70)) + scale_y_continuous(breaks=seq(0,100,10))
+
+ggplot(data = segregm, mapping = aes(x = variable, y = value)) +
+  geom_boxplot()
+ggplot(data = segregm, mapping = aes(x = variable, y = value, colour=provincia)) +
+  geom_boxplot()
+```
+
+## Correlaciones
+
+Vamos a mirar si existen correlaciones entre los valores de los diferentes indicadores para cada una de las zonas:
+
+```{r correlaciones}
+# Calculando Pairs
+pairs(~perc_alum_ext_pub+perc_alum_ext_priv+perc_bec_comedor_pub+perc_bec_comedor_priv+perc_bec_mat_escolar_pub+perc_bec_mat_escolar_priv,data=segreglimpio,
+      xlim=c(0,70),ylim = c(0,70),
+      lower.panel = NULL
+)
+```
+
+Ahora con una librería que también calcula la corelación (pearson).
+
+```{r correlaciones2}
+library(GGally)
+ggpairs(segreglimpio,
+  columns = c(1:6),
+  title = "buscando correlaciones", 
+  # upper = list(continuous = "density"),
+  aes(colour = provincia, alpha = 0.4))
+```
+
+Ahora un ejemplo de cómo calcular correlaciones ponderadas:
+
+```{r correlaciones3}
+# Calculate weighted corelations
+library(wCorr)
+weightedCorr(y=perc_bec_comedor_pub , x=perc_bec_mat_escolar_pub, method="pearson", weights=total_alumnado)
+weightedCorr(y=perc_bec_comedor_priv , x=perc_bec_mat_escolar_priv, method="pearson", weights=total_alumnado)
+```
+
+Ahora vamos a ver si existen correlaciones entre las diferencias para cada indicador de cada zona entre la red pública y la privada:
+
+```{r correlaciones4}
+# creates dataframe with diferences in variables
+comedor = data.frame(perc_bec_comedor_pub - perc_bec_comedor_priv)
+material = data.frame(perc_bec_mat_escolar_pub - perc_bec_mat_escolar_priv)
+extran  = data.frame(perc_alum_ext_pub - perc_alum_ext_priv)
+comedorx = data.frame(perc_bec_comedor_pub / perc_bec_comedor_priv)
+materialx = data.frame(perc_bec_mat_escolar_pub / perc_bec_mat_escolar_priv)
+extranx  = data.frame(perc_alum_ext_pub / perc_alum_ext_priv)
+
+segregdif = data.frame(comedor,material,extran,comedorx,materialx,extranx,provincia,zona)
+colnames(segregdif) = c("comedor","material","extran","comedorx","materialx","extranx","provincia","zona")
+
+ggpairs(segregdif,
+        title = "buscando correlaciones en las diferencias red pública - privada", 
+        columns = c(1:3),
+        aes(colour = provincia, alpha = 0.4))
+ggpairs(segregdif[provincia=="gipuzkoa",],
+        title = "buscando correlaciones en las diferencias red pública - privada en Gipuzkoa", 
+        columns = c(1:3),
+        aes(colour = provincia, alpha = 0.4))
+ggpairs(segregdif,
+        title = "buscando correlaciones", 
+        columns = c(4:6),
+        aes(colour = provincia, alpha = 0.4))
+```
+
+## Diferencias
+
+Visualizamos las diferencias entre la red pública y privada de cada zona en cada una de las variables: % becarios de material escolar, % becarios beca comedor y % alumnado extranjero. Esto es, cada valor representado es la diferencia entre:
+
+   % becarios de material escolar en red pública - % becarios de material escolar en red privada
+
+```{r diferencias}
+
+segregmdif <- melt(segregdif[,c(1:3,7,8)])
+
+ggplot(segregmdif) + 
+  geom_point(mapping = aes(x = variable, y = value, colour=provincia), position = "jitter", alpha = 8/10, size = 2) + 
+  labs(y = "valor", x = "diferencias") +
+  scale_y_continuous(breaks=seq(0,100,10))
+
+ggplot(segregmdif, mapping = aes(x = variable, y = value)) +
+  geom_boxplot()
+ggplot(segregmdif, mapping = aes(x = variable, y = value, fill=provincia)) +
+  geom_boxplot()
+
+```
+
+## Cocientes
+
+Visualizamos los cocientes entre la red pública y privada de cada zona en cada una de las variables: % becarios de material escolar, % becarios beca comedor y % alumnado extranjero. Esto es, cada valor representado es la diferencia entre:
+
+    % becarios de material escolar en red pública / % becarios de material escolar en red privada
+
+```{r cocientes1}
+
+segregmcoc <- melt(segregdif[,c(4:6,7,8)])
+
+ggplot(segregmcoc) + 
+  geom_point(mapping = aes(x = variable, y = value, colour=provincia), position = "jitter", alpha = 8/10, size = 2) + 
+  labs(y = "valor", x = "cocientes") +
+  scale_y_continuous(breaks=seq(0,100,10))
+
+ggplot(segregmcoc, mapping = aes(x = variable, y = value)) +
+  geom_boxplot()
+ggplot(segregmcoc, mapping = aes(x = variable, y = value, fill=provincia)) +
+  geom_boxplot()
+
+```
+
+Como el valor de Rioja Alavesa para e cociente dealumnado extranjero es  de 44 impide ver bien los datos, repetimos las visualizaciones eliminándolo:
+
+```{r cocientes2}
+
+segregmcoc <- melt(segregdif[,c(4:6,7,8)])
+
+ggplot(segregmcoc[-115,]) + 
+  geom_point(mapping = aes(x = variable, y = value, colour=provincia), position = "jitter", alpha = 8/10, size = 2) + 
+  labs(y = "valor", x = "cocientes") +
+  scale_y_continuous(breaks=seq(0,100,10))
+
+ggplot(segregmcoc[-115,], mapping = aes(x = variable, y = value)) +
+  geom_boxplot()
+ggplot(segregmcoc[-115,], mapping = aes(x = variable, y = value, fill=provincia)) +
+  geom_boxplot()
+
+```
+
+
+## Coordenadas paralelas
+
+```{r xx}
+# parcoord(segreglimpio[,c(1:6)], col = segreg[,3],  var.label = TRUE, ylim = c(0,72)) 
+# 
+# 
+# parcoord(segreg[,c(1,2)], col = segreg[,3],  var.label = T) 
+# parcoord(segreg[,c(3,4)])
+# parcoord(segreg[,c(5,6)])
+```
+
+
 
 ## Comparativa variables
+
+Y ahora unos ejercicios para comparar variables y diferencias de variables entre sí con un método más manual del que quemos explorado en la sección de [correlaciones](#correlaciones).
 
 ```{r pressure, echo=FALSE , warning=FALSE}
 ggplot(data = segreg, mapping = aes(x = perc_alum_ext_pub, y = perc_alum_ext_priv)) + 
@@ -50,14 +282,7 @@ ggplot(data = segreg, mapping = aes(x = perc_alum_ext_pub- perc_alum_ext_priv, y
   scale_colour_manual(values=c("#f6ae01", "#4199cb","#da5455")) +
   geom_point(aes(colour = provincia)) +
   labs(title = "comparativa diferencias extranjeros vs beca material escolar") +
-  geom_text(aes(label=zona),size = 2, colour="black", nudge_x = 0.7, nudge_y = 1,fill = provincia)
-
-ggplot(data = segreg, mapping = aes(x = perc_alum_ext_pub / perc_alum_ext_priv, y = perc_bec_mat_escolar_pub / perc_bec_mat_escolar_priv)) + 
-  coord_cartesian(ylim = c(0, 5),xlim = c(0, 15)) +
-  scale_colour_manual(values=c("#f6ae01", "#4199cb","#da5455")) +
-  geom_point(aes(colour = provincia)) +
-  labs(title = "comparativa diferencias extranjeros vs beca material escolar") +
-  geom_text(aes(label=zona),size = 2, colour="black", nudge_x = 0.7, nudge_y = 1,fill = provincia)
+  geom_text(aes(label=zona),size = 2, colour="black", nudge_x = 1, nudge_y = 1,fill = provincia)
 
 ggplot(data = segreg, mapping = aes(x = perc_alum_ext_pub - perc_alum_ext_priv, y = perc_bec_comedor_pub - perc_bec_comedor_priv)) + 
   coord_cartesian(ylim = c(-40, 50),xlim = c(-40, 30)) +
@@ -65,4 +290,11 @@ ggplot(data = segreg, mapping = aes(x = perc_alum_ext_pub - perc_alum_ext_priv, 
   geom_point(aes(colour = provincia)) +
   labs(title = "comparativa diferencias extranjeros vs beca comedor") +
   geom_text(aes(label=zona),size = 2, colour="black", nudge_x = 0.7, nudge_y = 1,fill = provincia)
+
+ggplot(data = segreg, mapping = aes(x = perc_alum_ext_pub / perc_alum_ext_priv, y = perc_bec_mat_escolar_pub / perc_bec_mat_escolar_priv)) + 
+  coord_cartesian(ylim = c(0, 5),xlim = c(0, 15)) +
+  scale_colour_manual(values=c("#f6ae01", "#4199cb","#da5455")) +
+  geom_point(aes(colour = provincia)) +
+  labs(title = "comparativa cocientes extranjeros vs beca material escolar") +
+  geom_text(aes(label=zona),size = 2, colour="black", nudge_x = 1, nudge_y = 1,fill = provincia)
 ```
