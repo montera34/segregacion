@@ -111,7 +111,10 @@ p {
 	background-color:#666;
 }
 
-#bizkaiamedia,#gipuzkoamedia,#arabamedia,#mediaponderada {
+#bizkaia,#gipuzkoa,#araba,.background .bizkaia,.background .gipuzkoa,.background .araba {
+	display:none;
+}
+#bizkaiamedia,#gipuzkoamedia,#arabamedia,#media {
 	stroke-width: 4px;
 	stroke-dasharray: 6,6;
 }
@@ -280,7 +283,7 @@ figcaption {
 .vis-head h1 {
 	font-weight:bold;
 }
-#idtodas, #idaraba, #idgipuzkoa, #idbizkaia, #idarabamedia, #idgipuzkoamedia, #idbizkaiamedia, #idmediaponderada {
+#idtodas, #idaraba, #idgipuzkoa, #idbizkaia, #idarabamedia, #idgipuzkoamedia, #idbizkaiamedia, #idmedia {
 	font-weight:bold;
 }
 li #idtodas, li #idbizkaia {
