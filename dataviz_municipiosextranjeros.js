@@ -11,7 +11,7 @@ var margin = {top: 50, right: 10, bottom: 10, left:0},
     height = 500 - margin.top - margin.bottom;
 
 var vis = d3.select("#vis");
-var chartWidth = width; //change this depending on number of varables
+var chartWidth = width/6; //change this depending on number of varables
 
 // language
 var becasMaterial = "% Becas material escolar",
@@ -47,14 +47,23 @@ var svg = d3.select("#vis").append("svg")
 var tooltip = d3.select("body").append("div") 
 		.attr("class", "tooltip2")
 
+// set color scale
+var colorScale = d3.scale.linear()
+    .domain([0, 0.65]) // See why 5 values https://github.com/d3/d3-scale#continuous_domain indice_desigualdad
+    .range(['#32f341','#a759e5'])
+
 //replaces spaces and .
+
 var replacement = function(d) { return d.replace(/\s+/g, '').replace(/\.+/g, '').replace(/\,+/g, '').replace(/[{()}]/g, '').replace(/\-+/g, '').toLowerCase();};
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 //Legends
 var legend = d3.select("#legend");
 var zona = d3.select("#zona");
 
-d3.csv("data/municipios-diferencias-pub-pri_inf-basica.csv", function(error, zonas) {
+d3.tsv("data/municipios-diferencias-pub-pri_inf-basica.csv", function(error, zonas) {
 
   // Extract the list of dimensions and create a scale for each.
   x.domain(dimensions = d3.keys(zonas[0]).filter(function(d) {
@@ -82,9 +91,10 @@ d3.csv("data/municipios-diferencias-pub-pri_inf-basica.csv", function(error, zon
     .enter().append("path")
       .attr("d", path)
       .attr("class",function(d) { return replacement(d.municipio) + " todas "+ d.provincia;} ) // colorea líneas según color de provincia
-      .attr("stroke", function(d) { return d.provincia == "araba" ? "#f6ae01" : d.provincia == "gipuzkoa" ? "#4199cb" : d.provincia == "bizkaia" ? "#da5455" : "#666"; })
+      //.attr("stroke", function(d) { return d.provincia == "araba" ? "#f6ae01" : d.provincia == "gipuzkoa" ? "#4199cb" : d.provincia == "bizkaia" ? "#da5455" : "#666"; })
+      .attr("stroke", function(d) { return colorScale(d.indice_gorard) })
       .attr("fill","none")
-      .attr("stroke-width","1.1px")
+      .attr("stroke-width","1.4px")
       //.attr("stroke-width","2px")
       .attr("id",function(d) { return replacement(d.municipio);} ) // colorea líneas según color de provincia
       .on("mousemove", showTooltip) // AÑADIR EVENTO SHOW TOOLTIP
@@ -96,7 +106,30 @@ d3.csv("data/municipios-diferencias-pub-pri_inf-basica.csv", function(error, zon
     .enter().append("g")
       .attr("class", "dimension")
       .attr("transform", function(d) { return "translate(" + x(d) + ")"; })
-        ;
+       .call(d3.behavior.drag()
+        .origin(function(d) { return {x: x(d)}; })
+        .on("dragstart", function(d) {
+          dragging[d] = x(d);
+          background.attr("visibility", "hidden");
+        })
+        .on("drag", function(d) {
+          dragging[d] = Math.min(width, Math.max(0, d3.event.x));
+          foreground.attr("d", path);
+          dimensions.sort(function(a, b) { return position(a) - position(b); });
+          x.domain(dimensions);
+          g.attr("transform", function(d) { return "translate(" + position(d) + ")"; })
+        })
+        .on("dragend", function(d) {
+          delete dragging[d];
+          transition(d3.select(this)).attr("transform", "translate(" + x(d) + ")");
+          transition(foreground).attr("d", path);
+          background
+              .attr("d", path)
+            .transition()
+              .delay(500)
+              .duration(0)
+              .attr("visibility", null);
+        }));
 
   // Add an axis and title.
   g.append("g")
@@ -104,7 +137,7 @@ d3.csv("data/municipios-diferencias-pub-pri_inf-basica.csv", function(error, zon
       .each(function(d) { d3.select(this).call(axis.scale(y[d])); })
     .append("text")
       .style("text-anchor", "middle")
-      .attr("class","axis_title_muni")
+      .attr("class","axis_title")
       .attr("y", -9)
       .text(function(d) { return d; });
 
@@ -129,28 +162,50 @@ d3.csv("data/municipios-diferencias-pub-pri_inf-basica.csv", function(error, zon
 		.style("text-anchor", "middle")
 		.attr("font-size", "14px")
 		.attr("fill", "black")
-		.attr("font-weight", "bold"); */
-
+		.attr("font-weight", "bold");*/
 	// rótulos ejes
-	/*svg.append("text")
-		.attr("x", chartWidth/4)
+	svg.append("text")
+		.attr("x", chartWidth/2)
 		.attr("y", -margin.top/6)
 		.text(publico)
 		.attr("class","axis_label");
 	svg.append("text")
-		.attr("x", chartWidth/4 + chartWidth/2)
+		.attr("x", chartWidth + chartWidth/2)
 		.attr("y", -margin.top/6)
 		.text(privadoConcertado)
-		.attr("class","axis_label");*/
+		.attr("class","axis_label");
+	svg.append("text")
+		.attr("x", chartWidth/2+chartWidth*2)
+		.attr("y", -margin.top/6)
+		.text("Nº Alumnado")
+		.attr("class","axis_label");
+	svg.append("text")
+		.attr("x", chartWidth/2+chartWidth*3)
+		.attr("y", -margin.top/6)
+		.text("Índice de Gorard")
+		.attr("class","axis_label");
+	svg.append("text")
+		.attr("x", chartWidth/2+chartWidth*4)
+		.attr("y", -margin.top/6)
+		.text("Diferencia: % público - % privado")
+		.attr("class","axis_label");
+	svg.append("text")
+		.attr("x", chartWidth/2+chartWidth*5)
+		.attr("y", -margin.top/6)
+		.text("Cociente: % público/% privado")
+		.attr("class","axis_label");
 
 	function showTooltip(d) {
 		// Fill the tooltip
 		tooltip.html(
-			"<div class='table-responsive'><h5><strong>" + d.municipio + "</strong> (" + d.provincia + ")</h5>" +
+			"<div class='table-responsive'><h5><strong>" + d.municipio + "</strong> (" + capitalizeFirstLetter(d.provincia) + ")</h5>" +
 					"<table class='table table-condensed table-striped'><thead><tr><td></td><td>" + publico + "</td><td>" + privadoConcertado + "</td></tr></thead>" +
 					"<tbody>" +
-					"<tr><td>" + alumnadoExtranjero + "</td><td style='text-align:right'>" + d.per_ext_pub + "% </td><td style='text-align:right'>" + d.per_ext_pri + "% </td></tr></	tbody>" +
-			"</table></div>")
+					"<tr><td>" + alumnadoExtranjero + "</td><td style='text-align:right'>" + d.per_ext_pub + "% </td><td style='text-align:right'>" + d.per_ext_pri + "% </td></tr>" +
+					"<tr><td>" + "Índice de Gorard" + "</td><td style='text-align:center' colspan = '2'>" + d.indice_gorard + "% </td></tr>" +
+					"<tr><td>" + "Diferencia: % público - % privado" + "</td><td style='text-align:center' colspan = '2'>" + d.diferencia + "% </td></tr>" +
+					"<tr><td>" + "Cociente: % público/% privado" + "</td><td style='text-align:center' colspan = '2'>" + d.cociente + "% </td></tr>" +
+			"</	tbody></table></div>")
 			.style("opacity", 1)
 
 		tooltip.style("left", (d3.event.pageX)+55 + "px")
